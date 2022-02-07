@@ -79,13 +79,10 @@
 		20DB580F27B162AE0007B649 /* Watchin */ = {
 			isa = PBXGroup;
 			children = (
-				20DB581027B162AE0007B649 /* AppDelegate.swift */,
-				20DB581227B162AE0007B649 /* SceneDelegate.swift */,
-				20DB581427B162AE0007B649 /* ViewController.swift */,
-				20DB581627B162AE0007B649 /* Main.storyboard */,
-				20DB581927B162BC0007B649 /* Assets.xcassets */,
-				20DB581B27B162BC0007B649 /* LaunchScreen.storyboard */,
-				20DB581E27B162BC0007B649 /* Info.plist */,
+				20DB584A27B164540007B649 /* Supporting Files */,
+				20DB584927B1642F0007B649 /* Model */,
+				20DB584827B164260007B649 /* View */,
+				20DB584727B1641A0007B649 /* Controller */,
 			);
 			path = Watchin;
 			sourceTree = "<group>";
@@ -97,6 +94,41 @@
 				20DB582927B162BC0007B649 /* Info.plist */,
 			);
 			path = WatchinTests;
+			sourceTree = "<group>";
+		};
+		20DB584727B1641A0007B649 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				20DB581427B162AE0007B649 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		20DB584827B164260007B649 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20DB581627B162AE0007B649 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		20DB584927B1642F0007B649 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		20DB584A27B164540007B649 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				20DB581E27B162BC0007B649 /* Info.plist */,
+				20DB581B27B162BC0007B649 /* LaunchScreen.storyboard */,
+				20DB581927B162BC0007B649 /* Assets.xcassets */,
+				20DB581227B162AE0007B649 /* SceneDelegate.swift */,
+				20DB581027B162AE0007B649 /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,7 +398,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3UQTFY6Z46;
-				INFOPLIST_FILE = Watchin/Info.plist;
+				INFOPLIST_FILE = "Watchin/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -385,7 +417,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3UQTFY6Z46;
-				INFOPLIST_FILE = Watchin/Info.plist;
+				INFOPLIST_FILE = "Watchin/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
