@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
 
         setImageAspect()
         setEditButtonAspect()
+        tableView.backgroundColor = UIColor.clear
 
     }
 
@@ -59,9 +60,13 @@ extension HomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tvShowCell", for: indexPath)
-
+        cell.backgroundColor = UIColor.clear
         // à compléter
         
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        150.0
     }
 }
