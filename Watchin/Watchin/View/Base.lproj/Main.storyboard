@@ -83,17 +83,38 @@
                                 <color key="textColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jy5-Xv-2my">
+                                <rect key="frame" x="0.0" y="320" width="414" height="493"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tvShowCell" id="9t3-oV-6of">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9t3-oV-6of" id="wzr-RL-I05">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="KaM-vV-gES" id="Wjw-IQ-TZj"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q2L-iL-G3O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="jy5-Xv-2my" firstAttribute="leading" secondItem="q2L-iL-G3O" secondAttribute="leading" id="92s-5C-t9b"/>
+                            <constraint firstItem="jy5-Xv-2my" firstAttribute="top" secondItem="0ZD-Kp-aKg" secondAttribute="bottom" constant="10" id="AdR-c2-DMn"/>
                             <constraint firstItem="uY6-pM-WG5" firstAttribute="bottom" secondItem="q2L-iL-G3O" secondAttribute="bottom" id="B7B-HL-mL8"/>
+                            <constraint firstItem="jy5-Xv-2my" firstAttribute="trailing" secondItem="q2L-iL-G3O" secondAttribute="trailing" id="Eqc-0d-gfW"/>
                             <constraint firstItem="Gpw-PK-bEy" firstAttribute="centerX" secondItem="2sE-8m-LXm" secondAttribute="centerX" id="IaL-C6-Xg0"/>
                             <constraint firstItem="Ipd-BY-d9h" firstAttribute="top" secondItem="q2L-iL-G3O" secondAttribute="top" constant="10" id="OEy-cK-1co"/>
                             <constraint firstItem="0ZD-Kp-aKg" firstAttribute="leading" secondItem="q2L-iL-G3O" secondAttribute="leading" constant="20" id="PwP-G1-wBl"/>
                             <constraint firstItem="uY6-pM-WG5" firstAttribute="leading" secondItem="q2L-iL-G3O" secondAttribute="leading" id="Trw-Gy-SW9"/>
                             <constraint firstItem="q2L-iL-G3O" firstAttribute="trailing" secondItem="0ZD-Kp-aKg" secondAttribute="trailing" constant="20" id="XGk-Uw-fcX"/>
                             <constraint firstItem="uY6-pM-WG5" firstAttribute="trailing" secondItem="q2L-iL-G3O" secondAttribute="trailing" id="bvJ-Q0-0eO"/>
+                            <constraint firstItem="jy5-Xv-2my" firstAttribute="bottom" secondItem="q2L-iL-G3O" secondAttribute="bottom" id="cxX-eR-xAj"/>
                             <constraint firstItem="Gpw-PK-bEy" firstAttribute="top" secondItem="q2L-iL-G3O" secondAttribute="top" constant="10" id="kRm-Fh-l5a"/>
                             <constraint firstItem="0ZD-Kp-aKg" firstAttribute="top" secondItem="Gpw-PK-bEy" secondAttribute="bottom" constant="20" id="opN-mm-uap"/>
                             <constraint firstItem="q2L-iL-G3O" firstAttribute="trailing" secondItem="Ipd-BY-d9h" secondAttribute="trailing" constant="10" id="qhd-zx-DdS"/>
@@ -105,6 +126,7 @@
                     <connections>
                         <outlet property="editProfileButton" destination="Ipd-BY-d9h" id="oOp-zn-lRX"/>
                         <outlet property="profileImageView" destination="Gpw-PK-bEy" id="tab-GA-ZNT"/>
+                        <outlet property="tableView" destination="jy5-Xv-2my" id="ggy-3L-HN0"/>
                         <outlet property="userNameLabel" destination="0ZD-Kp-aKg" id="W4Z-mq-lgd"/>
                     </connections>
                 </viewController>
