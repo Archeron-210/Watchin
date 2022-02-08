@@ -16,6 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.16858875749999999" green="0.16071411969999999" blue="0.1647063792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="selectedImageTintColor" red="0.2393205762" green="0.68847942350000002" blue="0.93728905920000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
@@ -36,6 +37,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="X99-Bw-KOg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.16858875749999999" green="0.16071411969999999" blue="0.1647063792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="KaM-vV-gES" kind="relationship" relationship="rootViewController" id="YAs-dc-Utf"/>
@@ -45,7 +50,7 @@
             </objects>
             <point key="canvasLocation" x="-325" y="-542"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="xjJ-Ke-ROY">
             <objects>
                 <viewController id="KaM-vV-gES" customClass="HomeViewController" customModule="Watchin" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,7 +60,7 @@
                         <viewLayoutGuide key="safeArea" id="q2L-iL-G3O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Jlv-Q1-yO1"/>
+                    <navigationItem key="navigationItem" title="Home" id="Jlv-Q1-yO1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgK-Hr-9Tv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -69,6 +74,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xIs-d7-LuM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.16858875749999999" green="0.16071411969999999" blue="0.1647063792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="bwk-qL-iGl" kind="relationship" relationship="rootViewController" id="nnf-F8-SNb"/>
@@ -78,7 +87,7 @@
             </objects>
             <point key="canvasLocation" x="-326" y="127"/>
         </scene>
-        <!--Search View Controller-->
+        <!--Search-->
         <scene sceneID="BQ1-TX-0aM">
             <objects>
                 <viewController id="bwk-qL-iGl" customClass="SearchViewController" customModule="Watchin" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,20 +97,24 @@
                         <viewLayoutGuide key="safeArea" id="sTp-Px-fMz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="JQs-o3-mad"/>
+                    <navigationItem key="navigationItem" title="Search" id="JQs-o3-mad"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVb-7A-XGP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="506" y="127"/>
         </scene>
-        <!--Watch Later-->
+        <!--Watchin' Later-->
         <scene sceneID="Fcg-r9-Ngq">
             <objects>
                 <navigationController id="OJw-XE-1XC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Watch Later" image="bookmark" catalog="system" id="LFh-30-fQ4"/>
+                    <tabBarItem key="tabBarItem" title="Watchin' Later" image="bookmark" catalog="system" id="LFh-30-fQ4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iQe-y6-qnI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.16858875749999999" green="0.16071411969999999" blue="0.1647063792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="5vW-5E-RhS" kind="relationship" relationship="rootViewController" id="GK4-UO-IhH"/>
@@ -111,7 +124,7 @@
             </objects>
             <point key="canvasLocation" x="-326" y="856"/>
         </scene>
-        <!--Watch Later View Controller-->
+        <!--Watchin' Later-->
         <scene sceneID="JH9-ZR-iYz">
             <objects>
                 <viewController id="5vW-5E-RhS" customClass="WatchLaterViewController" customModule="Watchin" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,7 +134,7 @@
                         <viewLayoutGuide key="safeArea" id="6Sh-HF-NfY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XMN-F7-CJJ"/>
+                    <navigationItem key="navigationItem" title="Watchin' Later" id="XMN-F7-CJJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmN-61-nwy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
