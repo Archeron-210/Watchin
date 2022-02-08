@@ -39,7 +39,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.16858875749999999" green="0.16071411969999999" blue="0.1647063792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" red="0.2393205762" green="0.68847942350000002" blue="0.93728905920000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -57,14 +57,60 @@
                     <view key="view" contentMode="scaleToFill" id="2sE-8m-LXm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="uY6-pM-WG5">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="Gpw-PK-bEy">
+                                <rect key="frame" x="132" y="98" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="2Yp-Qp-DCq"/>
+                                    <constraint firstAttribute="width" secondItem="Gpw-PK-bEy" secondAttribute="height" multiplier="1:1" id="i1z-0y-cob"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipd-BY-d9h">
+                                <rect key="frame" x="285" y="98" width="119" height="22"/>
+                                <color key="tintColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="contentEdgeInsets" minX="1" minY="0.0" maxX="2" maxY="0.0"/>
+                                <state key="normal" title=" Edit profile " image="pencil.circle" catalog="system">
+                                    <color key="titleColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name's TV shows" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZD-Kp-aKg">
+                                <rect key="frame" x="20" y="268" width="374" height="42"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="q2L-iL-G3O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uY6-pM-WG5" firstAttribute="bottom" secondItem="q2L-iL-G3O" secondAttribute="bottom" id="B7B-HL-mL8"/>
+                            <constraint firstItem="Gpw-PK-bEy" firstAttribute="centerX" secondItem="2sE-8m-LXm" secondAttribute="centerX" id="IaL-C6-Xg0"/>
+                            <constraint firstItem="Ipd-BY-d9h" firstAttribute="top" secondItem="q2L-iL-G3O" secondAttribute="top" constant="10" id="OEy-cK-1co"/>
+                            <constraint firstItem="0ZD-Kp-aKg" firstAttribute="leading" secondItem="q2L-iL-G3O" secondAttribute="leading" constant="20" id="PwP-G1-wBl"/>
+                            <constraint firstItem="uY6-pM-WG5" firstAttribute="leading" secondItem="q2L-iL-G3O" secondAttribute="leading" id="Trw-Gy-SW9"/>
+                            <constraint firstItem="q2L-iL-G3O" firstAttribute="trailing" secondItem="0ZD-Kp-aKg" secondAttribute="trailing" constant="20" id="XGk-Uw-fcX"/>
+                            <constraint firstItem="uY6-pM-WG5" firstAttribute="trailing" secondItem="q2L-iL-G3O" secondAttribute="trailing" id="bvJ-Q0-0eO"/>
+                            <constraint firstItem="Gpw-PK-bEy" firstAttribute="top" secondItem="q2L-iL-G3O" secondAttribute="top" constant="10" id="kRm-Fh-l5a"/>
+                            <constraint firstItem="0ZD-Kp-aKg" firstAttribute="top" secondItem="Gpw-PK-bEy" secondAttribute="bottom" constant="20" id="opN-mm-uap"/>
+                            <constraint firstItem="q2L-iL-G3O" firstAttribute="trailing" secondItem="Ipd-BY-d9h" secondAttribute="trailing" constant="10" id="qhd-zx-DdS"/>
+                            <constraint firstItem="uY6-pM-WG5" firstAttribute="top" secondItem="q2L-iL-G3O" secondAttribute="top" id="qxW-e9-cxk"/>
+                            <constraint firstItem="Ipd-BY-d9h" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Gpw-PK-bEy" secondAttribute="trailing" constant="46" id="twH-zb-nLC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="Jlv-Q1-yO1"/>
+                    <connections>
+                        <outlet property="editProfileButton" destination="Ipd-BY-d9h" id="oOp-zn-lRX"/>
+                        <outlet property="profileImageView" destination="Gpw-PK-bEy" id="tab-GA-ZNT"/>
+                        <outlet property="userNameLabel" destination="0ZD-Kp-aKg" id="W4Z-mq-lgd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgK-Hr-9Tv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="507" y="-542"/>
+            <point key="canvasLocation" x="505.79710144927537" y="-542.41071428571422"/>
         </scene>
         <!--Search-->
         <scene sceneID="Z1T-dq-kWr">
@@ -76,7 +122,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.16858875749999999" green="0.16071411969999999" blue="0.1647063792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" red="0.2393205762" green="0.68847942350000002" blue="0.93728905920000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -94,14 +140,25 @@
                     <view key="view" contentMode="scaleToFill" id="RYO-Lh-bVC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Yaw-lz-e0Y">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sTp-Px-fMz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Yaw-lz-e0Y" firstAttribute="bottom" secondItem="sTp-Px-fMz" secondAttribute="bottom" id="HD8-dh-Pbv"/>
+                            <constraint firstItem="Yaw-lz-e0Y" firstAttribute="top" secondItem="sTp-Px-fMz" secondAttribute="top" id="IIj-c8-ifc"/>
+                            <constraint firstItem="Yaw-lz-e0Y" firstAttribute="trailing" secondItem="sTp-Px-fMz" secondAttribute="trailing" id="SnL-b3-0ny"/>
+                            <constraint firstItem="Yaw-lz-e0Y" firstAttribute="leading" secondItem="sTp-Px-fMz" secondAttribute="leading" id="tfV-rZ-lTj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="JQs-o3-mad"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVb-7A-XGP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="506" y="127"/>
+            <point key="canvasLocation" x="505.79710144927537" y="126.5625"/>
         </scene>
         <!--Watchin' Later-->
         <scene sceneID="Fcg-r9-Ngq">
@@ -113,7 +170,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.16858875749999999" green="0.16071411969999999" blue="0.1647063792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" red="0.2393205762" green="0.68847942350000002" blue="0.93728905920000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -131,6 +188,12 @@
                     <view key="view" contentMode="scaleToFill" id="g8T-zc-c4i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ZE4-Bk-bjw">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Sh-HF-NfY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -138,13 +201,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmN-61-nwy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="506" y="856"/>
+            <point key="canvasLocation" x="505.79710144927537" y="855.80357142857144"/>
         </scene>
     </scenes>
     <resources>
         <image name="bookmark" catalog="system" width="112" height="128"/>
+        <image name="defaultProfilePic" width="166.5" height="166.5"/>
         <image name="film" catalog="system" width="128" height="93"/>
+        <image name="gradientBackground" width="200" height="400"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
