@@ -26,6 +26,7 @@ class EditProfileViewController: UIViewController {
         setButtonAspect(for: choosePictureButton)
         setButtonAspect(for: saveChangesButton)
         setButtonAspect(for: exitButton)
+        setTextFieldAspect()
 
     }
 
@@ -46,9 +47,7 @@ class EditProfileViewController: UIViewController {
     }
 
     private func setTextFieldAspect() {
-        userNameTextField.layer.borderWidth = 1
-        userNameTextField.layer.borderColor = UIColor.white.cgColor
-        userNameTextField.layer.cornerRadius = 10
+        userNameTextField.setBottomBorderAndPlaceholderTextColor()
     }
 
 }
