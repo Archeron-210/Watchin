@@ -56,5 +56,19 @@ class EditProfileViewController: UIViewController {
     private func setTextFieldAspect() {
         userNameTextField.setBottomBorderAndPlaceholderTextColor()
     }
-
 }
+
+    // MARK: - Keyboard Management
+
+extension EditProfileViewController: UITextFieldDelegate {
+
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        userNameTextField.resignFirstResponder()
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+

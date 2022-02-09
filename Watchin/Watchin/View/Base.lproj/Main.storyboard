@@ -94,6 +94,9 @@
                                 <color key="textColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="namePhonePad" keyboardAppearance="light" returnKeyType="done" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
+                                <connections>
+                                    <outlet property="delegate" destination="0rD-e6-j3g" id="ilT-Mb-SbH"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjB-AR-F0K">
                                 <rect key="frame" x="15" y="15" width="40" height="40"/>
@@ -119,6 +122,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ezb-5R-fBB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ezb-5R-fBB" firstAttribute="trailing" secondItem="kzR-MP-yKO" secondAttribute="trailing" constant="40" id="950-Pd-Vfc"/>
                             <constraint firstItem="u5i-iq-B2h" firstAttribute="top" secondItem="6vF-n9-OnC" secondAttribute="bottom" constant="15" id="97t-kT-BPa"/>
@@ -144,6 +148,9 @@
                             <constraint firstItem="tjB-AR-F0K" firstAttribute="leading" secondItem="ezb-5R-fBB" secondAttribute="leading" constant="15" id="uTO-uE-gmC"/>
                             <constraint firstAttribute="trailing" secondItem="6vF-n9-OnC" secondAttribute="trailing" id="x8D-pT-xYE"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qsi-eh-H2n" appends="YES" id="VYN-O6-Gjn"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="choosePictureButton" destination="bbK-JV-Gud" id="9XA-nc-QfP"/>
@@ -154,6 +161,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cz-3K-pCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="qsi-eh-H2n">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="0rD-e6-j3g" id="hL4-F9-PGA"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="498.55072463768118" y="-1194.6428571428571"/>
         </scene>
