@@ -142,6 +142,13 @@
                             <constraint firstAttribute="trailing" secondItem="6vF-n9-OnC" secondAttribute="trailing" id="x8D-pT-xYE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="choosePictureButton" destination="bbK-JV-Gud" id="9XA-nc-QfP"/>
+                        <outlet property="exitButton" destination="tjB-AR-F0K" id="CPU-ue-R5r"/>
+                        <outlet property="profilePictureImageView" destination="F4z-kS-8pw" id="Fft-XU-c86"/>
+                        <outlet property="saveChangesButton" destination="Bp8-jT-Ubg" id="0OL-wp-jpa"/>
+                        <outlet property="userNameTextField" destination="kzR-MP-yKO" id="nGt-gc-KfO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cz-3K-pCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

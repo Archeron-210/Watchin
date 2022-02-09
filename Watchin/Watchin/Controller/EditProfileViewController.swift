@@ -9,21 +9,46 @@ import UIKit
 
 class EditProfileViewController: UIViewController {
 
+    // MARK: - Outlets
+
+    @IBOutlet weak var profilePictureImageView: UIImageView!
+    @IBOutlet weak var choosePictureButton: UIButton!
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var saveChangesButton: UIButton!
+    @IBOutlet weak var exitButton: UIButton!
+
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-    
+        setProfilePictureAspect()
+        setButtonAspect(for: choosePictureButton)
+        setButtonAspect(for: saveChangesButton)
+        setButtonAspect(for: exitButton)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+
+    // MARK: - Private
+
+    private func setProfilePictureAspect() {
+        profilePictureImageView.layer.borderWidth = 3
+        profilePictureImageView.layer.masksToBounds = false
+        profilePictureImageView.layer.borderColor = UIColor.white.cgColor
+        profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.height/2
+        profilePictureImageView.clipsToBounds = true
+    }
+
+    private func setButtonAspect(for button: UIButton) {
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.cornerRadius = 10
+    }
+
+    private func setTextFieldAspect() {
+        userNameTextField.layer.borderWidth = 1
+        userNameTextField.layer.borderColor = UIColor.white.cgColor
+        userNameTextField.layer.cornerRadius = 10
+    }
 
 }
