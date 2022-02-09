@@ -18,6 +18,7 @@
 		20E164B127B1830E0057E42C /* WatchLaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E164B027B1830E0057E42C /* WatchLaterViewController.swift */; };
 		20E164B527B1833B0057E42C /* ShowDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E164B427B1833B0057E42C /* ShowDetailsViewController.swift */; };
 		20E164B927B3C7CF0057E42C /* TvShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E164B827B3C7CF0057E42C /* TvShowTableViewCell.swift */; };
+		20E164BD27B3CF020057E42C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E164BC27B3CF020057E42C /* EditProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		20E164B027B1830E0057E42C /* WatchLaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchLaterViewController.swift; sourceTree = "<group>"; };
 		20E164B427B1833B0057E42C /* ShowDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailsViewController.swift; sourceTree = "<group>"; };
 		20E164B827B3C7CF0057E42C /* TvShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowTableViewCell.swift; sourceTree = "<group>"; };
+		20E164BC27B3CF020057E42C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				20E164AC27B182670057E42C /* SearchViewController.swift */,
 				20E164B027B1830E0057E42C /* WatchLaterViewController.swift */,
 				20E164B427B1833B0057E42C /* ShowDetailsViewController.swift */,
+				20E164BC27B3CF020057E42C /* EditProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E164BD27B3CF020057E42C /* EditProfileViewController.swift in Sources */,
 				20DB581127B162AE0007B649 /* AppDelegate.swift in Sources */,
 				20DB581327B162AE0007B649 /* SceneDelegate.swift in Sources */,
 				20E164B127B1830E0057E42C /* WatchLaterViewController.swift in Sources */,
