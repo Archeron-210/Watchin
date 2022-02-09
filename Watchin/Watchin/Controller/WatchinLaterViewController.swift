@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WatchLaterViewController: UIViewController {
+class WatchinLaterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

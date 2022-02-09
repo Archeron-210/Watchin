@@ -54,7 +54,7 @@ extension HomeViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // retourne le tableau de séries
+        // retourne le tableau de séries.count
         return 1
     }
 
@@ -71,6 +71,6 @@ extension HomeViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        150.0
+        160.0
     }
 }
