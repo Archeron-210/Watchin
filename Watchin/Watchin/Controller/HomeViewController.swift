@@ -59,9 +59,13 @@ extension HomeViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tvShowCell", for: indexPath)
-        cell.backgroundColor = UIColor.clear
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tvShowCell", for: indexPath) as? TvShowTableViewCell else {
+            return UITableViewCell()
+        }
         // à compléter
+        cell.configure(poster: "watchinIcon", showTitle: "Show Title", watchedEpisodes: "Watched episodes: \n250/250", platform: "On: add platform")
+        cell.backgroundColor = UIColor.clear
+
         
         return cell
     }

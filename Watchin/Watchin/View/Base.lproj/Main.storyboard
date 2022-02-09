@@ -88,7 +88,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tvShowCell" rowHeight="160" id="9t3-oV-6of">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tvShowCell" rowHeight="160" id="9t3-oV-6of" customClass="TvShowTableViewCell" customModule="Watchin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9t3-oV-6of" id="wzr-RL-I05">
@@ -106,7 +106,7 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CT0-bW-B3p">
                                                             <rect key="frame" x="0.0" y="0.0" width="256" height="35"/>
-                                                            <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="25"/>
+                                                            <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="25"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -142,6 +142,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="v4d-Z2-7dc" secondAttribute="trailing" constant="5" id="t4B-IO-h4c"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="platformLabel" destination="hro-sh-iaE" id="YaZ-mt-5Yc"/>
+                                            <outlet property="showTitleLabel" destination="CT0-bW-B3p" id="K2I-gE-Vqx"/>
+                                            <outlet property="tvShowPosterImageView" destination="20s-Cx-AmO" id="Rdz-2l-Wk2"/>
+                                            <outlet property="watchedEpisodesLabel" destination="ue8-gN-BjO" id="PIl-B3-4iy"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
