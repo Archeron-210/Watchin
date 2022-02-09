@@ -102,6 +102,9 @@
                                     <constraint firstAttribute="width" constant="40" id="nXy-gB-R6J"/>
                                 </constraints>
                                 <state key="normal" image="cross"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="0rD-e6-j3g" eventType="touchUpInside" id="B29-OC-pOD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bp8-jT-Ubg">
                                 <rect key="frame" x="85" y="531.5" width="244" height="40"/>

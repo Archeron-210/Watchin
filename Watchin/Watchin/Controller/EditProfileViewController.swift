@@ -30,6 +30,13 @@ class EditProfileViewController: UIViewController {
 
     }
 
+    // MARK: - Actions
+
+    @IBAction func dismiss(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+
+
     // MARK: - Private
 
     private func setProfilePictureAspect() {
