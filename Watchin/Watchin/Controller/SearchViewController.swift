@@ -67,5 +67,21 @@ extension SearchViewController: UITableViewDataSource {
         // retourne le tableau de séries.count
         return 1
     }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tvShowCell", for: indexPath) as? TvShowTableViewCell else {
+            return UITableViewCell()
+        }
+        // à compléter
+        cell.configure(poster: "watchinIcon", showTitle: "Show Title", watchedEpisodes: "Watched episodes: \n250/250", platform: "On: add platform")
+        cell.backgroundColor = UIColor.clear
+
+
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        160.0
+    }
     
 }
