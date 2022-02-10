@@ -63,6 +63,8 @@ extension SearchViewController: UITextFieldDelegate {
     }
 }
 
+    // MARK: - TableView Management
+
 extension SearchViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
