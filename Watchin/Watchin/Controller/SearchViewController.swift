@@ -14,15 +14,21 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
+    @IBOutlet weak var tableView: UITableView!
 
     // MARK: - Life Cycle
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setSearchButtonAspect()
         setTextFieldAspect()
+        tableView.backgroundColor = UIColor.clear
     }
 
     // MARK: - Actions
