@@ -7,7 +7,7 @@ target 'Watchin' do
 
   # Pods for Watchin
 pod 'Alamofire', '~> 5.5'
-
+pod 'AlamofireImage', '~> 4.1'
   target 'WatchinTests' do
     inherit! :search_paths
     # Pods for testing
