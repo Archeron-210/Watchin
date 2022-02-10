@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		203076BB27B56ADD00A2AD36 /* Platforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076BA27B56ADD00A2AD36 /* Platforms.swift */; };
+		203076BF27B56DF500A2AD36 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076BE27B56DF500A2AD36 /* SearchResult.swift */; };
+		203076C527B572F500A2AD36 /* TvShowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076C427B572F500A2AD36 /* TvShowService.swift */; };
 		20DB581127B162AE0007B649 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DB581027B162AE0007B649 /* AppDelegate.swift */; };
 		20DB581327B162AE0007B649 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DB581227B162AE0007B649 /* SceneDelegate.swift */; };
 		20DB581827B162AE0007B649 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DB581627B162AE0007B649 /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 /* Begin PBXFileReference section */
 		11A099D167BD5C0DCF5B48F5 /* Pods-Watchin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watchin.debug.xcconfig"; path = "Target Support Files/Pods-Watchin/Pods-Watchin.debug.xcconfig"; sourceTree = "<group>"; };
 		203076BA27B56ADD00A2AD36 /* Platforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platforms.swift; sourceTree = "<group>"; };
+		203076BE27B56DF500A2AD36 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		203076C427B572F500A2AD36 /* TvShowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowService.swift; sourceTree = "<group>"; };
 		20DB580D27B162AE0007B649 /* Watchin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watchin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DB581027B162AE0007B649 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20DB581227B162AE0007B649 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				203076BA27B56ADD00A2AD36 /* Platforms.swift */,
+				203076BE27B56DF500A2AD36 /* SearchResult.swift */,
+				203076C427B572F500A2AD36 /* TvShowService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				203076BF27B56DF500A2AD36 /* SearchResult.swift in Sources */,
 				203076BB27B56ADD00A2AD36 /* Platforms.swift in Sources */,
 				20E164C927B4111D0057E42C /* UITextField+Extension.swift in Sources */,
 				20E164BD27B3CF020057E42C /* EditProfileViewController.swift in Sources */,
@@ -360,6 +367,7 @@
 				20E164AD27B182670057E42C /* SearchViewController.swift in Sources */,
 				20E164B527B1833B0057E42C /* ShowDetailsViewController.swift in Sources */,
 				20E164A927B182190057E42C /* HomeViewController.swift in Sources */,
+				203076C527B572F500A2AD36 /* TvShowService.swift in Sources */,
 				20E164B927B3C7CF0057E42C /* TvShowTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
