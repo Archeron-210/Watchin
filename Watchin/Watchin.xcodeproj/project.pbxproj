@@ -13,6 +13,7 @@
 		203076C927B57C0000A2AD36 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076C827B57C0000A2AD36 /* NetworkService.swift */; };
 		203076CD27B67E0C00A2AD36 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076CC27B67E0C00A2AD36 /* UITableView+Extension.swift */; };
 		203076D127B6AE7C00A2AD36 /* TvShowPreviewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076D027B6AE7C00A2AD36 /* TvShowPreviewProtocol.swift */; };
+		203076D527B6C3E100A2AD36 /* ShowResultDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076D427B6C3E100A2AD36 /* ShowResultDetailsViewController.swift */; };
 		20DB581127B162AE0007B649 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DB581027B162AE0007B649 /* AppDelegate.swift */; };
 		20DB581327B162AE0007B649 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DB581227B162AE0007B649 /* SceneDelegate.swift */; };
 		20DB581827B162AE0007B649 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DB581627B162AE0007B649 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		203076C827B57C0000A2AD36 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		203076CC27B67E0C00A2AD36 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		203076D027B6AE7C00A2AD36 /* TvShowPreviewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowPreviewProtocol.swift; sourceTree = "<group>"; };
+		203076D427B6C3E100A2AD36 /* ShowResultDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowResultDetailsViewController.swift; sourceTree = "<group>"; };
 		20DB580D27B162AE0007B649 /* Watchin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watchin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DB581027B162AE0007B649 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20DB581227B162AE0007B649 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				20E164B027B1830E0057E42C /* WatchinLaterViewController.swift */,
 				20E164B427B1833B0057E42C /* ShowDetailsViewController.swift */,
 				20E164BC27B3CF020057E42C /* EditProfileViewController.swift */,
+				203076D427B6C3E100A2AD36 /* ShowResultDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				20E164C927B4111D0057E42C /* UITextField+Extension.swift in Sources */,
 				20E164BD27B3CF020057E42C /* EditProfileViewController.swift in Sources */,
 				20DB581127B162AE0007B649 /* AppDelegate.swift in Sources */,
+				203076D527B6C3E100A2AD36 /* ShowResultDetailsViewController.swift in Sources */,
 				20DB581327B162AE0007B649 /* SceneDelegate.swift in Sources */,
 				20E164B127B1830E0057E42C /* WatchinLaterViewController.swift in Sources */,
 				20E164AD27B182670057E42C /* SearchViewController.swift in Sources */,
