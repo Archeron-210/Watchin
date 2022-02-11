@@ -17,11 +17,27 @@ struct TvShowsSearchDetail: Decodable {
     var id: Int
     var name: String
     var apiFormatedName: String
-    var image: String
+    var imageStringUrl: String
 
     // setting coding keys to custom property names :
     private enum CodingKeys: String, CodingKey {
-        case id, name, apiFormatedName = "permalink", image = "image_thumbnail_path"
+        case id, name, apiFormatedName = "permalink", imageStringUrl = "image_thumbnail_path"
     }
+
+}
+
+extension TvShowsSearchDetail: TvShowPreview {
+    var imageUrl: URL? {
+        return URL(string: imageStringUrl)
+    }
+
+    var watchedEpisodes: String {
+        return "Watched episodes: \nClic to start tracking!"
+    }
+
+    var platformAssociated: String {
+        return "On: add platform"
+    }
+
 
 }

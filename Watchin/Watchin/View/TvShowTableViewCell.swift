@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class TvShowTableViewCell: UITableViewCell {
 
@@ -19,11 +20,14 @@ class TvShowTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func configure(poster: String, showTitle: String, watchedEpisodes: String, platform: String) {
+    func configure(for tvShow: TvShowPreview) {
+        if let imageUrl = tvShow.imageUrl {
+            tvShowPosterImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "watchinIcon"))
+        }
         tvShowPosterImageView.image = UIImage(named: "watchinIcon")
-        showTitleLabel.text = showTitle
-        watchedEpisodesLabel.text = watchedEpisodes
-        platformLabel.text = platform
+        showTitleLabel.text = tvShow.name
+        watchedEpisodesLabel.text = tvShow.watchedEpisodes
+        platformLabel.text = tvShow.platformAssociated
     }
 
 }

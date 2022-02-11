@@ -45,7 +45,7 @@ extension WatchinLaterViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         // à compléter
-        cell.configure(poster: "watchinIcon", showTitle: "Show Title", watchedEpisodes: "Watched episodes: \nClic to start tracking!", platform: "On: add platform")
+        // cell.configure(for: <#T##TvShowPreview#>)
         cell.backgroundColor = UIColor.clear
 
 

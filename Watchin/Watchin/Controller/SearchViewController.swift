@@ -134,7 +134,7 @@ extension SearchViewController: UITableViewDataSource {
 
         let tvShow = searchResults[indexPath.row]
 
-        cell.configure(poster: "watchinIcon", showTitle: tvShow.name, watchedEpisodes: "Watched episodes: \nClic to start tracking!", platform: "On: add platform")
+        cell.configure(for: tvShow)
         cell.backgroundColor = UIColor.clear
 
 
