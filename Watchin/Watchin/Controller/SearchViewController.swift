@@ -16,6 +16,12 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
 
+    // MARK: - Property
+
+    var searchResults: [TvShowsSearchDetail] = []
+    private let tvShowService = TvShowService()
+    private var searchText = ""
+
     // MARK: - Life Cycle
 
     override func viewWillAppear(_ animated: Bool) {
@@ -33,9 +39,32 @@ class SearchViewController: UIViewController {
 
     // MARK: - Actions
 
+    @IBAction func searchButtonTapped(_ sender: UIButton) {
+        getSearchText()
+        getSearchResults()
+    }
 
 
     // MARK: - Private
+
+    private func getSearchText() {
+        guard let text = searchTextField.text, !text.isEmpty else {
+            emptyTextFieldAlert()
+            return
+        }
+        searchText = text
+    }
+
+    private func getSearchResults() {
+        tvShowService.getSearchResults(searchText: searchText) { result in
+            switch result {
+            case .success(let showsFound) :
+                self.searchResults = showsFound
+            case .failure :
+                self.errorAlert()
+            }
+        }
+    }
 
     private func setSearchButtonAspect() {
         searchButton.layer.borderWidth = 1
@@ -45,6 +74,22 @@ class SearchViewController: UIViewController {
 
     private func setTextFieldAspect() {
         searchTextField.setBottomBorderAndPlaceholderTextColor()
+    }
+
+    // MARK: - Alerts
+
+    private func errorAlert() {
+        let alert = UIAlertController(title: "⚠️", message: "It seems like something went wrong with servers 🔌", preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(actionAlert)
+        present(alert, animated: true, completion: nil)
+    }
+
+    private func emptyTextFieldAlert() {
+        let alert = UIAlertController(title: "⚠️", message: "You need to enter an ingredient to make your list! 📝", preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(actionAlert)
+        present(alert, animated: true, completion: nil)
     }
 
 }
@@ -73,15 +118,17 @@ extension SearchViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // retourne le tableau de séries.count
-        return 1
+        return searchResults.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "tvShowCell", for: indexPath) as? TvShowTableViewCell else {
             return UITableViewCell()
         }
-        // à compléter
-        cell.configure(poster: "watchinIcon", showTitle: "Show Title", watchedEpisodes: "Watched episodes: \nClic to start tracking!", platform: "On: add platform")
+
+        let tvShow = searchResults[indexPath.row]
+
+        cell.configure(poster: "watchinIcon", showTitle: tvShow.name, watchedEpisodes: "Watched episodes: \nClic to start tracking!", platform: "On: add platform")
         cell.backgroundColor = UIColor.clear
 
 
