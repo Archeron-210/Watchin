@@ -117,7 +117,11 @@ extension SearchViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // retourne le tableau de séries.count
+        if searchResults.count == 0 {
+            self.tableView.setEmptyMessage("Start by entering a TV show's name \nright above !")
+        } else {
+            self.tableView.restore()
+        }
         return searchResults.count
     }
 
