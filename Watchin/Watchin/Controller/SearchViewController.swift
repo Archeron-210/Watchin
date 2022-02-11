@@ -60,6 +60,7 @@ class SearchViewController: UIViewController {
             switch result {
             case .success(let showsFound) :
                 self.searchResults = showsFound
+                self.tableView.reloadData()
                 print("youhou")
             case .failure :
                 self.errorAlert()
