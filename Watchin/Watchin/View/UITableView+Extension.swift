@@ -16,7 +16,7 @@ extension UITableView {
         messageLabel.textColor = .white
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
-        messageLabel.font = UIFont(name: "KohinoorTelugu", size: 25)
+        messageLabel.font = UIFont(name: "Kohinoor Telugu", size: 20)
         messageLabel.sizeToFit()
 
         self.backgroundView = messageLabel
@@ -25,6 +25,6 @@ extension UITableView {
 
     func restore() {
         self.backgroundView = nil
-        self.separatorStyle = .singleLine
+        self.separatorStyle = .none
     }
 }
