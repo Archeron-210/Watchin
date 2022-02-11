@@ -23,7 +23,7 @@ class TvShowService {
     // MARK: - getSearchResults
 
     func getSearchResults(searchText: String?, completion: @escaping (Result<[TvShowsSearchDetail], Error>) -> Void) {
-        let baseUrl = computeShowDetailsQuery()
+        let baseUrl = computeSearchBaseUrl(searchText: searchText)
 
         networkService.request(baseURL: baseUrl) { (result: Result<SearchResult, Error>) in
             switch result {
@@ -38,14 +38,14 @@ class TvShowService {
 
     // MARK: - Private
 
-    private func computeSearchQuery(searchText: String?) -> String {
+    private func computeSearchBaseUrl(searchText: String?) -> String {
         guard let text = searchText else {
             return ""
         }
         return "\(baseUrl)search?q=\(text)&page=1"
     }
 
-    private func computeShowDetailsQuery() -> String {
+    private func computeShowDetailsBaseUrl() -> String {
         // à compléter
         return ""
     }

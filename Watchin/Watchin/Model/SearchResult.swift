@@ -14,7 +14,7 @@ struct SearchResult: Decodable {
 }
 
 struct TvShowsSearchDetail: Decodable {
-    var id: String
+    var id: Int
     var name: String
     var apiFormatedName: String
     var image: String
