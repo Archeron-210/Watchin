@@ -35,6 +35,7 @@ class SearchViewController: UIViewController {
         setSearchButtonAspect()
         setTextFieldAspect()
         tableView.backgroundColor = UIColor.clear
+        tableView.reloadData()
     }
 
     // MARK: - Actions
@@ -145,4 +146,20 @@ extension SearchViewController: UITableViewDataSource {
         160.0
     }
     
+}
+
+    // MARK: - Navigation
+
+extension SearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        guard let showResultDetailsViewController = self.storyboard?.instantiateViewController(identifier: "ShowResultDetailsViewController") as? ShowResultDetailsViewController else {
+            return
+        }
+        // A CHANGER
+        showResultDetailsViewController.tvShow = searchResults[indexPath.row]
+
+        self.navigationController?.pushViewController(showResultDetailsViewController, animated: true)
+    }
 }

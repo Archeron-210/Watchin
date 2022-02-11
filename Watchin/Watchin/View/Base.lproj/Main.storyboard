@@ -464,6 +464,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="bwk-qL-iGl" id="kR7-Xh-oFl"/>
+                                    <outlet property="delegate" destination="bwk-qL-iGl" id="vwl-Md-PQN"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -627,6 +628,17 @@
                             <constraint firstItem="qH7-eX-AC5" firstAttribute="trailing" secondItem="Xwo-MK-aMa" secondAttribute="trailing" constant="20" id="yks-1r-pHJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addToWatchinLaterButton" destination="FXF-ac-aHv" id="5qN-kx-91J"/>
+                        <outlet property="addToYourTvShowsButton" destination="akw-Pr-tdr" id="cQI-pU-rFA"/>
+                        <outlet property="countryLabel" destination="r6Q-YC-tUi" id="g28-jU-i7A"/>
+                        <outlet property="genresLabel" destination="AEu-Q2-lr6" id="L0W-Li-cs8"/>
+                        <outlet property="numberOfSeasonsLabel" destination="iGE-KX-a1P" id="TJu-nP-SAW"/>
+                        <outlet property="seeDescriptionButton" destination="Lxc-l0-VGB" id="j0X-9D-Kuq"/>
+                        <outlet property="showTitleLabel" destination="wjv-Fx-bXn" id="6hc-FT-2Q9"/>
+                        <outlet property="statusLabel" destination="lLH-im-FuL" id="rgS-CL-sXc"/>
+                        <outlet property="tvShowPoster" destination="BgF-7x-5ic" id="qFP-NK-rlf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vie-VD-w49" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
