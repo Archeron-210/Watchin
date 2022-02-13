@@ -39,10 +39,11 @@ class TvShowService {
     // MARK: - Private
 
     private func computeSearchBaseUrl(searchText: String?) -> String {
-        guard let text = searchText else {
+        guard let text = searchText, let escapedText = escapeWhitespaces(for: text) else {
             return ""
         }
-        return "\(baseUrl)search?q=\(text)&page=1"
+
+        return "\(baseUrl)search?q=\(escapedText)&page=1"
     }
 
     private func computeShowDetailsBaseUrl() -> String {
@@ -50,4 +51,7 @@ class TvShowService {
         return ""
     }
 
+    private func escapeWhitespaces(for text: String) -> String? {
+        return text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+    }
 }

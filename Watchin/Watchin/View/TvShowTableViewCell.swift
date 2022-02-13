@@ -23,8 +23,10 @@ class TvShowTableViewCell: UITableViewCell {
     func configure(for tvShow: TvShowPreview) {
         if let imageUrl = tvShow.imageUrl {
             tvShowPosterImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "watchinIcon"))
+        } else {
+            tvShowPosterImageView.image = UIImage(named: "watchinIcon")
         }
-        tvShowPosterImageView.image = UIImage(named: "watchinIcon")
+
         showTitleLabel.text = tvShow.name
         watchedEpisodesLabel.text = tvShow.watchedEpisodes
         platformLabel.text = tvShow.platformAssociated

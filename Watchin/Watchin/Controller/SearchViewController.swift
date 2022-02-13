@@ -20,7 +20,6 @@ class SearchViewController: UIViewController {
 
     var searchResults: [TvShowsSearchDetail] = []
     private let tvShowService = TvShowService()
-    private var searchText = ""
 
     // MARK: - Life Cycle
 
@@ -41,23 +40,22 @@ class SearchViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func searchButtonTapped(_ sender: UIButton) {
-        getSearchText()
-        getSearchResults()
+        search()
     }
 
 
     // MARK: - Private
 
-    private func getSearchText() {
+    private func search() {
         guard let text = searchTextField.text, !text.isEmpty else {
             emptyTextFieldAlert()
             return
         }
-        searchText = text
+        getSearchResults()
     }
 
     private func getSearchResults() {
-        tvShowService.getSearchResults(searchText: searchText) { result in
+        tvShowService.getSearchResults(searchText: searchTextField.text) { result in
             switch result {
             case .success(let showsFound) :
                 self.searchResults = showsFound
@@ -107,6 +105,7 @@ extension SearchViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        search()
         return true
     }
 }
@@ -151,7 +150,9 @@ extension SearchViewController: UITableViewDataSource {
     // MARK: - Navigation
 
 extension SearchViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         tableView.deselectRow(at: indexPath, animated: true)
 
         guard let showResultDetailsViewController = self.storyboard?.instantiateViewController(identifier: "ShowResultDetailsViewController") as? ShowResultDetailsViewController else {
