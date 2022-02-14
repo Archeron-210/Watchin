@@ -31,10 +31,12 @@ class ShowResultDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setButtonAspect(for: addToYourShowsButton)
         setButtonAspect(for: addToWatchinLaterButton)
         setButtonAspect(for: goToWikipediaButton)
+
+        displayShowDetails()
     }
 
     // MARK: - Actions
@@ -45,7 +47,24 @@ class ShowResultDetailsViewController: UIViewController {
         guard let tvShow = tvShow else {
             return
         }
-        
+
+        if let imageUrl = URL(string: tvShow.imageStringUrl) {
+            tvShowPosterImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "watchinIcon"))
+        } else {
+            tvShowPosterImageView.image = UIImage(named: "watchinIcon")
+        }
+
+        showTitleLabel.text = tvShow.name
+        yearLabel.text = "(\(tvShow.startDate))"
+        genresLabel.text = genresFormated(from: tvShow.genres)
+        countryLabel.text = "Country : \(tvShow.country)"
+        seasonCountLabel.text = "100 Seasons" // A MODIFIER
+        statusLabel.text = "Status : \(tvShow.status)"
+        descriptionLabel.text = tvShow.description
+    }
+
+    private func genresFormated(from genresArray: [String]) -> String {
+        return genresArray.joined(separator: ", ")
     }
 
     private func setButtonAspect(for button: UIButton) {

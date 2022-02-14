@@ -15,6 +15,7 @@ struct ShowDetail: Decodable {
 
 struct TvShowInfo: Decodable {
     var id: Int
+    var name: String
     var description: String
     var descriptionSource: String?
     var startDate: String
@@ -26,7 +27,7 @@ struct TvShowInfo: Decodable {
 
     // setting coding keys to custom property names :
     private enum CodingKeys: String, CodingKey {
-        case id, description, descriptionSource = "description_source", startDate = "start_date", country, status, imageStringUrl = "image_thumbnail_path", genres, episodes
+        case id, name, description, descriptionSource = "description_source", startDate = "start_date", country, status, imageStringUrl = "image_thumbnail_path", genres, episodes
     }
 }
 
