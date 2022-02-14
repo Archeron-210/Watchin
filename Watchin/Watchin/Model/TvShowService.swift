@@ -36,6 +36,20 @@ class TvShowService {
         }
     }
 
+    func getShowDetails(for showName: String, completion: @escaping (Result<TvShowInfo, Error>) -> Void) {
+        let baseUrl = computeShowDetailsBaseUrl(for: showName)
+
+        networkService.request(baseURL: baseUrl) { (result: Result<ShowDetail, Error>) in
+            switch result {
+            case .success(let details):
+                let showDetails = details.tvShow
+                completion(.success(showDetails))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+
     // MARK: - Private
 
     private func computeSearchBaseUrl(searchText: String?) -> String {
@@ -46,9 +60,9 @@ class TvShowService {
         return "\(baseUrl)search?q=\(escapedText)&page=1"
     }
 
-    private func computeShowDetailsBaseUrl() -> String {
+    private func computeShowDetailsBaseUrl(for tvShowName: String) -> String {
         // à compléter
-        return ""
+        return "\(baseUrl)show-details?q=\(tvShowName)"
     }
 
     private func escapeWhitespaces(for text: String) -> String? {
