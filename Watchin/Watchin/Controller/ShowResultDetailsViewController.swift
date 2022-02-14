@@ -11,7 +11,7 @@ class ShowResultDetailsViewController: UIViewController {
 
     // MARK: - Properties
 
-    var tvShow: TvShowPreview?
+    var tvShow: TvShowInfo?
 
     // MARK: - Outlets
     
@@ -40,6 +40,13 @@ class ShowResultDetailsViewController: UIViewController {
     // MARK: - Actions
 
     // MARK: - Private
+
+    private func displayShowDetails() {
+        guard let tvShow = tvShow else {
+            return
+        }
+        
+    }
 
     private func setButtonAspect(for button: UIButton) {
         button.layer.borderWidth = 1

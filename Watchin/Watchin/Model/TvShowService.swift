@@ -20,7 +20,7 @@ class TvShowService {
         self.networkService = networkService
     }
 
-    // MARK: - getSearchResults
+    // MARK: - getSearchResults & getShowDetails
 
     func getSearchResults(searchText: String?, completion: @escaping (Result<[TvShowsSearchDetail], Error>) -> Void) {
         let baseUrl = computeSearchBaseUrl(searchText: searchText)

@@ -155,12 +155,22 @@ extension SearchViewController: UITableViewDelegate {
 
         tableView.deselectRow(at: indexPath, animated: true)
 
+        tvShowService.getShowDetails(for: searchResults[indexPath.row].apiFormatedName) { result in
+            switch result {
+            case .success(let details):
+                self.goToShowDetails(with: details)
+                print("sheeesh")
+            case .failure :
+                self.errorAlert()
+            }
+        }
+    }
+
+    private func goToShowDetails(with details: TvShowInfo) {
         guard let showResultDetailsViewController = self.storyboard?.instantiateViewController(identifier: "ShowResultDetailsViewController") as? ShowResultDetailsViewController else {
             return
         }
-        // A CHANGER
-        showResultDetailsViewController.tvShow = searchResults[indexPath.row]
-
+        showResultDetailsViewController.tvShow = details
         self.navigationController?.pushViewController(showResultDetailsViewController, animated: true)
     }
 }
