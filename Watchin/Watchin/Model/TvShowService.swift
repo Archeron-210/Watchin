@@ -50,6 +50,7 @@ class TvShowService {
         }
     }
 
+
     // MARK: - Private
 
     private func computeSearchBaseUrl(searchText: String?) -> String {

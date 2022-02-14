@@ -612,7 +612,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yk2-6E-9Gd">
-                                                <rect key="frame" x="106.5" y="814.5" width="201" height="40"/>
+                                                <rect key="frame" x="137.5" y="814.5" width="139" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="OgV-B3-LoJ"/>
                                                 </constraints>
@@ -620,7 +620,10 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="5" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title=" Go to Wikipedia " image="paperplane.circle.fill" catalog="system"/>
+                                                <state key="normal" title=" See more  " image="paperplane.circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="seeMoreButtonTapped:" destination="cM5-D9-hop" eventType="touchUpInside" id="AV9-WS-UfI"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -685,8 +688,8 @@
                         <outlet property="countryLabel" destination="bnd-iw-wbI" id="D1W-1a-fXT"/>
                         <outlet property="descriptionLabel" destination="rxQ-Ee-569" id="Zhs-js-gCB"/>
                         <outlet property="genresLabel" destination="gHY-GB-Qg7" id="4d9-hJ-Ehe"/>
-                        <outlet property="goToWikipediaButton" destination="yk2-6E-9Gd" id="ka9-Ed-tEI"/>
                         <outlet property="seasonCountLabel" destination="2YJ-0S-83l" id="k0F-sn-y4Z"/>
+                        <outlet property="seeMoreButton" destination="yk2-6E-9Gd" id="upv-On-LBk"/>
                         <outlet property="showTitleLabel" destination="ZQU-GF-VOK" id="Mb4-VT-dzr"/>
                         <outlet property="statusLabel" destination="mnM-Fv-sFl" id="cLt-RX-QtR"/>
                         <outlet property="tvShowPosterImageView" destination="oUg-mR-KgT" id="XFb-uD-wUV"/>
