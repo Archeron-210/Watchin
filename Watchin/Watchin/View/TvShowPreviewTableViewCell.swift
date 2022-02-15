@@ -1,25 +1,26 @@
 //
-//  TvShowTableViewCell.swift
+//  TvShowPreviewTableViewCell.swift
 //  Watchin
 //
-//  Created by Archeron on 09/02/2022.
+//  Created by Archeron on 15/02/2022.
 //
 
 import UIKit
-import AlamofireImage
 
-class TvShowTableViewCell: UITableViewCell {
+class TvShowPreviewTableViewCell: UITableViewCell {
+
+    // MARK: - Outlets
 
     @IBOutlet weak var tvShowPosterImageView: UIImageView!
     @IBOutlet weak var showTitleLabel: UILabel!
-    @IBOutlet weak var watchedEpisodesLabel: UILabel!
-    @IBOutlet weak var platformLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+
+    // MARK: - Configure
 
     func configure(for tvShow: TvShowPreview) {
         setImage(for: tvShow)
         showTitleLabel.text = tvShow.name
-        watchedEpisodesLabel.text = tvShow.watchedEpisodes
-        platformLabel.text = tvShow.platformAssociated
+        countryLabel.text = "Country : \(tvShow.country)"
     }
 
     // MARK: - Private
@@ -31,4 +32,5 @@ class TvShowTableViewCell: UITableViewCell {
             tvShowPosterImageView.image = UIImage(named: "watchinIcon")
         }
     }
+
 }

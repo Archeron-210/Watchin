@@ -16,12 +16,13 @@ struct SearchResult: Decodable {
 struct TvShowsSearchDetail: Decodable {
     var id: Int
     var name: String
+    var country: String
     var apiFormatedName: String
     var imageStringUrl: String
 
     // setting coding keys to custom property names :
     private enum CodingKeys: String, CodingKey {
-        case id, name, apiFormatedName = "permalink", imageStringUrl = "image_thumbnail_path"
+        case id, name, country, apiFormatedName = "permalink", imageStringUrl = "image_thumbnail_path"
     }
 
 }

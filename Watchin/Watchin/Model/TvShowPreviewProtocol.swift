@@ -12,6 +12,7 @@ protocol TvShowPreview {
     var name: String { get }
     var imageUrl: URL? { get }
     var apiFormatedName: String { get }
+    var country: String { get }
     var watchedEpisodes: String { get }
     var platformAssociated: String { get }
 }

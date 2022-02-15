@@ -128,7 +128,7 @@ extension SearchViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tvShowCell", for: indexPath) as? TvShowTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tvShowPreviewCell", for: indexPath) as? TvShowPreviewTableViewCell else {
             return UITableViewCell()
         }
 

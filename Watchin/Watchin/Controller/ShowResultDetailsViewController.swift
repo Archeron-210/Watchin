@@ -83,7 +83,6 @@ class ShowResultDetailsViewController: UIViewController {
         guard let tvShow = tvShow else {
             return
         }
-
         if let imageUrl = URL(string: tvShow.imageStringUrl) {
             tvShowPosterImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "watchinIcon"))
         } else {
