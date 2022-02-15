@@ -16,8 +16,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
+    private var user: User {
+        UserRepository.shared.getUser()
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setUserInfo()
         tableView.reloadData()
     }
 
@@ -27,8 +32,16 @@ class HomeViewController: UIViewController {
         setImageAspect()
         setEditButtonAspect()
         tableView.backgroundColor = UIColor.clear
-
     }
+
+    @IBAction func editProfileButtonTapped(_ sender: UIButton) {
+        guard let editProfileViewController = self.storyboard?.instantiateViewController(identifier: "EditProfileViewController") as? EditProfileViewController else {
+            return
+        }
+        editProfileViewController.delegate = self
+        self.present(editProfileViewController, animated: true)
+    }
+
 
     // MARK: - Private
 
@@ -46,6 +59,20 @@ class HomeViewController: UIViewController {
         editProfileButton.layer.cornerRadius = 10
     }
 
+    private func setUserInfo() {
+        userNameLabel.text = "\(user.name)'s TV shows"
+        if let profilePictureData = user.profilePictureData, let image = UIImage(data: profilePictureData) {
+            profileImageView.image = image
+        } else {
+            profileImageView.image = UIImage(named: "defaultProfilePic")
+        }
+    }
+}
+
+extension HomeViewController: EditProfileViewControllerDismissDelegate {
+    func didDismiss() {
+        setUserInfo()
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {
