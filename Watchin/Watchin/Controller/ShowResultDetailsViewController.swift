@@ -56,7 +56,7 @@ class ShowResultDetailsViewController: UIViewController {
         yearLabel.text = "(\(formattedDate(tvShow.startDate)))"
         genresLabel.text = genresFormated(from: tvShow.genres)
         countryLabel.text = "Country : \(tvShow.country)"
-        seasonCountLabel.text = "100 Seasons" // A MODIFIER
+        seasonCountLabel.text = "\(getNumberOfSeasons(of: tvShow.episodes)) Seasons"
         statusLabel.text = "Status : \(tvShow.status)"
         descriptionLabel.text = formattedDescription(tvShow.description)
     }
@@ -69,6 +69,16 @@ class ShowResultDetailsViewController: UIViewController {
         return String(date.prefix(4))
     }
 
+    private func genresFormated(from genresArray: [String]) -> String {
+        return genresArray.joined(separator: ", ")
+    }
+
+    private func getNumberOfSeasons(of array: [EpisodeInfo]) -> String {
+        let seasonNumber = array.map{$0.season}.max() ?? 0
+        let formattedSeasonNumber = String(seasonNumber)
+        return formattedSeasonNumber
+    }
+
     private func setImage() {
         guard let tvShow = tvShow else {
             return
@@ -79,10 +89,6 @@ class ShowResultDetailsViewController: UIViewController {
         } else {
             tvShowPosterImageView.image = UIImage(named: "watchinIcon")
         }
-    }
-
-    private func genresFormated(from genresArray: [String]) -> String {
-        return genresArray.joined(separator: ", ")
     }
 
     private func goToWebsite() {
