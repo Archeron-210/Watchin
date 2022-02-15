@@ -32,8 +32,13 @@ class EditProfileViewController: UIViewController {
 
     // MARK: - Actions
 
-    @IBAction func dismiss(_ sender: Any) {
+    @IBAction func exitButtonTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+
+
+
+    @IBAction func saveChangesButtonTapped(_ sender: UIButton) {
     }
 
 
@@ -69,6 +74,25 @@ extension EditProfileViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+    // MARK: - Image and Navigation management
+
+extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    @IBAction func choosePictureButtonTapped(_ sender: UIButton) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        present(picker, animated: true)
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.originalImage] as? UIImage else {
+            return
+        }
+        profilePictureImageView.image = image
+        picker.dismiss(animated: true)
     }
 }
 
