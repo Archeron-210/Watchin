@@ -53,7 +53,7 @@ class ShowResultDetailsViewController: UIViewController {
 
         setImage()
         showTitleLabel.text = tvShow.name
-        yearLabel.text = "(\(tvShow.startDate))"
+        yearLabel.text = "(\(formattedDate(tvShow.startDate)))"
         genresLabel.text = genresFormated(from: tvShow.genres)
         countryLabel.text = "Country : \(tvShow.country)"
         seasonCountLabel.text = "100 Seasons" // A MODIFIER
@@ -63,6 +63,10 @@ class ShowResultDetailsViewController: UIViewController {
 
     private func formattedDescription(_ description: String) -> String {
         return description.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+    }
+
+    private func formattedDate(_ date: String) -> String {
+        return String(date.prefix(4))
     }
 
     private func setImage() {
