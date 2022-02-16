@@ -17,13 +17,19 @@ protocol UserRepositoryProtocol: AnyObject {
 
 class UserRepository: UserRepositoryProtocol {
 
+    // MARK: - Singleton
+
     static let shared: UserRepositoryProtocol = UserRepository()
+
+    // MARK: - Keys
 
     private enum Keys {
         static let name = "name"
         static let fileName = "profile_picture.png"
     }
 
+    // MARK: - Properties
+    
     private lazy var user: User = {
         let name = self.getName()
         let profilePictureData = self.getProfilePicture()
