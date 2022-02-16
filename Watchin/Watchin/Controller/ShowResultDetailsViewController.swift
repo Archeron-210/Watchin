@@ -9,10 +9,6 @@ import UIKit
 
 class ShowResultDetailsViewController: UIViewController {
 
-    // MARK: - Properties
-
-    var tvShow: TvShowInfo?
-
     // MARK: - Outlets
     
     @IBOutlet weak var tvShowPosterImageView: UIImageView!
@@ -26,6 +22,10 @@ class ShowResultDetailsViewController: UIViewController {
     @IBOutlet weak var addToWatchinLaterButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var seeMoreButton: UIButton!
+
+    // MARK: - Properties
+
+    var tvShow: TvShowInfo?
 
     // MARK: - Life Cycle
 
@@ -54,29 +54,11 @@ class ShowResultDetailsViewController: UIViewController {
         setImage()
         showTitleLabel.text = tvShow.name
         yearLabel.text = "(\(formattedDate(tvShow.startDate)))"
-        genresLabel.text = genresFormated(from: tvShow.genres)
+        genresLabel.text = formattedGenres(from: tvShow.genres)
         countryLabel.text = "Country : \(tvShow.country)"
         seasonCountLabel.text = "\(getNumberOfSeasons(of: tvShow.episodes)) Seasons"
         statusLabel.text = "Status : \(tvShow.status)"
         descriptionLabel.text = formattedDescription(tvShow.description)
-    }
-
-    private func formattedDescription(_ description: String) -> String {
-        return description.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-    }
-
-    private func formattedDate(_ date: String) -> String {
-        return String(date.prefix(4))
-    }
-
-    private func genresFormated(from genresArray: [String]) -> String {
-        return genresArray.joined(separator: ", ")
-    }
-
-    private func getNumberOfSeasons(of array: [EpisodeInfo]) -> String {
-        let seasonNumber = array.map{$0.season}.max() ?? 0
-        let formattedSeasonNumber = String(seasonNumber)
-        return formattedSeasonNumber
     }
 
     private func setImage() {
@@ -113,9 +95,31 @@ class ShowResultDetailsViewController: UIViewController {
         UIApplication.shared.open(defaultUrl, options: [:], completionHandler: nil)
     }
 
+    // MARK: - Formatting functions
+
+    private func formattedDescription(_ description: String) -> String {
+        return description.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+    }
+
+    private func formattedDate(_ date: String) -> String {
+        return String(date.prefix(4))
+    }
+
+    private func formattedGenres(from genresArray: [String]) -> String {
+        return genresArray.joined(separator: ", ")
+    }
+
+    private func getNumberOfSeasons(of array: [EpisodeInfo]) -> String {
+        let seasonNumber = array.map{$0.season}.max() ?? 0
+        let formattedSeasonNumber = String(seasonNumber)
+        return formattedSeasonNumber
+    }
+
     private func replaceWhitespacesWithPlus(for text: String) -> String {
         return text.replacingOccurrences(of: " ", with: "+")
     }
+
+    // MARK: - UI Aspect
 
     private func setButtonAspect(for button: UIButton) {
         button.layer.borderWidth = 1

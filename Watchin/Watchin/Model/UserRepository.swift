@@ -7,16 +7,11 @@
 
 import Foundation
 
-struct User {
-    var name: String
-    var profilePictureData: Data?
-}
-
 protocol UserRepositoryProtocol: AnyObject {
     // Retrieve the user
     func getUser() -> User
 
-    // Save given user. Returns true if succeeded, false if failed.
+    // Save given user, returns true if success, false if failure
     func saveUser(_ user: User) -> Bool
 }
 
@@ -43,29 +38,25 @@ class UserRepository: UserRepositoryProtocol {
     // MARK: - UserRepository
 
     func getUser() -> User {
-        return self.user
+        return user
     }
 
     func saveUser(_ user: User) -> Bool {
         // Try to save the profile picture
         let didSaveProfilePicture = self.saveProfilePicture(imageData: user.profilePictureData)
-
-        // If it failed, save failed so we return false.
+        // If it failed, save failed so we return false
         guard didSaveProfilePicture else {
             return false
         }
-
         // Save the user name
-        self.saveName(name: user.name)
-
+        saveName(name: user.name)
         // Update the user in memory
         self.user = user
-
-        // Save succeded.
+        // Save succeded
         return true
     }
 
-    // MARK: - Private helpers
+    // MARK: - Private Name Management
 
     private func saveName(name: String) {
         UserDefaults.standard.set(name, forKey: Keys.name)
@@ -74,6 +65,8 @@ class UserRepository: UserRepositoryProtocol {
     private func getName() -> String {
         return UserDefaults.standard.string(forKey: Keys.name) ?? "Name"
     }
+
+    // MARK: - Private Profile Picture Management
 
     private func saveProfilePicture(imageData: Data?) -> Bool {
         guard let data = imageData else {

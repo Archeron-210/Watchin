@@ -62,7 +62,6 @@ class TvShowService {
     }
 
     private func computeShowDetailsBaseUrl(for tvShowName: String) -> String {
-        // à compléter
         return "\(baseUrl)show-details?q=\(tvShowName)"
     }
 

@@ -16,9 +16,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
+    // MARK: - Properties
+
     private var user: User {
         UserRepository.shared.getUser()
     }
+
+    // MARK: - Life Cycle
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -34,7 +38,16 @@ class HomeViewController: UIViewController {
         tableView.backgroundColor = UIColor.clear
     }
 
+    // MARK: - Actions
+
     @IBAction func editProfileButtonTapped(_ sender: UIButton) {
+        goToEditProfile()
+    }
+
+
+    // MARK: - Private
+
+    private func goToEditProfile() {
         guard let editProfileViewController = self.storyboard?.instantiateViewController(identifier: "EditProfileViewController") as? EditProfileViewController else {
             return
         }
@@ -42,8 +55,7 @@ class HomeViewController: UIViewController {
         self.present(editProfileViewController, animated: true)
     }
 
-
-    // MARK: - Private
+    // MARK: - UI Aspect
 
     private func setImageAspect() {
         profileImageView.layer.borderWidth = 3
@@ -69,11 +81,15 @@ class HomeViewController: UIViewController {
     }
 }
 
+    // MARK: - Dismiss Delegate
+
 extension HomeViewController: EditProfileViewControllerDismissDelegate {
     func didDismiss() {
         setUserInfo()
     }
 }
+
+    // MARK: - TableView Management
 
 extension HomeViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {

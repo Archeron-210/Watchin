@@ -16,7 +16,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
 
-    // MARK: - Property
+    // MARK: - Properties
 
     var searchResults: [TvShowsSearchDetail] = []
     private let tvShowService = TvShowService()
@@ -40,13 +40,13 @@ class SearchViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func searchButtonTapped(_ sender: UIButton) {
-        search()
+        searchForResults()
     }
 
 
     // MARK: - Private
 
-    private func search() {
+    private func searchForResults() {
         guard let text = searchTextField.text, !text.isEmpty else {
             emptyTextFieldAlert()
             return
@@ -60,12 +60,13 @@ class SearchViewController: UIViewController {
             case .success(let showsFound) :
                 self.searchResults = showsFound
                 self.tableView.reloadData()
-                print("youhou")
             case .failure :
                 self.errorAlert()
             }
         }
     }
+
+    // MARK: - UI Aspect
 
     private func setSearchButtonAspect() {
         searchButton.layer.borderWidth = 1
@@ -87,7 +88,7 @@ class SearchViewController: UIViewController {
     }
 
     private func emptyTextFieldAlert() {
-        let alert = UIAlertController(title: "⚠️", message: "You need to enter an ingredient to make your list! 📝", preferredStyle: .alert)
+        let alert = UIAlertController(title: "⚠️", message: "You need to enter a show title first ! 📺", preferredStyle: .alert)
         let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(actionAlert)
         present(alert, animated: true, completion: nil)
@@ -95,7 +96,7 @@ class SearchViewController: UIViewController {
 
 }
 
-    // MARK: - KeyboardManagement
+    // MARK: - Keyboard Management
 
 extension SearchViewController: UITextFieldDelegate {
 
@@ -105,7 +106,7 @@ extension SearchViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        search()
+        searchForResults()
         return true
     }
 }
@@ -159,7 +160,6 @@ extension SearchViewController: UITableViewDelegate {
             switch result {
             case .success(let details):
                 self.goToShowDetails(with: details)
-                print("sheeesh")
             case .failure :
                 self.errorAlert()
             }

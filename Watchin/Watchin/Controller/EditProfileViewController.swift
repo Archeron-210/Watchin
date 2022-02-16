@@ -59,15 +59,7 @@ class EditProfileViewController: UIViewController {
     }
 
     @IBAction func saveChangesButtonTapped(_ sender: UIButton) {
-        guard let userName = userNameTextField.text, !userName.isEmpty else {
-            // alerte?
-            return
-        }
-        let data = profilePictureImageView.image?.pngData()
-        let user = User(name: userName, profilePictureData: data)
-        let success = repository.saveUser(user)
-        print("user save succeeded: ", success)
-        // TODO: if success/failed, show alert.
+        saveChanges()
     }
 
 
@@ -81,6 +73,23 @@ class EditProfileViewController: UIViewController {
             profilePictureImageView.image = UIImage(named: "defaultProfilePic")
         }
     }
+
+    private func saveChanges() {
+        guard let userName = userNameTextField.text, !userName.isEmpty else {
+            emptyTextFieldAlert()
+            return
+        }
+        let data = profilePictureImageView.image?.pngData()
+        let user = User(name: userName, profilePictureData: data)
+        let success = repository.saveUser(user)
+        if success {
+            successAlert()
+        } else {
+            failureAlert()
+        }
+    }
+
+    // MARK: - UI Aspect
 
     private func setProfilePictureAspect() {
         profilePictureImageView.layer.borderWidth = 3
@@ -99,6 +108,29 @@ class EditProfileViewController: UIViewController {
     private func setTextFieldAspect() {
         userNameTextField.setBottomBorderAndPlaceholderTextColor()
     }
+
+    // MARK: - Alerts
+
+    private func emptyTextFieldAlert() {
+        let alert = UIAlertController(title: "⚠️", message: "Please enter your name before saving !", preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(actionAlert)
+        present(alert, animated: true, completion: nil)
+    }
+
+    private func successAlert() {
+        let alert = UIAlertController(title: "✅", message: "Changes saved successfully !", preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(actionAlert)
+        present(alert, animated: true, completion: nil)
+    }
+
+    private func failureAlert() {
+        let alert = UIAlertController(title: "❌", message: "We were unable to save your changes", preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(actionAlert)
+        present(alert, animated: true, completion: nil)
+    }
 }
 
     // MARK: - Keyboard Management
@@ -115,7 +147,7 @@ extension EditProfileViewController: UITextFieldDelegate {
     }
 }
 
-    // MARK: - Image and Navigation management
+    // MARK: - Image and Navigation Management
 
 extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
