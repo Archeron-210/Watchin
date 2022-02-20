@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20G80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="Episode" representedClassName=".Episode" syncable="YES" codeGenerationType="category">
+        <attribute name="episodeNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="seasonNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="watchinShow" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WatchinShow" inverseName="episodes" inverseEntity="WatchinShow"/>
+    </entity>
+    <entity name="WatchinShow" representedClassName=".WatchinShow" syncable="YES" codeGenerationType="category">
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="descriptionSource" optional="YES" attributeType="String"/>
+        <attribute name="descriptionText" optional="YES" attributeType="String"/>
+        <attribute name="genres" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imageStringUrl" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="platform" optional="YES" attributeType="String"/>
+        <attribute name="startDate" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="totalEpisodes" optional="YES" attributeType="String"/>
+        <attribute name="totalSeasons" optional="YES" attributeType="String"/>
+        <attribute name="watchedEpisodes" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="watchedSeasons" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="episodes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Episode" inverseName="watchinShow" inverseEntity="Episode"/>
+    </entity>
+    <elements>
+        <element name="WatchinShow" positionX="-63" positionY="-18" width="128" height="268"/>
+        <element name="Episode" positionX="140.2852783203125" positionY="34.63037109375" width="128" height="103"/>
+    </elements>
 </model>
