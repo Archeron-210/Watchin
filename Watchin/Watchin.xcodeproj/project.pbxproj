@@ -36,6 +36,8 @@
 		20E164C927B4111D0057E42C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E164C827B4111D0057E42C /* UITextField+Extension.swift */; };
 		20F1B2E927C2AC8200AC3874 /* WatchinShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1B2E827C2AC8200AC3874 /* WatchinShow.swift */; };
 		20F1B2ED27C2AEE600AC3874 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1B2EC27C2AEE600AC3874 /* Episode.swift */; };
+		20F1B2F127C39CC300AC3874 /* WatchinShowRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1B2F027C39CC300AC3874 /* WatchinShowRepository.swift */; };
+		20F1B2F527C39CD800AC3874 /* EpisodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1B2F427C39CD800AC3874 /* EpisodeRepository.swift */; };
 		D7D7231AD882FE574B371B07 /* Pods_WatchinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C46AC8A1735A9193F671027 /* Pods_WatchinTests.framework */; };
 		E205BC7BD18710ED5E07B310 /* Pods_Watchin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC78C2B8A6DEDABC334B32E6 /* Pods_Watchin.framework */; };
 /* End PBXBuildFile section */
@@ -85,6 +87,8 @@
 		20E164C827B4111D0057E42C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		20F1B2E827C2AC8200AC3874 /* WatchinShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchinShow.swift; sourceTree = "<group>"; };
 		20F1B2EC27C2AEE600AC3874 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		20F1B2F027C39CC300AC3874 /* WatchinShowRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchinShowRepository.swift; sourceTree = "<group>"; };
+		20F1B2F427C39CD800AC3874 /* EpisodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRepository.swift; sourceTree = "<group>"; };
 		38BB3F411BC8914E025AD359 /* Pods-WatchinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchinTests.debug.xcconfig"; path = "Target Support Files/Pods-WatchinTests/Pods-WatchinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6623109F53824A104C01BC1C /* Pods-WatchinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchinTests.release.xcconfig"; path = "Target Support Files/Pods-WatchinTests/Pods-WatchinTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C46AC8A1735A9193F671027 /* Pods_WatchinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatchinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,7 +215,9 @@
 				2030770527BD0D2000A2AD36 /* User.swift */,
 				203076FB27BBFC4900A2AD36 /* UserRepository.swift */,
 				20F1B2E827C2AC8200AC3874 /* WatchinShow.swift */,
+				20F1B2F027C39CC300AC3874 /* WatchinShowRepository.swift */,
 				20F1B2EC27C2AEE600AC3874 /* Episode.swift */,
+				20F1B2F427C39CD800AC3874 /* EpisodeRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -408,6 +414,7 @@
 				2030771027BD369100A2AD36 /* CoreDataStack.swift in Sources */,
 				203076BF27B56DF500A2AD36 /* SearchResult.swift in Sources */,
 				203076BB27B56ADD00A2AD36 /* Platforms.swift in Sources */,
+				20F1B2F527C39CD800AC3874 /* EpisodeRepository.swift in Sources */,
 				20E164C927B4111D0057E42C /* UITextField+Extension.swift in Sources */,
 				20E164BD27B3CF020057E42C /* EditProfileViewController.swift in Sources */,
 				203076E127BAA83000A2AD36 /* UIColor+Extension.swift in Sources */,
@@ -415,6 +422,7 @@
 				203076D527B6C3E100A2AD36 /* ShowResultDetailsViewController.swift in Sources */,
 				20DB581327B162AE0007B649 /* SceneDelegate.swift in Sources */,
 				203076E927BBBC9D00A2AD36 /* TvShowPreviewTableViewCell.swift in Sources */,
+				20F1B2F127C39CC300AC3874 /* WatchinShowRepository.swift in Sources */,
 				20E164B127B1830E0057E42C /* WatchinLaterViewController.swift in Sources */,
 				20E164AD27B182670057E42C /* SearchViewController.swift in Sources */,
 				203076FC27BBFC4900A2AD36 /* UserRepository.swift in Sources */,
