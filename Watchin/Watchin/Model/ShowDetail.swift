@@ -38,6 +38,8 @@ struct EpisodeInfo: Decodable {
 }
 
 extension TvShowInfo: ShowDetailFormatted {
+    // Formatting properties to conform to ShowDetailProtocol, and obtain correct forms of it to use in controllers :
+
     var idFormatted: Int {
         return id
     }
@@ -47,11 +49,11 @@ extension TvShowInfo: ShowDetailFormatted {
     }
 
     var countryFormatted: String {
-        return country
+        return "Country: \(country)"
     }
 
     var statusFormatted: String {
-        return status
+        return "Status: \(status)"
     }
 
     var imageStringUrlFormatted: String {
@@ -71,8 +73,8 @@ extension TvShowInfo: ShowDetailFormatted {
     }
 
     var startDateFormatted: String {
-        // à compléter - changer
-        return String(startDate.prefix(4))
+        let date = String(startDate.prefix(4))
+        return "(\(date))"
     }
 
     var genresFormatted: String {
@@ -81,8 +83,11 @@ extension TvShowInfo: ShowDetailFormatted {
 
     var numberOfSeasons: String {
         let seasonNumber = episodes.map{$0.season}.max() ?? 0
-        let formattedSeasonNumber = String(seasonNumber)
-        return formattedSeasonNumber
+        if seasonNumber == 1 {
+            return "\(seasonNumber) Season"
+        } else {
+            return "\(seasonNumber) Seasons"
+        }
     }
 
     var numberOfEpisodes: String {
@@ -94,7 +99,7 @@ extension TvShowInfo: ShowDetailFormatted {
         return 0
     }
 
-    var watchedepisodes: Int {
+    var watchedEpisodes: Int {
         return 0
     }
 

@@ -31,11 +31,34 @@ class WatchinShowRepository {
         }
     }
 
-    func saveWatchinShow(show: TvShowInfo) {
+    func saveWatchinShow(show: ShowDetailFormatted) {
+        // check si deja enregistré
+
+        let watchinShow = WatchinShow(context: coreDataStack.viewContext)
+        watchinShow.id = Int32(show.idFormatted)
+        watchinShow.name = show.nameFormatted
+        watchinShow.descriptionText = show.descriptionFormatted
+        watchinShow.descriptionSource = show.descriptionSourceFormatted
+        watchinShow.startDate = show.startDateFormatted
+        watchinShow.country = show.countryFormatted
+        watchinShow.status = show.statusFormatted
+        watchinShow.imageStringUrl = show.imageStringUrlFormatted
+        watchinShow.genres = show.genresFormatted
+        watchinShow.totalSeasons = show.numberOfSeasons
+        watchinShow.totalEpisodes = show.numberOfEpisodes
+        watchinShow.watchedSeasons = Int32(show.watchedSeasons)
+        watchinShow.watchedEpisodes = Int32(show.watchedEpisodes)
+        watchinShow.platform = show.platform
+
+        do {
+            try coreDataStack.viewContext.save()
+        } catch {
+            print("We were unable to save this show")
+        }
 
     }
 
     func deleteWatchinShow() {
-
+        // à faire
     }
 }
