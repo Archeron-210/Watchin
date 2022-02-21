@@ -20,16 +20,9 @@ class WatchinShowRepository {
         self.coreDataStack = coreDataStack
     }
 
-    func getWatchinShows() -> [WatchinShow] {
-        let request: NSFetchRequest<WatchinShow> = WatchinShow.fetchRequest()
-        do {
-            let watchinShows = try coreDataStack.viewContext.fetch(request)
-            return watchinShows
-        } catch {
-            print("We were unable to retrieve shows")
-            return []
-        }
-    }
+//    func getShows() -> [ShowDetailFormatted] {
+//        return getWatchinShows().map {ShowDetailFormatted()}
+//    }
 
     func saveWatchinShow(show: ShowDetailFormatted) {
         // check si deja enregistré
@@ -60,5 +53,18 @@ class WatchinShowRepository {
 
     func deleteWatchinShow() {
         // à faire
+    }
+
+    // MARK: - Private
+    // private?
+    func getWatchinShows() -> [WatchinShow] {
+        let request: NSFetchRequest<WatchinShow> = WatchinShow.fetchRequest()
+        do {
+            let watchinShows = try coreDataStack.viewContext.fetch(request)
+            return watchinShows
+        } catch {
+            print("We were unable to retrieve shows")
+            return []
+        }
     }
 }

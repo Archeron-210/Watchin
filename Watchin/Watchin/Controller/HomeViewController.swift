@@ -18,15 +18,20 @@ class HomeViewController: UIViewController {
 
     // MARK: - Properties
 
+    var shows: [WatchinShow] = []
+
     private var user: User {
         UserRepository.shared.getUser()
     }
+
+    private let repository = WatchinShowRepository()
 
     // MARK: - Life Cycle
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUserInfo()
+        shows = repository.getWatchinShows()
         tableView.reloadData()
     }
 
@@ -97,7 +102,12 @@ extension HomeViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if shows.count == 0 {
+            self.tableView.setEmptyMessage("This list in currently empty.\n Start by searching a TV show\nand add it to your shows !\n↓")
+        } else {
+            self.tableView.restore()
+        }
+        return shows.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

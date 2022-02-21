@@ -15,17 +15,17 @@ class TvShowTableViewCell: UITableViewCell {
     @IBOutlet weak var watchedEpisodesLabel: UILabel!
     @IBOutlet weak var platformLabel: UILabel!
 
-    func configure(for tvShow: TvShowPreview) {
+    func configure(for tvShow: ShowDetailFormatted) {
         setImage(for: tvShow)
-        showTitleLabel.text = tvShow.name
-        watchedEpisodesLabel.text = tvShow.watchedEpisodes
-        platformLabel.text = tvShow.platformAssociated
+        showTitleLabel.text = tvShow.nameFormatted
+        watchedEpisodesLabel.text = "Watched episodes:\n\(tvShow.watchedEpisodes)/\(tvShow.numberOfEpisodes)"
+        platformLabel.text = "On: \(tvShow.platform)"
     }
 
     // MARK: - Private
 
-    private func setImage(for tvShow: TvShowPreview) {
-        if let imageUrl = tvShow.imageUrl {
+    private func setImage(for tvShow: ShowDetailFormatted) {
+        if let imageUrl = URL(string: tvShow.imageStringUrlFormatted) {
             tvShowPosterImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "watchinIcon"))
         } else {
             tvShowPosterImageView.image = UIImage(named: "watchinIcon")
