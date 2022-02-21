@@ -14,7 +14,7 @@ protocol TvShowPreview {
     var apiFormatedName: String { get }
     var country: String { get }
 
-    // A MODIFIER
+    // A MODIFIER - SUPPRIMER
     var watchedEpisodes: String { get }
     var platformAssociated: String { get }
 }
