@@ -25,7 +25,7 @@ class ShowResultDetailsViewController: UIViewController {
 
     // MARK: - Properties
 
-    var tvShow: TvShowInfo?
+    var tvShow: ShowDetailFormatted?
 
     // MARK: - Life Cycle
 
@@ -52,20 +52,20 @@ class ShowResultDetailsViewController: UIViewController {
         }
 
         setImage()
-        showTitleLabel.text = tvShow.name
-        yearLabel.text = "(\(formattedDate(tvShow.startDate)))"
-        genresLabel.text = formattedGenres(from: tvShow.genres)
-        countryLabel.text = "Country : \(tvShow.country)"
-        seasonCountLabel.text = "\(getNumberOfSeasons(of: tvShow.episodes)) Seasons"
-        statusLabel.text = "Status : \(tvShow.status)"
-        descriptionLabel.text = formattedDescription(tvShow.description)
+        showTitleLabel.text = tvShow.nameFormatted
+        yearLabel.text = tvShow.startDateFormatted
+        genresLabel.text = tvShow.genresFormatted
+        countryLabel.text = tvShow.countryFormatted
+        seasonCountLabel.text = tvShow.numberOfSeasons
+        statusLabel.text = tvShow.statusFormatted
+        descriptionLabel.text = tvShow.descriptionFormatted
     }
 
     private func setImage() {
         guard let tvShow = tvShow else {
             return
         }
-        if let imageUrl = URL(string: tvShow.imageStringUrl) {
+        if let imageUrl = URL(string: tvShow.imageStringUrlFormatted) {
             tvShowPosterImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "watchinIcon"))
         } else {
             tvShowPosterImageView.image = UIImage(named: "watchinIcon")
@@ -76,48 +76,12 @@ class ShowResultDetailsViewController: UIViewController {
         guard let tvShow = tvShow else {
             return
         }
-        guard let url = URL(string: tvShow.descriptionSource ?? "") else {
-            searchOnGoogle()
+        guard let url = URL(string: tvShow.descriptionSourceFormatted) else {
             return
         }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
-    private func searchOnGoogle() {
-        guard let tvShow = tvShow else {
-            return
-        }
-        let formattedTvShowName = replaceWhitespacesWithPlus(for: tvShow.name)
-        let defaultStringUrl = "https://www.google.com/search?q=\(formattedTvShowName)"
-        guard let defaultUrl = URL(string: defaultStringUrl) else {
-            return
-        }
-        UIApplication.shared.open(defaultUrl, options: [:], completionHandler: nil)
-    }
-
-    // MARK: - Formatting functions
-
-    private func formattedDescription(_ description: String) -> String {
-        return description.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-    }
-
-    private func formattedDate(_ date: String) -> String {
-        return String(date.prefix(4))
-    }
-
-    private func formattedGenres(from genresArray: [String]) -> String {
-        return genresArray.joined(separator: ", ")
-    }
-
-    private func getNumberOfSeasons(of array: [EpisodeInfo]) -> String {
-        let seasonNumber = array.map{$0.season}.max() ?? 0
-        let formattedSeasonNumber = String(seasonNumber)
-        return formattedSeasonNumber
-    }
-
-    private func replaceWhitespacesWithPlus(for text: String) -> String {
-        return text.replacingOccurrences(of: " ", with: "+")
-    }
 
     // MARK: - UI Aspect
 
