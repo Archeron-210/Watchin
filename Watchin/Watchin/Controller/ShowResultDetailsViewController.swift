@@ -36,6 +36,7 @@ class ShowResultDetailsViewController: UIViewController {
         setButtonAspect(for: addToYourShowsButton)
         setButtonAspect(for: addToWatchinLaterButton)
         setButtonAspect(for: seeMoreButton)
+        configureAddToYourShowsButton()
 
         displayShowDetails()
     }
@@ -43,15 +44,8 @@ class ShowResultDetailsViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func addToYourShowsButtonTapped(_ sender: UIButton) {
-        guard let show = tvShow else {
-            return
-        }
-        let success = repository.saveWatchinShow(show: show)
-        if success {
-            successAlert(message: "Added to your shows ! 📺")
-        } else {
-            errorAlert(message: "We were unable to add this show to your show")
-        }
+        saveShowToYourShows()
+        configureAddToYourShowsButton()
     }
 
     @IBAction func addToWatchinLaterButtonTapped(_ sender: UIButton) {
@@ -89,6 +83,18 @@ class ShowResultDetailsViewController: UIViewController {
         }
     }
 
+    private func saveShowToYourShows() {
+        guard let show = tvShow else {
+            return
+        }
+        let success = repository.saveWatchinShow(show: show)
+        if success {
+            successAlert(message: "Added to your shows ! 📺")
+        } else {
+            errorAlert(message: "We were unable to add this show to your show")
+        }
+    }
+
     private func goToWebsite() {
         guard let tvShow = tvShow else {
             return
@@ -117,6 +123,25 @@ class ShowResultDetailsViewController: UIViewController {
     }
 
     // MARK: - UI Aspect
+
+    private func configureAddToYourShowsButton() {
+        guard let show = tvShow else {
+            return
+        }
+
+        let isSavedToYourShows = repository.isAlreadySaved(show: show)
+        let title = isSavedToYourShows ? "Added to your shows" : "Add to your shows"
+        let color = isSavedToYourShows ? UIColor(red: 61, green: 176, blue: 239) : UIColor.white
+        let backgroundColor = isSavedToYourShows ? UIColor.white : UIColor.clear
+        let clickableState = isSavedToYourShows ? false : true
+
+        addToYourShowsButton.setTitle(title, for: .normal)
+        addToYourShowsButton.setTitleColor(color, for: .normal)
+        addToYourShowsButton.tintColor = color
+        addToYourShowsButton.backgroundColor = backgroundColor
+        addToYourShowsButton.isEnabled = clickableState
+
+    }
 
     private func setButtonAspect(for button: UIButton) {
         button.layer.borderWidth = 1

@@ -27,6 +27,9 @@ class WatchinShowRepository {
     }
 
     func saveWatchinShow(show: ShowDetailFormatted) -> Bool {
+        guard !isAlreadySaved(show: show) else {
+            return false
+        }
         // check si deja enregistré
         let watchinShow = WatchinShow(context: coreDataStack.viewContext)
         watchinShow.id = Int32(show.idFormatted)
@@ -56,6 +59,13 @@ class WatchinShowRepository {
 
     func deleteWatchinShow() {
         // à faire
+    }
+
+    func isAlreadySaved(show: ShowDetailFormatted) -> Bool {
+        let searchedShow = getWatchinShows().first { (watchinShow) -> Bool in
+            return watchinShow.idFormatted == show.idFormatted
+        }
+        return searchedShow != nil
     }
 
     // MARK: - Private
