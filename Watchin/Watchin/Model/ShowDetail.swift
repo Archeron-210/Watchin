@@ -95,15 +95,15 @@ extension TvShowInfo: ShowDetailFormatted {
         return numberOfEpisodesFormatted
     }
 
-    var watchedSeasons: Int {
+    var watchedSeasonsFormatted: Int {
         return 0
     }
 
-    var watchedEpisodes: Int {
+    var watchedEpisodesFormatted: Int {
         return 0
     }
 
-    var platform: String {
+    var platformFormatted: String {
         return "add platform"
     }
 

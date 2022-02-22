@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
 
     // MARK: - Properties
 
-    var shows: [WatchinShow] = []
+    var shows: [ShowDetailFormatted] = []
 
     private var user: User {
         UserRepository.shared.getUser()
@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUserInfo()
-        shows = repository.getWatchinShows()
+        shows = repository.getShows()
         tableView.reloadData()
     }
 
@@ -114,8 +114,9 @@ extension HomeViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "tvShowCell", for: indexPath) as? TvShowTableViewCell else {
             return UITableViewCell()
         }
-        // à compléter
-        //cell.configure(for:)
+
+        let show = shows[indexPath.row]
+        cell.configure(for: show)
         cell.backgroundColor = UIColor.clear
 
         

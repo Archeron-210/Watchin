@@ -18,8 +18,8 @@ class TvShowTableViewCell: UITableViewCell {
     func configure(for tvShow: ShowDetailFormatted) {
         setImage(for: tvShow)
         showTitleLabel.text = tvShow.nameFormatted
-        watchedEpisodesLabel.text = "Watched episodes:\n\(tvShow.watchedEpisodes)/\(tvShow.numberOfEpisodes)"
-        platformLabel.text = "On: \(tvShow.platform)"
+        watchedEpisodesLabel.text = "Watched episodes:\n\(tvShow.watchedEpisodesFormatted)/\(tvShow.numberOfEpisodes)"
+        platformLabel.text = "On: \(tvShow.platformFormatted)"
     }
 
     // MARK: - Private

@@ -20,9 +20,10 @@ class WatchinShowRepository {
         self.coreDataStack = coreDataStack
     }
 
-//    func getShows() -> [ShowDetailFormatted] {
-//        return getWatchinShows().map {ShowDetailFormatted()}
-//    }
+    func getShows() -> [ShowDetailFormatted] {
+        // creates a copy to use elsewhere in the app, without using specifically an object that has a CoreData reference by transforming a WatchinShow in a ShowDetailFormatted object :
+        return getWatchinShows().map { Show(showDetailFormatted: $0) }
+    }
 
     func saveWatchinShow(show: ShowDetailFormatted) {
         // check si deja enregistré
@@ -39,9 +40,9 @@ class WatchinShowRepository {
         watchinShow.genres = show.genresFormatted
         watchinShow.totalSeasons = show.numberOfSeasons
         watchinShow.totalEpisodes = show.numberOfEpisodes
-        watchinShow.watchedSeasons = Int32(show.watchedSeasons)
-        watchinShow.watchedEpisodes = Int32(show.watchedEpisodes)
-        watchinShow.platform = show.platform
+        watchinShow.watchedSeasons = Int32(show.watchedSeasonsFormatted)
+        watchinShow.watchedEpisodes = Int32(show.watchedEpisodesFormatted)
+        watchinShow.platform = show.platformFormatted
 
         do {
             try coreDataStack.viewContext.save()
@@ -56,8 +57,8 @@ class WatchinShowRepository {
     }
 
     // MARK: - Private
-    // private?
-    func getWatchinShows() -> [WatchinShow] {
+
+    private func getWatchinShows() -> [WatchinShow] {
         let request: NSFetchRequest<WatchinShow> = WatchinShow.fetchRequest()
         do {
             let watchinShows = try coreDataStack.viewContext.fetch(request)
