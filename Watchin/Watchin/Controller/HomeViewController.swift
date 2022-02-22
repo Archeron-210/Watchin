@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
         UserRepository.shared.getUser()
     }
 
-    private let repository = WatchinShowRepository()
+    private let repository = WatchinShowRepository.shared
 
     // MARK: - Life Cycle
 

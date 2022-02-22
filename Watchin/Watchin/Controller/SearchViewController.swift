@@ -55,7 +55,9 @@ class SearchViewController: UIViewController {
     }
 
     private func getSearchResults() {
+        toggleActivityIndicator(shown: true)
         tvShowService.getSearchResults(searchText: searchTextField.text) { result in
+            self.toggleActivityIndicator(shown: false)
             switch result {
             case .success(let showsFound) :
                 self.searchResults = showsFound
@@ -64,6 +66,11 @@ class SearchViewController: UIViewController {
                 self.errorAlert()
             }
         }
+    }
+
+    private func toggleActivityIndicator(shown: Bool) {
+        searchButton.isHidden = shown
+        activityIndicator.isHidden = !shown
     }
 
     // MARK: - UI Aspect

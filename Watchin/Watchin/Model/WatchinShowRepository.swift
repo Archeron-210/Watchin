@@ -12,6 +12,7 @@ class WatchinShowRepository {
 
     // MARK: - Properties
 
+    static let shared = WatchinShowRepository()
     private let coreDataStack: CoreDataStackProtocol
 
     // MARK: - Init
@@ -25,9 +26,8 @@ class WatchinShowRepository {
         return getWatchinShows().map { Show(showDetailFormatted: $0) }
     }
 
-    func saveWatchinShow(show: ShowDetailFormatted) {
+    func saveWatchinShow(show: ShowDetailFormatted) -> Bool {
         // check si deja enregistré
-
         let watchinShow = WatchinShow(context: coreDataStack.viewContext)
         watchinShow.id = Int32(show.idFormatted)
         watchinShow.name = show.nameFormatted
@@ -46,8 +46,10 @@ class WatchinShowRepository {
 
         do {
             try coreDataStack.viewContext.save()
+            return true
         } catch {
             print("We were unable to save this show")
+            return false
         }
 
     }

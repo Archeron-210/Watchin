@@ -26,6 +26,7 @@ class ShowResultDetailsViewController: UIViewController {
     // MARK: - Properties
 
     var tvShow: ShowDetailFormatted?
+    private let repository = WatchinShowRepository.shared
 
     // MARK: - Life Cycle
 
@@ -40,6 +41,22 @@ class ShowResultDetailsViewController: UIViewController {
     }
 
     // MARK: - Actions
+
+    @IBAction func addToYourShowsButtonTapped(_ sender: UIButton) {
+        guard let show = tvShow else {
+            return
+        }
+        let success = repository.saveWatchinShow(show: show)
+        if success {
+            successAlert(message: "Added to your shows ! 📺")
+        } else {
+            errorAlert(message: "We were unable to add this show to your show")
+        }
+    }
+
+    @IBAction func addToWatchinLaterButtonTapped(_ sender: UIButton) {
+    }
+
     @IBAction func seeMoreButtonTapped(_ sender: UIButton) {
         goToWebsite()
     }
@@ -82,6 +99,22 @@ class ShowResultDetailsViewController: UIViewController {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
+    // MARK: - Alerts
+
+    private func successAlert(message: String) {
+        let alert = UIAlertController(title: "✅", message: message, preferredStyle: .alert)
+        present(alert, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [unowned self] in
+           self.dismiss(animated: true)
+          }
+    }
+
+    private func errorAlert(message: String) {
+        let alert = UIAlertController(title: "❌", message: message, preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(actionAlert)
+        present(alert, animated: true, completion: nil)
+    }
 
     // MARK: - UI Aspect
 

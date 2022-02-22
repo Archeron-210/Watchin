@@ -380,6 +380,10 @@
                                             <outlet property="delegate" destination="bwk-qL-iGl" id="Ydo-zS-eGh"/>
                                         </connections>
                                     </textField>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="vpS-ng-fCr">
+                                        <rect key="frame" x="331" y="0.0" width="0.0" height="40"/>
+                                        <color key="color" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </activityIndicatorView>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6z-Mj-8gn">
                                         <rect key="frame" x="288" y="0.0" width="86" height="40"/>
                                         <constraints>
@@ -395,16 +399,14 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="B6z-Mj-8gn" firstAttribute="centerY" secondItem="vpS-ng-fCr" secondAttribute="centerY" id="Q2a-Gf-V1S"/>
                                     <constraint firstAttribute="height" constant="40" id="cnl-xw-JHg"/>
+                                    <constraint firstItem="B6z-Mj-8gn" firstAttribute="centerX" secondItem="vpS-ng-fCr" secondAttribute="centerX" id="evd-x4-YrS"/>
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator" translatesAutoresizingMaskIntoConstraints="NO" id="IQw-8y-6zA">
                                 <rect key="frame" x="0.0" y="220" width="414" height="14"/>
                             </imageView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="vpS-ng-fCr">
-                                <rect key="frame" x="332.5" y="161.5" width="37" height="37"/>
-                                <color key="color" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TvL-29-17Z" userLabel="Search Table View">
                                 <rect key="frame" x="0.0" y="244" width="414" height="569"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -484,9 +486,7 @@
                             <constraint firstItem="TvL-29-17Z" firstAttribute="leading" secondItem="RYO-Lh-bVC" secondAttribute="leading" id="Ca4-Dp-10r"/>
                             <constraint firstItem="Yaw-lz-e0Y" firstAttribute="bottom" secondItem="sTp-Px-fMz" secondAttribute="bottom" id="HD8-dh-Pbv"/>
                             <constraint firstItem="Yaw-lz-e0Y" firstAttribute="top" secondItem="sTp-Px-fMz" secondAttribute="top" id="IIj-c8-ifc"/>
-                            <constraint firstItem="vpS-ng-fCr" firstAttribute="centerY" secondItem="B6z-Mj-8gn" secondAttribute="centerY" id="Lxh-Yf-ziR"/>
                             <constraint firstItem="hGH-91-nse" firstAttribute="leading" secondItem="sTp-Px-fMz" secondAttribute="leading" constant="20" id="Ngk-7e-glW"/>
-                            <constraint firstItem="vpS-ng-fCr" firstAttribute="centerX" secondItem="B6z-Mj-8gn" secondAttribute="centerX" id="Nvo-hq-YHK"/>
                             <constraint firstItem="Yaw-lz-e0Y" firstAttribute="trailing" secondItem="sTp-Px-fMz" secondAttribute="trailing" id="SnL-b3-0ny"/>
                             <constraint firstAttribute="trailing" secondItem="IQw-8y-6zA" secondAttribute="trailing" id="YXb-ju-JuL"/>
                             <constraint firstAttribute="trailing" secondItem="TvL-29-17Z" secondAttribute="trailing" id="bhN-FQ-E1U"/>
@@ -593,6 +593,9 @@
                                                 <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="5" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title=" Add to your shows " image="film.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="addToYourShowsButtonTapped:" destination="cM5-D9-hop" eventType="touchUpInside" id="Nva-Ot-THO"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwm-AU-A7A">
                                                 <rect key="frame" x="78" y="425" width="258" height="40"/>
@@ -604,6 +607,9 @@
                                                 <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="5" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title=" Add to Watchin' Later " image="bookmark.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="addToWatchinLaterButtonTapped:" destination="cM5-D9-hop" eventType="touchUpInside" id="2rh-PH-5jG"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxQ-Ee-569">
                                                 <rect key="frame" x="20" y="485" width="374" height="319.5"/>
