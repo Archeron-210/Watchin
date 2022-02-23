@@ -40,6 +40,7 @@
 		20F1B2F527C39CD800AC3874 /* EpisodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1B2F427C39CD800AC3874 /* EpisodeRepository.swift */; };
 		20F1B2F927C3E14A00AC3874 /* ShowDetailFormatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1B2F827C3E14A00AC3874 /* ShowDetailFormatted.swift */; };
 		20F1B2FD27C4EF0700AC3874 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1B2FC27C4EF0600AC3874 /* Show.swift */; };
+		20F1B30727C69BFB00AC3874 /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1B30627C69BFB00AC3874 /* TrackingViewController.swift */; };
 		D7D7231AD882FE574B371B07 /* Pods_WatchinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C46AC8A1735A9193F671027 /* Pods_WatchinTests.framework */; };
 		E205BC7BD18710ED5E07B310 /* Pods_Watchin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC78C2B8A6DEDABC334B32E6 /* Pods_Watchin.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +94,7 @@
 		20F1B2F427C39CD800AC3874 /* EpisodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRepository.swift; sourceTree = "<group>"; };
 		20F1B2F827C3E14A00AC3874 /* ShowDetailFormatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailFormatted.swift; sourceTree = "<group>"; };
 		20F1B2FC27C4EF0600AC3874 /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
+		20F1B30627C69BFB00AC3874 /* TrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
 		38BB3F411BC8914E025AD359 /* Pods-WatchinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchinTests.debug.xcconfig"; path = "Target Support Files/Pods-WatchinTests/Pods-WatchinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6623109F53824A104C01BC1C /* Pods-WatchinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchinTests.release.xcconfig"; path = "Target Support Files/Pods-WatchinTests/Pods-WatchinTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C46AC8A1735A9193F671027 /* Pods_WatchinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatchinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +187,7 @@
 			children = (
 				20E164A827B182190057E42C /* HomeViewController.swift */,
 				20E164BC27B3CF020057E42C /* EditProfileViewController.swift */,
+				20F1B30627C69BFB00AC3874 /* TrackingViewController.swift */,
 				20E164AC27B182670057E42C /* SearchViewController.swift */,
 				203076D427B6C3E100A2AD36 /* ShowResultDetailsViewController.swift */,
 				20E164B027B1830E0057E42C /* WatchinLaterViewController.swift */,
@@ -431,6 +434,7 @@
 				203076E927BBBC9D00A2AD36 /* TvShowPreviewTableViewCell.swift in Sources */,
 				20F1B2F127C39CC300AC3874 /* WatchinShowRepository.swift in Sources */,
 				20E164B127B1830E0057E42C /* WatchinLaterViewController.swift in Sources */,
+				20F1B30727C69BFB00AC3874 /* TrackingViewController.swift in Sources */,
 				20E164AD27B182670057E42C /* SearchViewController.swift in Sources */,
 				203076FC27BBFC4900A2AD36 /* UserRepository.swift in Sources */,
 				20E164B527B1833B0057E42C /* ShowDetailsViewController.swift in Sources */,

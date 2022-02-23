@@ -137,13 +137,7 @@ class ShowResultDetailsViewController: UIViewController {
 
         // se renseigner sur attributedStrings
         addToYourShowsButton.setTitle(title, for: .normal)
-        //addToYourShowsButton.sizeToFit()
         addToYourShowsButton.setTitleColor(color, for: .normal)
-//        addToYourShowsButton.titleLabel?.minimumScaleFactor = 1.0
-//        addToYourShowsButton.titleLabel?.adjustsFontSizeToFitWidth = true
-//        addToYourShowsButton.widthAnchor.constraint(equalToConstant: addToYourShowsButton.intrinsicContentSize.width).isActive = true
-//        addToYourShowsButton.layoutIfNeeded()
-        //addToYourShowsButton.setNeedsLayout()
         addToYourShowsButton.tintColor = color
         addToYourShowsButton.backgroundColor = backgroundColor
         addToYourShowsButton.isEnabled = clickableState

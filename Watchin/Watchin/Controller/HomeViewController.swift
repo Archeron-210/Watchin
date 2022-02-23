@@ -127,3 +127,22 @@ extension HomeViewController: UITableViewDataSource {
         160.0
     }
 }
+
+    // MARK: - Navigation
+
+extension HomeViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        goToTracking(for: shows[indexPath.row])
+    }
+
+    private func goToTracking(for show: ShowDetailFormatted) {
+        guard let trackingViewController = self.storyboard?.instantiateViewController(identifier: "TrackingViewController") as? TrackingViewController else {
+            return
+        }
+
+        trackingViewController.show = show
+
+        self.navigationController?.pushViewController(trackingViewController, animated: true)
+    }
+}
