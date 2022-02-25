@@ -344,7 +344,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="Vc4-7f-MTH" userLabel="Info Container view">
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="Vc4-7f-MTH" userLabel="Info Container view" customClass="DetailHeaderView" customModule="Watchin" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="457"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -474,7 +474,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EpisodeCell" rowHeight="115" id="FUs-5a-F74">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EpisodeCell" rowHeight="115" id="FUs-5a-F74" customClass="EpisodeTableViewCell" customModule="Watchin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="485" width="414" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FUs-5a-F74" id="bXa-4l-TdB">
@@ -508,18 +508,27 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Ly6-7M-Hox" secondAttribute="trailing" constant="10" id="0MI-hB-dVQ"/>
                                                 <constraint firstItem="Np3-Qe-SyZ" firstAttribute="top" secondItem="bXa-4l-TdB" secondAttribute="topMargin" constant="10" id="2Eq-Ye-CPt"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ly6-7M-Hox" secondAttribute="bottom" constant="21" id="2OK-js-bD8"/>
                                                 <constraint firstItem="Ly6-7M-Hox" firstAttribute="leading" secondItem="Mhu-iU-9Dr" secondAttribute="leading" id="3V4-bb-xmS"/>
                                                 <constraint firstItem="Np3-Qe-SyZ" firstAttribute="trailing" secondItem="bXa-4l-TdB" secondAttribute="trailingMargin" id="75M-Sa-qvq"/>
                                                 <constraint firstItem="Mhu-iU-9Dr" firstAttribute="leading" secondItem="bXa-4l-TdB" secondAttribute="leadingMargin" constant="5" id="Jrh-IA-SNC"/>
                                                 <constraint firstItem="Np3-Qe-SyZ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Mhu-iU-9Dr" secondAttribute="trailing" constant="198" id="LI2-A4-lKH"/>
                                                 <constraint firstItem="Mhu-iU-9Dr" firstAttribute="top" secondItem="bXa-4l-TdB" secondAttribute="topMargin" constant="5" id="nGo-Zq-wZV"/>
-                                                <constraint firstItem="Ly6-7M-Hox" firstAttribute="top" secondItem="Np3-Qe-SyZ" secondAttribute="bottom" constant="15" id="qXp-AU-dzH"/>
+                                                <constraint firstItem="Ly6-7M-Hox" firstAttribute="top" relation="lessThanOrEqual" secondItem="Np3-Qe-SyZ" secondAttribute="bottom" constant="15" id="qXp-AU-dzH"/>
                                                 <constraint firstItem="Np3-Qe-SyZ" firstAttribute="trailing" secondItem="bXa-4l-TdB" secondAttribute="trailingMargin" id="xL6-oh-dQb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="episodeNumberLabel" destination="Mhu-iU-9Dr" id="OmX-Em-h4a"/>
+                                            <outlet property="episodeTitleLabel" destination="Ly6-7M-Hox" id="ZLv-0P-qPz"/>
+                                            <outlet property="sawItButton" destination="Np3-Qe-SyZ" id="VdF-Ex-RnN"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="des-Ov-Cd9" id="IW6-pu-NfD"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="78k-xC-XWn"/>

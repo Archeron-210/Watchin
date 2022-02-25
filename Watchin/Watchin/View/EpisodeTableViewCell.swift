@@ -9,15 +9,19 @@ import UIKit
 
 class EpisodeTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // MARK: - Outlets
+
+    @IBOutlet weak var episodeNumberLabel: UILabel!
+    @IBOutlet weak var episodeTitleLabel: UILabel!
+    @IBOutlet weak var sawItButton: UIButton!
+
+    // MARK: - Configure
+
+    func configure(for episode: EpisodeInfo) {
+        episodeTitleLabel.text = episode.name
+        episodeNumberLabel.text = "Episode \(episode.episode)"
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    
 
 }

@@ -106,6 +106,26 @@ extension TvShowInfo: ShowDetailFormatted {
     var platformFormatted: String {
         return "add platform"
     }
+}
 
+extension EpisodeInfo: EpisodeFormatted {
+    // Formatting properties to conform to EpisodeFormatted:
     
+    var episodeNameFormatted: String {
+        return name
+    }
+
+    var episodeNumberFormatted: Int {
+        return episode
+    }
+
+    var seasonNumberFormatted: Int {
+        return season
+    }
+
+    var hasBeenWatchedFormatted: Bool {
+        return false
+    }
+
+
 }
