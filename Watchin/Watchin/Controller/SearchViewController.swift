@@ -178,6 +178,7 @@ extension SearchViewController: UITableViewDelegate {
             return
         }
         showResultDetailsViewController.tvShow = details
+        showResultDetailsViewController.episodes = details.episodes
         self.navigationController?.pushViewController(showResultDetailsViewController, animated: true)
     }
 }

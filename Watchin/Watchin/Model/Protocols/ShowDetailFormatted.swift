@@ -23,6 +23,5 @@ protocol ShowDetailFormatted {
     var watchedSeasonsFormatted: Int { get }
     var watchedEpisodesFormatted: Int { get }
     var platformFormatted: String { get }
-    //var episodesFormatted: [EpisodeFormatted] { get }
 
 }

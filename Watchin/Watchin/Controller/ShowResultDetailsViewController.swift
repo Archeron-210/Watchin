@@ -26,7 +26,9 @@ class ShowResultDetailsViewController: UIViewController {
     // MARK: - Properties
 
     var tvShow: ShowDetailFormatted?
-    private let repository = WatchinShowRepository.shared
+    var episodes: [EpisodeFormatted]?
+    private let watchinShowRepository = WatchinShowRepository.shared
+    private let episodeDetailRepository = EpisodeDetailRepository.shared
 
     // MARK: - Life Cycle
 
@@ -87,11 +89,22 @@ class ShowResultDetailsViewController: UIViewController {
         guard let show = tvShow else {
             return
         }
-        let success = repository.saveWatchinShow(show: show)
+        let success = watchinShowRepository.saveWatchinShow(show: show)
         if success {
+            saveEpisodes()
             successAlert(message: "Added to your shows ! 📺")
         } else {
             errorAlert(message: "We were unable to add this show to your show")
+        }
+    }
+
+    // A VERIFIER
+    private func saveEpisodes() {
+        guard let episodes = episodes, let show = tvShow else {
+            return
+        }
+        for episode in episodes {
+            episodeDetailRepository.saveEpisodeDetail(for: episode, show: show)
         }
     }
 
@@ -129,7 +142,7 @@ class ShowResultDetailsViewController: UIViewController {
             return
         }
 
-        let isSavedToYourShows = repository.isAlreadySaved(show: show)
+        let isSavedToYourShows = watchinShowRepository.isAlreadySaved(show: show)
         let title = isSavedToYourShows ? "Added to your shows" : "Add to your shows"
         let color = isSavedToYourShows ? UIColor(red: 61, green: 176, blue: 239) : UIColor.white
         let backgroundColor = isSavedToYourShows ? UIColor.white : UIColor.clear

@@ -72,6 +72,4 @@ extension WatchinShow: ShowDetailFormatted {
     var platformFormatted: String {
         return platform ?? "No platform"
     }
-
-    
 }

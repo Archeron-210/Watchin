@@ -218,22 +218,14 @@
 		20DB584927B1642F0007B649 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				20FA1E4127C937F600DA009E /* Protocols */,
+				20FA1E4027C937A800DA009E /* External API Data */,
+				20FA1E4227C9384800DA009E /* Network */,
+				20FA1E4327C9389300DA009E /* User */,
 				2030770927BD361700A2AD36 /* CoreData */,
+				20FA1E4427C938F400DA009E /* CoreData Objects + Repositories */,
 				203076BA27B56ADD00A2AD36 /* Platforms.swift */,
-				203076BE27B56DF500A2AD36 /* SearchResult.swift */,
-				203076D027B6AE7C00A2AD36 /* TvShowPreviewProtocol.swift */,
-				203076E427BAAC3500A2AD36 /* ShowDetail.swift */,
-				20F1B2F827C3E14A00AC3874 /* ShowDetailFormatted.swift */,
-				20FA1E2E27C8EA1900DA009E /* EpisodeFormatted.swift */,
 				20F1B2FC27C4EF0600AC3874 /* Show.swift */,
-				203076C427B572F500A2AD36 /* TvShowService.swift */,
-				203076C827B57C0000A2AD36 /* NetworkService.swift */,
-				2030770527BD0D2000A2AD36 /* User.swift */,
-				203076FB27BBFC4900A2AD36 /* UserRepository.swift */,
-				20F1B2E827C2AC8200AC3874 /* WatchinShow.swift */,
-				20F1B2F027C39CC300AC3874 /* WatchinShowRepository.swift */,
-				20FA1E3827C926F200DA009E /* EpisodeDetail.swift */,
-				20FA1E3C27C9272900DA009E /* EpisodeDetailRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -258,6 +250,54 @@
 				203076E027BAA82F00A2AD36 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		20FA1E4027C937A800DA009E /* External API Data */ = {
+			isa = PBXGroup;
+			children = (
+				203076BE27B56DF500A2AD36 /* SearchResult.swift */,
+				203076E427BAAC3500A2AD36 /* ShowDetail.swift */,
+			);
+			path = "External API Data";
+			sourceTree = "<group>";
+		};
+		20FA1E4127C937F600DA009E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				203076D027B6AE7C00A2AD36 /* TvShowPreviewProtocol.swift */,
+				20F1B2F827C3E14A00AC3874 /* ShowDetailFormatted.swift */,
+				20FA1E2E27C8EA1900DA009E /* EpisodeFormatted.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		20FA1E4227C9384800DA009E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				203076C827B57C0000A2AD36 /* NetworkService.swift */,
+				203076C427B572F500A2AD36 /* TvShowService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		20FA1E4327C9389300DA009E /* User */ = {
+			isa = PBXGroup;
+			children = (
+				2030770527BD0D2000A2AD36 /* User.swift */,
+				203076FB27BBFC4900A2AD36 /* UserRepository.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		20FA1E4427C938F400DA009E /* CoreData Objects + Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				20F1B2E827C2AC8200AC3874 /* WatchinShow.swift */,
+				20F1B2F027C39CC300AC3874 /* WatchinShowRepository.swift */,
+				20FA1E3827C926F200DA009E /* EpisodeDetail.swift */,
+				20FA1E3C27C9272900DA009E /* EpisodeDetailRepository.swift */,
+			);
+			path = "CoreData Objects + Repositories";
 			sourceTree = "<group>";
 		};
 		EF8B381884DB4EE1A5E31CEE /* Frameworks */ = {

@@ -21,6 +21,8 @@ class WatchinShowRepository {
         self.coreDataStack = coreDataStack
     }
 
+    // MARK: - Data Management
+
     func getShows() -> [ShowDetailFormatted] {
         // creates a copy to use elsewhere in the app, without using specifically an object that has a CoreData reference by transforming a WatchinShow in a ShowDetailFormatted object :
         return getWatchinShows().map { Show(showDetailFormatted: $0) }
@@ -51,7 +53,7 @@ class WatchinShowRepository {
             try coreDataStack.viewContext.save()
             return true
         } catch {
-            print("We were unable to save this show")
+            print("Unable to save this show")
             return false
         }
 
