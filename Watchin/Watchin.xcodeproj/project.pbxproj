@@ -21,6 +21,7 @@
 		2030770627BD0D2000A2AD36 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030770527BD0D2000A2AD36 /* User.swift */; };
 		2030770C27BD366B00A2AD36 /* Watchin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2030770A27BD366B00A2AD36 /* Watchin.xcdatamodeld */; };
 		2030771027BD369100A2AD36 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030770F27BD369100A2AD36 /* CoreDataStack.swift */; };
+		20C56D7E27CCD71F00927D6F /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C56D7D27CCD71F00927D6F /* Episode.swift */; };
 		20DB581127B162AE0007B649 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DB581027B162AE0007B649 /* AppDelegate.swift */; };
 		20DB581327B162AE0007B649 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DB581227B162AE0007B649 /* SceneDelegate.swift */; };
 		20DB581827B162AE0007B649 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DB581627B162AE0007B649 /* Main.storyboard */; };
@@ -74,6 +75,7 @@
 		2030770527BD0D2000A2AD36 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2030770B27BD366B00A2AD36 /* Watchin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Watchin.xcdatamodel; sourceTree = "<group>"; };
 		2030770F27BD369100A2AD36 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		20C56D7D27CCD71F00927D6F /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		20DB580D27B162AE0007B649 /* Watchin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watchin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DB581027B162AE0007B649 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20DB581227B162AE0007B649 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				20FA1E4427C938F400DA009E /* CoreData Objects + Repositories */,
 				203076BA27B56ADD00A2AD36 /* Platforms.swift */,
 				20F1B2FC27C4EF0600AC3874 /* Show.swift */,
+				20C56D7D27CCD71F00927D6F /* Episode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				20FA1E3927C926F200DA009E /* EpisodeDetail.swift in Sources */,
 				20F1B2F927C3E14A00AC3874 /* ShowDetailFormatted.swift in Sources */,
 				20FA1E2F27C8EA1900DA009E /* EpisodeFormatted.swift in Sources */,
+				20C56D7E27CCD71F00927D6F /* Episode.swift in Sources */,
 				20F1B30B27C8E3E800AC3874 /* DetailHeaderView.swift in Sources */,
 				20DB581327B162AE0007B649 /* SceneDelegate.swift in Sources */,
 				203076E927BBBC9D00A2AD36 /* TvShowPreviewTableViewCell.swift in Sources */,

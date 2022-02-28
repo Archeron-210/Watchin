@@ -34,7 +34,7 @@ class CoreDataStack: CoreDataStackProtocol {
         let container = NSPersistentContainer(name: CoreDataStack.modelName)
         container.loadPersistentStores { storeDescription, error in
             if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo) for : \(storeDescription.description)")
+                assertionFailure("Unresolved error \(error), \(error.userInfo) for : \(storeDescription.description)")
             }
         }
         return container

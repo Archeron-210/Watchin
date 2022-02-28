@@ -23,6 +23,11 @@ class EpisodeDetailRepository {
 
     // MARK: - Data Management
 
+    func getEpisodes() -> [EpisodeFormatted] {
+        // creates a copy to use elsewhere in the app, without using specifically an object that has a CoreData reference by transforming an EpisodeDetail in an EpisodeFormatted object :
+        return getEpisodeDetails().map{ Episode(episodeFormatted: $0) }
+    }
+
     func saveEpisodeDetail(for episode: EpisodeFormatted, show: ShowDetailFormatted) {
         let episodeDetail = EpisodeDetail(context: coreDataStack.viewContext)
         episodeDetail.episodeNumber = Int32(episode.episodeNumberFormatted)
@@ -35,6 +40,18 @@ class EpisodeDetailRepository {
             try coreDataStack.viewContext.save()
         } catch {
             print("Unable to save desired object")
+        }
+    }
+
+    // MARK: - Private
+
+    private func getEpisodeDetails() -> [EpisodeDetail] {
+        let request: NSFetchRequest<EpisodeDetail> = EpisodeDetail.fetchRequest()
+        do {
+            let episodeDetails = try coreDataStack.viewContext.fetch(request)
+            return episodeDetails
+        } catch {
+            return []
         }
     }
 }
