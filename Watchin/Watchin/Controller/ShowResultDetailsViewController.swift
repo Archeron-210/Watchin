@@ -98,7 +98,6 @@ class ShowResultDetailsViewController: UIViewController {
         }
     }
 
-    // A VERIFIER
     private func saveEpisodes() {
         guard let episodes = episodes, let show = tvShow else {
             return

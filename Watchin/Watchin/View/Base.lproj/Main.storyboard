@@ -419,8 +419,8 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uVb-wB-YnG" userLabel="Buttons Stack View">
-                                            <rect key="frame" x="282" y="293" width="122" height="109"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uVb-wB-YnG" userLabel="Buttons Stack View">
+                                            <rect key="frame" x="282" y="298" width="122" height="119"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JRQ-TE-3CL">
                                                     <rect key="frame" x="0.0" y="0.0" width="122" height="33"/>
@@ -431,7 +431,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vuH-kV-SCP">
-                                                    <rect key="frame" x="0.0" y="38" width="122" height="33"/>
+                                                    <rect key="frame" x="0.0" y="43" width="122" height="33"/>
                                                     <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="23"/>
                                                     <inset key="contentEdgeInsets" minX="3" minY="0.0" maxX="3" maxY="0.0"/>
                                                     <state key="normal" title="Delete">
@@ -439,7 +439,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="skB-QW-Ffj">
-                                                    <rect key="frame" x="0.0" y="76" width="122" height="33"/>
+                                                    <rect key="frame" x="0.0" y="86" width="122" height="33"/>
                                                     <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="23"/>
                                                     <inset key="contentEdgeInsets" minX="3" minY="0.0" maxX="3" maxY="0.0"/>
                                                     <state key="normal" title="Platforms">
@@ -459,7 +459,7 @@
                                     <constraints>
                                         <constraint firstItem="CCa-ng-hCg" firstAttribute="leading" secondItem="Vc4-7f-MTH" secondAttribute="leading" constant="10" id="4LJ-uF-vpN"/>
                                         <constraint firstItem="AtY-cW-qfu" firstAttribute="top" secondItem="CCa-ng-hCg" secondAttribute="bottom" constant="5" id="8gm-kY-YgB"/>
-                                        <constraint firstItem="uVb-wB-YnG" firstAttribute="top" secondItem="Gtk-ef-CCK" secondAttribute="bottom" constant="5" id="Ihg-hq-Mhd"/>
+                                        <constraint firstItem="uVb-wB-YnG" firstAttribute="top" secondItem="Gtk-ef-CCK" secondAttribute="bottom" constant="10" id="Ihg-hq-Mhd"/>
                                         <constraint firstItem="Gtk-ef-CCK" firstAttribute="top" secondItem="hLI-7x-AVX" secondAttribute="bottom" constant="5" id="NHG-a6-q6Y"/>
                                         <constraint firstItem="CCa-ng-hCg" firstAttribute="top" secondItem="Gtk-ef-CCK" secondAttribute="bottom" constant="5" id="NgY-n7-fd0"/>
                                         <constraint firstItem="AtY-cW-qfu" firstAttribute="leading" secondItem="Vc4-7f-MTH" secondAttribute="leading" constant="5" id="OtL-ox-faw"/>
@@ -544,7 +544,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="countryLabel" destination="8uI-h1-B8l" id="v0y-dF-RO3"/>
+                        <outlet property="deleteButton" destination="vuH-kV-SCP" id="nBc-Fd-5BQ"/>
+                        <outlet property="episodesNumberLabel" destination="i3Y-gz-A3f" id="QzF-Vm-3dO"/>
+                        <outlet property="genresLabel" destination="nXR-Y2-eXT" id="hQB-ix-rui"/>
+                        <outlet property="platformLabel" destination="ZWT-aG-kQr" id="Piw-Yr-JEH"/>
+                        <outlet property="platformsButton" destination="skB-QW-Ffj" id="LcF-5j-Ok4"/>
+                        <outlet property="seasonsNumberLabel" destination="jZR-tt-zdR" id="pU3-en-Uhk"/>
+                        <outlet property="showTitleLabel" destination="z27-qs-4ag" id="0S9-3O-WMY"/>
+                        <outlet property="startAgainButton" destination="JRQ-TE-3CL" id="qyv-1R-aNm"/>
+                        <outlet property="startDateStatusLabel" destination="iYg-RD-Jvp" id="syO-S7-Jq2"/>
                         <outlet property="tableView" destination="Nfe-CG-aKS" id="B52-j2-HqF"/>
+                        <outlet property="tvShowPosterImageView" destination="B0H-A2-Zyg" id="zXQ-QJ-U5f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vm1-va-2rU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -11,7 +11,17 @@ class TrackingViewController: UIViewController {
 
     // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var tvShowPosterImageView: UIImageView!
+    @IBOutlet weak var showTitleLabel: UILabel!
+    @IBOutlet weak var startDateStatusLabel: UILabel!
+    @IBOutlet weak var genresLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var episodesNumberLabel: UILabel!
+    @IBOutlet weak var seasonsNumberLabel: UILabel!
+    @IBOutlet weak var platformLabel: UILabel!
+    @IBOutlet weak var startAgainButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var platformsButton: UIButton!
 
     // MARK: - Properties
 
@@ -34,6 +44,10 @@ class TrackingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setButtonAspect(for: startAgainButton)
+        setButtonAspect(for: deleteButton)
+        setButtonAspect(for: platformsButton)
+
         displayShowInfos()
     }
 
@@ -44,10 +58,16 @@ class TrackingViewController: UIViewController {
     }
 
     // MARK: - UI Aspect
-    
+
+    private func setButtonAspect(for button: UIButton) {
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.cornerRadius = 10
+    }
 
 }
 
+    // MARK: - TableView Management
 extension TrackingViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
