@@ -474,15 +474,15 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EpisodeCell" rowHeight="115" id="FUs-5a-F74" customClass="EpisodeTableViewCell" customModule="Watchin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="485" width="414" height="115"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EpisodeCell" rowHeight="120" id="FUs-5a-F74" customClass="EpisodeTableViewCell" customModule="Watchin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="485" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FUs-5a-F74" id="bXa-4l-TdB">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Np3-Qe-SyZ">
-                                                    <rect key="frame" x="320" y="21" width="74" height="30"/>
+                                                    <rect key="frame" x="320" y="16" width="74" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="j1h-21-cGM"/>
                                                     </constraints>
@@ -493,7 +493,7 @@
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhu-iU-9Dr">
-                                                    <rect key="frame" x="25" y="16" width="97" height="32.5"/>
+                                                    <rect key="frame" x="25" y="13" width="97" height="32.5"/>
                                                     <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="23"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -504,17 +504,26 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator" translatesAutoresizingMaskIntoConstraints="NO" id="vyn-oy-Oja">
+                                                    <rect key="frame" x="5" y="99" width="404" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="4Gf-me-7tQ"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Ly6-7M-Hox" secondAttribute="trailing" constant="10" id="0MI-hB-dVQ"/>
-                                                <constraint firstItem="Np3-Qe-SyZ" firstAttribute="top" secondItem="bXa-4l-TdB" secondAttribute="topMargin" constant="10" id="2Eq-Ye-CPt"/>
-                                                <constraint firstAttribute="bottom" secondItem="Ly6-7M-Hox" secondAttribute="bottom" constant="21" id="2OK-js-bD8"/>
+                                                <constraint firstItem="Np3-Qe-SyZ" firstAttribute="top" secondItem="bXa-4l-TdB" secondAttribute="topMargin" constant="5" id="2Eq-Ye-CPt"/>
                                                 <constraint firstItem="Ly6-7M-Hox" firstAttribute="leading" secondItem="Mhu-iU-9Dr" secondAttribute="leading" id="3V4-bb-xmS"/>
                                                 <constraint firstItem="Np3-Qe-SyZ" firstAttribute="trailing" secondItem="bXa-4l-TdB" secondAttribute="trailingMargin" id="75M-Sa-qvq"/>
+                                                <constraint firstItem="vyn-oy-Oja" firstAttribute="leading" secondItem="bXa-4l-TdB" secondAttribute="leading" constant="5" id="A4J-2P-dCA"/>
                                                 <constraint firstItem="Mhu-iU-9Dr" firstAttribute="leading" secondItem="bXa-4l-TdB" secondAttribute="leadingMargin" constant="5" id="Jrh-IA-SNC"/>
                                                 <constraint firstItem="Np3-Qe-SyZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mhu-iU-9Dr" secondAttribute="trailing" constant="10" id="LI2-A4-lKH"/>
-                                                <constraint firstItem="Mhu-iU-9Dr" firstAttribute="top" secondItem="bXa-4l-TdB" secondAttribute="topMargin" constant="5" id="nGo-Zq-wZV"/>
-                                                <constraint firstItem="Ly6-7M-Hox" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Np3-Qe-SyZ" secondAttribute="bottom" constant="15" id="qXp-AU-dzH"/>
+                                                <constraint firstAttribute="bottom" secondItem="vyn-oy-Oja" secondAttribute="bottom" constant="1" id="QcJ-LV-mVF"/>
+                                                <constraint firstItem="vyn-oy-Oja" firstAttribute="top" secondItem="Ly6-7M-Hox" secondAttribute="bottom" constant="5" id="n4f-5O-FNp"/>
+                                                <constraint firstItem="Mhu-iU-9Dr" firstAttribute="top" secondItem="bXa-4l-TdB" secondAttribute="topMargin" constant="2" id="nGo-Zq-wZV"/>
+                                                <constraint firstItem="Ly6-7M-Hox" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Np3-Qe-SyZ" secondAttribute="bottom" constant="10" id="qXp-AU-dzH"/>
+                                                <constraint firstAttribute="trailing" secondItem="vyn-oy-Oja" secondAttribute="trailing" constant="5" id="skM-hH-uvY"/>
                                                 <constraint firstItem="Np3-Qe-SyZ" firstAttribute="trailing" secondItem="bXa-4l-TdB" secondAttribute="trailingMargin" id="xL6-oh-dQb"/>
                                             </constraints>
                                         </tableViewCellContentView>
