@@ -512,9 +512,9 @@
                                                 <constraint firstItem="Ly6-7M-Hox" firstAttribute="leading" secondItem="Mhu-iU-9Dr" secondAttribute="leading" id="3V4-bb-xmS"/>
                                                 <constraint firstItem="Np3-Qe-SyZ" firstAttribute="trailing" secondItem="bXa-4l-TdB" secondAttribute="trailingMargin" id="75M-Sa-qvq"/>
                                                 <constraint firstItem="Mhu-iU-9Dr" firstAttribute="leading" secondItem="bXa-4l-TdB" secondAttribute="leadingMargin" constant="5" id="Jrh-IA-SNC"/>
-                                                <constraint firstItem="Np3-Qe-SyZ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Mhu-iU-9Dr" secondAttribute="trailing" constant="198" id="LI2-A4-lKH"/>
+                                                <constraint firstItem="Np3-Qe-SyZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mhu-iU-9Dr" secondAttribute="trailing" constant="10" id="LI2-A4-lKH"/>
                                                 <constraint firstItem="Mhu-iU-9Dr" firstAttribute="top" secondItem="bXa-4l-TdB" secondAttribute="topMargin" constant="5" id="nGo-Zq-wZV"/>
-                                                <constraint firstItem="Ly6-7M-Hox" firstAttribute="top" relation="lessThanOrEqual" secondItem="Np3-Qe-SyZ" secondAttribute="bottom" constant="15" id="qXp-AU-dzH"/>
+                                                <constraint firstItem="Ly6-7M-Hox" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Np3-Qe-SyZ" secondAttribute="bottom" constant="15" id="qXp-AU-dzH"/>
                                                 <constraint firstItem="Np3-Qe-SyZ" firstAttribute="trailing" secondItem="bXa-4l-TdB" secondAttribute="trailingMargin" id="xL6-oh-dQb"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -534,6 +534,9 @@
                         <viewLayoutGuide key="safeArea" id="78k-xC-XWn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Nfe-CG-aKS" id="B52-j2-HqF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vm1-va-2rU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

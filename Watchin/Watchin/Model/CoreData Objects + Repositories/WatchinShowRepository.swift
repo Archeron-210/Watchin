@@ -28,6 +28,12 @@ class WatchinShowRepository {
         return getWatchinShows().map { Show(showDetailFormatted: $0) }
     }
 
+    func getWatchinShow(id: Int) -> WatchinShow? {
+        return getWatchinShows().first {
+            $0.idFormatted == id
+        }
+    }
+
     func saveWatchinShow(show: ShowDetailFormatted) -> Bool {
         guard !isAlreadySaved(show: show) else {
             return false

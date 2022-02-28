@@ -25,6 +25,7 @@ struct Show: ShowDetailFormatted {
     var watchedEpisodesFormatted: Int
     var platformFormatted: String
 
+
     // MARK: - Init
     // allows to create a Show with any object that conforms to ShowDetailFormatted
 

@@ -17,9 +17,10 @@ class EpisodeTableViewCell: UITableViewCell {
 
     // MARK: - Configure
 
-    func configure(for episode: EpisodeInfo) {
-        episodeTitleLabel.text = episode.name
-        episodeNumberLabel.text = "Episode \(episode.episode)"
+    func configure(for episode: EpisodeFormatted) {
+
+        episodeNumberLabel.text = "Episode \(episode.episodeNumberFormatted)"
+        episodeTitleLabel.text = episode.episodeNameFormatted
     }
 
     

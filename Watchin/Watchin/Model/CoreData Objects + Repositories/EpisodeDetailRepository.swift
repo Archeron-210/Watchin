@@ -23,9 +23,21 @@ class EpisodeDetailRepository {
 
     // MARK: - Data Management
 
-    func getEpisodes() -> [EpisodeFormatted] {
+    func getEpisodes(for show: ShowDetailFormatted) -> [[EpisodeFormatted]] {
         // creates a copy to use elsewhere in the app, without using specifically an object that has a CoreData reference by transforming an EpisodeDetail in an EpisodeFormatted object :
-        return getEpisodeDetails().map{ Episode(episodeFormatted: $0) }
+        let episodes = getEpisodeDetails(for: show).map { Episode(episodeFormatted: $0) }
+        var seasonsNumber: [Int] = []
+        episodes.forEach {
+            if !seasonsNumber.contains($0.seasonNumberFormatted) {
+                seasonsNumber.append($0.seasonNumberFormatted)
+            }
+        }
+        let episodesBySeason: [[EpisodeFormatted]] = seasonsNumber.map { seasonsNumber in
+            episodes.filter { episode in
+                seasonsNumber == episode.seasonNumberFormatted
+            }
+        }
+        return episodesBySeason
     }
 
     func saveEpisodeDetail(for episode: EpisodeFormatted, show: ShowDetailFormatted) {
@@ -34,7 +46,7 @@ class EpisodeDetailRepository {
         episodeDetail.seasonNumber = Int32(episode.seasonNumberFormatted)
         episodeDetail.name = episode.episodeNameFormatted
         episodeDetail.hasBeenWatched = episode.hasBeenWatchedFormatted
-        episodeDetail.watchinShow = show as? WatchinShow
+        episodeDetail.watchinShow = WatchinShowRepository.shared.getWatchinShow(id: show.idFormatted)
 
         do {
             try coreDataStack.viewContext.save()
@@ -45,11 +57,13 @@ class EpisodeDetailRepository {
 
     // MARK: - Private
 
-    private func getEpisodeDetails() -> [EpisodeDetail] {
+    private func getEpisodeDetails(for show: ShowDetailFormatted) -> [EpisodeDetail] {
         let request: NSFetchRequest<EpisodeDetail> = EpisodeDetail.fetchRequest()
         do {
             let episodeDetails = try coreDataStack.viewContext.fetch(request)
-            return episodeDetails
+            return episodeDetails.filter {
+                $0.watchinShow?.idFormatted == show.idFormatted
+            }
         } catch {
             return []
         }

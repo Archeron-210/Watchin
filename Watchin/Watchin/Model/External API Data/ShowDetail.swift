@@ -106,7 +106,7 @@ extension TvShowInfo: ShowDetailFormatted {
     var platformFormatted: String {
         return "add platform"
     }
-
+    
 }
 
 extension EpisodeInfo: EpisodeFormatted {

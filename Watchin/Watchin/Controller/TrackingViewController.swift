@@ -10,40 +10,77 @@ import UIKit
 class TrackingViewController: UIViewController {
 
     // MARK: - Outlet
+    @IBOutlet weak var tableView: UITableView!
 
 
     // MARK: - Properties
 
     var show: ShowDetailFormatted?
+    var episodes: [[EpisodeFormatted]] = []
+    private let episodeDetailRepository = EpisodeDetailRepository.shared
+
+    // MARK: - Life Cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        guard let show = show else {
+            return
+        }
+        episodes = episodeDetailRepository.getEpisodes(for: show)
+        tableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        displayShowInfos()
     }
+
+    // MARK: - Private
+
+    private func displayShowInfos() {
+
+    }
+
+    // MARK: - UI Aspect
+    
 
 }
 
 extension TrackingViewController: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return episodes.count
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let show = show else {
-            return 1
+        guard episodes.count > section else {
+            return 0
         }
-        let numberOfSections = Int(show.numberOfSeasons) ?? 1
-        return numberOfSections
+        return episodes[section].count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let show = show, let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell", for: indexPath) as? EpisodeTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell", for: indexPath) as? EpisodeTableViewCell else {
             return UITableViewCell()
         }
 
-        // cell.configure(for: show.)
-
+        let episode = episodes[indexPath.section][indexPath.row]
+        cell.configure(for: episode)
 
         return cell
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        115.0
+    }
 
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard episodes.count > section else {
+            return nil
+        }
+        return "Season \(episodes[section].first?.seasonNumberFormatted ?? 0)"
+    }
 }
 
