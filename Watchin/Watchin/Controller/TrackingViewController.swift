@@ -54,7 +54,27 @@ class TrackingViewController: UIViewController {
     // MARK: - Private
 
     private func displayShowInfos() {
+        guard let show = show else {
+            return
+        }
+        setImage()
+        showTitleLabel.text = show.nameFormatted
+        startDateStatusLabel.text = "\(show.startDateFormatted) - \(show.statusFormatted)"
+        genresLabel.text = show.genresFormatted
+        countryLabel.text = show.countryFormatted
+        episodesNumberLabel.text = "Episodes : 0/\(show.numberOfEpisodes)"
+        seasonsNumberLabel.text = "Seasons: 0/\(show.numberOfSeasons)"
+    }
 
+    private func setImage() {
+        guard let show = show else {
+            return
+        }
+        if let imageUrl = URL(string: show.imageStringUrlFormatted) {
+            tvShowPosterImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "watchinIcon"))
+        } else {
+            tvShowPosterImageView.image = UIImage(named: "watchinIcon")
+        }
     }
 
     // MARK: - UI Aspect

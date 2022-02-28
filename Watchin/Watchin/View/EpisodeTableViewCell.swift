@@ -27,7 +27,7 @@ class EpisodeTableViewCell: UITableViewCell {
     func configure(for episode: EpisodeFormatted) {
 
         episodeNumberLabel.text = "Episode \(episode.episodeNumberFormatted)"
-        episodeTitleLabel.text = episode.episodeNameFormatted
+        episodeTitleLabel.text = "'\(episode.episodeNameFormatted)'"
     }
 
     // MARK: - Private
