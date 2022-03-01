@@ -115,12 +115,28 @@ extension TrackingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         120.0
     }
+}
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard episodes.count > section else {
-            return nil
-        }
-        return "Season \(episodes[section].first?.seasonNumberFormatted ?? 0)"
+    // MARK: - Headers Aspect
+
+extension TrackingViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 40))
+        header.backgroundColor = UIColor.white
+
+        let titleLabel = UILabel(frame: CGRect(x: 20, y: 2, width: header.frame.size.width - 5, height: header.frame.size.height - 5))
+        titleLabel.text = "◦ Season \(section + 1)"
+        titleLabel.font = UIFont(name: "Kohinoor Telugu", size: 22)
+        titleLabel.textColor = UIColor(red: 61, green: 176, blue: 239)
+
+        header.addSubview(titleLabel)
+        return header
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        40.0
     }
 }
 

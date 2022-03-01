@@ -10,5 +10,5 @@ import Foundation
 
 class DetailHeaderView: UIView {
 
-    @IBOutlet weak var infoContainerView: UIView!
+
 }

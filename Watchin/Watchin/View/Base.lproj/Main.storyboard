@@ -537,6 +537,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="des-Ov-Cd9" id="IW6-pu-NfD"/>
+                                    <outlet property="delegate" destination="des-Ov-Cd9" id="LQ4-qN-pJi"/>
                                 </connections>
                             </tableView>
                         </subviews>
