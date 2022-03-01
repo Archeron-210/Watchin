@@ -29,6 +29,5 @@ let platformNames = ["Netflix",
                      "PlutoTV",
                      "Shadowz",
                      "Funimation"]
-
-// let sortedPlatformNames = platformNames.sorted()
+ let sortedPlatformNames = platformNames.sorted()
 

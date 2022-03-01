@@ -22,6 +22,7 @@
 		2030770C27BD366B00A2AD36 /* Watchin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2030770A27BD366B00A2AD36 /* Watchin.xcdatamodeld */; };
 		2030771027BD369100A2AD36 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030770F27BD369100A2AD36 /* CoreDataStack.swift */; };
 		20C56D7E27CCD71F00927D6F /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C56D7D27CCD71F00927D6F /* Episode.swift */; };
+		20C56D8327CE7B3200927D6F /* PlatformPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C56D8227CE7B3200927D6F /* PlatformPickerViewController.swift */; };
 		20DB581127B162AE0007B649 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DB581027B162AE0007B649 /* AppDelegate.swift */; };
 		20DB581327B162AE0007B649 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DB581227B162AE0007B649 /* SceneDelegate.swift */; };
 		20DB581827B162AE0007B649 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DB581627B162AE0007B649 /* Main.storyboard */; };
@@ -76,6 +77,7 @@
 		2030770B27BD366B00A2AD36 /* Watchin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Watchin.xcdatamodel; sourceTree = "<group>"; };
 		2030770F27BD369100A2AD36 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		20C56D7D27CCD71F00927D6F /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		20C56D8227CE7B3200927D6F /* PlatformPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformPickerViewController.swift; sourceTree = "<group>"; };
 		20DB580D27B162AE0007B649 /* Watchin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watchin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DB581027B162AE0007B649 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20DB581227B162AE0007B649 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				20E164A827B182190057E42C /* HomeViewController.swift */,
 				20E164BC27B3CF020057E42C /* EditProfileViewController.swift */,
 				20F1B30627C69BFB00AC3874 /* TrackingViewController.swift */,
+				20C56D8227CE7B3200927D6F /* PlatformPickerViewController.swift */,
 				20E164AC27B182670057E42C /* SearchViewController.swift */,
 				203076D427B6C3E100A2AD36 /* ShowResultDetailsViewController.swift */,
 				20E164B027B1830E0057E42C /* WatchinLaterViewController.swift */,
@@ -486,6 +489,7 @@
 				203076BB27B56ADD00A2AD36 /* Platforms.swift in Sources */,
 				20E164C927B4111D0057E42C /* UITextField+Extension.swift in Sources */,
 				20E164BD27B3CF020057E42C /* EditProfileViewController.swift in Sources */,
+				20C56D8327CE7B3200927D6F /* PlatformPickerViewController.swift in Sources */,
 				203076E127BAA83000A2AD36 /* UIColor+Extension.swift in Sources */,
 				20DB581127B162AE0007B649 /* AppDelegate.swift in Sources */,
 				203076D527B6C3E100A2AD36 /* ShowResultDetailsViewController.swift in Sources */,
