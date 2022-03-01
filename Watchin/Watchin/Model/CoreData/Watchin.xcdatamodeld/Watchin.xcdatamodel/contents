@@ -22,7 +22,7 @@
         <attribute name="totalSeasons" optional="YES" attributeType="String"/>
         <attribute name="watchedEpisodes" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="watchedSeasons" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="episodes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EpisodeDetail" inverseName="watchinShow" inverseEntity="EpisodeDetail"/>
+        <relationship name="episodes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EpisodeDetail" inverseName="watchinShow" inverseEntity="EpisodeDetail"/>
     </entity>
     <elements>
         <element name="EpisodeDetail" positionX="141.866943359375" positionY="41.39791870117188" width="128" height="118"/>
