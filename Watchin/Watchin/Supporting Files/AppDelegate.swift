@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         let image = UIImage(named: "whiteGradient")
         UINavigationBar.appearance().setBackgroundImage(image?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch), for: .default)
+
+        // A compléter
+        UITabBar.appearance().backgroundImage = image
         return true
     }
 
