@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.16858875749999999" green="0.16071411969999999" blue="0.1647063792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" red="0.2393205762" green="0.68847942350000002" blue="0.93728905920000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
@@ -37,7 +37,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="X99-Bw-KOg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.16858875749999999" green="0.16071411969999999" blue="0.1647063792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.2393205762" green="0.68847942350000002" blue="0.93728905920000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
@@ -184,7 +184,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="uY6-pM-WG5">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="Gpw-PK-bEy">
                                 <rect key="frame" x="132" y="98" width="150" height="150"/>
@@ -294,9 +294,9 @@
                         <viewLayoutGuide key="safeArea" id="q2L-iL-G3O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="uY6-pM-WG5" firstAttribute="bottom" secondItem="q2L-iL-G3O" secondAttribute="bottom" id="B7B-HL-mL8"/>
                             <constraint firstItem="Gpw-PK-bEy" firstAttribute="centerX" secondItem="2sE-8m-LXm" secondAttribute="centerX" id="IaL-C6-Xg0"/>
                             <constraint firstItem="Ipd-BY-d9h" firstAttribute="top" secondItem="q2L-iL-G3O" secondAttribute="top" constant="10" id="OEy-cK-1co"/>
+                            <constraint firstAttribute="bottom" secondItem="uY6-pM-WG5" secondAttribute="bottom" id="PT5-UL-xEG"/>
                             <constraint firstAttribute="trailing" secondItem="jy5-Xv-2my" secondAttribute="trailing" id="PXv-DK-Zua"/>
                             <constraint firstItem="0ZD-Kp-aKg" firstAttribute="leading" secondItem="q2L-iL-G3O" secondAttribute="leading" constant="20" id="PwP-G1-wBl"/>
                             <constraint firstItem="uY6-pM-WG5" firstAttribute="leading" secondItem="q2L-iL-G3O" secondAttribute="leading" id="Trw-Gy-SW9"/>
@@ -309,9 +309,9 @@
                             <constraint firstItem="Gpw-PK-bEy" firstAttribute="top" secondItem="q2L-iL-G3O" secondAttribute="top" constant="10" id="kRm-Fh-l5a"/>
                             <constraint firstItem="jy5-Xv-2my" firstAttribute="top" secondItem="diR-iT-zmp" secondAttribute="bottom" constant="10" id="men-fB-aL4"/>
                             <constraint firstItem="0ZD-Kp-aKg" firstAttribute="top" secondItem="Gpw-PK-bEy" secondAttribute="bottom" constant="20" id="opN-mm-uap"/>
+                            <constraint firstItem="uY6-pM-WG5" firstAttribute="top" secondItem="2sE-8m-LXm" secondAttribute="top" id="pQM-hE-vqx"/>
                             <constraint firstAttribute="trailing" secondItem="diR-iT-zmp" secondAttribute="trailing" id="qEv-a7-Ent"/>
                             <constraint firstItem="q2L-iL-G3O" firstAttribute="trailing" secondItem="Ipd-BY-d9h" secondAttribute="trailing" constant="10" id="qhd-zx-DdS"/>
-                            <constraint firstItem="uY6-pM-WG5" firstAttribute="top" secondItem="q2L-iL-G3O" secondAttribute="top" id="qxW-e9-cxk"/>
                             <constraint firstItem="Ipd-BY-d9h" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Gpw-PK-bEy" secondAttribute="trailing" constant="46" id="twH-zb-nLC"/>
                         </constraints>
                     </view>
@@ -649,7 +649,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xIs-d7-LuM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.16858875749999999" green="0.16071411969999999" blue="0.1647063792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.2393205762" green="0.68847942350000002" blue="0.93728905920000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
@@ -671,7 +671,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Yaw-lz-e0Y">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a TV show :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qP1-Xk-65a">
                                 <rect key="frame" x="20" y="113" width="374" height="22"/>
@@ -793,14 +793,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="Yaw-lz-e0Y" firstAttribute="top" secondItem="RYO-Lh-bVC" secondAttribute="top" id="2v3-yw-4uM"/>
                             <constraint firstItem="qP1-Xk-65a" firstAttribute="leading" secondItem="sTp-Px-fMz" secondAttribute="leading" constant="20" id="58X-UC-A54"/>
                             <constraint firstItem="TvL-29-17Z" firstAttribute="top" secondItem="IQw-8y-6zA" secondAttribute="bottom" constant="10" id="7Ou-zm-DvT"/>
                             <constraint firstItem="sTp-Px-fMz" firstAttribute="trailing" secondItem="qP1-Xk-65a" secondAttribute="trailing" constant="20" id="8rf-4C-Ee7"/>
                             <constraint firstItem="TvL-29-17Z" firstAttribute="bottom" secondItem="sTp-Px-fMz" secondAttribute="bottom" id="9uf-kR-9hO"/>
                             <constraint firstItem="qP1-Xk-65a" firstAttribute="top" secondItem="sTp-Px-fMz" secondAttribute="top" constant="25" id="CNj-Wf-sCW"/>
                             <constraint firstItem="TvL-29-17Z" firstAttribute="leading" secondItem="RYO-Lh-bVC" secondAttribute="leading" id="Ca4-Dp-10r"/>
-                            <constraint firstItem="Yaw-lz-e0Y" firstAttribute="bottom" secondItem="sTp-Px-fMz" secondAttribute="bottom" id="HD8-dh-Pbv"/>
-                            <constraint firstItem="Yaw-lz-e0Y" firstAttribute="top" secondItem="sTp-Px-fMz" secondAttribute="top" id="IIj-c8-ifc"/>
                             <constraint firstItem="hGH-91-nse" firstAttribute="leading" secondItem="sTp-Px-fMz" secondAttribute="leading" constant="20" id="Ngk-7e-glW"/>
                             <constraint firstItem="Yaw-lz-e0Y" firstAttribute="trailing" secondItem="sTp-Px-fMz" secondAttribute="trailing" id="SnL-b3-0ny"/>
                             <constraint firstAttribute="trailing" secondItem="IQw-8y-6zA" secondAttribute="trailing" id="YXb-ju-JuL"/>
@@ -809,6 +808,7 @@
                             <constraint firstItem="hGH-91-nse" firstAttribute="top" secondItem="qP1-Xk-65a" secondAttribute="bottom" constant="25" id="llM-7o-N4b"/>
                             <constraint firstItem="Yaw-lz-e0Y" firstAttribute="leading" secondItem="sTp-Px-fMz" secondAttribute="leading" id="tfV-rZ-lTj"/>
                             <constraint firstItem="IQw-8y-6zA" firstAttribute="leading" secondItem="RYO-Lh-bVC" secondAttribute="leading" id="uQ4-uy-ljS"/>
+                            <constraint firstAttribute="bottom" secondItem="Yaw-lz-e0Y" secondAttribute="bottom" id="uRz-X1-Deh"/>
                             <constraint firstItem="sTp-Px-fMz" firstAttribute="trailing" secondItem="hGH-91-nse" secondAttribute="trailing" constant="20" id="xX5-U1-Aho"/>
                         </constraints>
                         <connections>
@@ -1030,7 +1030,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iQe-y6-qnI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.16858875749999999" green="0.16071411969999999" blue="0.1647063792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.2393205762" green="0.68847942350000002" blue="0.93728905920000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
@@ -1052,7 +1052,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ZE4-Bk-bjw">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7c6-nN-jKE">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
@@ -1128,14 +1128,14 @@
                         <viewLayoutGuide key="safeArea" id="6Sh-HF-NfY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZE4-Bk-bjw" firstAttribute="top" secondItem="6Sh-HF-NfY" secondAttribute="top" id="3Sm-kE-noN"/>
                             <constraint firstItem="ZE4-Bk-bjw" firstAttribute="trailing" secondItem="6Sh-HF-NfY" secondAttribute="trailing" id="5m7-az-4Lf"/>
                             <constraint firstItem="7c6-nN-jKE" firstAttribute="leading" secondItem="6Sh-HF-NfY" secondAttribute="leading" id="6gY-YV-uAi"/>
                             <constraint firstItem="7c6-nN-jKE" firstAttribute="top" secondItem="6Sh-HF-NfY" secondAttribute="top" id="Kew-Wn-O2g"/>
+                            <constraint firstAttribute="bottom" secondItem="ZE4-Bk-bjw" secondAttribute="bottom" id="KuU-9L-98d"/>
+                            <constraint firstItem="ZE4-Bk-bjw" firstAttribute="top" secondItem="g8T-zc-c4i" secondAttribute="top" id="Lkv-LR-I7q"/>
                             <constraint firstItem="7c6-nN-jKE" firstAttribute="bottom" secondItem="6Sh-HF-NfY" secondAttribute="bottom" id="MHI-q2-sfZ"/>
                             <constraint firstItem="ZE4-Bk-bjw" firstAttribute="leading" secondItem="6Sh-HF-NfY" secondAttribute="leading" id="abc-U2-AVp"/>
                             <constraint firstItem="7c6-nN-jKE" firstAttribute="trailing" secondItem="6Sh-HF-NfY" secondAttribute="trailing" id="fja-h0-PbB"/>
-                            <constraint firstItem="ZE4-Bk-bjw" firstAttribute="bottom" secondItem="6Sh-HF-NfY" secondAttribute="bottom" id="hfg-az-TCC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Watchin' Later" id="XMN-F7-CJJ"/>
