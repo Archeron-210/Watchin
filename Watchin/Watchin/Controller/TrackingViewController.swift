@@ -51,6 +51,18 @@ class TrackingViewController: UIViewController {
         displayShowInfos()
     }
 
+    // MARK: - Actions
+
+    @IBAction func platformsButtonTapped(_ sender: UIButton) {
+        goToPlatformsPicker()
+    }
+
+    @IBAction func startAgainButtonTapped(_ sender: UIButton) {
+    }
+
+    @IBAction func deleteButtonTapped(_ sender: UIButton) {
+    }
+
     // MARK: - Private
 
     private func displayShowInfos() {
@@ -75,6 +87,13 @@ class TrackingViewController: UIViewController {
         } else {
             tvShowPosterImageView.image = UIImage(named: "watchinIcon")
         }
+    }
+
+    private func goToPlatformsPicker() {
+        guard let platformPickerViewController = self.storyboard?.instantiateViewController(identifier: "PlatformPickerViewController") as? PlatformPickerViewController else {
+            return
+        }
+        self.present(platformPickerViewController, animated: true)
     }
 
     // MARK: - UI Aspect

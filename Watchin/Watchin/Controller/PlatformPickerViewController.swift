@@ -13,7 +13,7 @@ class PlatformPickerViewController: UIViewController {
 
     @IBOutlet weak var pickerContainerView: UIView!
     @IBOutlet weak var doneButton: UIButton!
-    // outlet pickerView?
+    @IBOutlet weak var platformPickerView: UIPickerView!
     @IBOutlet weak var exitButton: UIButton!
 
     // MARK: - Life Cycle
@@ -29,12 +29,19 @@ class PlatformPickerViewController: UIViewController {
 
     @IBAction func doneButtonTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+        savePlatform()
     }
     @IBAction func exitButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
 
     // MARK: - Private
+
+    private func savePlatform() {
+        let platformIndex = platformPickerView.selectedRow(inComponent: 0)
+        let platform = sortedPlatformNames[platformIndex]
+        
+    }
     
     // MARK: - UIAspect
 

@@ -430,6 +430,9 @@
                                                     <state key="normal" title="Start again">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="startAgainButtonTapped:" destination="des-Ov-Cd9" eventType="touchUpInside" id="kkw-h9-LtO"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vuH-kV-SCP">
                                                     <rect key="frame" x="0.0" y="43" width="126" height="33"/>
@@ -438,6 +441,9 @@
                                                     <state key="normal" title="Delete">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="deleteButtonTapped:" destination="des-Ov-Cd9" eventType="touchUpInside" id="Gtz-bZ-nxS"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="skB-QW-Ffj">
                                                     <rect key="frame" x="0.0" y="86" width="126" height="33"/>
@@ -447,7 +453,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="1vB-UP-FOt" kind="presentation" id="zAD-F7-JsV"/>
+                                                        <action selector="platformsButtonTapped:" destination="des-Ov-Cd9" eventType="touchUpInside" id="qmV-JV-dCf"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -570,13 +576,13 @@
         <!--Platform Picker View Controller-->
         <scene sceneID="Iuu-d8-dSa">
             <objects>
-                <viewController id="1vB-UP-FOt" customClass="PlatformPickerViewController" customModule="Watchin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlatformPickerViewController" id="1vB-UP-FOt" customClass="PlatformPickerViewController" customModule="Watchin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bWr-Qh-nZu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wnC-Rg-3WB" userLabel="Picker Container View">
-                                <rect key="frame" x="35" y="249" width="344" height="344"/>
+                                <rect key="frame" x="35" y="276" width="344" height="344"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rbT-lp-Eel">
                                         <rect key="frame" x="0.0" y="50" width="344" height="216"/>
@@ -610,7 +616,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="XI1-vs-tFQ">
-                                <rect key="frame" x="175" y="525" width="64" height="33"/>
+                                <rect key="frame" x="175" y="552" width="64" height="33"/>
                                 <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="23"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <state key="normal" title="Done">
@@ -636,6 +642,7 @@
                         <outlet property="doneButton" destination="XI1-vs-tFQ" id="eNv-kB-3C9"/>
                         <outlet property="exitButton" destination="vJp-Lo-ffC" id="4oD-iW-8eh"/>
                         <outlet property="pickerContainerView" destination="wnC-Rg-3WB" id="pau-k5-5UP"/>
+                        <outlet property="platformPickerView" destination="rbT-lp-Eel" id="Vav-Ty-YEe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MgK-aS-zvc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
