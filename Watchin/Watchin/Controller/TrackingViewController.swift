@@ -27,6 +27,7 @@ class TrackingViewController: UIViewController {
 
     var show: ShowDetailFormatted?
     var episodes: [[EpisodeFormatted]] = []
+    private let watchinShowRepository = WatchinShowRepository.shared
     private let episodeDetailRepository = EpisodeDetailRepository.shared
 
     // MARK: - Life Cycle
@@ -61,12 +62,13 @@ class TrackingViewController: UIViewController {
     }
 
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
+        deleteAlert()
     }
 
     // MARK: - Private
 
     private func displayShowInfos() {
-        // as? WatchinShow ?
+        // as? WatchinShow ? pour afficher platform?
         guard let show = show else {
             return
         }
@@ -98,6 +100,21 @@ class TrackingViewController: UIViewController {
         platformPickerViewController.show = currentShow
         self.present(platformPickerViewController, animated: true)
     }
+
+    // MARK: - Alerts
+
+    private func deleteAlert() {
+        let alert = UIAlertController(title: "⚠️", message: "You are about to delete this show from your saved shows : all your episode progression will be lost.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+            guard let show = self.show else {
+                return
+            }
+            self.watchinShowRepository.deleteWatchinShow(show: show)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+
 
     // MARK: - UI Aspect
 

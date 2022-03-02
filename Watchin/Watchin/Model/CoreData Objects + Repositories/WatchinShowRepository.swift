@@ -72,8 +72,19 @@ class WatchinShowRepository {
         }
     }
 
-    func deleteWatchinShow() {
-        // à faire
+    func deleteWatchinShow(show: ShowDetailFormatted) {
+        let searchedShow = getWatchinShows().first(where: { (watchinShow) -> Bool in
+            return watchinShow.id == show.idFormatted
+        })
+        guard let foundWatchinShow = searchedShow else {
+            return
+        }
+        coreDataStack.viewContext.delete(foundWatchinShow)
+        do {
+            try coreDataStack.viewContext.save()
+        } catch {
+            print("Unable to delete this show")
+        }
     }
 
     func isAlreadySaved(show: ShowDetailFormatted) -> Bool {
