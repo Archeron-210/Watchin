@@ -585,6 +585,17 @@
                                             <outlet property="delegate" destination="1vB-UP-FOt" id="lEB-Ew-ZKr"/>
                                         </connections>
                                     </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJp-Lo-ffC" userLabel="Exit Button">
+                                        <rect key="frame" x="5" y="5" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="KBy-OW-7Fw"/>
+                                            <constraint firstAttribute="width" secondItem="vJp-Lo-ffC" secondAttribute="height" multiplier="1:1" id="Ocm-A8-Mdx"/>
+                                        </constraints>
+                                        <state key="normal" image="blueCross"/>
+                                        <connections>
+                                            <action selector="exitButtonTapped:" destination="1vB-UP-FOt" eventType="touchUpInside" id="5d4-Wg-csG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -592,7 +603,9 @@
                                     <constraint firstItem="rbT-lp-Eel" firstAttribute="leading" secondItem="wnC-Rg-3WB" secondAttribute="leading" id="SNr-vQ-hEY"/>
                                     <constraint firstAttribute="trailing" secondItem="rbT-lp-Eel" secondAttribute="trailing" id="WQU-ea-bpn"/>
                                     <constraint firstItem="rbT-lp-Eel" firstAttribute="centerY" secondItem="wnC-Rg-3WB" secondAttribute="centerY" id="hzc-AL-Zb3"/>
+                                    <constraint firstItem="vJp-Lo-ffC" firstAttribute="leading" secondItem="wnC-Rg-3WB" secondAttribute="leading" constant="5" id="lYa-4J-mpb"/>
                                     <constraint firstAttribute="width" secondItem="wnC-Rg-3WB" secondAttribute="height" multiplier="1:1" id="rgV-jY-lq9"/>
+                                    <constraint firstItem="vJp-Lo-ffC" firstAttribute="top" secondItem="wnC-Rg-3WB" secondAttribute="top" constant="5" id="tuz-Bb-6yl"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="XI1-vs-tFQ">
@@ -620,6 +633,7 @@
                     </view>
                     <connections>
                         <outlet property="doneButton" destination="XI1-vs-tFQ" id="eNv-kB-3C9"/>
+                        <outlet property="exitButton" destination="vJp-Lo-ffC" id="4oD-iW-8eh"/>
                         <outlet property="pickerContainerView" destination="wnC-Rg-3WB" id="pau-k5-5UP"/>
                     </connections>
                 </viewController>
@@ -1135,6 +1149,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="blueCross" width="59.5" height="59.5"/>
         <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="bookmark.fill" catalog="system" width="112" height="128"/>
         <image name="cross" width="66.5" height="66.5"/>

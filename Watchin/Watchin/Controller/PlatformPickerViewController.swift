@@ -14,6 +14,7 @@ class PlatformPickerViewController: UIViewController {
     @IBOutlet weak var pickerContainerView: UIView!
     @IBOutlet weak var doneButton: UIButton!
     // outlet pickerView?
+    @IBOutlet weak var exitButton: UIButton!
 
     // MARK: - Life Cycle
 
@@ -21,11 +22,15 @@ class PlatformPickerViewController: UIViewController {
         super.viewDidLoad()
         setContainerViewAspect()
         setButtonAspect(button: doneButton)
+        setButtonAspect(button: exitButton)
     }
 
     // MARK: - Action
 
     @IBAction func doneButtonTapped(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    @IBAction func exitButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
 
