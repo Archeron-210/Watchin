@@ -66,6 +66,7 @@ class TrackingViewController: UIViewController {
     // MARK: - Private
 
     private func displayShowInfos() {
+        // as? WatchinShow ?
         guard let show = show else {
             return
         }
@@ -75,7 +76,8 @@ class TrackingViewController: UIViewController {
         genresLabel.text = show.genresFormatted
         countryLabel.text = show.countryFormatted
         episodesNumberLabel.text = "Episodes : 0/\(show.numberOfEpisodes)"
-        seasonsNumberLabel.text = "Seasons: 0/\(show.numberOfSeasons)"
+        seasonsNumberLabel.text = "Seasons : 0/\(show.numberOfSeasons)"
+        platformLabel.text = "On : \(show.platformFormatted)"
     }
 
     private func setImage() {
@@ -90,9 +92,10 @@ class TrackingViewController: UIViewController {
     }
 
     private func goToPlatformsPicker() {
-        guard let platformPickerViewController = self.storyboard?.instantiateViewController(identifier: "PlatformPickerViewController") as? PlatformPickerViewController else {
+        guard let currentShow = show, let platformPickerViewController = self.storyboard?.instantiateViewController(identifier: "PlatformPickerViewController") as? PlatformPickerViewController else {
             return
         }
+        platformPickerViewController.show = currentShow
         self.present(platformPickerViewController, animated: true)
     }
 

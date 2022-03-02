@@ -16,6 +16,11 @@ class PlatformPickerViewController: UIViewController {
     @IBOutlet weak var platformPickerView: UIPickerView!
     @IBOutlet weak var exitButton: UIButton!
 
+    // MARK: - Properties
+
+    private let watchinShowRepository = WatchinShowRepository.shared
+    var show: ShowDetailFormatted?
+
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
@@ -28,9 +33,10 @@ class PlatformPickerViewController: UIViewController {
     // MARK: - Action
 
     @IBAction func doneButtonTapped(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
         savePlatform()
+        dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func exitButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -38,9 +44,14 @@ class PlatformPickerViewController: UIViewController {
     // MARK: - Private
 
     private func savePlatform() {
+        guard let show = show as? WatchinShow else {
+            return
+        }
         let platformIndex = platformPickerView.selectedRow(inComponent: 0)
         let platform = sortedPlatformNames[platformIndex]
-        
+
+        show.platform = platform
+        watchinShowRepository.saveModifications()
     }
     
     // MARK: - UIAspect

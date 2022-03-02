@@ -62,7 +62,14 @@ class WatchinShowRepository {
             print("Unable to save this show")
             return false
         }
+    }
 
+    func saveModifications() {
+        do {
+            try coreDataStack.viewContext.save()
+        } catch {
+            print("Unable to save desired changes")
+        }
     }
 
     func deleteWatchinShow() {

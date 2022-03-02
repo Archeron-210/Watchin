@@ -59,6 +59,14 @@ class EpisodeDetailRepository {
         }
     }
 
+    func saveModifications() {
+        do {
+            try coreDataStack.viewContext.save()
+        } catch {
+            print("Unable to save desired changes")
+        }
+    }
+
     // MARK: - Private
 
     private func getEpisodeDetails(for show: ShowDetailFormatted) -> [EpisodeDetail] {
