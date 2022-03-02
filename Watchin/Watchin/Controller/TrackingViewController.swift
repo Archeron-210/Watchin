@@ -101,15 +101,20 @@ class TrackingViewController: UIViewController {
         self.present(platformPickerViewController, animated: true)
     }
 
+    private func deleteAndGoBackToHome() {
+        guard let show = self.show else {
+            return
+        }
+        watchinShowRepository.deleteWatchinShow(show: show)
+        navigationController?.popViewController(animated: true)
+    }
+
     // MARK: - Alerts
 
     private func deleteAlert() {
         let alert = UIAlertController(title: "⚠️", message: "You are about to delete this show from your saved shows : all your episode progression will be lost.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
-            guard let show = self.show else {
-                return
-            }
-            self.watchinShowRepository.deleteWatchinShow(show: show)
+            self.deleteAndGoBackToHome()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true)
