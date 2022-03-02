@@ -578,7 +578,7 @@
                                 <rect key="frame" x="35" y="249" width="344" height="344"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rbT-lp-Eel">
-                                        <rect key="frame" x="0.0" y="64" width="344" height="216"/>
+                                        <rect key="frame" x="0.0" y="50" width="344" height="216"/>
                                         <color key="tintColor" red="0.2393205762" green="0.68847942350000002" blue="0.93728905920000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="dataSource" destination="1vB-UP-FOt" id="1eC-T3-Pc5"/>
@@ -600,16 +600,16 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="rbT-lp-Eel" firstAttribute="centerX" secondItem="wnC-Rg-3WB" secondAttribute="centerX" id="3lf-WA-QC4"/>
+                                    <constraint firstItem="rbT-lp-Eel" firstAttribute="top" secondItem="vJp-Lo-ffC" secondAttribute="bottom" constant="5" id="RwN-pa-cvY"/>
                                     <constraint firstItem="rbT-lp-Eel" firstAttribute="leading" secondItem="wnC-Rg-3WB" secondAttribute="leading" id="SNr-vQ-hEY"/>
                                     <constraint firstAttribute="trailing" secondItem="rbT-lp-Eel" secondAttribute="trailing" id="WQU-ea-bpn"/>
-                                    <constraint firstItem="rbT-lp-Eel" firstAttribute="centerY" secondItem="wnC-Rg-3WB" secondAttribute="centerY" id="hzc-AL-Zb3"/>
                                     <constraint firstItem="vJp-Lo-ffC" firstAttribute="leading" secondItem="wnC-Rg-3WB" secondAttribute="leading" constant="5" id="lYa-4J-mpb"/>
                                     <constraint firstAttribute="width" secondItem="wnC-Rg-3WB" secondAttribute="height" multiplier="1:1" id="rgV-jY-lq9"/>
                                     <constraint firstItem="vJp-Lo-ffC" firstAttribute="top" secondItem="wnC-Rg-3WB" secondAttribute="top" constant="5" id="tuz-Bb-6yl"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="XI1-vs-tFQ">
-                                <rect key="frame" x="175" y="534" width="64" height="33"/>
+                                <rect key="frame" x="175" y="525" width="64" height="33"/>
                                 <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="23"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <state key="normal" title="Done">
@@ -628,7 +628,7 @@
                             <constraint firstItem="XI1-vs-tFQ" firstAttribute="centerX" secondItem="bWr-Qh-nZu" secondAttribute="centerX" id="TJR-xs-oZ4"/>
                             <constraint firstItem="wnC-Rg-3WB" firstAttribute="leading" secondItem="dhG-Ga-R2b" secondAttribute="leading" constant="35" id="fJ0-te-l0e"/>
                             <constraint firstItem="wnC-Rg-3WB" firstAttribute="centerY" secondItem="bWr-Qh-nZu" secondAttribute="centerY" id="mNG-JG-VSU"/>
-                            <constraint firstItem="XI1-vs-tFQ" firstAttribute="top" secondItem="rbT-lp-Eel" secondAttribute="bottom" constant="5" id="wdq-oK-f77"/>
+                            <constraint firstItem="XI1-vs-tFQ" firstAttribute="top" secondItem="rbT-lp-Eel" secondAttribute="bottom" constant="10" id="wdq-oK-f77"/>
                         </constraints>
                     </view>
                     <connections>
