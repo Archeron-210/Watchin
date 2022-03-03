@@ -14,6 +14,7 @@ struct Episode: EpisodeFormatted {
     var episodeNumberFormatted: Int
     var seasonNumberFormatted: Int
     var hasBeenWatchedFormatted: Bool
+    var episodeIdFormatted: Int
 
     // MARK: - Init
     // allows to create a Show with any object that conforms to EpisodeFormatted
@@ -23,5 +24,6 @@ struct Episode: EpisodeFormatted {
         self.episodeNumberFormatted = episodeFormatted.episodeNumberFormatted
         self.seasonNumberFormatted = episodeFormatted.seasonNumberFormatted
         self.hasBeenWatchedFormatted = episodeFormatted.hasBeenWatchedFormatted
+        self.episodeIdFormatted = episodeFormatted.episodeIdFormatted
     }
 }

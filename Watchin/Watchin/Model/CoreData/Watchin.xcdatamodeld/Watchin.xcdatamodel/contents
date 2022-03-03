@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20G80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="EpisodeDetail" representedClassName=".EpisodeDetail" syncable="YES" codeGenerationType="category">
+        <attribute name="episodeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="episodeNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="hasBeenWatched" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -25,7 +26,7 @@
         <relationship name="episodes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EpisodeDetail" inverseName="watchinShow" inverseEntity="EpisodeDetail"/>
     </entity>
     <elements>
-        <element name="EpisodeDetail" positionX="141.866943359375" positionY="41.39791870117188" width="128" height="118"/>
+        <element name="EpisodeDetail" positionX="141.866943359375" positionY="41.39791870117188" width="128" height="119"/>
         <element name="WatchinShow" positionX="-63" positionY="-18" width="128" height="268"/>
     </elements>
 </model>

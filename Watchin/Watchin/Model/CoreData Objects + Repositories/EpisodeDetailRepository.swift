@@ -59,7 +59,8 @@ class EpisodeDetailRepository {
         }
     }
 
-    func saveModifications() {
+    func updateEpisode(episode: EpisodeFormatted) {
+        
         do {
             try coreDataStack.viewContext.save()
         } catch {

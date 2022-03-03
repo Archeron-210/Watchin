@@ -30,5 +30,9 @@ extension EpisodeDetail: EpisodeFormatted {
         return hasBeenWatched
     }
 
+    var episodeIdFormatted: Int {
+        let intEpisodeId = Int(episodeId)
+        return intEpisodeId
+    }
 
 }

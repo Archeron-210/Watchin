@@ -128,5 +128,13 @@ extension EpisodeInfo: EpisodeFormatted {
         return false
     }
 
+    var episodeIdFormatted: Int {
+        let stringID = "\(season)\(episode)"
+        guard let id = Int(stringID) else {
+            return 0
+        }
+        return id
+    }
+
 
 }

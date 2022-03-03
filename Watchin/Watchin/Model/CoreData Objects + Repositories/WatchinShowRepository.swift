@@ -65,9 +65,9 @@ class WatchinShowRepository {
     }
 
     func updateWatchinShowPlatform(show: ShowDetailFormatted, platform: String) {
-        let searchedShow = getWatchinShows().first { (watchinShow) -> Bool in
+        let searchedShow = getWatchinShows().first(where: { (watchinShow) -> Bool in
             return watchinShow.idFormatted == show.idFormatted
-        }
+        })
         guard let foundWatchinShow = searchedShow else {
             print("WatchinShow not found, unable to save desired changes")
             return

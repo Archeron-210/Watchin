@@ -152,6 +152,35 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		20C56D8E27D0D15B00927D6F /* Watchin Later Scene */ = {
+			isa = PBXGroup;
+			children = (
+				20E164B027B1830E0057E42C /* WatchinLaterViewController.swift */,
+				20E164B427B1833B0057E42C /* ShowDetailsViewController.swift */,
+			);
+			path = "Watchin Later Scene";
+			sourceTree = "<group>";
+		};
+		20C56D8F27D0D16D00927D6F /* Search Scene */ = {
+			isa = PBXGroup;
+			children = (
+				20E164AC27B182670057E42C /* SearchViewController.swift */,
+				203076D427B6C3E100A2AD36 /* ShowResultDetailsViewController.swift */,
+			);
+			path = "Search Scene";
+			sourceTree = "<group>";
+		};
+		20C56D9027D0D17700927D6F /* Home Scene */ = {
+			isa = PBXGroup;
+			children = (
+				20C56D8227CE7B3200927D6F /* PlatformPickerViewController.swift */,
+				20F1B30627C69BFB00AC3874 /* TrackingViewController.swift */,
+				20E164BC27B3CF020057E42C /* EditProfileViewController.swift */,
+				20E164A827B182190057E42C /* HomeViewController.swift */,
+			);
+			path = "Home Scene";
+			sourceTree = "<group>";
+		};
 		20DB580427B162AD0007B649 = {
 			isa = PBXGroup;
 			children = (
@@ -195,14 +224,9 @@
 		20DB584727B1641A0007B649 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				20E164A827B182190057E42C /* HomeViewController.swift */,
-				20E164BC27B3CF020057E42C /* EditProfileViewController.swift */,
-				20F1B30627C69BFB00AC3874 /* TrackingViewController.swift */,
-				20C56D8227CE7B3200927D6F /* PlatformPickerViewController.swift */,
-				20E164AC27B182670057E42C /* SearchViewController.swift */,
-				203076D427B6C3E100A2AD36 /* ShowResultDetailsViewController.swift */,
-				20E164B027B1830E0057E42C /* WatchinLaterViewController.swift */,
-				20E164B427B1833B0057E42C /* ShowDetailsViewController.swift */,
+				20C56D9027D0D17700927D6F /* Home Scene */,
+				20C56D8F27D0D16D00927D6F /* Search Scene */,
+				20C56D8E27D0D15B00927D6F /* Watchin Later Scene */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

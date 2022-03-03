@@ -12,6 +12,7 @@ protocol EpisodeFormatted {
     var episodeNameFormatted: String { get }
     var episodeNumberFormatted: Int { get }
     var seasonNumberFormatted: Int { get }
+    var episodeIdFormatted: Int { get }
     var hasBeenWatchedFormatted: Bool { get }
     
 }
