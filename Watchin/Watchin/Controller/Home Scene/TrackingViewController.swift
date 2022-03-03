@@ -23,6 +23,7 @@ class TrackingViewController: UIViewController {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var platformsButton: UIButton!
 
+
     // MARK: - Properties
 
     var show: ShowDetailFormatted?
@@ -63,6 +64,8 @@ class TrackingViewController: UIViewController {
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
         deleteAlert()
     }
+
+
 
     // MARK: - Private
 
@@ -109,6 +112,14 @@ class TrackingViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
+    private func updateEpisode() {
+
+    }
+
+    private func updateButtonAspect() {
+
+    }
+
     // MARK: - Alerts
 
     private func deleteAlert() {
@@ -143,6 +154,28 @@ extension TrackingViewController: PlatformPickerViewControllerDismissDelegate {
     }
 }
 
+    // MARK: - Cell Delegate
+
+extension TrackingViewController: EpisodeTableViewCellActionDelegate {
+    func sawItButtonTapped(in cell: EpisodeTableViewCell) {
+        // check if there are an indexPath and a show
+        guard let indexPath = tableView.indexPath(for: cell), let show = show else {
+            return
+        }
+        // check if not out of range
+        guard episodes.count > indexPath.section,
+              episodes[indexPath.section].count > indexPath.row else {
+            return
+        }
+
+        let episode = episodes[indexPath.section][indexPath.row]
+        episodeDetailRepository.updateWatchEpisodeStatus(episode: episode, of: show)
+        // update episode data
+        episodes = episodeDetailRepository.getEpisodes(for: show)
+        cell.configure(for: episodes[indexPath.section][indexPath.row])
+    }
+}
+
     // MARK: - TableView Management
 
 extension TrackingViewController: UITableViewDataSource {
@@ -163,8 +196,15 @@ extension TrackingViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
+        // ??? à checker
+        guard episodes.count > indexPath.section,
+              episodes[indexPath.section].count > indexPath.row else {
+            return UITableViewCell()
+        }
+
         let episode = episodes[indexPath.section][indexPath.row]
         cell.configure(for: episode)
+        cell.delegate = self
 
         return cell
     }

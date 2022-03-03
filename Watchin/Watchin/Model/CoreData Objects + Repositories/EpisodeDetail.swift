@@ -28,6 +28,7 @@ extension EpisodeDetail: EpisodeFormatted {
 
     var hasBeenWatchedFormatted: Bool {
         return hasBeenWatched
+
     }
 
     var episodeIdFormatted: Int {

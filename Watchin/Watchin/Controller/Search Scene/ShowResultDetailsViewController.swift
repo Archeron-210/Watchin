@@ -103,7 +103,7 @@ class ShowResultDetailsViewController: UIViewController {
             return
         }
         for episode in episodes {
-            episodeDetailRepository.saveEpisodeDetail(for: episode, show: show)
+            episodeDetailRepository.saveEpisodeDetail(for: episode, of: show)
         }
     }
 

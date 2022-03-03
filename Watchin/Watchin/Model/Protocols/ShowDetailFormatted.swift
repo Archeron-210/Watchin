@@ -22,6 +22,6 @@ protocol ShowDetailFormatted {
     var numberOfEpisodes: String { get }
     var watchedSeasonsFormatted: Int { get }
     var watchedEpisodesFormatted: Int { get }
-    var platformFormatted: String { get set }
+    var platformFormatted: String { get }
 
 }

@@ -96,16 +96,17 @@ extension TvShowInfo: ShowDetailFormatted {
     }
 
     var watchedSeasonsFormatted: Int {
-        return 0
+        get { return 0 }
+        set {}
     }
 
     var watchedEpisodesFormatted: Int {
-        return 0
+        get { return 0 }
+        set {}
     }
 
     var platformFormatted: String {
-        get { return "add platform" }
-        set {}
+        return "add platform"
     }
 }
 
@@ -126,6 +127,7 @@ extension EpisodeInfo: EpisodeFormatted {
 
     var hasBeenWatchedFormatted: Bool {
         return false
+
     }
 
     var episodeIdFormatted: Int {

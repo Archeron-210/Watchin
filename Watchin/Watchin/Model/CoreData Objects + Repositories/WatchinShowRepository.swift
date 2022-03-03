@@ -38,7 +38,6 @@ class WatchinShowRepository {
         guard !isAlreadySaved(show: show) else {
             return false
         }
-        // check si deja enregistré
         let watchinShow = WatchinShow(context: coreDataStack.viewContext)
         watchinShow.id = Int32(show.idFormatted)
         watchinShow.name = show.nameFormatted

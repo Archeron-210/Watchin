@@ -44,12 +44,23 @@ class EpisodeDetailRepository {
         return episodesBySeason
     }
 
-    func saveEpisodeDetail(for episode: EpisodeFormatted, show: ShowDetailFormatted) {
+    func getEpisode(for id: Int, in show: ShowDetailFormatted) -> EpisodeFormatted? {
+        let episodeDetail = getEpisodeDetails(for: show).first {
+            $0.episodeIdFormatted == id
+        }
+        guard let episode = episodeDetail else {
+            return nil
+        }
+        return Episode(episodeFormatted: episode)
+    }
+
+    func saveEpisodeDetail(for episode: EpisodeFormatted, of show: ShowDetailFormatted) {
         let episodeDetail = EpisodeDetail(context: coreDataStack.viewContext)
         episodeDetail.episodeNumber = Int32(episode.episodeNumberFormatted)
         episodeDetail.seasonNumber = Int32(episode.seasonNumberFormatted)
         episodeDetail.name = episode.episodeNameFormatted
         episodeDetail.hasBeenWatched = episode.hasBeenWatchedFormatted
+        episodeDetail.episodeId = Int32(episode.episodeIdFormatted)
         episodeDetail.watchinShow = watchinShowRepository.getWatchinShow(id: show.idFormatted)
 
         do {
@@ -59,9 +70,17 @@ class EpisodeDetailRepository {
         }
     }
 
-    func updateEpisode(episode: EpisodeFormatted) {
-        
+    func updateWatchEpisodeStatus(episode: EpisodeFormatted, of show: ShowDetailFormatted) {
+        let searchedEpisode = getEpisodeDetails(for: show).first (where: {  (episodeDetail) -> Bool in
+            return episodeDetail.episodeId == episode.episodeIdFormatted
+        })
+
+        guard let foundEpisode = searchedEpisode else {
+            return
+        }
+
         do {
+            foundEpisode.hasBeenWatched = !episode.hasBeenWatchedFormatted
             try coreDataStack.viewContext.save()
         } catch {
             print("Unable to save desired changes")

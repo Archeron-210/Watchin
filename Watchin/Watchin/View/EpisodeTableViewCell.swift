@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol EpisodeTableViewCellActionDelegate: AnyObject {
+    func sawItButtonTapped(in cell: EpisodeTableViewCell)
+}
+
 class EpisodeTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
@@ -14,6 +18,10 @@ class EpisodeTableViewCell: UITableViewCell {
     @IBOutlet weak var episodeNumberLabel: UILabel!
     @IBOutlet weak var episodeTitleLabel: UILabel!
     @IBOutlet weak var sawItButton: UIButton!
+
+    // MARK: - Property
+
+    weak var delegate: EpisodeTableViewCellActionDelegate?
 
     // MARK: - Life Cycle
 
@@ -28,6 +36,11 @@ class EpisodeTableViewCell: UITableViewCell {
 
         episodeNumberLabel.text = "Episode \(episode.episodeNumberFormatted)"
         episodeTitleLabel.text = "'\(episode.episodeNameFormatted)'"
+
+    }
+
+    @IBAction func sawItButtonTapped(_ sender: UIButton) {
+        delegate?.sawItButtonTapped(in: self)
     }
 
     // MARK: - Private

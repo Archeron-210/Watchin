@@ -501,6 +501,9 @@
                                                     <state key="normal" title="Saw it !">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="sawItButtonTapped:" destination="FUs-5a-F74" eventType="touchUpInside" id="gQ4-HX-SoF"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhu-iU-9Dr">
                                                     <rect key="frame" x="25" y="13" width="107.5" height="35"/>
