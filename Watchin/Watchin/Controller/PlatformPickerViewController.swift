@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol PlatformPickerViewControllerDismissDelegate: AnyObject {
+    func didDismiss()
+}
+
 class PlatformPickerViewController: UIViewController {
 
     // MARK: - Outlets
@@ -18,8 +22,12 @@ class PlatformPickerViewController: UIViewController {
 
     // MARK: - Properties
 
-    private let watchinShowRepository = WatchinShowRepository.shared
+    weak var delegate: PlatformPickerViewControllerDismissDelegate?
+
     var show: ShowDetailFormatted?
+
+    private let watchinShowRepository = WatchinShowRepository.shared
+
 
     // MARK: - Life Cycle
 
@@ -28,6 +36,14 @@ class PlatformPickerViewController: UIViewController {
         setContainerViewAspect()
         setButtonAspect(button: doneButton)
         setButtonAspect(button: exitButton)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        self.presentingViewController?.viewWillAppear(true)
+
+        if isBeingDismissed {
+            delegate?.didDismiss()
+        }
     }
 
     // MARK: - Action
@@ -44,14 +60,12 @@ class PlatformPickerViewController: UIViewController {
     // MARK: - Private
 
     private func savePlatform() {
-        guard let show = show as? WatchinShow else {
+        guard let show = show else {
             return
         }
         let platformIndex = platformPickerView.selectedRow(inComponent: 0)
         let platform = sortedPlatformNames[platformIndex]
-
-        show.platform = platform
-        watchinShowRepository.saveModifications()
+        watchinShowRepository.updateWatchinShowPlatform(show: show, platform: platform)
     }
     
     // MARK: - UIAspect

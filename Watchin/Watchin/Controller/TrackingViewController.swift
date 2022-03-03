@@ -38,6 +38,7 @@ class TrackingViewController: UIViewController {
         guard let show = show else {
             return
         }
+        displayShowInfos()
         episodes = episodeDetailRepository.getEpisodes(for: show)
         tableView.reloadData()
     }
@@ -48,8 +49,6 @@ class TrackingViewController: UIViewController {
         setButtonAspect(for: startAgainButton)
         setButtonAspect(for: deleteButton)
         setButtonAspect(for: platformsButton)
-
-        displayShowInfos()
     }
 
     // MARK: - Actions
@@ -98,6 +97,7 @@ class TrackingViewController: UIViewController {
             return
         }
         platformPickerViewController.show = currentShow
+        platformPickerViewController.delegate = self
         self.present(platformPickerViewController, animated: true)
     }
 
@@ -131,7 +131,20 @@ class TrackingViewController: UIViewController {
 
 }
 
+    // MARK: - Dismiss Delegate
+
+extension TrackingViewController: PlatformPickerViewControllerDismissDelegate {
+    func didDismiss() {
+        guard let show = show else {
+            return
+        }
+        self.show = watchinShowRepository.getWatchinShow(id: show.idFormatted)
+        displayShowInfos()
+    }
+}
+
     // MARK: - TableView Management
+
 extension TrackingViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -168,7 +181,7 @@ extension TrackingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 40))
-        header.backgroundColor = UIColor.white
+        header.backgroundColor = UIColor.white.withAlphaComponent(0.8)
 
         let titleLabel = UILabel(frame: CGRect(x: 20, y: 2, width: header.frame.size.width - 5, height: header.frame.size.height - 5))
         titleLabel.text = "◦ Season \(section + 1)"

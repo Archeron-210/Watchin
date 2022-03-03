@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        // UINavigationBar appearance
         UINavigationBar.appearance().tintColor = UIColor.white
         if let customFont = UIFont(name: "Kohinoor Telugu", size: 22.0) {
             UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
@@ -20,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let image = UIImage(named: "whiteGradient")
         UINavigationBar.appearance().setBackgroundImage(image?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch), for: .default)
 
-        // A compléter
-        UITabBar.appearance().backgroundImage = image
+        // UITabBar appearance
+        UITabBar.appearance().backgroundImage = UIImage()
         UITabBar.appearance().unselectedItemTintColor = .white
         return true
     }

@@ -64,8 +64,16 @@ class WatchinShowRepository {
         }
     }
 
-    func saveModifications() {
+    func updateWatchinShowPlatform(show: ShowDetailFormatted, platform: String) {
+        let searchedShow = getWatchinShows().first { (watchinShow) -> Bool in
+            return watchinShow.idFormatted == show.idFormatted
+        }
+        guard let foundWatchinShow = searchedShow else {
+            print("WatchinShow not found, unable to save desired changes")
+            return
+        }
         do {
+            foundWatchinShow.platform = platform
             try coreDataStack.viewContext.save()
         } catch {
             print("Unable to save desired changes")

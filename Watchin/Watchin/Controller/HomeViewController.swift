@@ -30,6 +30,7 @@ class HomeViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         setUserInfo()
         shows = repository.getShows()
         tableView.reloadData()
