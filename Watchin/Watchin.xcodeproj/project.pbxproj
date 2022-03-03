@@ -41,7 +41,6 @@
 		20F1B2F927C3E14A00AC3874 /* ShowDetailFormatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1B2F827C3E14A00AC3874 /* ShowDetailFormatted.swift */; };
 		20F1B2FD27C4EF0700AC3874 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1B2FC27C4EF0600AC3874 /* Show.swift */; };
 		20F1B30727C69BFB00AC3874 /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1B30627C69BFB00AC3874 /* TrackingViewController.swift */; };
-		20F1B30B27C8E3E800AC3874 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1B30A27C8E3E700AC3874 /* DetailHeaderView.swift */; };
 		20FA1E2527C8E8A000DA009E /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FA1E2427C8E8A000DA009E /* EpisodeTableViewCell.swift */; };
 		20FA1E2F27C8EA1900DA009E /* EpisodeFormatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FA1E2E27C8EA1900DA009E /* EpisodeFormatted.swift */; };
 		20FA1E3927C926F200DA009E /* EpisodeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FA1E3827C926F200DA009E /* EpisodeDetail.swift */; };
@@ -100,7 +99,6 @@
 		20F1B2F827C3E14A00AC3874 /* ShowDetailFormatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailFormatted.swift; sourceTree = "<group>"; };
 		20F1B2FC27C4EF0600AC3874 /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		20F1B30627C69BFB00AC3874 /* TrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
-		20F1B30A27C8E3E700AC3874 /* DetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
 		20FA1E2427C8E8A000DA009E /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		20FA1E2E27C8EA1900DA009E /* EpisodeFormatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeFormatted.swift; sourceTree = "<group>"; };
 		20FA1E3827C926F200DA009E /* EpisodeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetail.swift; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 				20DB581627B162AE0007B649 /* Main.storyboard */,
 				203076E827BBBC9C00A2AD36 /* TvShowPreviewTableViewCell.swift */,
 				20E164B827B3C7CF0057E42C /* TvShowTableViewCell.swift */,
-				20F1B30A27C8E3E700AC3874 /* DetailHeaderView.swift */,
 				20FA1E2427C8E8A000DA009E /* EpisodeTableViewCell.swift */,
 			);
 			path = View;
@@ -521,7 +518,6 @@
 				20F1B2F927C3E14A00AC3874 /* ShowDetailFormatted.swift in Sources */,
 				20FA1E2F27C8EA1900DA009E /* EpisodeFormatted.swift in Sources */,
 				20C56D7E27CCD71F00927D6F /* Episode.swift in Sources */,
-				20F1B30B27C8E3E800AC3874 /* DetailHeaderView.swift in Sources */,
 				20DB581327B162AE0007B649 /* SceneDelegate.swift in Sources */,
 				203076E927BBBC9D00A2AD36 /* TvShowPreviewTableViewCell.swift in Sources */,
 				20FA1E3D27C9272900DA009E /* EpisodeDetailRepository.swift in Sources */,

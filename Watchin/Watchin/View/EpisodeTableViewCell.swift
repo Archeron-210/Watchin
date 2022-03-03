@@ -27,7 +27,7 @@ class EpisodeTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setButtonAspect()
+        setButtonBaseAspect()
     }
 
     // MARK: - Configure
@@ -36,6 +36,7 @@ class EpisodeTableViewCell: UITableViewCell {
 
         episodeNumberLabel.text = "Episode \(episode.episodeNumberFormatted)"
         episodeTitleLabel.text = "'\(episode.episodeNameFormatted)'"
+        updateSawItButtonAspect(of: episode)
 
     }
 
@@ -45,10 +46,24 @@ class EpisodeTableViewCell: UITableViewCell {
 
     // MARK: - Private
 
-    private func setButtonAspect() {
+    private func setButtonBaseAspect() {
         sawItButton.layer.borderWidth = 1
         sawItButton.layer.borderColor = UIColor.white.cgColor
         sawItButton.layer.cornerRadius = 10
     }
+
+    private func updateSawItButtonAspect(of episode: EpisodeFormatted) {
+        let hasBeenWatched = episode.hasBeenWatchedFormatted
+
+        let title =  hasBeenWatched ? "Seen ✓" : "Saw it !"
+        let color = hasBeenWatched ? UIColor(red: 61, green: 176, blue: 239) : UIColor.white
+        let backgroundColor = hasBeenWatched ? UIColor.white : UIColor.clear
+
+        sawItButton.setTitle(title, for: .normal)
+        sawItButton.setTitleColor(color, for: .normal)
+        sawItButton.tintColor = color
+        sawItButton.backgroundColor = backgroundColor
+    }
+
 
 }

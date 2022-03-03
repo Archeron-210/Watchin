@@ -154,7 +154,7 @@ extension TrackingViewController: PlatformPickerViewControllerDismissDelegate {
     }
 }
 
-    // MARK: - Cell Delegate
+    // MARK: - EpisodeCell Delegate
 
 extension TrackingViewController: EpisodeTableViewCellActionDelegate {
     func sawItButtonTapped(in cell: EpisodeTableViewCell) {

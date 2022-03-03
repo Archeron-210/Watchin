@@ -345,7 +345,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="Vc4-7f-MTH" userLabel="Info Container view" customClass="DetailHeaderView" customModule="Watchin" customModuleProvider="target">
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="Vc4-7f-MTH" userLabel="Info Container view">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="457"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
