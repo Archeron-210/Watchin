@@ -28,7 +28,14 @@ class TrackingViewController: UIViewController {
 
     var show: ShowDetailFormatted?
     var episodes: [[EpisodeFormatted]] = []
-    var watchedEpisodes: [EpisodeFormatted] = []
+    var watchedEpisodes: [EpisodeFormatted] = [] {
+        didSet {
+            guard let show = show else {
+                return
+            }
+            episodesNumberLabel.text = "Episodes : \(watchedEpisodes.count)/\(show.numberOfEpisodes)"
+        }
+    }
     private let watchinShowRepository = WatchinShowRepository.shared
     private let episodeDetailRepository = EpisodeDetailRepository.shared
 
@@ -166,6 +173,7 @@ extension TrackingViewController: EpisodeTableViewCellActionDelegate {
         episodeDetailRepository.updateWatchEpisodeStatus(episode: episode, of: show)
         // update episode data
         episodes = episodeDetailRepository.getEpisodes(for: show)
+        watchedEpisodes = episodeDetailRepository.getWatchedEpisodes(for: show)
         cell.configure(for: episodes[indexPath.section][indexPath.row])
     }
 }
