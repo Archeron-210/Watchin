@@ -26,7 +26,7 @@ class EpisodeDetailRepository {
     // MARK: - Data Management
 
     func getEpisodes(for show: ShowDetailFormatted) -> [[EpisodeFormatted]] {
-        // creates a copy to use elsewhere in the app, without using specifically an object that has a CoreData reference by transforming an EpisodeDetail in an EpisodeFormatted object :
+        // creates a copy to use elsewhere in the app, without using specifically an object that has a CoreData reference by transforming an EpisodeDetail into an EpisodeFormatted object :
         let episodes = getEpisodeDetails(for: show).map { Episode(episodeFormatted: $0) }
         // creates an array that contains each season number :
         var seasonsNumber: [Int] = []
@@ -52,6 +52,12 @@ class EpisodeDetailRepository {
             return nil
         }
         return Episode(episodeFormatted: episode)
+    }
+
+    func getWatchedEpisodes(for show: ShowDetailFormatted) -> [EpisodeFormatted] {
+        let episodes = getEpisodeDetails(for: show).map { Episode(episodeFormatted: $0) }
+        let episodeWatched = episodes.filter { $0.hasBeenWatchedFormatted == true }
+        return episodeWatched
     }
 
     func saveEpisodeDetail(for episode: EpisodeFormatted, of show: ShowDetailFormatted) {

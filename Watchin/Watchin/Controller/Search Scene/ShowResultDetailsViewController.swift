@@ -135,8 +135,8 @@ class ShowResultDetailsViewController: UIViewController {
     private func successAlert(message: String) {
         let alert = UIAlertController(title: "✅", message: message, preferredStyle: .alert)
         present(alert, animated: true, completion: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [unowned self] in
-           self.dismiss(animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            self?.dismiss(animated: true)
           }
     }
 

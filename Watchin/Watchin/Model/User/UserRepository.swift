@@ -106,7 +106,7 @@ class UserRepository: UserRepositoryProtocol {
             let data = try Data(contentsOf: url)
             return data
         } catch {
-            print("Unable to read data from disk (\(error))")
+            print("Unable to read data from disk (\(error.localizedDescription))")
             return nil
         }
     }

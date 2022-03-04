@@ -28,6 +28,7 @@ class TrackingViewController: UIViewController {
 
     var show: ShowDetailFormatted?
     var episodes: [[EpisodeFormatted]] = []
+    var watchedEpisodes: [EpisodeFormatted] = []
     private let watchinShowRepository = WatchinShowRepository.shared
     private let episodeDetailRepository = EpisodeDetailRepository.shared
 
@@ -41,6 +42,7 @@ class TrackingViewController: UIViewController {
         }
         displayShowInfos()
         episodes = episodeDetailRepository.getEpisodes(for: show)
+        watchedEpisodes = episodeDetailRepository.getWatchedEpisodes(for: show)
         tableView.reloadData()
     }
 
@@ -70,16 +72,16 @@ class TrackingViewController: UIViewController {
     // MARK: - Private
 
     private func displayShowInfos() {
-        // as? WatchinShow ? pour afficher platform?
         guard let show = show else {
             return
         }
+
         setImage()
         showTitleLabel.text = show.nameFormatted
         startDateStatusLabel.text = "\(show.startDateFormatted) - \(show.statusFormatted)"
         genresLabel.text = show.genresFormatted
         countryLabel.text = show.countryFormatted
-        episodesNumberLabel.text = "Episodes : 0/\(show.numberOfEpisodes)"
+        episodesNumberLabel.text = "Episodes : \(watchedEpisodes.count)/\(show.numberOfEpisodes)"
         seasonsNumberLabel.text = "Seasons : 0/\(show.numberOfSeasons)"
         platformLabel.text = "On : \(show.platformFormatted)"
     }
@@ -110,14 +112,6 @@ class TrackingViewController: UIViewController {
         }
         watchinShowRepository.deleteWatchinShow(show: show)
         navigationController?.popViewController(animated: true)
-    }
-
-    private func updateEpisode() {
-
-    }
-
-    private func updateButtonAspect() {
-
     }
 
     // MARK: - Alerts
