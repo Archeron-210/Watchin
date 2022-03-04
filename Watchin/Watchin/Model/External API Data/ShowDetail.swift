@@ -53,7 +53,7 @@ extension TvShowInfo: ShowDetailFormatted {
     }
 
     var statusFormatted: String {
-        return "Status: \(status)"
+        return status
     }
 
     var imageStringUrlFormatted: String {
@@ -83,11 +83,7 @@ extension TvShowInfo: ShowDetailFormatted {
 
     var numberOfSeasons: String {
         let seasonNumber = episodes.map{$0.season}.max() ?? 0
-        if seasonNumber == 1 {
-            return "\(seasonNumber) Season"
-        } else {
-            return "\(seasonNumber) Seasons"
-        }
+        return String(seasonNumber)
     }
 
     var numberOfEpisodes: String {
@@ -96,13 +92,11 @@ extension TvShowInfo: ShowDetailFormatted {
     }
 
     var watchedSeasonsFormatted: Int {
-        get { return 0 }
-        set {}
+        return 0
     }
 
     var watchedEpisodesFormatted: Int {
-        get { return 0 }
-        set {}
+        return 0
     }
 
     var platformFormatted: String {
@@ -137,6 +131,5 @@ extension EpisodeInfo: EpisodeFormatted {
         }
         return id
     }
-
 
 }

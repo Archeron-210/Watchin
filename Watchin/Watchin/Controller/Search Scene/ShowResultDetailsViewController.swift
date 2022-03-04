@@ -69,9 +69,9 @@ class ShowResultDetailsViewController: UIViewController {
         yearLabel.text = tvShow.startDateFormatted
         genresLabel.text = tvShow.genresFormatted
         countryLabel.text = tvShow.countryFormatted
-        seasonCountLabel.text = tvShow.numberOfSeasons
-        statusLabel.text = tvShow.statusFormatted
+        statusLabel.text = "Status: \(tvShow.statusFormatted)"
         descriptionLabel.text = tvShow.descriptionFormatted
+        displayCorrectSeasonInfo()
     }
 
     private func setImage() {
@@ -82,6 +82,19 @@ class ShowResultDetailsViewController: UIViewController {
             tvShowPosterImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "watchinIcon"))
         } else {
             tvShowPosterImageView.image = UIImage(named: "watchinIcon")
+        }
+    }
+
+    private func displayCorrectSeasonInfo() {
+        guard let tvShow = tvShow else {
+            return
+        }
+
+        let intNumberOfSeasons = Int(tvShow.numberOfSeasons) ?? 0
+        if intNumberOfSeasons > 1 {
+        seasonCountLabel.text = "\(tvShow.numberOfSeasons) Seasons"
+        } else {
+            seasonCountLabel.text = "\(tvShow.numberOfSeasons) Season"
         }
     }
 
