@@ -71,6 +71,7 @@ class TrackingViewController: UIViewController {
     }
 
     @IBAction func startAgainButtonTapped(_ sender: UIButton) {
+        startAgainAlert()
     }
 
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
@@ -135,6 +136,18 @@ class TrackingViewController: UIViewController {
         present(alert, animated: true)
     }
 
+    private func startAgainAlert() {
+        let alert = UIAlertController(title: "⚠️", message: "You are about to delete all your episode progression: are you sure you want to start this show again ?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Start again", style: .destructive, handler: { action in
+            guard let show = self.show else {
+                return
+            }
+            self.episodeDetailRepository.deleteWatchedEpisodes(for: show)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+
 
     // MARK: - UI Aspect
 
@@ -177,6 +190,7 @@ extension TrackingViewController: EpisodeTableViewCellActionDelegate {
         // update episode data
         episodes = episodeDetailRepository.getEpisodes(for: show)
         watchedEpisodes = episodeDetailRepository.getWatchedEpisodes(for: show)
+        // A CHECKER
         watchinShowRepository.updateWatchinShowNumberOfWatchedEpisodes(show: show, with: watchedEpisodes.count)
         cell.configure(for: episodes[indexPath.section][indexPath.row])
     }
