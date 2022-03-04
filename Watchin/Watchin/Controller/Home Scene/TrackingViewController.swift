@@ -28,12 +28,14 @@ class TrackingViewController: UIViewController {
 
     var show: ShowDetailFormatted?
     var episodes: [[EpisodeFormatted]] = []
+    // A CHECKER
     var watchedEpisodes: [EpisodeFormatted] = [] {
         didSet {
             guard let show = show else {
                 return
             }
-            episodesNumberLabel.text = "Episodes : \(watchedEpisodes.count)/\(show.numberOfEpisodes)"
+            watchinShowRepository.updateWatchinShowNumberOfWatchedEpisodes(show: show, with: watchedEpisodes.count)
+            episodesNumberLabel.text = "Episodes : \(show.watchedEpisodesFormatted)/\(show.numberOfEpisodes)"
         }
     }
     private let watchinShowRepository = WatchinShowRepository.shared
@@ -50,6 +52,7 @@ class TrackingViewController: UIViewController {
         displayShowInfos()
         episodes = episodeDetailRepository.getEpisodes(for: show)
         watchedEpisodes = episodeDetailRepository.getWatchedEpisodes(for: show)
+        watchinShowRepository.updateWatchinShowNumberOfWatchedEpisodes(show: show, with: watchedEpisodes.count)
         tableView.reloadData()
     }
 
@@ -88,7 +91,7 @@ class TrackingViewController: UIViewController {
         startDateStatusLabel.text = "\(show.startDateFormatted) - \(show.statusFormatted)"
         genresLabel.text = show.genresFormatted
         countryLabel.text = show.countryFormatted
-        episodesNumberLabel.text = "Episodes : \(watchedEpisodes.count)/\(show.numberOfEpisodes)"
+        episodesNumberLabel.text = "Episodes : \(show.watchedEpisodesFormatted)/\(show.numberOfEpisodes)"
         seasonsNumberLabel.text = "Seasons : 0/\(show.numberOfSeasons)"
         platformLabel.text = "On : \(show.platformFormatted)"
     }
@@ -174,6 +177,7 @@ extension TrackingViewController: EpisodeTableViewCellActionDelegate {
         // update episode data
         episodes = episodeDetailRepository.getEpisodes(for: show)
         watchedEpisodes = episodeDetailRepository.getWatchedEpisodes(for: show)
+        watchinShowRepository.updateWatchinShowNumberOfWatchedEpisodes(show: show, with: watchedEpisodes.count)
         cell.configure(for: episodes[indexPath.section][indexPath.row])
     }
 }

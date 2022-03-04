@@ -79,6 +79,22 @@ class WatchinShowRepository {
         }
     }
 
+    func updateWatchinShowNumberOfWatchedEpisodes(show: ShowDetailFormatted, with number: Int) {
+        let searchedShow = getWatchinShows().first(where: { (watchinShow) -> Bool in
+            return watchinShow.idFormatted == show.idFormatted
+        })
+        guard let foundWatchinShow = searchedShow else {
+            print("WatchinShow not found, unable to save desired changes")
+            return
+        }
+        do {
+            foundWatchinShow.watchedEpisodes = Int32(number)
+            try coreDataStack.viewContext.save()
+        } catch {
+            print("Unable to save desired changes")
+        }
+    }
+
     func deleteWatchinShow(show: ShowDetailFormatted) {
         let searchedShow = getWatchinShows().first(where: { (watchinShow) -> Bool in
             return watchinShow.id == show.idFormatted
