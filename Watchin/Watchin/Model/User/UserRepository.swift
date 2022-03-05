@@ -48,15 +48,15 @@ class UserRepository: UserRepositoryProtocol {
     }
 
     func saveUser(_ user: User) -> Bool {
-        // Try to save the profile picture
+        // Tries to save the profile picture
         let didSaveProfilePicture = self.saveProfilePicture(imageData: user.profilePictureData)
-        // If it failed, save failed so we return false
+        // If it failed, then saving failed, so returns false
         guard didSaveProfilePicture else {
             return false
         }
-        // Save the user name
+        // Saves the user name
         saveName(name: user.name)
-        // Update the user in memory
+        // Updates the user in memory
         self.user = user
         // Save succeded
         return true
@@ -78,35 +78,35 @@ class UserRepository: UserRepositoryProtocol {
         guard let data = imageData else {
             return false
         }
-        // Create URL
+        // Creates URL
         let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         guard let documentsUrl = documents else {
             return false
         }
         let url = documentsUrl.appendingPathComponent(Keys.fileName)
         do {
-            // Write to Disk
+            // Writes to disk
             try data.write(to: url)
             return true
         } catch {
-            print("Unable to write data to disk (\(error))")
+            print("Unable to write data to disk (\(error.localizedDescription))")
             return false
         }
     }
 
     private func getProfilePicture() -> Data? {
-        // Create URL
+        // Creates URL
         let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         guard let documentsUrl = documents else {
             return nil
         }
         let url = documentsUrl.appendingPathComponent(Keys.fileName)
         do {
-            // Read from Disk
+            // Reads from disk
             let data = try Data(contentsOf: url)
             return data
         } catch {
-            print("Unable to read data from disk (\(error.localizedDescription))")
+            print("Unable to read data from disk, or no profile picture setted yet (\(error.localizedDescription))")
             return nil
         }
     }

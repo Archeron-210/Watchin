@@ -160,7 +160,6 @@ class ShowResultDetailsViewController: UIViewController {
         let backgroundColor = isSavedToYourShows ? UIColor.white : UIColor.clear
         let clickableState = isSavedToYourShows ? false : true
 
-        // se renseigner sur attributedStrings
         addToYourShowsButton.setTitle(title, for: .normal)
         addToYourShowsButton.setTitleColor(color, for: .normal)
         addToYourShowsButton.tintColor = color

@@ -97,9 +97,12 @@ extension PlatformPickerViewController: UIPickerViewDataSource {
 }
 
 extension PlatformPickerViewController: UIPickerViewDelegate {
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-
-        return sortedPlatformNames[row]
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let pickerLabel = UILabel()
+        pickerLabel.text = sortedPlatformNames[row]
+        pickerLabel.font = UIFont(name: "Kohinoor Telugu", size: 25)
+        pickerLabel.textColor = UIColor(red: 61, green: 176, blue: 239)
+        pickerLabel.textAlignment = .center
+        return pickerLabel
     }
 }
