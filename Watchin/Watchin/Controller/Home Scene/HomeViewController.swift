@@ -19,12 +19,12 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
 
     var shows: [ShowDetailFormatted] = []
-
     private var user: User {
         UserRepository.shared.getUser()
     }
 
-    private let repository = WatchinShowRepository.shared
+    private let watchinShowRepository = WatchinShowRepository.shared
+    private let episodeDetailRepository = EpisodeDetailRepository.shared
 
     // MARK: - Life Cycle
 
@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setUserInfo()
-        shows = repository.getShows()
+        shows = watchinShowRepository.getShows()
         tableView.reloadData()
     }
 
@@ -117,7 +117,8 @@ extension HomeViewController: UITableViewDataSource {
         }
 
         let show = shows[indexPath.row]
-        cell.configure(for: show)
+        let watchedEpisodes = episodeDetailRepository.getWatchedEpisodes(for: show)
+        cell.configure(for: show, with: watchedEpisodes.count)
         cell.backgroundColor = UIColor.clear
 
         

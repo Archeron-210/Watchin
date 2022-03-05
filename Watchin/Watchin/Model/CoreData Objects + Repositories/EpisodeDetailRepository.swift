@@ -58,8 +58,6 @@ class EpisodeDetailRepository {
     func getWatchedEpisodes(for show: ShowDetailFormatted) -> [EpisodeFormatted] {
         let episodes = getEpisodeDetails(for: show).map { Episode(episodeFormatted: $0) }
         let episodeWatched = episodes.filter { $0.hasBeenWatchedFormatted == true }
-        // a checker
-        watchinShowRepository.updateWatchinShowNumberOfWatchedEpisodes(show: show, with: episodeWatched.count)
         return episodeWatched
     }
 
@@ -70,7 +68,6 @@ class EpisodeDetailRepository {
             updateWatchEpisodeStatus(episode: episode, of: show)
         }
         watchedEpisodes.removeAll()
-        watchinShowRepository.updateWatchinShowNumberOfWatchedEpisodes(show: show, with: 0)
     }
 
     func saveEpisodeDetail(for episode: EpisodeFormatted, of show: ShowDetailFormatted) {

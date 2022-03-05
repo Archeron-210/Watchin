@@ -21,8 +21,6 @@ struct Show: ShowDetailFormatted {
     var genresFormatted: String
     var numberOfSeasons: String
     var numberOfEpisodes: String
-    var watchedSeasonsFormatted: Int
-    var watchedEpisodesFormatted: Int
     var platformFormatted: String
 
 
@@ -41,8 +39,6 @@ struct Show: ShowDetailFormatted {
         self.genresFormatted = showDetailFormatted.genresFormatted
         self.numberOfSeasons = showDetailFormatted.numberOfSeasons
         self.numberOfEpisodes = showDetailFormatted.numberOfEpisodes
-        self.watchedSeasonsFormatted = showDetailFormatted.watchedSeasonsFormatted
-        self.watchedEpisodesFormatted = showDetailFormatted.watchedEpisodesFormatted
         self.platformFormatted = showDetailFormatted.platformFormatted
     }
 

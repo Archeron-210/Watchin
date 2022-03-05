@@ -50,8 +50,6 @@ class WatchinShowRepository {
         watchinShow.genres = show.genresFormatted
         watchinShow.totalSeasons = show.numberOfSeasons
         watchinShow.totalEpisodes = show.numberOfEpisodes
-        watchinShow.watchedSeasons = Int32(show.watchedSeasonsFormatted)
-        watchinShow.watchedEpisodes = Int32(show.watchedEpisodesFormatted)
         watchinShow.platform = show.platformFormatted
 
         do {
@@ -73,22 +71,6 @@ class WatchinShowRepository {
         }
         do {
             foundWatchinShow.platform = platform
-            try coreDataStack.viewContext.save()
-        } catch {
-            print("Unable to save desired changes")
-        }
-    }
-
-    func updateWatchinShowNumberOfWatchedEpisodes(show: ShowDetailFormatted, with number: Int) {
-        let searchedShow = getWatchinShows().first(where: { (watchinShow) -> Bool in
-            return watchinShow.idFormatted == show.idFormatted
-        })
-        guard let foundWatchinShow = searchedShow else {
-            print("WatchinShow not found, unable to save desired changes")
-            return
-        }
-        do {
-            foundWatchinShow.watchedEpisodes = Int32(number)
             try coreDataStack.viewContext.save()
         } catch {
             print("Unable to save desired changes")

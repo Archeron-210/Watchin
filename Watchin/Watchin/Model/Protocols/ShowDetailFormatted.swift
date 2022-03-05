@@ -20,8 +20,6 @@ protocol ShowDetailFormatted {
     var genresFormatted: String { get }
     var numberOfSeasons: String { get }
     var numberOfEpisodes: String { get }
-    var watchedSeasonsFormatted: Int { get }
-    var watchedEpisodesFormatted: Int { get }
     var platformFormatted: String { get }
 
 }

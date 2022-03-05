@@ -59,18 +59,6 @@ extension WatchinShow: ShowDetailFormatted {
         return totalEpisodes ?? "No number of episodes"
     }
 
-    var watchedSeasonsFormatted: Int {
-        let intWatchedSeasons = Int(watchedSeasons)
-        return intWatchedSeasons 
-
-    }
-
-    var watchedEpisodesFormatted: Int {
-        let intWatchedEpisodes = Int(watchedEpisodes)
-        return intWatchedEpisodes
-
-    }
-
     var platformFormatted: String {
         return platform ?? "No platform"
     }

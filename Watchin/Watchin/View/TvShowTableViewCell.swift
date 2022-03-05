@@ -15,10 +15,10 @@ class TvShowTableViewCell: UITableViewCell {
     @IBOutlet weak var watchedEpisodesLabel: UILabel!
     @IBOutlet weak var platformLabel: UILabel!
 
-    func configure(for tvShow: ShowDetailFormatted) {
+    func configure(for tvShow: ShowDetailFormatted, with watchedEpisodes: Int) {
         setImage(for: tvShow)
         showTitleLabel.text = tvShow.nameFormatted
-        watchedEpisodesLabel.text = "Watched episodes:\n\(tvShow.watchedEpisodesFormatted)/\(tvShow.numberOfEpisodes)"
+        watchedEpisodesLabel.text = "Watched episodes:\n\(watchedEpisodes)/\(tvShow.numberOfEpisodes)"
         platformLabel.text = "On: \(tvShow.platformFormatted)"
     }
 
