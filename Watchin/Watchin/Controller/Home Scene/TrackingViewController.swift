@@ -27,16 +27,8 @@ class TrackingViewController: UIViewController {
     // MARK: - Properties
 
     var show: ShowDetailFormatted?
-    var episodes: [[EpisodeFormatted]] = []
-    // A CHECKER
-    var watchedEpisodes: [EpisodeFormatted] = [] {
-        didSet {
-            guard let show = show else {
-                return
-            }
-            episodesNumberLabel.text = "Episodes : \(watchedEpisodes.count)/\(show.numberOfEpisodes)"
-        }
-    }
+    var episodesBySeason: [[EpisodeFormatted]] = []
+
     private let watchinShowRepository = WatchinShowRepository.shared
     private let episodeDetailRepository = EpisodeDetailRepository.shared
 
@@ -49,8 +41,7 @@ class TrackingViewController: UIViewController {
             return
         }
         displayShowInfos()
-        episodes = episodeDetailRepository.getEpisodes(for: show)
-        watchedEpisodes = episodeDetailRepository.getWatchedEpisodes(for: show)
+        episodesBySeason = episodeDetailRepository.getEpisodes(for: show)
         tableView.reloadData()
     }
 
@@ -84,15 +75,26 @@ class TrackingViewController: UIViewController {
         guard let show = show else {
             return
         }
-
         setImage()
         showTitleLabel.text = show.nameFormatted
         startDateStatusLabel.text = "\(show.startDateFormatted) - \(show.statusFormatted)"
         genresLabel.text = show.genresFormatted
         countryLabel.text = show.countryFormatted
-        episodesNumberLabel.text = "Episodes : \(watchedEpisodes.count)/\(show.numberOfEpisodes)"
-        seasonsNumberLabel.text = "Seasons : 0/\(show.numberOfSeasons)"
+        displayEpisodesAndSeasons()
         platformLabel.text = "On : \(show.platformFormatted)"
+    }
+
+    private func displayEpisodesAndSeasons() {
+        guard let show = show else {
+            return
+        }
+        let watchedEpisodes = episodeDetailRepository.getWatchedEpisodes(for: show)
+        episodesNumberLabel.text = "Episodes : \(watchedEpisodes.count)/\(show.numberOfEpisodes)"
+
+        let watchedSeasons = episodesBySeason.filter {
+            $0.allSatisfy { $0.hasBeenWatchedFormatted }
+        }.count
+        seasonsNumberLabel.text = "Seasons : \(watchedSeasons)/\(show.numberOfSeasons)"
     }
 
     private func setImage() {
@@ -178,17 +180,17 @@ extension TrackingViewController: EpisodeTableViewCellActionDelegate {
             return
         }
         // check if not out of range
-        guard episodes.count > indexPath.section,
-              episodes[indexPath.section].count > indexPath.row else {
+        guard episodesBySeason.count > indexPath.section,
+              episodesBySeason[indexPath.section].count > indexPath.row else {
             return
         }
 
-        let episode = episodes[indexPath.section][indexPath.row]
+        let episode = episodesBySeason[indexPath.section][indexPath.row]
         episodeDetailRepository.updateWatchEpisodeStatus(episode: episode, of: show)
         // update episode data
-        episodes = episodeDetailRepository.getEpisodes(for: show)
-        watchedEpisodes = episodeDetailRepository.getWatchedEpisodes(for: show)
-        cell.configure(for: episodes[indexPath.section][indexPath.row])
+        episodesBySeason = episodeDetailRepository.getEpisodes(for: show)
+        displayEpisodesAndSeasons()
+        cell.configure(for: episodesBySeason[indexPath.section][indexPath.row])
     }
 }
 
@@ -197,14 +199,14 @@ extension TrackingViewController: EpisodeTableViewCellActionDelegate {
 extension TrackingViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return episodes.count
+        return episodesBySeason.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard episodes.count > section else {
+        guard episodesBySeason.count > section else {
             return 0
         }
-        return episodes[section].count
+        return episodesBySeason[section].count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -213,12 +215,12 @@ extension TrackingViewController: UITableViewDataSource {
         }
 
         // ??? à checker
-        guard episodes.count > indexPath.section,
-              episodes[indexPath.section].count > indexPath.row else {
+        guard episodesBySeason.count > indexPath.section,
+              episodesBySeason[indexPath.section].count > indexPath.row else {
             return UITableViewCell()
         }
 
-        let episode = episodes[indexPath.section][indexPath.row]
+        let episode = episodesBySeason[indexPath.section][indexPath.row]
         cell.configure(for: episode)
         cell.delegate = self
 

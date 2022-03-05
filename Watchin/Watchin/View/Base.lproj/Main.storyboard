@@ -489,13 +489,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Np3-Qe-SyZ">
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Np3-Qe-SyZ">
                                                     <rect key="frame" x="316" y="16" width="78" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="j1h-21-cGM"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="20"/>
-                                                    <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                                    <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                                     <state key="normal" title="Saw it !">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
@@ -526,7 +526,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="Ly6-7M-Hox" secondAttribute="trailing" constant="10" id="0MI-hB-dVQ"/>
                                                 <constraint firstItem="Np3-Qe-SyZ" firstAttribute="top" secondItem="bXa-4l-TdB" secondAttribute="topMargin" constant="5" id="2Eq-Ye-CPt"/>
                                                 <constraint firstItem="Ly6-7M-Hox" firstAttribute="leading" secondItem="Mhu-iU-9Dr" secondAttribute="leading" id="3V4-bb-xmS"/>
-                                                <constraint firstItem="Np3-Qe-SyZ" firstAttribute="trailing" secondItem="bXa-4l-TdB" secondAttribute="trailingMargin" id="75M-Sa-qvq"/>
                                                 <constraint firstItem="vyn-oy-Oja" firstAttribute="leading" secondItem="bXa-4l-TdB" secondAttribute="leading" constant="5" id="A4J-2P-dCA"/>
                                                 <constraint firstItem="Mhu-iU-9Dr" firstAttribute="leading" secondItem="bXa-4l-TdB" secondAttribute="leadingMargin" constant="5" id="Jrh-IA-SNC"/>
                                                 <constraint firstItem="Np3-Qe-SyZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mhu-iU-9Dr" secondAttribute="trailing" constant="10" id="LI2-A4-lKH"/>

@@ -54,14 +54,12 @@ class EpisodeDetailRepository {
         return Episode(episodeFormatted: episode)
     }
 
-    // A CHECKER
     func getWatchedEpisodes(for show: ShowDetailFormatted) -> [EpisodeFormatted] {
         let episodes = getEpisodeDetails(for: show).map { Episode(episodeFormatted: $0) }
         let episodeWatched = episodes.filter { $0.hasBeenWatchedFormatted == true }
         return episodeWatched
     }
 
-    // A CHECKER
     func deleteWatchedEpisodes(for show: ShowDetailFormatted) {
         var watchedEpisodes = getWatchedEpisodes(for: show)
         for episode in watchedEpisodes {

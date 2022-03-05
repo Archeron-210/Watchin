@@ -50,6 +50,7 @@ class EpisodeTableViewCell: UITableViewCell {
         sawItButton.layer.borderWidth = 1
         sawItButton.layer.borderColor = UIColor.white.cgColor
         sawItButton.layer.cornerRadius = 10
+        sawItButton.titleLabel?.numberOfLines = 1
     }
 
     private func updateSawItButtonAspect(of episode: EpisodeFormatted) {
