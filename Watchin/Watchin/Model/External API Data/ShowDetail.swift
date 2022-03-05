@@ -73,7 +73,12 @@ extension TvShowInfo: ShowDetailFormatted {
     }
 
     var startDateFormatted: String {
-        let date = String(startDate.prefix(4))
+        var date = ""
+        if startDate.hasAlphabeticalCharacters() {
+            date = String(startDate.suffix(4))
+        } else {
+            date = String(startDate.prefix(4))
+        }
         return "(\(date))"
     }
 
