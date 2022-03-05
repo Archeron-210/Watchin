@@ -15,16 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         // UINavigationBar appearance
-        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().tintColor = UIColor(red: 61, green: 176, blue: 239)
         if let customFont = UIFont(name: "Kohinoor Telugu", size: 22.0) {
             UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
         }
-        let image = UIImage(named: "whiteGradient")
-        UINavigationBar.appearance().setBackgroundImage(image?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch), for: .default)
+        let navBarImage = UIImage(named: "navBarGradient")
+
+        UINavigationBar.appearance().setBackgroundImage(navBarImage?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch), for: .default)
 
         // UITabBar appearance
-        UITabBar.appearance().backgroundImage = UIImage()
+        let tabBarImage = UIImage(named: "tabBarGradient")
         UITabBar.appearance().unselectedItemTintColor = .white
+        UITabBar.appearance().backgroundImage = tabBarImage?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch)
         return true
     }
 

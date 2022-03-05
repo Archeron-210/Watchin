@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "whiteGradiant@1x.png",
+      "filename" : "navBarGradient@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "whiteGradiant@2x.png",
+      "filename" : "navBarGradient@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "whiteGradiant@3x.png",
+      "filename" : "navBarGradient@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
