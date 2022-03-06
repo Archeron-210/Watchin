@@ -22,6 +22,7 @@ struct Show: ShowDetailFormatted {
     var numberOfSeasons: String
     var numberOfEpisodes: String
     var platformFormatted: String
+    var trackedFormatted: Bool
 
 
     // MARK: - Init
@@ -40,6 +41,7 @@ struct Show: ShowDetailFormatted {
         self.numberOfSeasons = showDetailFormatted.numberOfSeasons
         self.numberOfEpisodes = showDetailFormatted.numberOfEpisodes
         self.platformFormatted = showDetailFormatted.platformFormatted
+        self.trackedFormatted = showDetailFormatted.trackedFormatted
     }
 
 

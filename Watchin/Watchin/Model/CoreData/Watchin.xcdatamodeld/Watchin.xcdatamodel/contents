@@ -21,10 +21,11 @@
         <attribute name="status" optional="YES" attributeType="String"/>
         <attribute name="totalEpisodes" optional="YES" attributeType="String"/>
         <attribute name="totalSeasons" optional="YES" attributeType="String"/>
+        <attribute name="tracked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <relationship name="episodes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EpisodeDetail" inverseName="watchinShow" inverseEntity="EpisodeDetail"/>
     </entity>
     <elements>
         <element name="EpisodeDetail" positionX="141.866943359375" positionY="41.39791870117188" width="128" height="119"/>
-        <element name="WatchinShow" positionX="-63" positionY="-18" width="128" height="224"/>
+        <element name="WatchinShow" positionX="-63" positionY="-18" width="128" height="239"/>
     </elements>
 </model>

@@ -21,5 +21,6 @@ protocol ShowDetailFormatted {
     var numberOfSeasons: String { get }
     var numberOfEpisodes: String { get }
     var platformFormatted: String { get }
+    var trackedFormatted: Bool { get }
 
 }

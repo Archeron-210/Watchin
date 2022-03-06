@@ -90,6 +90,7 @@ class EpisodeDetailRepository {
         })
 
         guard let foundEpisode = searchedEpisode else {
+            print("Episode not found, unable to save desired changes")
             return
         }
 

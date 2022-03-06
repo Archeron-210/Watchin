@@ -28,6 +28,18 @@ class WatchinShowRepository {
         return getWatchinShows().map { Show(showDetailFormatted: $0) }
     }
 
+    func getTrackedShows() -> [ShowDetailFormatted]  {
+        let shows = getWatchinShows().map { Show(showDetailFormatted: $0) }
+        let trackedShows = shows.filter { $0.trackedFormatted == true }
+        return trackedShows
+    }
+
+    func getUntrackedShows() -> [ShowDetailFormatted]  {
+        let shows = getWatchinShows().map { Show(showDetailFormatted: $0) }
+        let untrackedShows = shows.filter { $0.trackedFormatted == false }
+        return untrackedShows
+    }
+
     func getWatchinShow(id: Int) -> WatchinShow? {
         return getWatchinShows().first {
             $0.idFormatted == id
@@ -75,6 +87,24 @@ class WatchinShowRepository {
         } catch {
             print("Unable to save desired changes")
         }
+    }
+
+    func updateShowTrackedStatus(show: ShowDetailFormatted) {
+        let searchedShow = getWatchinShows().first(where: { (watchinShow) -> Bool in
+            return watchinShow.idFormatted == show.idFormatted
+        })
+        guard let foundWatchinShow = searchedShow else {
+            print("WatchinShow not found, unable to save desired changes")
+            return
+        }
+
+        do {
+            foundWatchinShow.tracked = !show.trackedFormatted
+            try coreDataStack.viewContext.save()
+        } catch {
+            print("Unable to save desired changes")
+        }
+
     }
 
     func deleteWatchinShow(show: ShowDetailFormatted) {

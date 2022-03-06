@@ -105,6 +105,7 @@ class ShowResultDetailsViewController: UIViewController {
         let success = watchinShowRepository.saveWatchinShow(show: show)
         if success {
             saveEpisodes()
+            watchinShowRepository.updateShowTrackedStatus(show: show)
             successAlert(message: "Added to your shows ! 📺")
         } else {
             errorAlert(message: "We were unable to add this show to your show")
