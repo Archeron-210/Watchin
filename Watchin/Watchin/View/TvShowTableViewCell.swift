@@ -15,6 +15,8 @@ class TvShowTableViewCell: UITableViewCell {
     @IBOutlet weak var watchedEpisodesLabel: UILabel!
     @IBOutlet weak var platformLabel: UILabel!
 
+    // MARK: - Configure
+
     func configure(for tvShow: ShowDetailFormatted, with watchedEpisodes: Int) {
         setImage(for: tvShow)
         showTitleLabel.text = tvShow.nameFormatted
