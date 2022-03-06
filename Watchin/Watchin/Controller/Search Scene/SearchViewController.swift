@@ -148,11 +148,6 @@ extension SearchViewController: UITableViewDataSource {
 
         return cell
     }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        160.0
-    }
-    
 }
 
     // MARK: - Navigation
@@ -180,5 +175,9 @@ extension SearchViewController: UITableViewDelegate {
         showResultDetailsViewController.tvShow = details
         showResultDetailsViewController.episodes = details.episodes
         self.navigationController?.pushViewController(showResultDetailsViewController, animated: true)
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        160.0
     }
 }

@@ -125,9 +125,6 @@ extension HomeViewController: UITableViewDataSource {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        160.0
-    }
 }
 
     // MARK: - Navigation
@@ -146,5 +143,9 @@ extension HomeViewController: UITableViewDelegate {
         trackingViewController.show = show
 
         self.navigationController?.pushViewController(trackingViewController, animated: true)
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        160.0
     }
 }

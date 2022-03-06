@@ -226,10 +226,6 @@ extension TrackingViewController: UITableViewDataSource {
 
         return cell
     }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        120.0
-    }
 }
 
     // MARK: - Headers Aspect
@@ -252,6 +248,10 @@ extension TrackingViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         40.0
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        120.0
     }
 }
 

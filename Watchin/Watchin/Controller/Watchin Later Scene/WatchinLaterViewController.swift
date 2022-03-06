@@ -13,16 +13,17 @@ class WatchinLaterViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
+    // MARK: - Properties
+    var watchinLaterShows: [ShowDetailFormatted] = []
+    private let watchinShowRepository = WatchinShowRepository.shared
+
     // MARK: - Life Cycle
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        watchinLaterShows = watchinShowRepository.getUntrackedShows()
         tableView.reloadData()
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
     }
 
 }
@@ -36,23 +37,28 @@ extension WatchinLaterViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // retourne le tableau de séries.count
-        return 1
+        if watchinLaterShows.count == 0 {
+            self.tableView.setEmptyMessage("This list in currently empty.\nHere, you can save\nall the shows to want to watch later.\nStart by searching a TV show\nand add it to Watchin' Later !\n↓")
+        } else {
+            self.tableView.restore()
+        }
+        return watchinLaterShows.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tvShowCell", for: indexPath) as? TvShowTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "WatchinLaterShowCell", for: indexPath) as? WatchinLaterTableViewCell else {
             return UITableViewCell()
         }
-        // à compléter
-        // cell.configure(for: <#T##TvShowPreview#>)
+        let watchinLaterShow = watchinLaterShows[indexPath.row]
+        cell.configure(for: watchinLaterShow)
         cell.backgroundColor = UIColor.clear
-
 
         return cell
     }
+}
 
+extension WatchinLaterViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        160.0
+        return 160.0
     }
 }

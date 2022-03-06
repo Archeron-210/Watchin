@@ -189,7 +189,6 @@ class ShowResultDetailsViewController: UIViewController {
         }
 
         let isInWatchinLater = watchinShowRepository.isInWatchinLater(show: show)
-
         let title = isInWatchinLater ? "Added to your Watchin' Later" : "Add to Watchin' Later"
         let color = isInWatchinLater ? UIColor(red: 61, green: 176, blue: 239) : UIColor.white
         let backgroundColor = isInWatchinLater ? UIColor.white : UIColor.clear
