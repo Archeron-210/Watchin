@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setUserInfo()
-        shows = watchinShowRepository.getShows()
+        shows = watchinShowRepository.getTrackedShows()
         tableView.reloadData()
     }
 

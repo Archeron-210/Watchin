@@ -911,28 +911,28 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="FIC-jO-Bdq">
-                                                <rect key="frame" x="151" y="370" width="112" height="40"/>
+                                                <rect key="frame" x="148.5" y="370" width="117" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="XHF-xY-Fm7"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="23"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="10" maxY="0.0"/>
+                                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
                                                 <state key="normal" title=" Button" image="film.fill" catalog="system"/>
                                                 <connections>
                                                     <action selector="addToYourShowsButtonTapped:" destination="cM5-D9-hop" eventType="touchUpInside" id="Nva-Ot-THO"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwm-AU-A7A">
-                                                <rect key="frame" x="78" y="425" width="258" height="40"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Qwm-AU-A7A">
+                                                <rect key="frame" x="71" y="425" width="272.5" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Kg4-br-29J"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="23"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="5" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="10" maxY="0.0"/>
+                                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
                                                 <state key="normal" title=" Add to Watchin' Later " image="bookmark.fill" catalog="system"/>
                                                 <connections>
                                                     <action selector="addToWatchinLaterButtonTapped:" destination="cM5-D9-hop" eventType="touchUpInside" id="2rh-PH-5jG"/>

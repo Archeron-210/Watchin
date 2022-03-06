@@ -39,6 +39,7 @@ class ShowResultDetailsViewController: UIViewController {
         setButtonAspect(for: addToWatchinLaterButton)
         setButtonAspect(for: seeMoreButton)
         configureAddToYourShowsButton()
+        configureAddToWatchinLaterButton()
 
         displayShowDetails()
     }
@@ -51,6 +52,8 @@ class ShowResultDetailsViewController: UIViewController {
     }
 
     @IBAction func addToWatchinLaterButtonTapped(_ sender: UIButton) {
+        saveShowToWatchinLater()
+        configureAddToWatchinLaterButton()
     }
 
     @IBAction func seeMoreButtonTapped(_ sender: UIButton) {
@@ -108,7 +111,7 @@ class ShowResultDetailsViewController: UIViewController {
             watchinShowRepository.updateShowTrackedStatus(show: show)
             successAlert(message: "Added to your shows ! 📺")
         } else {
-            errorAlert(message: "We were unable to add this show to your show")
+            errorAlert(message: "We were unable to add this show to your shows, please check if you did not already save it.")
         }
     }
 
@@ -118,6 +121,19 @@ class ShowResultDetailsViewController: UIViewController {
         }
         for episode in episodes {
             episodeDetailRepository.saveEpisodeDetail(for: episode, of: show)
+        }
+    }
+
+    private func saveShowToWatchinLater() {
+        guard let show = tvShow else {
+            return
+        }
+        let success = watchinShowRepository.saveWatchinShow(show: show)
+
+        if success {
+            successAlert(message: "Added to Watchin' Later ! 🔖")
+        } else {
+            errorAlert(message: "We were unable to add this show to Watchin' Later, please check if you did not already save it to your shows in your Home page !")
         }
     }
 
@@ -155,23 +171,41 @@ class ShowResultDetailsViewController: UIViewController {
             return
         }
 
-        let isSavedToYourShows = watchinShowRepository.isAlreadySaved(show: show)
+        let isSavedToYourShows = watchinShowRepository.isInYourShows(show: show)
         let title = isSavedToYourShows ? "Added to your shows" : "Add to your shows"
         let color = isSavedToYourShows ? UIColor(red: 61, green: 176, blue: 239) : UIColor.white
         let backgroundColor = isSavedToYourShows ? UIColor.white : UIColor.clear
-        let clickableState = isSavedToYourShows ? false : true
 
         addToYourShowsButton.setTitle(title, for: .normal)
         addToYourShowsButton.setTitleColor(color, for: .normal)
         addToYourShowsButton.tintColor = color
         addToYourShowsButton.backgroundColor = backgroundColor
-        addToYourShowsButton.isEnabled = clickableState
+        addToYourShowsButton.isEnabled = !isSavedToYourShows
+    }
+
+    private func configureAddToWatchinLaterButton() {
+        guard let show = tvShow else {
+            return
+        }
+
+        let isInWatchinLater = watchinShowRepository.isInWatchinLater(show: show)
+
+        let title = isInWatchinLater ? "Added to your Watchin' Later" : "Add to Watchin' Later"
+        let color = isInWatchinLater ? UIColor(red: 61, green: 176, blue: 239) : UIColor.white
+        let backgroundColor = isInWatchinLater ? UIColor.white : UIColor.clear
+
+        addToWatchinLaterButton.setTitle(title, for: .normal)
+        addToWatchinLaterButton.setTitleColor(color, for: .normal)
+        addToWatchinLaterButton.tintColor = color
+        addToWatchinLaterButton.backgroundColor = backgroundColor
+        addToWatchinLaterButton.isEnabled = !isInWatchinLater
     }
 
     private func setButtonAspect(for button: UIButton) {
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.cornerRadius = 10
+        button.titleLabel?.numberOfLines = 1
     }
 
 }

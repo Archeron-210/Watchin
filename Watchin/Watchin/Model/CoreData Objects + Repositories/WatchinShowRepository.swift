@@ -63,7 +63,8 @@ class WatchinShowRepository {
         watchinShow.totalSeasons = show.numberOfSeasons
         watchinShow.totalEpisodes = show.numberOfEpisodes
         watchinShow.platform = show.platformFormatted
-
+        watchinShow.tracked = show.trackedFormatted
+        
         do {
             try coreDataStack.viewContext.save()
             return true
@@ -127,6 +128,26 @@ class WatchinShowRepository {
             return watchinShow.idFormatted == show.idFormatted
         }
         return searchedShow != nil
+    }
+
+    func isInYourShows(show: ShowDetailFormatted) -> Bool {
+        let searchedShow = getWatchinShows().first { (watchinShow) -> Bool in
+            return watchinShow.idFormatted == show.idFormatted
+        }
+        guard let foundShow = searchedShow else {
+            return false
+        }
+        return foundShow.trackedFormatted
+    }
+
+    func isInWatchinLater(show: ShowDetailFormatted) -> Bool {
+        let searchedShow = getWatchinShows().first { (watchinShow) -> Bool in
+            return watchinShow.idFormatted == show.idFormatted
+        }
+        guard let foundShow = searchedShow else {
+            return false
+        }
+        return !foundShow.trackedFormatted
     }
 
     // MARK: - Private
