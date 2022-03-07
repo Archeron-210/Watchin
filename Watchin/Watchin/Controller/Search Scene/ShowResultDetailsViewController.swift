@@ -167,8 +167,11 @@ class ShowResultDetailsViewController: UIViewController {
     }
 
     private func watchinLaterPlatformPickerViewAlert() {
-        let alert = UIAlertController(title: "Please select a platform :", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
         alert.isModalInPresentation = true
+        let titleAttributes = [NSAttributedString.Key.font: UIFont(name: "Kohinoor Telugu", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor(red: 61, green: 176, blue: 239)]
+        let titleString = NSAttributedString(string: "Please select a platform :", attributes: titleAttributes)
+        alert.setValue(titleString, forKey: "attributedTitle")
 
         let pickerView = UIPickerView()
         pickerView.translatesAutoresizingMaskIntoConstraints = false
@@ -183,8 +186,6 @@ class ShowResultDetailsViewController: UIViewController {
 
         pickerView.dataSource = self
         pickerView.delegate = self
-
-
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(cancelAction)

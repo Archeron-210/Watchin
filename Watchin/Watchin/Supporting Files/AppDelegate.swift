@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarImage = UIImage(named: "tabBarGradient")
         UITabBar.appearance().unselectedItemTintColor = .white
         UITabBar.appearance().backgroundImage = tabBarImage?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch)
+
+        UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = UIColor(red: 61, green: 176, blue: 239)
+
         return true
     }
 
