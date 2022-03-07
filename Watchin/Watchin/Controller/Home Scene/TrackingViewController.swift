@@ -28,7 +28,6 @@ class TrackingViewController: UIViewController {
 
     var show: ShowDetailFormatted?
     var episodesBySeason: [[EpisodeFormatted]] = []
-    var watchedEpisodes: [EpisodeFormatted] = []
 
     private let watchinShowRepository = WatchinShowRepository.shared
     private let episodeDetailRepository = EpisodeDetailRepository.shared
@@ -43,7 +42,6 @@ class TrackingViewController: UIViewController {
         }
         displayShowInfos()
         episodesBySeason = episodeDetailRepository.getEpisodes(for: show)
-        watchedEpisodes = episodeDetailRepository.getWatchedEpisodes(for: show)
         tableView.reloadData()
     }
 
@@ -62,7 +60,7 @@ class TrackingViewController: UIViewController {
     }
 
     @IBAction func startAgainButtonTapped(_ sender: UIButton) {
-        startAgain()
+        startAgainAlert()
     }
 
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
@@ -90,7 +88,7 @@ class TrackingViewController: UIViewController {
         guard let show = show else {
             return
         }
-        watchedEpisodes = episodeDetailRepository.getWatchedEpisodes(for: show)
+        let watchedEpisodes = episodeDetailRepository.getWatchedEpisodes(for: show)
         episodesNumberLabel.text = "Episodes : \(watchedEpisodes.count)/\(show.numberOfEpisodes)"
 
         let watchedSeasons = episodesBySeason.filter {
@@ -119,13 +117,13 @@ class TrackingViewController: UIViewController {
         self.present(platformPickerViewController, animated: true)
     }
 
-    private func startAgain() {
-        if watchedEpisodes.count > 0 {
-            startAgainAlert()
-        } else {
-            noEpisodeWatchedAlert()
-        }
-    }
+//    private func startAgain() {
+//        if watchedEpisodes.count > 0 {
+//            startAgainAlert()
+//        } else {
+//            noEpisodeWatchedAlert()
+//        }
+//    }
 
     private func deleteAndGoBackToHome() {
         guard let show = show else {
@@ -208,7 +206,7 @@ extension TrackingViewController: EpisodeTableViewCellActionDelegate {
         // update episode data
         episodesBySeason = episodeDetailRepository.getEpisodes(for: show)
         displayEpisodesAndSeasons()
-        cell.configure(for: episodesBySeason[indexPath.section][indexPath.row])
+        cell.configure(for: episode)
     }
 }
 

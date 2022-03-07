@@ -52,7 +52,7 @@ class ShowResultDetailsViewController: UIViewController {
     }
 
     @IBAction func addToWatchinLaterButtonTapped(_ sender: UIButton) {
-        saveShowToWatchinLater()
+        watchinLaterPlatformPickerViewAlert()
         configureAddToWatchinLaterButton()
     }
 
@@ -130,9 +130,7 @@ class ShowResultDetailsViewController: UIViewController {
         }
         let success = watchinShowRepository.saveWatchinShow(show: show)
 
-        if success {
-            watchinLaterPlatformPickerViewAlert()
-        } else {
+        if !success {
             errorAlert(message: "We were unable to add this show to Watchin' Later, please check if you did not already save it to your shows in your Home page !")
         }
     }
@@ -147,7 +145,7 @@ class ShowResultDetailsViewController: UIViewController {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
-    private func savePlatform(from pickerView: UIPickerView ) {
+    private func savePlatform(from pickerView: UIPickerView) {
         guard let tvShow = tvShow else {
             return
         }
@@ -191,7 +189,10 @@ class ShowResultDetailsViewController: UIViewController {
         alert.addAction(cancelAction)
 
         alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { (UIAlertAction) in
+
+            self.saveShowToWatchinLater()
             self.savePlatform(from: pickerView)
+            self.configureAddToWatchinLaterButton()
                 }))
                 self.present(alert,animated: true, completion: nil )
     }
@@ -211,7 +212,7 @@ class ShowResultDetailsViewController: UIViewController {
         }
 
         let isSavedToYourShows = watchinShowRepository.isInYourShows(show: show)
-        let title = isSavedToYourShows ? "Added to your shows" : "Add to your shows"
+        let title = isSavedToYourShows ? "Added to your shows !" : "Add to your shows"
         let color = isSavedToYourShows ? UIColor(red: 61, green: 176, blue: 239) : UIColor.white
         let backgroundColor = isSavedToYourShows ? UIColor.white : UIColor.clear
 
@@ -228,7 +229,7 @@ class ShowResultDetailsViewController: UIViewController {
         }
 
         let isInWatchinLater = watchinShowRepository.isInWatchinLater(show: show)
-        let title = isInWatchinLater ? "Added to your Watchin' Later" : "Add to Watchin' Later"
+        let title = isInWatchinLater ? "Added to Watchin' Later !" : "Add to Watchin' Later"
         let color = isInWatchinLater ? UIColor(red: 61, green: 176, blue: 239) : UIColor.white
         let backgroundColor = isInWatchinLater ? UIColor.white : UIColor.clear
 
