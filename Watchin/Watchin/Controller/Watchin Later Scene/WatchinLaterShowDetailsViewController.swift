@@ -31,6 +31,9 @@ class WatchinLaterShowDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setButtonAspect(for: changePlatformButton)
+        setButtonAspect(for: startWatchinItButton)
+        displayShowInfos()
     }
 
     // MARK: - Actions
@@ -42,6 +45,39 @@ class WatchinLaterShowDetailsViewController: UIViewController {
     }
 
     // MARK: - Private
+
+    private func displayShowInfos() {
+        guard let show = show else {
+            return
+        }
+
+        setImage()
+        showTitleLabel.text = show.nameFormatted
+        startDateAndStatusLabel.text = "\(show.startDateFormatted) - \(show.statusFormatted)"
+        genresLabel.text = show.genresFormatted
+        seasonsLabel.text = "\(show.numberOfSeasons) Seasons"
+        episodesLabel.text = "\(show.numberOfEpisodes) Episodes"
+        platformNameLabel.text = show.platformFormatted
+    }
+
+    private func setImage() {
+        guard let show = show else {
+            return
+        }
+
+        if let imageUrl = URL(string: show.imageStringUrlFormatted) {
+            tvShowPosterImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "watchinIcon"))
+        } else {
+            tvShowPosterImageView.image = UIImage(named: "watchinIcon")
+        }
+    }
+
+    private func setButtonAspect(for button: UIButton) {
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.cornerRadius = 10
+        button.titleLabel?.numberOfLines = 1
+    }
 
 
     // MARK: - Alerts
