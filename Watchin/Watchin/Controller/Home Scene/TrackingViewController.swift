@@ -28,6 +28,7 @@ class TrackingViewController: UIViewController {
 
     var show: ShowDetailFormatted?
     var episodesBySeason: [[EpisodeFormatted]] = []
+    var watchedEpisodes: [EpisodeFormatted] = []
 
     private let watchinShowRepository = WatchinShowRepository.shared
     private let episodeDetailRepository = EpisodeDetailRepository.shared
@@ -42,6 +43,7 @@ class TrackingViewController: UIViewController {
         }
         displayShowInfos()
         episodesBySeason = episodeDetailRepository.getEpisodes(for: show)
+        watchedEpisodes = episodeDetailRepository.getWatchedEpisodes(for: show)
         tableView.reloadData()
     }
 
@@ -60,7 +62,7 @@ class TrackingViewController: UIViewController {
     }
 
     @IBAction func startAgainButtonTapped(_ sender: UIButton) {
-        startAgainAlert()
+        startAgain()
     }
 
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
@@ -88,7 +90,7 @@ class TrackingViewController: UIViewController {
         guard let show = show else {
             return
         }
-        let watchedEpisodes = episodeDetailRepository.getWatchedEpisodes(for: show)
+        watchedEpisodes = episodeDetailRepository.getWatchedEpisodes(for: show)
         episodesNumberLabel.text = "Episodes : \(watchedEpisodes.count)/\(show.numberOfEpisodes)"
 
         let watchedSeasons = episodesBySeason.filter {
@@ -117,8 +119,16 @@ class TrackingViewController: UIViewController {
         self.present(platformPickerViewController, animated: true)
     }
 
+    private func startAgain() {
+        if watchedEpisodes.count > 0 {
+            startAgainAlert()
+        } else {
+            noEpisodeWatchedAlert()
+        }
+    }
+
     private func deleteAndGoBackToHome() {
-        guard let show = self.show else {
+        guard let show = show else {
             return
         }
         watchinShowRepository.deleteWatchinShow(show: show)
@@ -148,6 +158,13 @@ class TrackingViewController: UIViewController {
         present(alert, animated: true)
     }
 
+    private func noEpisodeWatchedAlert() {
+        let alert = UIAlertController(title: "⚠️", message: "No episode watched, nothing to delete here !", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok, my bad !", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
+
 
     // MARK: - UI Aspect
 
@@ -174,6 +191,7 @@ extension TrackingViewController: PlatformPickerViewControllerDismissDelegate {
     // MARK: - EpisodeCell Delegate
 
 extension TrackingViewController: EpisodeTableViewCellActionDelegate {
+
     func sawItButtonTapped(in cell: EpisodeTableViewCell) {
         // check if there are an indexPath and a show
         guard let indexPath = tableView.indexPath(for: cell), let show = show else {
@@ -214,7 +232,6 @@ extension TrackingViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        // ??? à checker
         guard episodesBySeason.count > indexPath.section,
               episodesBySeason[indexPath.section].count > indexPath.row else {
             return UITableViewCell()
@@ -247,11 +264,11 @@ extension TrackingViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        40.0
+        return 40.0
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        120.0
+        return 120.0
     }
 }
 

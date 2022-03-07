@@ -20,6 +20,7 @@ class WatchinLaterShowDetailsViewController: UIViewController {
     @IBOutlet weak var platformNameLabel: UILabel!
     @IBOutlet weak var changePlatformButton: UIButton!
     @IBOutlet weak var startWatchinItButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
 
     // MARK: - Properties
 
@@ -33,6 +34,7 @@ class WatchinLaterShowDetailsViewController: UIViewController {
 
         setButtonAspect(for: changePlatformButton)
         setButtonAspect(for: startWatchinItButton)
+        setButtonAspect(for: deleteButton)
         displayShowDetails()
     }
 
@@ -42,6 +44,10 @@ class WatchinLaterShowDetailsViewController: UIViewController {
     }
 
     @IBAction func startWatchinItButtonTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func deleteButtonTapped(_ sender: UIButton) {
+        deleteAlert()
     }
 
     // MARK: - Private
@@ -72,6 +78,16 @@ class WatchinLaterShowDetailsViewController: UIViewController {
         }
     }
 
+    private func deleteAndGoBackToWatchinLater() {
+        guard let show = show else {
+            return
+        }
+        watchinShowRepository.deleteWatchinShow(show: show)
+        navigationController?.popViewController(animated: true)
+    }
+
+    // MARK: - UI Aspect
+
     private func setButtonAspect(for button: UIButton) {
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.white.cgColor
@@ -81,5 +97,14 @@ class WatchinLaterShowDetailsViewController: UIViewController {
 
 
     // MARK: - Alerts
+
+    private func deleteAlert() {
+        let alert = UIAlertController(title: "⚠️", message: "You are about to delete this show from your Watchin' later list. Are you sure ?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+            self.deleteAndGoBackToWatchinLater()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
 
 }
