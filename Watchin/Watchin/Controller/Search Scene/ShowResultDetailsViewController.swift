@@ -130,7 +130,9 @@ class ShowResultDetailsViewController: UIViewController {
         }
         let success = watchinShowRepository.saveWatchinShow(show: show)
 
-        if !success {
+        if success {
+            saveEpisodes()
+        } else {
             errorAlert(message: "We were unable to add this show to Watchin' Later, please check if you did not already save it to your shows in your Home page !")
         }
     }
@@ -221,6 +223,7 @@ class ShowResultDetailsViewController: UIViewController {
         addToYourShowsButton.tintColor = color
         addToYourShowsButton.backgroundColor = backgroundColor
         addToYourShowsButton.isEnabled = !isSavedToYourShows
+        addToWatchinLaterButton.isEnabled = !isSavedToYourShows
     }
 
     private func configureAddToWatchinLaterButton() {
@@ -238,6 +241,7 @@ class ShowResultDetailsViewController: UIViewController {
         addToWatchinLaterButton.tintColor = color
         addToWatchinLaterButton.backgroundColor = backgroundColor
         addToWatchinLaterButton.isEnabled = !isInWatchinLater
+        addToYourShowsButton.isEnabled = !isInWatchinLater
     }
 
     private func setButtonAspect(for button: UIButton) {

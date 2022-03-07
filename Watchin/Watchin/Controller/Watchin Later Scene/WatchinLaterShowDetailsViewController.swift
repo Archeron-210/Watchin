@@ -45,6 +45,7 @@ class WatchinLaterShowDetailsViewController: UIViewController {
     }
 
     @IBAction func startWatchinItButtonTapped(_ sender: UIButton) {
+        startWatchinItAlert()
     }
     
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
@@ -88,6 +89,14 @@ class WatchinLaterShowDetailsViewController: UIViewController {
         self.present(platformPickerViewController, animated: true)
     }
 
+    private func moveToYourShowsAndGoBack() {
+        guard let show = show else {
+            return
+        }
+        watchinShowRepository.updateShowTrackedStatus(show: show)
+        navigationController?.popViewController(animated: true)
+    }
+
     private func deleteAndGoBackToWatchinLater() {
         guard let show = show else {
             return
@@ -117,7 +126,18 @@ class WatchinLaterShowDetailsViewController: UIViewController {
         present(alert, animated: true)
     }
 
+    private func startWatchinItAlert() {
+        let alert = UIAlertController(title: "⚠️", message: "You are about to move this show from this list to your shows. Are you sure ?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Move it to my shows !", style: .default, handler: { action in
+            self.moveToYourShowsAndGoBack()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+
 }
+
+    // MARK: - Dismiss Delegate
 
 extension WatchinLaterShowDetailsViewController: PlatformPickerViewControllerDismissDelegate {
     func didDismiss() {

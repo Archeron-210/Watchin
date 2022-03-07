@@ -23,11 +23,6 @@ class WatchinShowRepository {
 
     // MARK: - Data Management
 
-    func getShows() -> [ShowDetailFormatted] {
-        // creates a copy to use elsewhere in the app, without using specifically an object that has a CoreData reference by transforming a WatchinShow in a ShowDetailFormatted object :
-        return getWatchinShows().map { Show(showDetailFormatted: $0) }
-    }
-
     func getTrackedShows() -> [ShowDetailFormatted]  {
         let shows = getWatchinShows().map { Show(showDetailFormatted: $0) }
         let trackedShows = shows.filter { $0.trackedFormatted == true }

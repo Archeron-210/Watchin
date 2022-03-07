@@ -225,6 +225,7 @@ extension TrackingViewController: UITableViewDataSource {
         let episode = episodesBySeason[indexPath.section][indexPath.row]
         cell.configure(for: episode)
         cell.delegate = self
+        cell.selectionStyle = .none
 
         return cell
     }

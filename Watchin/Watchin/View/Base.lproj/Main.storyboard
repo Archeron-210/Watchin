@@ -1215,7 +1215,7 @@
                                 <rect key="frame" x="10" y="302" width="394" height="14"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator" translatesAutoresizingMaskIntoConstraints="NO" id="GXJ-MF-53r">
-                                <rect key="frame" x="10" y="489" width="394" height="14"/>
+                                <rect key="frame" x="10" y="469" width="394" height="14"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 Seasons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TII-aM-IRc">
                                 <rect key="frame" x="20" y="326" width="121" height="31"/>
@@ -1230,19 +1230,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watchin' later on :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1H-cl-EEr">
-                                <rect key="frame" x="111.5" y="407" width="191" height="33"/>
+                                <rect key="frame" x="111.5" y="387" width="191" height="33"/>
                                 <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Platform name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9c-h1-vlM">
-                                <rect key="frame" x="10" y="450" width="394" height="34"/>
+                                <rect key="frame" x="10" y="430" width="394" height="34"/>
                                 <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="0Nd-xY-CbL">
-                                <rect key="frame" x="110" y="608" width="194" height="40"/>
+                                <rect key="frame" x="110" y="588" width="194" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ptn-DL-ghA"/>
                                 </constraints>
@@ -1256,7 +1256,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cBg-lI-SCv">
-                                <rect key="frame" x="115" y="548" width="184" height="40"/>
+                                <rect key="frame" x="115" y="528" width="184" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="H4r-BI-LLh"/>
                                 </constraints>
@@ -1270,7 +1270,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIO-j8-SbU">
-                                <rect key="frame" x="168" y="668" width="78" height="40"/>
+                                <rect key="frame" x="168" y="648" width="78" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Qg9-T5-YHY"/>
                                 </constraints>
@@ -1290,7 +1290,7 @@
                             <constraint firstItem="cBg-lI-SCv" firstAttribute="top" secondItem="GXJ-MF-53r" secondAttribute="bottom" constant="45" id="2SL-hL-qHP"/>
                             <constraint firstItem="TII-aM-IRc" firstAttribute="leading" secondItem="oMA-yU-dsZ" secondAttribute="leading" constant="20" id="66g-bD-vJ3"/>
                             <constraint firstItem="GXJ-MF-53r" firstAttribute="leading" secondItem="oMA-yU-dsZ" secondAttribute="leading" constant="10" id="8wB-cR-Kca"/>
-                            <constraint firstItem="a1H-cl-EEr" firstAttribute="top" secondItem="TII-aM-IRc" secondAttribute="bottom" constant="50" id="94w-Cu-Abv"/>
+                            <constraint firstItem="a1H-cl-EEr" firstAttribute="top" secondItem="TII-aM-IRc" secondAttribute="bottom" constant="30" id="94w-Cu-Abv"/>
                             <constraint firstItem="54d-nX-nUG" firstAttribute="top" secondItem="v9O-Za-BkD" secondAttribute="bottom" constant="2" id="BKc-Kz-C7j"/>
                             <constraint firstItem="TII-aM-IRc" firstAttribute="top" secondItem="gij-mv-boH" secondAttribute="bottom" constant="10" id="CMH-6r-Kr1"/>
                             <constraint firstItem="xIO-j8-SbU" firstAttribute="top" secondItem="0Nd-xY-CbL" secondAttribute="bottom" constant="20" id="Dyb-KC-rY2"/>
