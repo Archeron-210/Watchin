@@ -175,10 +175,10 @@
 		20C56D9027D0D17700927D6F /* Home Scene */ = {
 			isa = PBXGroup;
 			children = (
-				20C56D8227CE7B3200927D6F /* PlatformPickerViewController.swift */,
-				20F1B30627C69BFB00AC3874 /* TrackingViewController.swift */,
 				20E164BC27B3CF020057E42C /* EditProfileViewController.swift */,
 				20E164A827B182190057E42C /* HomeViewController.swift */,
+				20F1B30627C69BFB00AC3874 /* TrackingViewController.swift */,
+				20C56D8227CE7B3200927D6F /* PlatformPickerViewController.swift */,
 			);
 			path = "Home Scene";
 			sourceTree = "<group>";

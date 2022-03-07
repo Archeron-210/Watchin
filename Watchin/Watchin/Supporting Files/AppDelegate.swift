@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor(red: 61, green: 176, blue: 239)
         if let customFont = UIFont(name: "Kohinoor Telugu", size: 22.0) {
             UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
+            UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .highlighted)
         }
         let navBarImage = UIImage(named: "navBarGradient")
 

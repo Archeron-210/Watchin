@@ -32,15 +32,19 @@ class ShowResultDetailsViewController: UIViewController {
 
     // MARK: - Life Cycle
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        configureAddToYourShowsButton()
+        configureAddToWatchinLaterButton()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setButtonAspect(for: addToYourShowsButton)
         setButtonAspect(for: addToWatchinLaterButton)
         setButtonAspect(for: seeMoreButton)
-        configureAddToYourShowsButton()
-        configureAddToWatchinLaterButton()
-
         displayShowDetails()
     }
 
@@ -156,6 +160,24 @@ class ShowResultDetailsViewController: UIViewController {
         watchinShowRepository.updateWatchinShowPlatform(show: tvShow, platform: platform)
     }
 
+    private func createPlatformsPickerView(for alert: UIAlertController) -> UIPickerView {
+        let pickerView = UIPickerView()
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
+        alert.view.addSubview(pickerView)
+
+        NSLayoutConstraint.activate([
+            pickerView.leadingAnchor.constraint(equalTo: alert.view.leadingAnchor),
+            pickerView.trailingAnchor.constraint(equalTo: alert.view.trailingAnchor),
+            pickerView.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 25),
+            pickerView.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -50)
+        ])
+
+        pickerView.dataSource = self
+        pickerView.delegate = self
+
+        return pickerView
+    }
+
     // MARK: - Alerts
 
     private func successAlert(message: String) {
@@ -173,19 +195,7 @@ class ShowResultDetailsViewController: UIViewController {
         let titleString = NSAttributedString(string: "Please select a platform :", attributes: titleAttributes)
         alert.setValue(titleString, forKey: "attributedTitle")
 
-        let pickerView = UIPickerView()
-        pickerView.translatesAutoresizingMaskIntoConstraints = false
-        alert.view.addSubview(pickerView)
-
-        NSLayoutConstraint.activate([
-            pickerView.leadingAnchor.constraint(equalTo: alert.view.leadingAnchor),
-            pickerView.trailingAnchor.constraint(equalTo: alert.view.trailingAnchor),
-            pickerView.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 25),
-            pickerView.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -50)
-        ])
-
-        pickerView.dataSource = self
-        pickerView.delegate = self
+        let pickerView = createPlatformsPickerView(for: alert)
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
@@ -243,6 +253,19 @@ class ShowResultDetailsViewController: UIViewController {
         addToWatchinLaterButton.isEnabled = !isInWatchinLater
         addToYourShowsButton.isEnabled = !isInWatchinLater
     }
+
+//    private func configureButton(for button: UIButton, of show: ShowDetailFormatted, condition: Bool, messageTrue: String, messageFalse: String) {
+//
+//        let title = condition ? messageTrue : messageFalse
+//        let color = condition ? UIColor(red: 61, green: 176, blue: 239) : UIColor.white
+//        let backgroundColor = condition ? UIColor.white : UIColor.clear
+//
+//        button.setTitle(title, for: .normal)
+//        button.setTitleColor(color, for: .normal)
+//        button.tintColor = color
+//        button.backgroundColor = backgroundColor
+//        button.isEnabled = !condition
+//    }
 
     private func setButtonAspect(for button: UIButton) {
         button.layer.borderWidth = 1
