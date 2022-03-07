@@ -1171,7 +1171,7 @@
         <!--Watchin Later Show Details View Controller-->
         <scene sceneID="1lw-70-Prg">
             <objects>
-                <viewController id="1ma-lk-7Aj" customClass="WatchinLaterShowDetailsViewController" customModule="Watchin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WatchinLaterShowDetailsViewController" id="1ma-lk-7Aj" customClass="WatchinLaterShowDetailsViewController" customModule="Watchin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Qu-Nf-ObF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1244,6 +1244,9 @@
                                 <state key="normal" title="Start Watchin' it !">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="startWatchinItButtonTapped:" destination="1ma-lk-7Aj" eventType="touchUpInside" id="ocu-Kg-GiY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cBg-lI-SCv">
                                 <rect key="frame" x="115" y="548" width="184" height="40"/>
@@ -1255,6 +1258,9 @@
                                 <state key="normal" title="Change platform">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="changePlatformButtonTapped:" destination="1ma-lk-7Aj" eventType="touchUpInside" id="XL3-NV-rxG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oMA-yU-dsZ"/>
@@ -1295,6 +1301,17 @@
                             <constraint firstItem="gij-mv-boH" firstAttribute="leading" secondItem="oMA-yU-dsZ" secondAttribute="leading" constant="10" id="zoR-ob-jRq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="changePlatformButton" destination="cBg-lI-SCv" id="N1P-bD-fGd"/>
+                        <outlet property="episodesLabel" destination="9rg-qi-Fes" id="vxJ-Tu-dlC"/>
+                        <outlet property="genresLabel" destination="54d-nX-nUG" id="lw5-zw-ggn"/>
+                        <outlet property="platformNameLabel" destination="h9c-h1-vlM" id="dL2-19-wsG"/>
+                        <outlet property="seasonsLabel" destination="TII-aM-IRc" id="BhW-px-CjB"/>
+                        <outlet property="showTitleLabel" destination="20R-Ge-O4T" id="X4W-7R-KBD"/>
+                        <outlet property="startDateAndStatusLabel" destination="v9O-Za-BkD" id="uy3-Zq-qUt"/>
+                        <outlet property="startWatchinItButton" destination="0Nd-xY-CbL" id="Rs8-e1-BNr"/>
+                        <outlet property="tvShowPosterImageView" destination="hv7-59-rk2" id="izn-gD-o2w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fb-Hm-l2q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -58,6 +58,21 @@ extension WatchinLaterViewController: UITableViewDataSource {
 }
 
 extension WatchinLaterViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        goToWatchinLaterShowDetails(for: watchinLaterShows[indexPath.row])
+    }
+
+    private func goToWatchinLaterShowDetails(for show: ShowDetailFormatted) {
+        guard let watchinLaterShowDetailsViewController = self.storyboard?.instantiateViewController(identifier: "WatchinLaterShowDetailsViewController") as? WatchinLaterShowDetailsViewController else {
+            return
+        }
+
+        watchinLaterShowDetailsViewController.show = show
+
+        self.navigationController?.pushViewController(watchinLaterShowDetailsViewController, animated: true)
+    }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 160.0
     }
