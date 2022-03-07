@@ -1,13 +1,13 @@
 //
-//  ShowDetailsViewController.swift
+//  WatchinLaterShowDetailsViewController.swift
 //  Watchin
 //
-//  Created by Archeron on 07/02/2022.
+//  Created by Archeron on 07/03/2022.
 //
 
 import UIKit
 
-class ShowDetailsViewController: UIViewController {
+class WatchinLaterShowDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
