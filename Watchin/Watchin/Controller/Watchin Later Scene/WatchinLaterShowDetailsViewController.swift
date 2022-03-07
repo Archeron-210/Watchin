@@ -41,6 +41,7 @@ class WatchinLaterShowDetailsViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func changePlatformButtonTapped(_ sender: UIButton) {
+        goToPlatformsPicker()
     }
 
     @IBAction func startWatchinItButtonTapped(_ sender: UIButton) {
@@ -78,6 +79,15 @@ class WatchinLaterShowDetailsViewController: UIViewController {
         }
     }
 
+    private func goToPlatformsPicker() {
+        guard let currentShow = show, let platformPickerViewController = self.storyboard?.instantiateViewController(identifier: "PlatformPickerViewController") as? PlatformPickerViewController else {
+            return
+        }
+        platformPickerViewController.show = currentShow
+        platformPickerViewController.delegate = self
+        self.present(platformPickerViewController, animated: true)
+    }
+
     private func deleteAndGoBackToWatchinLater() {
         guard let show = show else {
             return
@@ -107,4 +117,14 @@ class WatchinLaterShowDetailsViewController: UIViewController {
         present(alert, animated: true)
     }
 
+}
+
+extension WatchinLaterShowDetailsViewController: PlatformPickerViewControllerDismissDelegate {
+    func didDismiss() {
+        guard let show = show else {
+            return
+        }
+        self.show = watchinShowRepository.getWatchinShow(id: show.idFormatted)
+        displayShowDetails()
+    }
 }

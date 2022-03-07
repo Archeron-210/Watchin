@@ -117,14 +117,6 @@ class TrackingViewController: UIViewController {
         self.present(platformPickerViewController, animated: true)
     }
 
-//    private func startAgain() {
-//        if watchedEpisodes.count > 0 {
-//            startAgainAlert()
-//        } else {
-//            noEpisodeWatchedAlert()
-//        }
-//    }
-
     private func deleteAndGoBackToHome() {
         guard let show = show else {
             return
@@ -151,18 +143,13 @@ class TrackingViewController: UIViewController {
                 return
             }
             self.episodeDetailRepository.deleteWatchedEpisodes(for: show)
+            self.episodesBySeason = self.episodeDetailRepository.getEpisodes(for: show)
+            self.displayEpisodesAndSeasons()
+            self.tableView.reloadData()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true)
     }
-
-    private func noEpisodeWatchedAlert() {
-        let alert = UIAlertController(title: "⚠️", message: "No episode watched, nothing to delete here !", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ok, my bad !", style: .default, handler: nil)
-        alert.addAction(action)
-        present(alert, animated: true)
-    }
-
 
     // MARK: - UI Aspect
 
@@ -206,7 +193,7 @@ extension TrackingViewController: EpisodeTableViewCellActionDelegate {
         // update episode data
         episodesBySeason = episodeDetailRepository.getEpisodes(for: show)
         displayEpisodesAndSeasons()
-        cell.configure(for: episode)
+        cell.configure(for: episodesBySeason[indexPath.section][indexPath.row])
     }
 }
 
