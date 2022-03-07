@@ -33,7 +33,7 @@ class WatchinLaterShowDetailsViewController: UIViewController {
 
         setButtonAspect(for: changePlatformButton)
         setButtonAspect(for: startWatchinItButton)
-        displayShowInfos()
+        displayShowDetails()
     }
 
     // MARK: - Actions
@@ -46,7 +46,7 @@ class WatchinLaterShowDetailsViewController: UIViewController {
 
     // MARK: - Private
 
-    private func displayShowInfos() {
+    private func displayShowDetails() {
         guard let show = show else {
             return
         }

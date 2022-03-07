@@ -131,7 +131,7 @@ class ShowResultDetailsViewController: UIViewController {
         let success = watchinShowRepository.saveWatchinShow(show: show)
 
         if success {
-            successAlert(message: "Added to Watchin' Later ! 🔖")
+            watchinLaterPlatformPickerViewAlert()
         } else {
             errorAlert(message: "We were unable to add this show to Watchin' Later, please check if you did not already save it to your shows in your Home page !")
         }
@@ -147,6 +147,15 @@ class ShowResultDetailsViewController: UIViewController {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
+    private func savePlatform(from pickerView: UIPickerView ) {
+        guard let tvShow = tvShow else {
+            return
+        }
+        let platformIndex = pickerView.selectedRow(inComponent: 0)
+        let platform = sortedPlatformNames[platformIndex]
+        watchinShowRepository.updateWatchinShowPlatform(show: tvShow, platform: platform)
+    }
+
     // MARK: - Alerts
 
     private func successAlert(message: String) {
@@ -155,6 +164,35 @@ class ShowResultDetailsViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             self?.dismiss(animated: true)
           }
+    }
+
+    private func watchinLaterPlatformPickerViewAlert() {
+        let alert = UIAlertController(title: "Please select a platform :", message: "", preferredStyle: .alert)
+        alert.isModalInPresentation = true
+
+        let pickerView = UIPickerView()
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
+        alert.view.addSubview(pickerView)
+
+        NSLayoutConstraint.activate([
+            pickerView.leadingAnchor.constraint(equalTo: alert.view.leadingAnchor),
+            pickerView.trailingAnchor.constraint(equalTo: alert.view.trailingAnchor),
+            pickerView.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 25),
+            pickerView.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -50)
+        ])
+
+        pickerView.dataSource = self
+        pickerView.delegate = self
+
+
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+
+        alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { (UIAlertAction) in
+            self.savePlatform(from: pickerView)
+                }))
+                self.present(alert,animated: true, completion: nil )
     }
 
     private func errorAlert(message: String) {
@@ -207,4 +245,28 @@ class ShowResultDetailsViewController: UIViewController {
         button.titleLabel?.numberOfLines = 1
     }
 
+}
+
+extension ShowResultDetailsViewController: UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return sortedPlatformNames.count
+    }
+
+}
+
+extension ShowResultDetailsViewController: UIPickerViewDelegate {
+
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let pickerLabel = UILabel()
+        pickerLabel.text = sortedPlatformNames[row]
+        pickerLabel.font = UIFont(name: "Kohinoor Telugu", size: 25)
+        pickerLabel.textColor = UIColor(red: 61, green: 176, blue: 239)
+        pickerLabel.textAlignment = .center
+        return pickerLabel
+    }
 }

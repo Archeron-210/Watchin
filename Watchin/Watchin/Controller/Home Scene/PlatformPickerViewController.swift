@@ -97,6 +97,7 @@ extension PlatformPickerViewController: UIPickerViewDataSource {
 }
 
 extension PlatformPickerViewController: UIPickerViewDelegate {
+    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let pickerLabel = UILabel()
         pickerLabel.text = sortedPlatformNames[row]
