@@ -7,17 +7,32 @@
 
 import Foundation
 
+struct ApiConfiguration {
+
+    let baseUrl: String
+
+    init(baseUrl: String) {
+        self.baseUrl = baseUrl
+    }
+
+    init() {
+        baseUrl = "https://www.episodate.com/api/"
+    }
+}
+
 class ShowService {
 
     // MARK: - Properties
 
     private let networkService: NetworkProtocol
+    private let apiConfiguration: ApiConfiguration
     private let baseUrl = "https://www.episodate.com/api/"
 
     // MARK: - Init
 
-    init(networkService: NetworkProtocol = NetworkService()) {
+    init(networkService: NetworkProtocol = NetworkService(), apiConfiguration: ApiConfiguration = ApiConfiguration()) {
         self.networkService = networkService
+        self.apiConfiguration = apiConfiguration
     }
 
     // MARK: - getSearchResults & getShowDetails
@@ -57,12 +72,11 @@ class ShowService {
         guard let text = searchText, let escapedText = escapeWhitespaces(for: text) else {
             return ""
         }
-
-        return "\(baseUrl)search?q=\(escapedText)&page=1"
+        return "\(apiConfiguration.baseUrl)search?q=\(escapedText)&page=1"
     }
 
     private func computeShowDetailsBaseUrl(for tvShowName: String) -> String {
-        return "\(baseUrl)show-details?q=\(tvShowName)"
+        return "\(apiConfiguration.baseUrl)show-details?q=\(tvShowName)"
     }
 
     private func escapeWhitespaces(for text: String) -> String? {

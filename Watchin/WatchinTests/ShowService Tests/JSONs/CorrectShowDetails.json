@@ -1,0 +1,1058 @@
+{
+    "tvShow": {
+        "id": 29560,
+        "name": "Arrow",
+        "permalink": "arrow",
+        "url": "https://www.episodate.com/tv-show/arrow",
+        "description": "Arrow is an American television series developed by writer/producers Greg Berlanti, Marc Guggenheim, and Andrew Kreisberg. It is based on the DC Comics character Green Arrow, a costumed crime-fighter created by Mort Weisinger and George Papp. It premiered in North America on The CW on October 10, 2012, with international broadcasting taking place in late 2012. Primarily filmed in Vancouver, British Columbia, Canada, the series follows billionaire playboy Oliver Queen, portrayed by Stephen Amell, who, five years after being stranded on a hostile island, returns home to fight crime and corruption as a secret vigilante whose weapon of choice is a bow and arrow. Unlike in the comic books, Queen does not go by the alias \"Green Arrow\". The series takes a realistic look at the Green Arrow character, as well as other characters from the DC Comics universe. Although Oliver Queen/Green Arrow had been featured in the television series Smallville from 2006 to 2011, the producers decided to start clean and find a new actor (Amell) to portray the character. Arrow focuses on the humanity of Oliver Queen, and how he was changed by time spent shipwrecked on an island. Most episodes have flashback scenes to the five years in which Oliver was missing.",
+        "description_source": "http://en.wikipedia.org/wiki/Arrow_%28TV_series%29",
+        "start_date": "2012-10-10",
+        "end_date": null,
+        "country": "US",
+        "status": "Ended",
+        "runtime": 60,
+        "network": "The CW",
+        "youtube_link": null,
+        "image_path": "https://static.episodate.com/images/tv-show/full/29560.jpg",
+        "image_thumbnail_path": "https://static.episodate.com/images/tv-show/thumbnail/29560.jpg",
+        "rating": "9.1137",
+        "rating_count": "642",
+        "countdown": null,
+        "genres": [
+            "Drama",
+            "Action",
+            "Science-Fiction"
+        ],
+        "pictures": [
+            "https://static.episodate.com/images/episode/29560-242.jpg",
+            "https://static.episodate.com/images/episode/29560-804.jpg",
+            "https://static.episodate.com/images/episode/29560-664.jpg",
+            "https://static.episodate.com/images/episode/29560-120.jpg",
+            "https://static.episodate.com/images/episode/29560-764.jpg",
+            "https://static.episodate.com/images/episode/29560-792.jpg",
+            "https://static.episodate.com/images/episode/29560-159.jpg"
+        ],
+        "episodes": [
+            {
+                "season": 1,
+                "episode": 1,
+                "name": "Pilot",
+                "air_date": "2012-10-11 00:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 2,
+                "name": "Honor Thy Father",
+                "air_date": "2012-10-18 00:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 3,
+                "name": "Lone Gunmen",
+                "air_date": "2012-10-25 00:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 4,
+                "name": "An Innocent Man",
+                "air_date": "2012-11-01 00:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 5,
+                "name": "Damaged",
+                "air_date": "2012-11-08 01:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 6,
+                "name": "Legacies",
+                "air_date": "2012-11-15 01:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 7,
+                "name": "Muse of Fire",
+                "air_date": "2012-11-29 01:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 8,
+                "name": "Vendetta",
+                "air_date": "2012-12-06 01:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 9,
+                "name": "Year's End",
+                "air_date": "2012-12-13 01:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 10,
+                "name": "Burned",
+                "air_date": "2013-01-17 01:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 11,
+                "name": "Trust but Verify",
+                "air_date": "2013-01-24 01:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 12,
+                "name": "Vertigo",
+                "air_date": "2013-01-31 01:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 13,
+                "name": "Betrayal",
+                "air_date": "2013-02-07 01:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 14,
+                "name": "The Odyssey",
+                "air_date": "2013-02-14 01:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 15,
+                "name": "Dodger",
+                "air_date": "2013-02-21 01:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 16,
+                "name": "Dead to Rights",
+                "air_date": "2013-02-28 01:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 17,
+                "name": "The Huntress Returns",
+                "air_date": "2013-03-21 00:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 18,
+                "name": "Salvation",
+                "air_date": "2013-03-28 00:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 19,
+                "name": "Unfinished Business",
+                "air_date": "2013-04-04 00:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 20,
+                "name": "Home Invasion",
+                "air_date": "2013-04-25 00:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 21,
+                "name": "The Undertaking",
+                "air_date": "2013-05-02 00:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 22,
+                "name": "Darkness on the Edge of Town",
+                "air_date": "2013-05-09 00:00:00"
+            },
+            {
+                "season": 1,
+                "episode": 23,
+                "name": "Sacrifice",
+                "air_date": "2013-05-16 00:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 1,
+                "name": "City of Heroes",
+                "air_date": "2013-10-10 00:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 2,
+                "name": "Identity",
+                "air_date": "2013-10-17 00:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 3,
+                "name": "Broken Dolls",
+                "air_date": "2013-10-24 00:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 4,
+                "name": "Crucible",
+                "air_date": "2013-10-31 00:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 5,
+                "name": "League of Assassins",
+                "air_date": "2013-11-07 01:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 6,
+                "name": "Keep Your Enemies Closer",
+                "air_date": "2013-11-14 01:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 7,
+                "name": "State v. Queen",
+                "air_date": "2013-11-21 01:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 8,
+                "name": "The Scientist",
+                "air_date": "2013-12-05 01:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 9,
+                "name": "Three Ghosts",
+                "air_date": "2013-12-12 01:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 10,
+                "name": "Blast Radius",
+                "air_date": "2014-01-16 01:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 11,
+                "name": "Blind Spot",
+                "air_date": "2014-01-23 01:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 12,
+                "name": "Tremors",
+                "air_date": "2014-01-30 01:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 13,
+                "name": "Heir to the Demon",
+                "air_date": "2014-02-06 01:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 14,
+                "name": "Time of Death",
+                "air_date": "2014-02-27 01:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 15,
+                "name": "The Promise",
+                "air_date": "2014-03-06 01:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 16,
+                "name": "Suicide Squad",
+                "air_date": "2014-03-20 00:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 17,
+                "name": "Birds of Prey",
+                "air_date": "2014-03-27 00:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 18,
+                "name": "Deathstroke",
+                "air_date": "2014-04-03 00:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 19,
+                "name": "The Man Under the Hood",
+                "air_date": "2014-04-17 00:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 20,
+                "name": "Seeing Red",
+                "air_date": "2014-04-24 00:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 21,
+                "name": "City of Blood",
+                "air_date": "2014-05-01 00:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 22,
+                "name": "Streets of Fire",
+                "air_date": "2014-05-08 00:00:00"
+            },
+            {
+                "season": 2,
+                "episode": 23,
+                "name": "Unthinkable",
+                "air_date": "2014-05-15 00:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 1,
+                "name": "The Calm",
+                "air_date": "2014-10-09 00:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 2,
+                "name": "Sara",
+                "air_date": "2014-10-16 00:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 3,
+                "name": "Corto Maltese",
+                "air_date": "2014-10-23 00:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 4,
+                "name": "The Magician",
+                "air_date": "2014-10-30 00:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 5,
+                "name": "The Secret Origin of Felicity Smoak",
+                "air_date": "2014-11-06 01:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 6,
+                "name": "Guilty",
+                "air_date": "2014-11-13 01:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 7,
+                "name": "Draw Back Your Bow",
+                "air_date": "2014-11-20 01:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 8,
+                "name": "The Brave and the Bold",
+                "air_date": "2014-12-04 01:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 9,
+                "name": "The Climb",
+                "air_date": "2014-12-11 01:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 10,
+                "name": "Left Behind",
+                "air_date": "2015-01-22 01:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 11,
+                "name": "Midnight City",
+                "air_date": "2015-01-29 01:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 12,
+                "name": "Uprising",
+                "air_date": "2015-02-05 01:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 13,
+                "name": "Canaries",
+                "air_date": "2015-02-12 01:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 14,
+                "name": "The Return",
+                "air_date": "2015-02-19 01:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 15,
+                "name": "Nanda Parbat",
+                "air_date": "2015-02-26 01:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 16,
+                "name": "The Offer",
+                "air_date": "2015-03-19 00:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 17,
+                "name": "Suicidal Tendencies",
+                "air_date": "2015-03-26 00:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 18,
+                "name": "Public Enemy",
+                "air_date": "2015-04-02 00:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 19,
+                "name": "Broken Arrow",
+                "air_date": "2015-04-16 00:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 20,
+                "name": "The Fallen",
+                "air_date": "2015-04-23 00:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 21,
+                "name": "Al Sah-Him",
+                "air_date": "2015-04-30 00:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 22,
+                "name": "This is Your Sword",
+                "air_date": "2015-05-07 00:00:00"
+            },
+            {
+                "season": 3,
+                "episode": 23,
+                "name": "My Name is Oliver Queen",
+                "air_date": "2015-05-14 00:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 1,
+                "name": "Green Arrow",
+                "air_date": "2015-10-08 00:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 2,
+                "name": "The Candidate",
+                "air_date": "2015-10-15 00:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 3,
+                "name": "Restoration",
+                "air_date": "2015-10-22 00:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 4,
+                "name": "Beyond Redemption",
+                "air_date": "2015-10-29 00:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 5,
+                "name": "Haunted",
+                "air_date": "2015-11-05 01:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 6,
+                "name": "Lost Souls",
+                "air_date": "2015-11-12 01:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 7,
+                "name": "Brotherhood",
+                "air_date": "2015-11-19 01:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 8,
+                "name": "Legends of Yesterday",
+                "air_date": "2015-12-03 01:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 9,
+                "name": "Dark Waters",
+                "air_date": "2015-12-10 01:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 10,
+                "name": "Blood Debts",
+                "air_date": "2016-01-21 01:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 11,
+                "name": "A.W.O.L.",
+                "air_date": "2016-01-28 01:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 12,
+                "name": "Unchained",
+                "air_date": "2016-02-04 01:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 13,
+                "name": "Sins of the Father",
+                "air_date": "2016-02-11 01:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 14,
+                "name": "Code of Silence",
+                "air_date": "2016-02-18 01:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 15,
+                "name": "Taken",
+                "air_date": "2016-02-25 01:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 16,
+                "name": "Broken Hearts",
+                "air_date": "2016-03-24 00:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 17,
+                "name": "Beacon of Hope",
+                "air_date": "2016-03-31 00:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 18,
+                "name": "Eleven-Fifty-Nine",
+                "air_date": "2016-04-07 00:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 19,
+                "name": "Canary Cry",
+                "air_date": "2016-04-28 00:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 20,
+                "name": "Genesis",
+                "air_date": "2016-05-05 00:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 21,
+                "name": "Monument Point",
+                "air_date": "2016-05-12 00:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 22,
+                "name": "Lost in the Flood",
+                "air_date": "2016-05-19 00:00:00"
+            },
+            {
+                "season": 4,
+                "episode": 23,
+                "name": "Schism",
+                "air_date": "2016-05-26 00:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 1,
+                "name": "Legacy",
+                "air_date": "2016-10-06 00:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 2,
+                "name": "The Recruits",
+                "air_date": "2016-10-13 00:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 3,
+                "name": "A Matter of Trust",
+                "air_date": "2016-10-20 00:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 4,
+                "name": "Penance",
+                "air_date": "2016-10-27 00:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 5,
+                "name": "Human Target",
+                "air_date": "2016-11-03 00:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 6,
+                "name": "So It Begins",
+                "air_date": "2016-11-10 01:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 7,
+                "name": "Vigilante",
+                "air_date": "2016-11-17 01:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 8,
+                "name": "Invasion!",
+                "air_date": "2016-12-01 01:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 9,
+                "name": "What We Leave Behind",
+                "air_date": "2016-12-08 01:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 10,
+                "name": "Who Are You?",
+                "air_date": "2017-01-26 01:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 11,
+                "name": "Second Chances",
+                "air_date": "2017-02-02 01:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 12,
+                "name": "Bratva",
+                "air_date": "2017-02-09 01:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 13,
+                "name": "Spectre of the Gun",
+                "air_date": "2017-02-16 01:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 14,
+                "name": "The Sin-Eater",
+                "air_date": "2017-02-23 01:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 15,
+                "name": "Fighting Fire with Fire",
+                "air_date": "2017-03-02 01:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 16,
+                "name": "Checkmate",
+                "air_date": "2017-03-16 00:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 17,
+                "name": "Kapiushon",
+                "air_date": "2017-03-23 00:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 18,
+                "name": "Disbanded",
+                "air_date": "2017-03-30 00:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 19,
+                "name": "Dangerous Liaisons",
+                "air_date": "2017-04-27 00:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 20,
+                "name": "Underneath",
+                "air_date": "2017-05-04 00:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 21,
+                "name": "Honor Thy Fathers",
+                "air_date": "2017-05-11 00:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 22,
+                "name": "Missing",
+                "air_date": "2017-05-18 00:00:00"
+            },
+            {
+                "season": 5,
+                "episode": 23,
+                "name": "Lian Yu",
+                "air_date": "2017-05-25 00:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 1,
+                "name": "Fallout",
+                "air_date": "2017-10-13 01:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 2,
+                "name": "Tribute",
+                "air_date": "2017-10-20 01:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 3,
+                "name": "Next of Kin",
+                "air_date": "2017-10-27 01:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 4,
+                "name": "Reversal",
+                "air_date": "2017-11-03 01:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 5,
+                "name": "Deathstroke Returns",
+                "air_date": "2017-11-10 02:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 6,
+                "name": "Promises Kept",
+                "air_date": "2017-11-17 02:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 7,
+                "name": "Thanksgiving",
+                "air_date": "2017-11-24 02:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 8,
+                "name": "Crisis on Earth-X, Part 2",
+                "air_date": "2017-11-28 02:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 9,
+                "name": "Irreconcilable Differences",
+                "air_date": "2017-12-08 02:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 10,
+                "name": "Divided",
+                "air_date": "2018-01-19 02:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 11,
+                "name": "We Fall",
+                "air_date": "2018-01-26 02:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 12,
+                "name": "All for Nothing",
+                "air_date": "2018-02-02 02:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 13,
+                "name": "The Devil's Greatest Trick",
+                "air_date": "2018-02-09 02:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 14,
+                "name": "Collision Course",
+                "air_date": "2018-03-02 02:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 15,
+                "name": "Doppelganger",
+                "air_date": "2018-03-09 02:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 16,
+                "name": "The Thanatos Guild",
+                "air_date": "2018-03-30 01:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 17,
+                "name": "Brothers in Arms",
+                "air_date": "2018-04-06 01:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 18,
+                "name": "Fundamentals",
+                "air_date": "2018-04-13 01:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 19,
+                "name": "The Dragon",
+                "air_date": "2018-04-20 01:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 20,
+                "name": "Shifting Allegiances",
+                "air_date": "2018-04-27 01:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 21,
+                "name": "Docket No. 11-19-41-73",
+                "air_date": "2018-05-04 01:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 22,
+                "name": "The Ties That Bind",
+                "air_date": "2018-05-11 01:00:00"
+            },
+            {
+                "season": 6,
+                "episode": 23,
+                "name": "Life Sentence",
+                "air_date": "2018-05-18 01:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 1,
+                "name": "Inmate 4587",
+                "air_date": "2018-10-16 00:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 2,
+                "name": "The Longbow Hunters",
+                "air_date": "2018-10-23 00:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 3,
+                "name": "Crossing Lines",
+                "air_date": "2018-10-30 00:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 4,
+                "name": "Level Two",
+                "air_date": "2018-11-06 01:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 5,
+                "name": "The Demon",
+                "air_date": "2018-11-13 01:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 6,
+                "name": "Due Process",
+                "air_date": "2018-11-20 01:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 7,
+                "name": "The Slabside Redemption",
+                "air_date": "2018-11-27 01:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 8,
+                "name": "Unmasked",
+                "air_date": "2018-12-04 01:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 9,
+                "name": "Elseworlds, Part 2",
+                "air_date": "2018-12-11 01:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 10,
+                "name": "My Name is Emiko Queen",
+                "air_date": "2019-01-22 01:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 11,
+                "name": "Past Sins",
+                "air_date": "2019-01-29 01:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 12,
+                "name": "Emerald Archer",
+                "air_date": "2019-02-05 01:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 13,
+                "name": "Star City Slayer",
+                "air_date": "2019-02-12 01:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 14,
+                "name": "Brothers & Sisters",
+                "air_date": "2019-03-05 01:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 15,
+                "name": "Training Day",
+                "air_date": "2019-03-12 00:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 16,
+                "name": "Star City 2040",
+                "air_date": "2019-03-19 00:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 17,
+                "name": "Inheritance",
+                "air_date": "2019-03-26 00:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 18,
+                "name": "Lost Canary",
+                "air_date": "2019-04-16 01:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 19,
+                "name": "Spartan",
+                "air_date": "2019-04-23 01:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 20,
+                "name": "Confessions",
+                "air_date": "2019-04-30 01:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 21,
+                "name": "Living Proof",
+                "air_date": "2019-05-07 01:00:00"
+            },
+            {
+                "season": 7,
+                "episode": 22,
+                "name": "You Have Saved This City",
+                "air_date": "2019-05-14 01:00:00"
+            },
+            {
+                "season": 8,
+                "episode": 1,
+                "name": "Starling City",
+                "air_date": "2019-10-16 01:00:00"
+            },
+            {
+                "season": 8,
+                "episode": 2,
+                "name": "Welcome to Hong Kong",
+                "air_date": "2019-10-23 01:00:00"
+            },
+            {
+                "season": 8,
+                "episode": 3,
+                "name": "Leap of Faith",
+                "air_date": "2019-10-30 01:00:00"
+            },
+            {
+                "season": 8,
+                "episode": 4,
+                "name": "Present Tense",
+                "air_date": "2019-11-06 02:00:00"
+            },
+            {
+                "season": 8,
+                "episode": 5,
+                "name": "Prochnost",
+                "air_date": "2019-11-20 02:00:00"
+            },
+            {
+                "season": 8,
+                "episode": 6,
+                "name": "Reset",
+                "air_date": "2019-11-27 02:00:00"
+            },
+            {
+                "season": 8,
+                "episode": 7,
+                "name": "Purgatory",
+                "air_date": "2019-12-04 02:00:00"
+            },
+            {
+                "season": 8,
+                "episode": 8,
+                "name": "Crisis on Infinite Earths: Part Four",
+                "air_date": "2020-01-15 01:00:00"
+            },
+            {
+                "season": 8,
+                "episode": 9,
+                "name": "Green Arrow & The Canaries",
+                "air_date": "2020-01-22 01:00:00"
+            },
+            {
+                "season": 8,
+                "episode": 10,
+                "name": "Fadeout",
+                "air_date": "2020-01-29 02:00:00"
+            }
+        ]
+    }
+}

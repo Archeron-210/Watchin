@@ -1,0 +1,84 @@
+{
+    "total": "7",
+    "page": 1,
+    "pages": 1,
+    "tv_shows": [
+        {
+            "id": 29560,
+            "name": "Arrow",
+            "permalink": "arrow",
+            "start_date": "2012-10-10",
+            "end_date": null,
+            "country": "US",
+            "network": "The CW",
+            "status": "Ended",
+            "image_thumbnail_path": "https://static.episodate.com/images/tv-show/thumbnail/29560.jpg"
+        },
+        {
+            "id": 50488,
+            "name": "Arrow Affliction",
+            "permalink": "arrow-affliction",
+            "start_date": "2008-09-29",
+            "end_date": null,
+            "country": "US",
+            "network": "Sportsman Channel",
+            "status": "Ended",
+            "image_thumbnail_path": "https://static.episodate.com/images/tv-show/thumbnail/50488.jpg"
+        },
+        {
+            "id": 35594,
+            "name": "Arrow Emblem – Hawk of the Grand Prix",
+            "permalink": "arrow-emblem-hawk-of-the-grand-prix",
+            "start_date": "Sep/22/1977",
+            "end_date": "Aug/31/1978",
+            "country": "JP",
+            "network": "Fuji TV",
+            "status": "Canceled/Ended",
+            "image_thumbnail_path": "https://static.episodate.com/images/tv-show/thumbnail/35594.jpg"
+        },
+        {
+            "id": 71844,
+            "name": "Back Arrow",
+            "permalink": "back-arrow",
+            "start_date": "2021-01-09",
+            "end_date": null,
+            "country": "JP",
+            "network": "Tokyo MX",
+            "status": "Ended",
+            "image_thumbnail_path": "https://static.episodate.com/images/tv-show/thumbnail/71844.jpg"
+        },
+        {
+            "id": 67480,
+            "name": "Green Arrow and the Canaries",
+            "permalink": "green-arrow-and-the-canaries",
+            "start_date": null,
+            "end_date": null,
+            "country": "US",
+            "network": "The CW",
+            "status": "In Development",
+            "image_thumbnail_path": "https://static.episodate.com/images/tv-show/thumbnail/67480.jpg"
+        },
+        {
+            "id": 49417,
+            "name": "Red Arrow",
+            "permalink": "red-arrow",
+            "start_date": "2009-06-28",
+            "end_date": null,
+            "country": "US",
+            "network": "Outdoor Channel",
+            "status": "Ended",
+            "image_thumbnail_path": "https://static.episodate.com/images/tv-show/thumbnail/49417.jpg"
+        },
+        {
+            "id": 29089,
+            "name": "The Black Arrow",
+            "permalink": "the-black-arrow",
+            "start_date": "Jan/19/1958",
+            "end_date": "Feb/23/1958",
+            "country": "UK",
+            "network": "BBC one",
+            "status": "Canceled/Ended",
+            "image_thumbnail_path": "https://static.episodate.com/images/tv-show/thumbnail/29089.jpg"
+        }
+    ]
+}
