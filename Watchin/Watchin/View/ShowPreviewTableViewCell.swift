@@ -11,7 +11,7 @@ class ShowPreviewTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
 
-    @IBOutlet weak var tvShowPosterImageView: UIImageView!
+    @IBOutlet weak var showPosterImageView: UIImageView!
     @IBOutlet weak var showTitleLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
     
@@ -27,11 +27,10 @@ class ShowPreviewTableViewCell: UITableViewCell {
     // MARK: - Private
 
     private func setImage(for show: ShowSearchDetail) {
-        let formattedImage = URL(string: show.imageStringUrl)
-        if let imageUrl = formattedImage {
-            tvShowPosterImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "watchinIcon"))
+        if let imageUrl = URL(string: show.imageStringUrl) {
+            showPosterImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "watchinIcon"))
         } else {
-            tvShowPosterImageView.image = UIImage(named: "watchinIcon")
+            showPosterImageView.image = UIImage(named: "watchinIcon")
         }
     }
 

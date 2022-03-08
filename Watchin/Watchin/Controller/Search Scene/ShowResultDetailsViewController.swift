@@ -27,6 +27,7 @@ class ShowResultDetailsViewController: UIViewController {
 
     var show: ShowDetailFormatted?
     var episodes: [EpisodeFormatted]?
+    private let aspectSetter = AspectSettings.shared
     private let watchinShowRepository = WatchinShowRepository.shared
     private let episodeDetailRepository = EpisodeDetailRepository.shared
 
@@ -34,17 +35,15 @@ class ShowResultDetailsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         configureAddToYourShowsButton()
         configureAddToWatchinLaterButton()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setButtonAspect(for: addToYourShowsButton)
-        setButtonAspect(for: addToWatchinLaterButton)
-        setButtonAspect(for: seeMoreButton)
+        aspectSetter.setButtonBasicAspect(for: addToYourShowsButton)
+        aspectSetter.setButtonBasicAspect(for: addToWatchinLaterButton)
+        aspectSetter.setButtonBasicAspect(for: seeMoreButton)
         displayShowDetails()
     }
 
@@ -67,41 +66,29 @@ class ShowResultDetailsViewController: UIViewController {
     // MARK: - Private
 
     private func displayShowDetails() {
-        guard let tvShow = show else {
+        guard let show = show else {
             return
         }
 
-        setImage()
-        showTitleLabel.text = tvShow.nameFormatted
-        yearLabel.text = tvShow.startDateFormatted
-        genresLabel.text = tvShow.genresFormatted
-        countryLabel.text = tvShow.countryFormatted
-        statusLabel.text = "Status: \(tvShow.statusFormatted)"
-        descriptionLabel.text = tvShow.descriptionFormatted
+        aspectSetter.setImage(for: show, on: tvShowPosterImageView)
+        showTitleLabel.text = show.nameFormatted
+        yearLabel.text = show.startDateFormatted
+        genresLabel.text = show.genresFormatted
+        countryLabel.text = show.countryFormatted
+        statusLabel.text = "Status: \(show.statusFormatted)"
+        descriptionLabel.text = show.descriptionFormatted
         displayCorrectSeasonInfo()
     }
 
-    private func setImage() {
-        guard let tvShow = show else {
-            return
-        }
-        if let imageUrl = URL(string: tvShow.imageStringUrlFormatted) {
-            tvShowPosterImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "watchinIcon"))
-        } else {
-            tvShowPosterImageView.image = UIImage(named: "watchinIcon")
-        }
-    }
-
     private func displayCorrectSeasonInfo() {
-        guard let tvShow = show else {
+        guard let show = show else {
             return
         }
-
-        let intNumberOfSeasons = Int(tvShow.numberOfSeasons) ?? 0
+        let intNumberOfSeasons = Int(show.numberOfSeasons) ?? 0
         if intNumberOfSeasons > 1 {
-        seasonCountLabel.text = "\(tvShow.numberOfSeasons) Seasons"
+        seasonCountLabel.text = "\(show.numberOfSeasons) Seasons"
         } else {
-            seasonCountLabel.text = "\(tvShow.numberOfSeasons) Season"
+            seasonCountLabel.text = "\(show.numberOfSeasons) Season"
         }
     }
 
@@ -142,22 +129,22 @@ class ShowResultDetailsViewController: UIViewController {
     }
 
     private func goToWebsite() {
-        guard let tvShow = show else {
+        guard let show = show else {
             return
         }
-        guard let url = URL(string: tvShow.descriptionSourceFormatted) else {
+        guard let url = URL(string: show.descriptionSourceFormatted) else {
             return
         }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
     private func savePlatform(from pickerView: UIPickerView) {
-        guard let tvShow = show else {
+        guard let show = show else {
             return
         }
         let platformIndex = pickerView.selectedRow(inComponent: 0)
         let platform = sortedPlatformNames[platformIndex]
-        watchinShowRepository.updateWatchinShowPlatform(show: tvShow, platform: platform)
+        watchinShowRepository.updateWatchinShowPlatform(show: show, platform: platform)
     }
 
     private func createPlatformsPickerView(for alert: UIAlertController) -> UIPickerView {
@@ -188,6 +175,13 @@ class ShowResultDetailsViewController: UIViewController {
           }
     }
 
+    private func errorAlert(message: String) {
+        let alert = UIAlertController(title: "❌", message: message, preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(actionAlert)
+        present(alert, animated: true, completion: nil)
+    }
+
     private func watchinLaterPlatformPickerViewAlert() {
         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
         alert.isModalInPresentation = true
@@ -207,13 +201,6 @@ class ShowResultDetailsViewController: UIViewController {
             self.configureAddToWatchinLaterButton()
                 }))
                 self.present(alert,animated: true, completion: nil )
-    }
-
-    private func errorAlert(message: String) {
-        let alert = UIAlertController(title: "❌", message: message, preferredStyle: .alert)
-        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(actionAlert)
-        present(alert, animated: true, completion: nil)
     }
 
     // MARK: - UI Aspect
@@ -253,28 +240,9 @@ class ShowResultDetailsViewController: UIViewController {
         addToWatchinLaterButton.isEnabled = !isInWatchinLater
         addToYourShowsButton.isEnabled = !isInWatchinLater
     }
-
-//    private func configureButton(for button: UIButton, of show: ShowDetailFormatted, condition: Bool, messageTrue: String, messageFalse: String) {
-//
-//        let title = condition ? messageTrue : messageFalse
-//        let color = condition ? UIColor(red: 61, green: 176, blue: 239) : UIColor.white
-//        let backgroundColor = condition ? UIColor.white : UIColor.clear
-//
-//        button.setTitle(title, for: .normal)
-//        button.setTitleColor(color, for: .normal)
-//        button.tintColor = color
-//        button.backgroundColor = backgroundColor
-//        button.isEnabled = !condition
-//    }
-
-    private func setButtonAspect(for button: UIButton) {
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.white.cgColor
-        button.layer.cornerRadius = 10
-        button.titleLabel?.numberOfLines = 1
-    }
-
 }
+
+    // MARK: - PickerView Management
 
 extension ShowResultDetailsViewController: UIPickerViewDataSource {
     

@@ -23,9 +23,8 @@ class PlatformPickerViewController: UIViewController {
     // MARK: - Properties
 
     weak var delegate: PlatformPickerViewControllerDismissDelegate?
-
     var show: ShowDetailFormatted?
-
+    private let setterAspect = AspectSettings.shared
     private let watchinShowRepository = WatchinShowRepository.shared
 
 
@@ -33,9 +32,9 @@ class PlatformPickerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setContainerViewAspect()
-        setButtonAspect(button: doneButton)
-        setButtonAspect(button: exitButton)
+        setterAspect.setContainerViewAspect(for: pickerContainerView)
+        setterAspect.setButtonOnWhiteBackgroundAspect(for: doneButton)
+        setterAspect.setButtonOnWhiteBackgroundAspect(for: exitButton)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -67,18 +66,7 @@ class PlatformPickerViewController: UIViewController {
         let platform = sortedPlatformNames[platformIndex]
         watchinShowRepository.updateWatchinShowPlatform(show: show, platform: platform)
     }
-    
-    // MARK: - UIAspect
 
-    private func setContainerViewAspect() {
-        pickerContainerView.layer.cornerRadius = 10
-    }
-
-    private func setButtonAspect(button: UIButton) {
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor(red: 61, green: 176, blue: 239).cgColor
-        button.layer.cornerRadius = 10
-    }
 }
 
     // MARK: - PickerView Management

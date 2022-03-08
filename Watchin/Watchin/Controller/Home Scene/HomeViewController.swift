@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     private var user: User {
         UserRepository.shared.getUser()
     }
-
+    private let aspectSetter = AspectSettings.shared
     private let watchinShowRepository = WatchinShowRepository.shared
     private let episodeDetailRepository = EpisodeDetailRepository.shared
 
@@ -30,7 +30,6 @@ class HomeViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         setUserInfo()
         shows = watchinShowRepository.getTrackedShows()
         tableView.reloadData()
@@ -38,9 +37,8 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setImageAspect()
-        setEditButtonAspect()
+        aspectSetter.setProfilePictureAspect(for: profileImageView)
+        aspectSetter.setButtonBasicAspect(for: editProfileButton)
         tableView.backgroundColor = UIColor.clear
     }
 
@@ -53,30 +51,6 @@ class HomeViewController: UIViewController {
 
     // MARK: - Private
 
-    private func goToEditProfile() {
-        guard let editProfileViewController = self.storyboard?.instantiateViewController(identifier: "EditProfileViewController") as? EditProfileViewController else {
-            return
-        }
-        editProfileViewController.delegate = self
-        self.present(editProfileViewController, animated: true)
-    }
-
-    // MARK: - UI Aspect
-
-    private func setImageAspect() {
-        profileImageView.layer.borderWidth = 3
-        profileImageView.layer.masksToBounds = false
-        profileImageView.layer.borderColor = UIColor.white.cgColor
-        profileImageView.layer.cornerRadius = profileImageView.frame.height/2
-        profileImageView.clipsToBounds = true
-    }
-
-    private func setEditButtonAspect() {
-        editProfileButton.layer.borderWidth = 1
-        editProfileButton.layer.borderColor = UIColor.white.cgColor
-        editProfileButton.layer.cornerRadius = 10
-    }
-
     private func setUserInfo() {
         userNameLabel.text = "\(user.name)'s TV shows"
         if let profilePictureData = user.profilePictureData, let image = UIImage(data: profilePictureData) {
@@ -85,6 +59,15 @@ class HomeViewController: UIViewController {
             profileImageView.image = UIImage(named: "defaultProfilePic")
         }
     }
+
+    private func goToEditProfile() {
+        guard let editProfileViewController = self.storyboard?.instantiateViewController(identifier: "EditProfileViewController") as? EditProfileViewController else {
+            return
+        }
+        editProfileViewController.delegate = self
+        self.present(editProfileViewController, animated: true)
+    }
+
 }
 
     // MARK: - Dismiss Delegate

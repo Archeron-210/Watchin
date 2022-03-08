@@ -28,7 +28,7 @@ class TrackingViewController: UIViewController {
 
     var show: ShowDetailFormatted?
     var episodesBySeason: [[EpisodeFormatted]] = []
-
+    private let aspectSetter = AspectSettings.shared
     private let watchinShowRepository = WatchinShowRepository.shared
     private let episodeDetailRepository = EpisodeDetailRepository.shared
 
@@ -47,10 +47,9 @@ class TrackingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setButtonAspect(for: startAgainButton)
-        setButtonAspect(for: deleteButton)
-        setButtonAspect(for: platformsButton)
+        aspectSetter.setButtonBasicAspect(for: startAgainButton)
+        aspectSetter.setButtonBasicAspect(for: deleteButton)
+        aspectSetter.setButtonBasicAspect(for: platformsButton)
     }
 
     // MARK: - Actions
@@ -75,7 +74,7 @@ class TrackingViewController: UIViewController {
         guard let show = show else {
             return
         }
-        setImage()
+        aspectSetter.setImage(for: show, on: tvShowPosterImageView)
         showTitleLabel.text = show.nameFormatted
         startDateStatusLabel.text = "\(show.startDateFormatted) - \(show.statusFormatted)"
         genresLabel.text = show.genresFormatted
@@ -97,22 +96,11 @@ class TrackingViewController: UIViewController {
         seasonsNumberLabel.text = "Seasons : \(watchedSeasons)/\(show.numberOfSeasons)"
     }
 
-    private func setImage() {
-        guard let show = show else {
-            return
-        }
-        if let imageUrl = URL(string: show.imageStringUrlFormatted) {
-            tvShowPosterImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "watchinIcon"))
-        } else {
-            tvShowPosterImageView.image = UIImage(named: "watchinIcon")
-        }
-    }
-
     private func goToPlatformsPicker() {
-        guard let currentShow = show, let platformPickerViewController = self.storyboard?.instantiateViewController(identifier: "PlatformPickerViewController") as? PlatformPickerViewController else {
+        guard let show = show, let platformPickerViewController = self.storyboard?.instantiateViewController(identifier: "PlatformPickerViewController") as? PlatformPickerViewController else {
             return
         }
-        platformPickerViewController.show = currentShow
+        platformPickerViewController.show = show
         platformPickerViewController.delegate = self
         self.present(platformPickerViewController, animated: true)
     }
@@ -149,14 +137,6 @@ class TrackingViewController: UIViewController {
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true)
-    }
-
-    // MARK: - UI Aspect
-
-    private func setButtonAspect(for button: UIButton) {
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.white.cgColor
-        button.layer.cornerRadius = 10
     }
 
 }

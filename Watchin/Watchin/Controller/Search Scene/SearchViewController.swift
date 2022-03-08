@@ -19,6 +19,7 @@ class SearchViewController: UIViewController {
     // MARK: - Properties
 
     var searchResults: [ShowSearchDetail] = []
+    private let aspectSetter = AspectSettings.shared
     private let showService = ShowService()
 
     // MARK: - Life Cycle
@@ -30,9 +31,8 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setSearchButtonAspect()
-        setTextFieldAspect()
+        aspectSetter.setButtonBasicAspect(for: searchButton)
+        aspectSetter.setTextFieldAspect(for: searchTextField)
         tableView.backgroundColor = UIColor.clear
         tableView.reloadData()
     }
@@ -48,7 +48,7 @@ class SearchViewController: UIViewController {
 
     private func searchForResults() {
         guard let text = searchTextField.text, !text.isEmpty else {
-            emptyTextFieldAlert()
+            alert(title: "⚠️", message: "You need to enter a show title first ! 📺")
             return
         }
         getSearchResults()
@@ -63,7 +63,7 @@ class SearchViewController: UIViewController {
                 self.searchResults = showsFound
                 self.tableView.reloadData()
             case .failure :
-                self.errorAlert()
+                self.alert(title: "⚠️", message: "It seems like something went wrong with servers 🔌")
             }
         }
     }
@@ -73,34 +73,14 @@ class SearchViewController: UIViewController {
         activityIndicator.isHidden = !shown
     }
 
-    // MARK: - UI Aspect
+    // MARK: - Alert
 
-    private func setSearchButtonAspect() {
-        searchButton.layer.borderWidth = 1
-        searchButton.layer.borderColor = UIColor.white.cgColor
-        searchButton.layer.cornerRadius = 10
-    }
-
-    private func setTextFieldAspect() {
-        searchTextField.setBottomBorderAndPlaceholderTextColor()
-    }
-
-    // MARK: - Alerts
-
-    private func errorAlert() {
-        let alert = UIAlertController(title: "⚠️", message: "It seems like something went wrong with servers 🔌", preferredStyle: .alert)
+    private func alert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(actionAlert)
         present(alert, animated: true, completion: nil)
     }
-
-    private func emptyTextFieldAlert() {
-        let alert = UIAlertController(title: "⚠️", message: "You need to enter a show title first ! 📺", preferredStyle: .alert)
-        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(actionAlert)
-        present(alert, animated: true, completion: nil)
-    }
-
 }
 
     // MARK: - Keyboard Management
@@ -140,9 +120,9 @@ extension SearchViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        let tvShow = searchResults[indexPath.row]
+        let show = searchResults[indexPath.row]
 
-        cell.configure(for: tvShow)
+        cell.configure(for: show)
         cell.backgroundColor = UIColor.clear
 
 
@@ -163,7 +143,7 @@ extension SearchViewController: UITableViewDelegate {
             case .success(let details):
                 self.goToShowDetails(with: details)
             case .failure :
-                self.errorAlert()
+                self.alert(title: "⚠️", message: "It seems like something went wrong with servers 🔌")
             }
         }
     }

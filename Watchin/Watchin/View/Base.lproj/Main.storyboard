@@ -61,18 +61,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="F4z-kS-8pw">
-                                <rect key="frame" x="132" y="139" width="150" height="150"/>
+                                <rect key="frame" x="132" y="144" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="F4z-kS-8pw" secondAttribute="height" multiplier="1:1" id="AjI-tX-nSc"/>
                                     <constraint firstAttribute="height" constant="150" id="z7g-Hc-ahg"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbK-JV-Gud">
-                                <rect key="frame" x="70" y="319" width="274" height="40"/>
+                                <rect key="frame" x="93" y="324" width="228" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="WQh-G8-Qgk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <state key="normal" title="Choose a profile picture">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -81,16 +82,16 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator" translatesAutoresizingMaskIntoConstraints="NO" id="6vF-n9-OnC">
-                                <rect key="frame" x="0.0" y="374" width="414" height="14"/>
+                                <rect key="frame" x="0.0" y="379" width="414" height="14"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your name :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5i-iq-B2h">
-                                <rect key="frame" x="85" y="403" width="244" height="28"/>
+                                <rect key="frame" x="85" y="408" width="244" height="28"/>
                                 <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tap here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kzR-MP-yKO">
-                                <rect key="frame" x="40" y="446" width="334" height="29.5"/>
+                                <rect key="frame" x="50" y="451" width="314" height="29.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -112,11 +113,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bp8-jT-Ubg">
-                                <rect key="frame" x="85" y="575.5" width="244" height="40"/>
+                                <rect key="frame" x="140.5" y="510.5" width="133" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="LFS-sY-Guf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <state key="normal" title="Save changes">
                                     <color key="titleColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -129,27 +131,25 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="ezb-5R-fBB" firstAttribute="trailing" secondItem="kzR-MP-yKO" secondAttribute="trailing" constant="40" id="950-Pd-Vfc"/>
+                            <constraint firstItem="Bp8-jT-Ubg" firstAttribute="centerX" secondItem="Gix-2i-cJt" secondAttribute="centerX" id="7SX-tc-KC3"/>
+                            <constraint firstItem="ezb-5R-fBB" firstAttribute="trailing" secondItem="kzR-MP-yKO" secondAttribute="trailing" constant="50" id="950-Pd-Vfc"/>
                             <constraint firstItem="u5i-iq-B2h" firstAttribute="top" secondItem="6vF-n9-OnC" secondAttribute="bottom" constant="15" id="97t-kT-BPa"/>
                             <constraint firstItem="6vF-n9-OnC" firstAttribute="leading" secondItem="Gix-2i-cJt" secondAttribute="leading" id="9eK-xO-t9U"/>
-                            <constraint firstItem="bbK-JV-Gud" firstAttribute="leading" secondItem="ezb-5R-fBB" secondAttribute="leading" constant="70" id="CYg-VD-Hll"/>
                             <constraint firstItem="6vF-n9-OnC" firstAttribute="top" secondItem="bbK-JV-Gud" secondAttribute="bottom" constant="15" id="G0t-4f-Jd9"/>
-                            <constraint firstItem="Bp8-jT-Ubg" firstAttribute="top" secondItem="kzR-MP-yKO" secondAttribute="bottom" constant="100" id="HW9-0Z-irU"/>
+                            <constraint firstItem="Bp8-jT-Ubg" firstAttribute="top" secondItem="kzR-MP-yKO" secondAttribute="bottom" constant="30" id="HW9-0Z-irU"/>
                             <constraint firstItem="ybS-6S-bcS" firstAttribute="top" secondItem="Gix-2i-cJt" secondAttribute="top" id="JiQ-Tq-VuX"/>
                             <constraint firstAttribute="trailing" secondItem="ybS-6S-bcS" secondAttribute="trailing" id="Mrh-1M-h9I"/>
-                            <constraint firstItem="F4z-kS-8pw" firstAttribute="top" secondItem="ezb-5R-fBB" secondAttribute="top" constant="95" id="P6x-Kg-671"/>
+                            <constraint firstItem="F4z-kS-8pw" firstAttribute="top" secondItem="ezb-5R-fBB" secondAttribute="top" constant="100" id="P6x-Kg-671"/>
                             <constraint firstItem="kzR-MP-yKO" firstAttribute="top" secondItem="u5i-iq-B2h" secondAttribute="bottom" constant="15" id="PAN-rR-1ce"/>
-                            <constraint firstItem="kzR-MP-yKO" firstAttribute="leading" secondItem="ezb-5R-fBB" secondAttribute="leading" constant="40" id="QU9-ba-aDP"/>
+                            <constraint firstItem="bbK-JV-Gud" firstAttribute="centerX" secondItem="Gix-2i-cJt" secondAttribute="centerX" id="QFz-of-7sA"/>
+                            <constraint firstItem="kzR-MP-yKO" firstAttribute="leading" secondItem="ezb-5R-fBB" secondAttribute="leading" constant="50" id="QU9-ba-aDP"/>
                             <constraint firstItem="F4z-kS-8pw" firstAttribute="centerX" secondItem="Gix-2i-cJt" secondAttribute="centerX" id="RXE-y1-WdW"/>
                             <constraint firstAttribute="bottom" secondItem="ybS-6S-bcS" secondAttribute="bottom" id="TTN-hL-5Ud"/>
                             <constraint firstItem="ezb-5R-fBB" firstAttribute="trailing" secondItem="u5i-iq-B2h" secondAttribute="trailing" constant="85" id="UPa-T9-S5k"/>
-                            <constraint firstItem="ezb-5R-fBB" firstAttribute="trailing" secondItem="bbK-JV-Gud" secondAttribute="trailing" constant="70" id="VoM-tN-ogO"/>
                             <constraint firstItem="tjB-AR-F0K" firstAttribute="top" secondItem="ezb-5R-fBB" secondAttribute="top" constant="15" id="X7c-qY-Rji"/>
-                            <constraint firstItem="ezb-5R-fBB" firstAttribute="trailing" secondItem="Bp8-jT-Ubg" secondAttribute="trailing" constant="85" id="Xgr-5n-cQP"/>
                             <constraint firstItem="u5i-iq-B2h" firstAttribute="leading" secondItem="ezb-5R-fBB" secondAttribute="leading" constant="85" id="cN1-15-4jA"/>
                             <constraint firstItem="bbK-JV-Gud" firstAttribute="top" secondItem="F4z-kS-8pw" secondAttribute="bottom" constant="30" id="cvC-Gt-8kT"/>
                             <constraint firstItem="ybS-6S-bcS" firstAttribute="leading" secondItem="Gix-2i-cJt" secondAttribute="leading" id="fTI-ge-NrG"/>
-                            <constraint firstItem="Bp8-jT-Ubg" firstAttribute="leading" secondItem="ezb-5R-fBB" secondAttribute="leading" constant="85" id="o6a-o3-Bi3"/>
                             <constraint firstItem="tjB-AR-F0K" firstAttribute="leading" secondItem="ezb-5R-fBB" secondAttribute="leading" constant="15" id="uTO-uE-gmC"/>
                             <constraint firstAttribute="trailing" secondItem="6vF-n9-OnC" secondAttribute="trailing" id="x8D-pT-xYE"/>
                         </constraints>
@@ -800,8 +800,8 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="countryLabel" destination="25j-he-H10" id="emY-eC-ZLN"/>
+                                            <outlet property="showPosterImageView" destination="oMj-us-Nea" id="ffT-Og-RTp"/>
                                             <outlet property="showTitleLabel" destination="M2o-bV-de5" id="TF3-Ni-yhk"/>
-                                            <outlet property="tvShowPosterImageView" destination="oMj-us-Nea" id="ffT-Og-RTp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1215,7 +1215,7 @@
                                 <rect key="frame" x="10" y="302" width="394" height="14"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator" translatesAutoresizingMaskIntoConstraints="NO" id="GXJ-MF-53r">
-                                <rect key="frame" x="10" y="469" width="394" height="14"/>
+                                <rect key="frame" x="10" y="459" width="394" height="14"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 Seasons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TII-aM-IRc">
                                 <rect key="frame" x="20" y="326" width="121" height="31"/>
@@ -1230,19 +1230,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watchin' later on :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1H-cl-EEr">
-                                <rect key="frame" x="111.5" y="387" width="191" height="33"/>
+                                <rect key="frame" x="111.5" y="377" width="191" height="33"/>
                                 <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Platform name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9c-h1-vlM">
-                                <rect key="frame" x="10" y="430" width="394" height="34"/>
+                                <rect key="frame" x="10" y="420" width="394" height="34"/>
                                 <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="0Nd-xY-CbL">
-                                <rect key="frame" x="110" y="588" width="194" height="40"/>
+                                <rect key="frame" x="110" y="578" width="194" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ptn-DL-ghA"/>
                                 </constraints>
@@ -1256,7 +1256,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cBg-lI-SCv">
-                                <rect key="frame" x="115" y="528" width="184" height="40"/>
+                                <rect key="frame" x="115" y="518" width="184" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="H4r-BI-LLh"/>
                                 </constraints>
@@ -1270,7 +1270,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIO-j8-SbU">
-                                <rect key="frame" x="168" y="648" width="78" height="40"/>
+                                <rect key="frame" x="168" y="638" width="78" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Qg9-T5-YHY"/>
                                 </constraints>
@@ -1290,7 +1290,7 @@
                             <constraint firstItem="cBg-lI-SCv" firstAttribute="top" secondItem="GXJ-MF-53r" secondAttribute="bottom" constant="45" id="2SL-hL-qHP"/>
                             <constraint firstItem="TII-aM-IRc" firstAttribute="leading" secondItem="oMA-yU-dsZ" secondAttribute="leading" constant="20" id="66g-bD-vJ3"/>
                             <constraint firstItem="GXJ-MF-53r" firstAttribute="leading" secondItem="oMA-yU-dsZ" secondAttribute="leading" constant="10" id="8wB-cR-Kca"/>
-                            <constraint firstItem="a1H-cl-EEr" firstAttribute="top" secondItem="TII-aM-IRc" secondAttribute="bottom" constant="30" id="94w-Cu-Abv"/>
+                            <constraint firstItem="a1H-cl-EEr" firstAttribute="top" secondItem="TII-aM-IRc" secondAttribute="bottom" constant="20" id="94w-Cu-Abv"/>
                             <constraint firstItem="54d-nX-nUG" firstAttribute="top" secondItem="v9O-Za-BkD" secondAttribute="bottom" constant="2" id="BKc-Kz-C7j"/>
                             <constraint firstItem="TII-aM-IRc" firstAttribute="top" secondItem="gij-mv-boH" secondAttribute="bottom" constant="10" id="CMH-6r-Kr1"/>
                             <constraint firstItem="xIO-j8-SbU" firstAttribute="top" secondItem="0Nd-xY-CbL" secondAttribute="bottom" constant="20" id="Dyb-KC-rY2"/>

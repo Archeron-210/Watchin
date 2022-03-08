@@ -25,6 +25,7 @@
 		20A18E1F27D6074700871DB9 /* WatchinLaterShowDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A18E1E27D6074700871DB9 /* WatchinLaterShowDetailsViewController.swift */; };
 		20C56D7E27CCD71F00927D6F /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C56D7D27CCD71F00927D6F /* Episode.swift */; };
 		20C56D8327CE7B3200927D6F /* PlatformPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C56D8227CE7B3200927D6F /* PlatformPickerViewController.swift */; };
+		20C8C75E27D7744200A4D0A4 /* AspectSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8C75D27D7744200A4D0A4 /* AspectSettings.swift */; };
 		20DB581127B162AE0007B649 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DB581027B162AE0007B649 /* AppDelegate.swift */; };
 		20DB581327B162AE0007B649 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DB581227B162AE0007B649 /* SceneDelegate.swift */; };
 		20DB581827B162AE0007B649 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DB581627B162AE0007B649 /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 		20A18E1E27D6074700871DB9 /* WatchinLaterShowDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchinLaterShowDetailsViewController.swift; sourceTree = "<group>"; };
 		20C56D7D27CCD71F00927D6F /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		20C56D8227CE7B3200927D6F /* PlatformPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformPickerViewController.swift; sourceTree = "<group>"; };
+		20C8C75D27D7744200A4D0A4 /* AspectSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectSettings.swift; sourceTree = "<group>"; };
 		20DB580D27B162AE0007B649 /* Watchin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watchin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DB581027B162AE0007B649 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20DB581227B162AE0007B649 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		20DB584727B1641A0007B649 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				20C8C75D27D7744200A4D0A4 /* AspectSettings.swift */,
 				20C56D9027D0D17700927D6F /* Home Scene */,
 				20C56D8F27D0D16D00927D6F /* Search Scene */,
 				20C56D8E27D0D15B00927D6F /* Watchin Later Scene */,
@@ -530,6 +533,7 @@
 				20F1B30727C69BFB00AC3874 /* TrackingViewController.swift in Sources */,
 				20E164AD27B182670057E42C /* SearchViewController.swift in Sources */,
 				203076FC27BBFC4900A2AD36 /* UserRepository.swift in Sources */,
+				20C8C75E27D7744200A4D0A4 /* AspectSettings.swift in Sources */,
 				203076CD27B67E0C00A2AD36 /* UITableView+Extension.swift in Sources */,
 				20E164A927B182190057E42C /* HomeViewController.swift in Sources */,
 				203076E527BAAC3500A2AD36 /* ShowDetail.swift in Sources */,

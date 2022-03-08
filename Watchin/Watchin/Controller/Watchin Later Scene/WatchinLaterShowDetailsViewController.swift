@@ -25,16 +25,16 @@ class WatchinLaterShowDetailsViewController: UIViewController {
     // MARK: - Properties
 
     var show: ShowDetailFormatted?
-    var watchinShowRepository = WatchinShowRepository.shared
+    private let aspectSetter = AspectSettings.shared
+    private let watchinShowRepository = WatchinShowRepository.shared
 
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setButtonAspect(for: changePlatformButton)
-        setButtonAspect(for: startWatchinItButton)
-        setButtonAspect(for: deleteButton)
+        aspectSetter.setButtonBasicAspect(for: changePlatformButton)
+        aspectSetter.setButtonBasicAspect(for: startWatchinItButton)
+        aspectSetter.setButtonBasicAspect(for: deleteButton)
         displayShowDetails()
     }
 
@@ -59,7 +59,7 @@ class WatchinLaterShowDetailsViewController: UIViewController {
             return
         }
 
-        setImage()
+        aspectSetter.setImage(for: show, on: tvShowPosterImageView)
         showTitleLabel.text = show.nameFormatted
         startDateAndStatusLabel.text = "\(show.startDateFormatted) - \(show.statusFormatted)"
         genresLabel.text = show.genresFormatted
@@ -68,23 +68,11 @@ class WatchinLaterShowDetailsViewController: UIViewController {
         platformNameLabel.text = show.platformFormatted
     }
 
-    private func setImage() {
-        guard let show = show else {
-            return
-        }
-
-        if let imageUrl = URL(string: show.imageStringUrlFormatted) {
-            tvShowPosterImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "watchinIcon"))
-        } else {
-            tvShowPosterImageView.image = UIImage(named: "watchinIcon")
-        }
-    }
-
     private func goToPlatformsPicker() {
-        guard let currentShow = show, let platformPickerViewController = self.storyboard?.instantiateViewController(identifier: "PlatformPickerViewController") as? PlatformPickerViewController else {
+        guard let show = show, let platformPickerViewController = self.storyboard?.instantiateViewController(identifier: "PlatformPickerViewController") as? PlatformPickerViewController else {
             return
         }
-        platformPickerViewController.show = currentShow
+        platformPickerViewController.show = show
         platformPickerViewController.delegate = self
         self.present(platformPickerViewController, animated: true)
     }
@@ -104,16 +92,6 @@ class WatchinLaterShowDetailsViewController: UIViewController {
         watchinShowRepository.deleteWatchinShow(show: show)
         navigationController?.popViewController(animated: true)
     }
-
-    // MARK: - UI Aspect
-
-    private func setButtonAspect(for button: UIButton) {
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.white.cgColor
-        button.layer.cornerRadius = 10
-        button.titleLabel?.numberOfLines = 1
-    }
-
 
     // MARK: - Alerts
 

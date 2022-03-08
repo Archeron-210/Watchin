@@ -24,9 +24,8 @@ class EditProfileViewController: UIViewController {
     // MARK: - Properties
 
     weak var delegate: EditProfileViewControllerDismissDelegate?
-
+    private let aspectSetter = AspectSettings.shared
     private let repository = UserRepository.shared
-
     private var user: User {
         UserRepository.shared.getUser()
     }
@@ -35,18 +34,16 @@ class EditProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setProfilePictureAspect()
-        setButtonAspect(for: choosePictureButton)
-        setButtonAspect(for: saveChangesButton)
-        setButtonAspect(for: exitButton)
-        setTextFieldAspect()
+        aspectSetter.setProfilePictureAspect(for: profilePictureImageView)
+        aspectSetter.setButtonBasicAspect(for: choosePictureButton)
+        aspectSetter.setButtonBasicAspect(for: saveChangesButton)
+        aspectSetter.setButtonBasicAspect(for: exitButton)
+        aspectSetter.setTextFieldAspect(for: userNameTextField)
         displayUserInfos()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         self.presentingViewController?.viewWillAppear(true)
-
         if isBeingDismissed {
             delegate?.didDismiss()
         }
@@ -76,57 +73,23 @@ class EditProfileViewController: UIViewController {
 
     private func saveChanges() {
         guard let userName = userNameTextField.text, !userName.isEmpty else {
-            emptyTextFieldAlert()
+            alert(title: "⚠️", message: "Please enter your name before saving !")
             return
         }
         let data = profilePictureImageView.image?.pngData()
         let user = User(name: userName, profilePictureData: data)
         let success = repository.saveUser(user)
         if success {
-            successAlert()
+            alert(title: "✅", message: "Changes saved successfully !")
         } else {
-            failureAlert()
+            alert(title: "❌", message: "We were unable to save your changes")
         }
-    }
-
-    // MARK: - UI Aspect
-
-    private func setProfilePictureAspect() {
-        profilePictureImageView.layer.borderWidth = 3
-        profilePictureImageView.layer.masksToBounds = false
-        profilePictureImageView.layer.borderColor = UIColor.white.cgColor
-        profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.height/2
-        profilePictureImageView.clipsToBounds = true
-    }
-
-    private func setButtonAspect(for button: UIButton) {
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.white.cgColor
-        button.layer.cornerRadius = 10
-    }
-
-    private func setTextFieldAspect() {
-        userNameTextField.setBottomBorderAndPlaceholderTextColor()
     }
 
     // MARK: - Alerts
 
-    private func emptyTextFieldAlert() {
-        let alert = UIAlertController(title: "⚠️", message: "Please enter your name before saving !", preferredStyle: .alert)
-        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(actionAlert)
-        present(alert, animated: true, completion: nil)
-    }
-
-    private func successAlert() {
-        let alert = UIAlertController(title: "✅", message: "Changes saved successfully !", preferredStyle: .alert)
-        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(actionAlert)
-        present(alert, animated: true, completion: nil)
-    }
-
-    private func failureAlert() {
-        let alert = UIAlertController(title: "❌", message: "We were unable to save your changes", preferredStyle: .alert)
+    private func alert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(actionAlert)
         present(alert, animated: true, completion: nil)

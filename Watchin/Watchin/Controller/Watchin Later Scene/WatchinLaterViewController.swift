@@ -21,8 +21,8 @@ class WatchinLaterViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         watchinLaterShows = watchinShowRepository.getUntrackedShows()
+        tableView.backgroundColor = UIColor.clear
         tableView.reloadData()
     }
 
@@ -63,6 +63,10 @@ extension WatchinLaterViewController: UITableViewDelegate {
         goToWatchinLaterShowDetails(for: watchinLaterShows[indexPath.row])
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160.0
+    }
+
     private func goToWatchinLaterShowDetails(for show: ShowDetailFormatted) {
         guard let watchinLaterShowDetailsViewController = self.storyboard?.instantiateViewController(identifier: "WatchinLaterShowDetailsViewController") as? WatchinLaterShowDetailsViewController else {
             return
@@ -71,9 +75,5 @@ extension WatchinLaterViewController: UITableViewDelegate {
         watchinLaterShowDetailsViewController.show = show
 
         self.navigationController?.pushViewController(watchinLaterShowDetailsViewController, animated: true)
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160.0
     }
 }
