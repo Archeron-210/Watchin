@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		203076BB27B56ADD00A2AD36 /* Platforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076BA27B56ADD00A2AD36 /* Platforms.swift */; };
 		203076BF27B56DF500A2AD36 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076BE27B56DF500A2AD36 /* SearchResult.swift */; };
-		203076C527B572F500A2AD36 /* TvShowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076C427B572F500A2AD36 /* TvShowService.swift */; };
+		203076C527B572F500A2AD36 /* ShowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076C427B572F500A2AD36 /* ShowService.swift */; };
 		203076C927B57C0000A2AD36 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076C827B57C0000A2AD36 /* NetworkService.swift */; };
 		203076CD27B67E0C00A2AD36 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076CC27B67E0C00A2AD36 /* UITableView+Extension.swift */; };
 		203076D527B6C3E100A2AD36 /* ShowResultDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076D427B6C3E100A2AD36 /* ShowResultDetailsViewController.swift */; };
@@ -34,7 +34,7 @@
 		20E164A927B182190057E42C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E164A827B182190057E42C /* HomeViewController.swift */; };
 		20E164AD27B182670057E42C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E164AC27B182670057E42C /* SearchViewController.swift */; };
 		20E164B127B1830E0057E42C /* WatchinLaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E164B027B1830E0057E42C /* WatchinLaterViewController.swift */; };
-		20E164B927B3C7CF0057E42C /* TvShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E164B827B3C7CF0057E42C /* TvShowTableViewCell.swift */; };
+		20E164B927B3C7CF0057E42C /* WatchinShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E164B827B3C7CF0057E42C /* WatchinShowTableViewCell.swift */; };
 		20E164BD27B3CF020057E42C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E164BC27B3CF020057E42C /* EditProfileViewController.swift */; };
 		20E164C927B4111D0057E42C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E164C827B4111D0057E42C /* UITextField+Extension.swift */; };
 		20F1B2E927C2AC8200AC3874 /* WatchinShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1B2E827C2AC8200AC3874 /* WatchinShow.swift */; };
@@ -64,7 +64,7 @@
 		11A099D167BD5C0DCF5B48F5 /* Pods-Watchin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watchin.debug.xcconfig"; path = "Target Support Files/Pods-Watchin/Pods-Watchin.debug.xcconfig"; sourceTree = "<group>"; };
 		203076BA27B56ADD00A2AD36 /* Platforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platforms.swift; sourceTree = "<group>"; };
 		203076BE27B56DF500A2AD36 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
-		203076C427B572F500A2AD36 /* TvShowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowService.swift; sourceTree = "<group>"; };
+		203076C427B572F500A2AD36 /* ShowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowService.swift; sourceTree = "<group>"; };
 		203076C827B57C0000A2AD36 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		203076CC27B67E0C00A2AD36 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		203076D427B6C3E100A2AD36 /* ShowResultDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowResultDetailsViewController.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		20E164A827B182190057E42C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		20E164AC27B182670057E42C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		20E164B027B1830E0057E42C /* WatchinLaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchinLaterViewController.swift; sourceTree = "<group>"; };
-		20E164B827B3C7CF0057E42C /* TvShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowTableViewCell.swift; sourceTree = "<group>"; };
+		20E164B827B3C7CF0057E42C /* WatchinShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchinShowTableViewCell.swift; sourceTree = "<group>"; };
 		20E164BC27B3CF020057E42C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		20E164C827B4111D0057E42C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		20F1B2E827C2AC8200AC3874 /* WatchinShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchinShow.swift; sourceTree = "<group>"; };
@@ -237,7 +237,7 @@
 				20F1B30E27C8E40200AC3874 /* Extensions */,
 				20DB581627B162AE0007B649 /* Main.storyboard */,
 				203076E827BBBC9C00A2AD36 /* ShowPreviewTableViewCell.swift */,
-				20E164B827B3C7CF0057E42C /* TvShowTableViewCell.swift */,
+				20E164B827B3C7CF0057E42C /* WatchinShowTableViewCell.swift */,
 				20FA1E2427C8E8A000DA009E /* EpisodeTableViewCell.swift */,
 				206930F327D4F37F00D82268 /* WatchinLaterTableViewCell.swift */,
 			);
@@ -305,7 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				203076C827B57C0000A2AD36 /* NetworkService.swift */,
-				203076C427B572F500A2AD36 /* TvShowService.swift */,
+				203076C427B572F500A2AD36 /* ShowService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -533,11 +533,11 @@
 				203076CD27B67E0C00A2AD36 /* UITableView+Extension.swift in Sources */,
 				20E164A927B182190057E42C /* HomeViewController.swift in Sources */,
 				203076E527BAAC3500A2AD36 /* ShowDetail.swift in Sources */,
-				203076C527B572F500A2AD36 /* TvShowService.swift in Sources */,
+				203076C527B572F500A2AD36 /* ShowService.swift in Sources */,
 				20F1B2E927C2AC8200AC3874 /* WatchinShow.swift in Sources */,
 				20F1B2FD27C4EF0700AC3874 /* Show.swift in Sources */,
 				203076C927B57C0000A2AD36 /* NetworkService.swift in Sources */,
-				20E164B927B3C7CF0057E42C /* TvShowTableViewCell.swift in Sources */,
+				20E164B927B3C7CF0057E42C /* WatchinShowTableViewCell.swift in Sources */,
 				2030770627BD0D2000A2AD36 /* User.swift in Sources */,
 				20A18E1F27D6074700871DB9 /* WatchinLaterShowDetailsViewController.swift in Sources */,
 				206930F427D4F38000D82268 /* WatchinLaterTableViewCell.swift in Sources */,

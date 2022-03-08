@@ -112,7 +112,7 @@ extension HomeViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tvShowCell", for: indexPath) as? TvShowTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "WatchinShowCell", for: indexPath) as? WatchinShowTableViewCell else {
             return UITableViewCell()
         }
 
@@ -146,6 +146,6 @@ extension HomeViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        160.0
+        return 160.0
     }
 }

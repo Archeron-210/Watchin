@@ -24,6 +24,5 @@ struct ShowSearchDetail: Decodable {
     private enum CodingKeys: String, CodingKey {
         case id, name, country, apiFormatedName = "permalink", imageStringUrl = "image_thumbnail_path"
     }
-
 }
 

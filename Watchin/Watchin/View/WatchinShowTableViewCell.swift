@@ -1,5 +1,5 @@
 //
-//  TvShowTableViewCell.swift
+//  WatchinShowTableViewCell.swift
 //  Watchin
 //
 //  Created by Archeron on 09/02/2022.
@@ -8,7 +8,7 @@
 import UIKit
 import AlamofireImage
 
-class TvShowTableViewCell: UITableViewCell {
+class WatchinShowTableViewCell: UITableViewCell {
 
     @IBOutlet weak var tvShowPosterImageView: UIImageView!
     @IBOutlet weak var showTitleLabel: UILabel!

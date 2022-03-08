@@ -108,6 +108,7 @@ class WatchinShowRepository {
             return watchinShow.id == show.idFormatted
         })
         guard let foundWatchinShow = searchedShow else {
+            print("WatchinShow not found, unable to save desired changes")
             return
         }
         coreDataStack.viewContext.delete(foundWatchinShow)

@@ -43,27 +43,21 @@ extension TvShowInfo: ShowDetailFormatted {
     var idFormatted: Int {
         return id
     }
-
     var nameFormatted: String {
         return name
     }
-
     var countryFormatted: String {
         return "Country: \(country)"
     }
-
     var statusFormatted: String {
         return status
     }
-
     var imageStringUrlFormatted: String {
         return imageStringUrl
     }
-
     var descriptionFormatted: String {
         return description.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
-
     var descriptionSourceFormatted: String {
         guard let descriptionSource = descriptionSource else {
             let formattedName = name.replacingOccurrences(of: " ", with: "+")
@@ -71,7 +65,6 @@ extension TvShowInfo: ShowDetailFormatted {
         }
         return descriptionSource
     }
-
     var startDateFormatted: String {
         var date = ""
         if startDate.hasAlphabeticalCharacters() {
@@ -81,33 +74,26 @@ extension TvShowInfo: ShowDetailFormatted {
         }
         return "(\(date))"
     }
-
     var genresFormatted: String {
         return genres.joined(separator: ", ")
     }
-
     var numberOfSeasons: String {
         let seasonNumber = episodes.map{$0.season}.max() ?? 0
         return String(seasonNumber)
     }
-
     var numberOfEpisodes: String {
         let numberOfEpisodesFormatted = String(episodes.count)
         return numberOfEpisodesFormatted
     }
-
     var watchedSeasonsFormatted: Int {
         return 0
     }
-
     var watchedEpisodesFormatted: Int {
         return 0
     }
-
     var platformFormatted: String {
         return "add platform"
     }
-
     var trackedFormatted: Bool {
         return false
     }
@@ -119,20 +105,15 @@ extension EpisodeInfo: EpisodeFormatted {
     var episodeNameFormatted: String {
         return name
     }
-
     var episodeNumberFormatted: Int {
         return episode
     }
-
     var seasonNumberFormatted: Int {
         return season
     }
-
     var hasBeenWatchedFormatted: Bool {
         return false
-
     }
-
     var episodeIdFormatted: Int {
         let stringID = "\(season)\(episode)"
         guard let id = Int(stringID) else {
@@ -140,5 +121,4 @@ extension EpisodeInfo: EpisodeFormatted {
         }
         return id
     }
-
 }

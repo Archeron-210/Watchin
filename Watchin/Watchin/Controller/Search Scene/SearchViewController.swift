@@ -19,7 +19,7 @@ class SearchViewController: UIViewController {
     // MARK: - Properties
 
     var searchResults: [ShowSearchDetail] = []
-    private let tvShowService = TvShowService()
+    private let showService = ShowService()
 
     // MARK: - Life Cycle
 
@@ -56,7 +56,7 @@ class SearchViewController: UIViewController {
 
     private func getSearchResults() {
         toggleActivityIndicator(shown: true)
-        tvShowService.getSearchResults(searchText: searchTextField.text) { result in
+        showService.getSearchResults(searchText: searchTextField.text) { result in
             self.toggleActivityIndicator(shown: false)
             switch result {
             case .success(let showsFound) :
@@ -158,7 +158,7 @@ extension SearchViewController: UITableViewDelegate {
 
         tableView.deselectRow(at: indexPath, animated: true)
 
-        tvShowService.getShowDetails(for: searchResults[indexPath.row].apiFormatedName) { result in
+        showService.getShowDetails(for: searchResults[indexPath.row].apiFormatedName) { result in
             switch result {
             case .success(let details):
                 self.goToShowDetails(with: details)
@@ -172,12 +172,12 @@ extension SearchViewController: UITableViewDelegate {
         guard let showResultDetailsViewController = self.storyboard?.instantiateViewController(identifier: "ShowResultDetailsViewController") as? ShowResultDetailsViewController else {
             return
         }
-        showResultDetailsViewController.tvShow = details
+        showResultDetailsViewController.show = details
         showResultDetailsViewController.episodes = details.episodes
         self.navigationController?.pushViewController(showResultDetailsViewController, animated: true)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        160.0
+        return 160.0
     }
 }

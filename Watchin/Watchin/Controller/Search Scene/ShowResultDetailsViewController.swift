@@ -25,7 +25,7 @@ class ShowResultDetailsViewController: UIViewController {
 
     // MARK: - Properties
 
-    var tvShow: ShowDetailFormatted?
+    var show: ShowDetailFormatted?
     var episodes: [EpisodeFormatted]?
     private let watchinShowRepository = WatchinShowRepository.shared
     private let episodeDetailRepository = EpisodeDetailRepository.shared
@@ -67,7 +67,7 @@ class ShowResultDetailsViewController: UIViewController {
     // MARK: - Private
 
     private func displayShowDetails() {
-        guard let tvShow = tvShow else {
+        guard let tvShow = show else {
             return
         }
 
@@ -82,7 +82,7 @@ class ShowResultDetailsViewController: UIViewController {
     }
 
     private func setImage() {
-        guard let tvShow = tvShow else {
+        guard let tvShow = show else {
             return
         }
         if let imageUrl = URL(string: tvShow.imageStringUrlFormatted) {
@@ -93,7 +93,7 @@ class ShowResultDetailsViewController: UIViewController {
     }
 
     private func displayCorrectSeasonInfo() {
-        guard let tvShow = tvShow else {
+        guard let tvShow = show else {
             return
         }
 
@@ -106,7 +106,7 @@ class ShowResultDetailsViewController: UIViewController {
     }
 
     private func saveShowToYourShows() {
-        guard let show = tvShow else {
+        guard let show = show else {
             return
         }
         let success = watchinShowRepository.saveWatchinShow(show: show)
@@ -120,7 +120,7 @@ class ShowResultDetailsViewController: UIViewController {
     }
 
     private func saveEpisodes() {
-        guard let episodes = episodes, let show = tvShow else {
+        guard let episodes = episodes, let show = show else {
             return
         }
         for episode in episodes {
@@ -129,7 +129,7 @@ class ShowResultDetailsViewController: UIViewController {
     }
 
     private func saveShowToWatchinLater() {
-        guard let show = tvShow else {
+        guard let show = show else {
             return
         }
         let success = watchinShowRepository.saveWatchinShow(show: show)
@@ -142,7 +142,7 @@ class ShowResultDetailsViewController: UIViewController {
     }
 
     private func goToWebsite() {
-        guard let tvShow = tvShow else {
+        guard let tvShow = show else {
             return
         }
         guard let url = URL(string: tvShow.descriptionSourceFormatted) else {
@@ -152,7 +152,7 @@ class ShowResultDetailsViewController: UIViewController {
     }
 
     private func savePlatform(from pickerView: UIPickerView) {
-        guard let tvShow = tvShow else {
+        guard let tvShow = show else {
             return
         }
         let platformIndex = pickerView.selectedRow(inComponent: 0)
@@ -219,7 +219,7 @@ class ShowResultDetailsViewController: UIViewController {
     // MARK: - UI Aspect
 
     private func configureAddToYourShowsButton() {
-        guard let show = tvShow else {
+        guard let show = show else {
             return
         }
 
@@ -237,7 +237,7 @@ class ShowResultDetailsViewController: UIViewController {
     }
 
     private func configureAddToWatchinLaterButton() {
-        guard let show = tvShow else {
+        guard let show = show else {
             return
         }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TvShowService {
+class ShowService {
 
     // MARK: - Properties
 
