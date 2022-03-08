@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         // UINavigationBar appearance
-        UINavigationBar.appearance().tintColor = UIColor(red: 61, green: 176, blue: 239)
+        UINavigationBar.appearance().tintColor = UIColor.lightBlue
         if let customFont = UIFont(name: "Kohinoor Telugu", size: 22.0) {
             UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
             UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .highlighted)
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().unselectedItemTintColor = .white
         UITabBar.appearance().backgroundImage = tabBarImage?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch)
 
-        UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = UIColor(red: 61, green: 176, blue: 239)
+        UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = UIColor.lightBlue
 
         return true
     }

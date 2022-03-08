@@ -21,7 +21,7 @@ class AspectSettings {
 
     func setButtonOnWhiteBackgroundAspect(for button: UIButton) {
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor(red: 61, green: 176, blue: 239).cgColor
+        button.layer.borderColor = UIColor.lightBlue.cgColor
         button.layer.cornerRadius = 10
         button.titleLabel?.numberOfLines = 1
     }
@@ -48,5 +48,12 @@ class AspectSettings {
         } else {
             imageView.image = UIImage(named: "watchinIcon")
         }
+    }
+
+    func setLabelForPicker(for label: UILabel, with title: String) {
+        label.text = title
+        label.font = UIFont(name: "Kohinoor Telugu", size: 25)
+        label.textColor = UIColor.lightBlue
+        label.textAlignment = .center
     }
 }

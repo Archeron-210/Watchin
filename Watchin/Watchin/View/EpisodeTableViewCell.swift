@@ -57,7 +57,7 @@ class EpisodeTableViewCell: UITableViewCell {
         let hasBeenWatched = episode.hasBeenWatchedFormatted
 
         let title =  hasBeenWatched ? "Seen ✓" : "Saw it !"
-        let color = hasBeenWatched ? UIColor(red: 61, green: 176, blue: 239) : UIColor.white
+        let color = hasBeenWatched ? UIColor.lightBlue : UIColor.white
         let backgroundColor = hasBeenWatched ? UIColor.white : UIColor.clear
 
         sawItButton.setTitle(title, for: .normal)

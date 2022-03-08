@@ -38,9 +38,9 @@ extension WatchinLaterViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if watchinLaterShows.count == 0 {
-            self.tableView.setEmptyMessage("This list in currently empty.\nHere, you can save\nall the shows to want to watch later.\nStart by searching a TV show\nand add it to Watchin' Later !\n↓")
+            tableView.setEmptyMessage("This list in currently empty.\nHere, you can save\nall the shows to want to watch later.\nStart by searching a TV show\nand add it to Watchin' Later !\n↓")
         } else {
-            self.tableView.restore()
+            tableView.restore()
         }
         return watchinLaterShows.count
     }

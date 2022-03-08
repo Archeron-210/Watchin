@@ -185,7 +185,7 @@ class ShowResultDetailsViewController: UIViewController {
     private func watchinLaterPlatformPickerViewAlert() {
         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
         alert.isModalInPresentation = true
-        let titleAttributes = [NSAttributedString.Key.font: UIFont(name: "Kohinoor Telugu", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor(red: 61, green: 176, blue: 239)]
+        let titleAttributes = [NSAttributedString.Key.font: UIFont(name: "Kohinoor Telugu", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.lightBlue]
         let titleString = NSAttributedString(string: "Please select a platform :", attributes: titleAttributes)
         alert.setValue(titleString, forKey: "attributedTitle")
 
@@ -212,7 +212,7 @@ class ShowResultDetailsViewController: UIViewController {
 
         let isSavedToYourShows = watchinShowRepository.isInYourShows(show: show)
         let title = isSavedToYourShows ? "Added to your shows !" : "Add to your shows"
-        let color = isSavedToYourShows ? UIColor(red: 61, green: 176, blue: 239) : UIColor.white
+        let color = isSavedToYourShows ? UIColor.lightBlue : UIColor.white
         let backgroundColor = isSavedToYourShows ? UIColor.white : UIColor.clear
 
         addToYourShowsButton.setTitle(title, for: .normal)
@@ -230,7 +230,7 @@ class ShowResultDetailsViewController: UIViewController {
 
         let isInWatchinLater = watchinShowRepository.isInWatchinLater(show: show)
         let title = isInWatchinLater ? "Added to Watchin' Later !" : "Add to Watchin' Later"
-        let color = isInWatchinLater ? UIColor(red: 61, green: 176, blue: 239) : UIColor.white
+        let color = isInWatchinLater ? UIColor.lightBlue : UIColor.white
         let backgroundColor = isInWatchinLater ? UIColor.white : UIColor.clear
 
         addToWatchinLaterButton.setTitle(title, for: .normal)
@@ -260,10 +260,7 @@ extension ShowResultDetailsViewController: UIPickerViewDelegate {
 
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let pickerLabel = UILabel()
-        pickerLabel.text = sortedPlatformNames[row]
-        pickerLabel.font = UIFont(name: "Kohinoor Telugu", size: 25)
-        pickerLabel.textColor = UIColor(red: 61, green: 176, blue: 239)
-        pickerLabel.textAlignment = .center
+        aspectSetter.setLabelForPicker(for: pickerLabel, with: sortedPlatformNames[row])
         return pickerLabel
     }
 }

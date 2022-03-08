@@ -87,9 +87,9 @@ extension HomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if shows.count == 0 {
-            self.tableView.setEmptyMessage("This list in currently empty.\n Start by searching a TV show\nand add it to your shows !\n↓")
+            tableView.setEmptyMessage("This list in currently empty.\n Start by searching a TV show\nand add it to your shows !\n↓")
         } else {
-            self.tableView.restore()
+            tableView.restore()
         }
         return shows.count
     }

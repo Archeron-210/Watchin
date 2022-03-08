@@ -24,7 +24,7 @@ class PlatformPickerViewController: UIViewController {
 
     weak var delegate: PlatformPickerViewControllerDismissDelegate?
     var show: ShowDetailFormatted?
-    private let setterAspect = AspectSettings.shared
+    private let aspectSetter = AspectSettings.shared
     private let watchinShowRepository = WatchinShowRepository.shared
 
 
@@ -32,9 +32,9 @@ class PlatformPickerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setterAspect.setContainerViewAspect(for: pickerContainerView)
-        setterAspect.setButtonOnWhiteBackgroundAspect(for: doneButton)
-        setterAspect.setButtonOnWhiteBackgroundAspect(for: exitButton)
+        aspectSetter.setContainerViewAspect(for: pickerContainerView)
+        aspectSetter.setButtonOnWhiteBackgroundAspect(for: doneButton)
+        aspectSetter.setButtonOnWhiteBackgroundAspect(for: exitButton)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -88,10 +88,7 @@ extension PlatformPickerViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let pickerLabel = UILabel()
-        pickerLabel.text = sortedPlatformNames[row]
-        pickerLabel.font = UIFont(name: "Kohinoor Telugu", size: 25)
-        pickerLabel.textColor = UIColor(red: 61, green: 176, blue: 239)
-        pickerLabel.textAlignment = .center
+        aspectSetter.setLabelForPicker(for: pickerLabel, with: sortedPlatformNames[row])
         return pickerLabel
     }
 }

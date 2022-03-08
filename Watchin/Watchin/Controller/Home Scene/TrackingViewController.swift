@@ -223,7 +223,7 @@ extension TrackingViewController: UITableViewDelegate {
         let titleLabel = UILabel(frame: CGRect(x: 20, y: 2, width: header.frame.size.width - 5, height: header.frame.size.height - 5))
         titleLabel.text = "◦ Season \(section + 1)"
         titleLabel.font = UIFont(name: "Kohinoor Telugu", size: 22)
-        titleLabel.textColor = UIColor(red: 61, green: 176, blue: 239)
+        titleLabel.textColor = UIColor.lightBlue
 
         header.addSubview(titleLabel)
         return header
