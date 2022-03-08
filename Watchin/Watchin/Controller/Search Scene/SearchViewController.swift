@@ -18,7 +18,7 @@ class SearchViewController: UIViewController {
 
     // MARK: - Properties
 
-    var searchResults: [TvShowsSearchDetail] = []
+    var searchResults: [ShowSearchDetail] = []
     private let tvShowService = TvShowService()
 
     // MARK: - Life Cycle
@@ -136,7 +136,7 @@ extension SearchViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tvShowPreviewCell", for: indexPath) as? TvShowPreviewTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ShowPreviewCell", for: indexPath) as? ShowPreviewTableViewCell else {
             return UITableViewCell()
         }
 

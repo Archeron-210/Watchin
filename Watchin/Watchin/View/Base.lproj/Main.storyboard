@@ -746,7 +746,7 @@
                                 <rect key="frame" x="0.0" y="244" width="414" height="569"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tvShowPreviewCell" rowHeight="160" id="YG8-1J-Og0" userLabel="tvShowPreviewCell" customClass="TvShowPreviewTableViewCell" customModule="Watchin" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShowPreviewCell" rowHeight="160" id="YG8-1J-Og0" customClass="ShowPreviewTableViewCell" customModule="Watchin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YG8-1J-Og0" id="SBp-PA-Ubl">
@@ -799,7 +799,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="countryLabel" destination="25j-he-H10" id="VI8-bN-zmX"/>
+                                            <outlet property="countryLabel" destination="25j-he-H10" id="emY-eC-ZLN"/>
                                             <outlet property="showTitleLabel" destination="M2o-bV-de5" id="TF3-Ni-yhk"/>
                                             <outlet property="tvShowPosterImageView" destination="oMj-us-Nea" id="ffT-Og-RTp"/>
                                         </connections>

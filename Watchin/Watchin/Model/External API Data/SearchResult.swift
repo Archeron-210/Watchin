@@ -10,10 +10,10 @@ import Foundation
 // MARK: - Data Mapping From API JSON Response
 
 struct SearchResult: Decodable {
-    var tv_shows: [TvShowsSearchDetail]
+    var tv_shows: [ShowSearchDetail]
 }
 
-struct TvShowsSearchDetail: Decodable {
+struct ShowSearchDetail: Decodable {
     var id: Int
     var name: String
     var country: String
@@ -27,18 +27,3 @@ struct TvShowsSearchDetail: Decodable {
 
 }
 
-extension TvShowsSearchDetail: TvShowPreview {
-    var imageUrl: URL? {
-        return URL(string: imageStringUrl)
-    }
-
-    var watchedEpisodes: String {
-        return "Watched episodes: \nClic to start tracking!"
-    }
-
-    var platformAssociated: String {
-        return "On: add platform"
-    }
-
-
-}
