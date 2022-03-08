@@ -9,24 +9,31 @@ import Foundation
 
 struct ApiConfiguration {
 
-    let baseUrl: String
+    let searchBaseURL: String
+    let showDetailBaseURL: String
 
-    init(baseUrl: String) {
-        self.baseUrl = baseUrl
+    init(searchBaseURL: String, showDetailBaseURL: String) {
+        self.searchBaseURL = searchBaseURL
+        self.showDetailBaseURL = showDetailBaseURL
     }
 
     init() {
-        baseUrl = "https://www.episodate.com/api/"
+        searchBaseURL = "https://www.episodate.com/api/search"
+        showDetailBaseURL = "https://www.episodate.com/api/show-details"
     }
 }
 
 class ShowService {
 
+    enum Route: String {
+        case search
+        case showDetails = "show-details"
+    }
+
     // MARK: - Properties
 
     private let networkService: NetworkProtocol
     private let apiConfiguration: ApiConfiguration
-    private let baseUrl = "https://www.episodate.com/api/"
 
     // MARK: - Init
 
@@ -38,9 +45,9 @@ class ShowService {
     // MARK: - getSearchResults & getShowDetails
 
     func getSearchResults(searchText: String?, completion: @escaping (Result<[ShowSearchDetail], Error>) -> Void) {
-        let baseUrl = computeSearchBaseUrl(searchText: searchText)
-
-        networkService.request(baseURL: baseUrl) { (result: Result<SearchResult, Error>) in
+        let baseURL = apiConfiguration.searchBaseURL
+        let parameters = computeSearchParameters(searchParameter: searchText)
+        networkService.request(baseURL: baseURL, parameters: parameters) { (result: Result<SearchResult, Error>) in
             switch result {
             case .success(let searchResult):
                 let tvShows = searchResult.tv_shows
@@ -52,9 +59,9 @@ class ShowService {
     }
 
     func getShowDetails(for showName: String, completion: @escaping (Result<TvShowInfo, Error>) -> Void) {
-        let baseUrl = computeShowDetailsBaseUrl(for: showName)
-
-        networkService.request(baseURL: baseUrl) { (result: Result<ShowDetail, Error>) in
+        let baseURL = apiConfiguration.showDetailBaseURL
+        let parameters = computeSearchParameters(searchParameter: showName)
+        networkService.request(baseURL: baseURL, parameters: parameters) { (result: Result<ShowDetail, Error>) in
             switch result {
             case .success(let details):
                 let showDetails = details.tvShow
@@ -68,15 +75,14 @@ class ShowService {
 
     // MARK: - Private
 
-    private func computeSearchBaseUrl(searchText: String?) -> String {
-        guard let text = searchText, let escapedText = escapeWhitespaces(for: text) else {
-            return ""
+    private func computeSearchParameters(searchParameter: String?) -> [String: Any] {
+        guard let text = searchParameter, let escapedText = escapeWhitespaces(for: text) else {
+            return [:]
         }
-        return "\(apiConfiguration.baseUrl)search?q=\(escapedText)&page=1"
-    }
-
-    private func computeShowDetailsBaseUrl(for tvShowName: String) -> String {
-        return "\(apiConfiguration.baseUrl)show-details?q=\(tvShowName)"
+        let parameters: [String: Any] = [
+            "q": escapedText
+        ]
+        return parameters
     }
 
     private func escapeWhitespaces(for text: String) -> String? {

@@ -208,21 +208,13 @@
 		20C8C76727D79DF700A4D0A4 /* ShowService Tests */ = {
 			isa = PBXGroup;
 			children = (
-				20C8C76827D79E2800A4D0A4 /* JSONs */,
+				20C8C77D27D7A21A00A4D0A4 /* CorrectSearchResults.json */,
+				20C8C78127D7A23400A4D0A4 /* CorrectShowDetails.json */,
+				20C8C77727D7A1B300A4D0A4 /* Incorrect.json */,
 				20C8C76927D79E5600A4D0A4 /* FakeNetworkService.swift */,
 				20C8C76F27D79E9800A4D0A4 /* ShowServiceTests.swift */,
 			);
 			path = "ShowService Tests";
-			sourceTree = "<group>";
-		};
-		20C8C76827D79E2800A4D0A4 /* JSONs */ = {
-			isa = PBXGroup;
-			children = (
-				20C8C77D27D7A21A00A4D0A4 /* CorrectSearchResults.json */,
-				20C8C78127D7A23400A4D0A4 /* CorrectShowDetails.json */,
-				20C8C77727D7A1B300A4D0A4 /* Incorrect.json */,
-			);
-			path = JSONs;
 			sourceTree = "<group>";
 		};
 		20DB580427B162AD0007B649 = {

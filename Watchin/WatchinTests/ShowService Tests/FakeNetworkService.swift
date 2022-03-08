@@ -9,7 +9,8 @@ import Foundation
 @testable import Watchin
 
 class FakeNetworkService: NetworkProtocol {
-    func request<T>(baseURL: String, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
+    // implementing request from NetworkProtocol, this time by passing fake data through "baseUrl":
+    func request<T>(baseURL: String, parameters: [String: Any], completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
         let bundle = Bundle(for: FakeNetworkService.self)
         let url = bundle.url(forResource: baseURL, withExtension: "json")!
         do {
@@ -24,13 +25,10 @@ class FakeNetworkService: NetworkProtocol {
 
 class FakeConfiguration {
 
-    static var correctSearchResults: ApiConfiguration {
-        return ApiConfiguration(baseUrl: "CorrectSearchResults")
-    }
-    static var correctShowDetails: ApiConfiguration {
-        return ApiConfiguration(baseUrl: "CorrectShowDetails")
+    static var correct: ApiConfiguration {
+        return ApiConfiguration(searchBaseURL: "CorrectSearchResults", showDetailBaseURL: "CorrectShowDetails")
     }
     static var incorrect: ApiConfiguration {
-        return ApiConfiguration(baseUrl: "Incorrect")
+        return ApiConfiguration(searchBaseURL: "Incorrect", showDetailBaseURL: "Incorrect")
     }
 }

@@ -12,15 +12,15 @@ import Alamofire
 // The protocol used in application and in unit tests
 
 protocol NetworkProtocol: AnyObject {
-    func request<T: Decodable>(baseURL: String, completion: @escaping (Result<T, Error>) -> Void)
+    func request<T: Decodable>(baseURL: String, parameters: [String: Any], completion: @escaping (Result<T, Error>) -> Void)
 }
 
 // MARK: - Network Service
 // allows to create a layer between Alamofire and the application
 
 class NetworkService: NetworkProtocol {
-    func request<T: Decodable>(baseURL: String, completion: @escaping (Result<T, Error>) -> Void) {
-        AF.request(baseURL).responseDecodable(of: T.self) { (response) in
+    func request<T: Decodable>(baseURL: String, parameters: [String: Any], completion: @escaping (Result<T, Error>) -> Void) {
+        AF.request(baseURL, parameters: parameters).responseDecodable(of: T.self) { (response) in
             switch response.result {
             case .success(let result):
                 completion(.success(result))
@@ -30,3 +30,4 @@ class NetworkService: NetworkProtocol {
         }
     }
 }
+
