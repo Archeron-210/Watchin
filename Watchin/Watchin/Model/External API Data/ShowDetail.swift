@@ -18,7 +18,7 @@ struct TvShowInfo: Decodable {
     var name: String
     var description: String
     var descriptionSource: String?
-    var startDate: String
+    var startDate: String?
     var country: String
     var status: String
     var imageStringUrl: String
@@ -44,21 +44,39 @@ extension TvShowInfo: ShowDetailFormatted {
         return id
     }
     var nameFormatted: String {
+        guard name != "" else {
+            return DefaultString.name
+        }
         return name
     }
     var countryFormatted: String {
+        guard country != "" else {
+            return DefaultString.country
+        }
         return "Country: \(country)"
     }
     var statusFormatted: String {
+        guard status != "" else {
+            return DefaultString.status
+        }
         return status
     }
     var imageStringUrlFormatted: String {
+        guard imageStringUrl != "" else {
+            return DefaultString.stringUrl
+        }
         return imageStringUrl
     }
     var descriptionFormatted: String {
+        guard description != "", description != "<br>" else {
+            return DefaultString.description
+        }
         return description.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
     var descriptionSourceFormatted: String {
+        guard descriptionSource != "" else {
+            return DefaultString.descriptionSource
+        }
         guard let descriptionSource = descriptionSource else {
             let formattedName = name.replacingOccurrences(of: " ", with: "+")
             return "https://www.google.com/search?q=\(formattedName)"
@@ -66,15 +84,21 @@ extension TvShowInfo: ShowDetailFormatted {
         return descriptionSource
     }
     var startDateFormatted: String {
-        var date = ""
-        if startDate.hasAlphabeticalCharacters() {
-            date = String(startDate.suffix(4))
-        } else {
-            date = String(startDate.prefix(4))
+        guard let date = startDate else {
+            return DefaultString.date
         }
-        return "(\(date))"
+        var formattedDate = ""
+        if date.hasAlphabeticalCharacters() {
+            formattedDate = String(date.suffix(4))
+        } else {
+            formattedDate = String(date.prefix(4))
+        }
+        return "(\(formattedDate))"
     }
     var genresFormatted: String {
+        guard genres != [] else {
+            return DefaultString.genre
+        }
         return genres.joined(separator: ", ")
     }
     var numberOfSeasons: String {

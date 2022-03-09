@@ -1,5 +1,5 @@
 //
-//  TvShowInfoFormattedTests.swift
+//  TvShowInfoFormattingTests.swift
 //  WatchinTests
 //
 //  Created by Archeron on 09/03/2022.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import Watchin
 
-class TvShowInfoFormattedTests: XCTestCase {
+class TvShowInfoFormattingTests: XCTestCase {
 
     // MARK: - Properties
 
@@ -100,4 +100,46 @@ class TvShowInfoFormattedTests: XCTestCase {
     func testGivenShowHasAStartDateWithLetters_WhenConformingToProtocol_ThenShowHasAStartDateFormatted() {
         XCTAssertEqual(specialCorrectTestShow.startDateFormatted, "(1958)")
     }
+
+    // MARK: - incorrectShow tests
+
+    func testGivenShowHasAnEmptyName_WhenConformingToProtocol_ThenShowHasANameFormatted() {
+        XCTAssertEqual(incorrectTestShow.nameFormatted, DefaultString.name)
+    }
+
+    func testGivenShowHasAnEmptyDescription_WhenConformingToProtocol_ThenShowHasADescriptionFormatted() {
+        XCTAssertEqual(incorrectTestShow.descriptionFormatted, DefaultString.description)
+    }
+
+    func testGivenShowHasAnEmptyDescriptionSource_WhenConformingToProtocol_ThenShowHasADescriptionSourceFormatted() {
+        XCTAssertEqual(incorrectTestShow.descriptionSourceFormatted, DefaultString.descriptionSource)
+    }
+
+    func testGivenShowHasNoStartDate_WhenConformingToProtocol_ThenShowHasAStartDateFormatted() {
+        XCTAssertEqual(incorrectTestShow.startDateFormatted, DefaultString.date)
+    }
+
+    func testGivenShowHasNoCountry_WhenConformingToProtocol_ThenShowHasACountryFormatted() {
+        XCTAssertEqual(incorrectTestShow.countryFormatted, DefaultString.country)
+    }
+
+    func testGivenShowHasNoStatus_WhenConformingToProtocol_ThenShowHasAStatusFormatted() {
+        XCTAssertEqual(incorrectTestShow.statusFormatted, DefaultString.status)
+    }
+
+    func testGivenShowHasNoImageStringUrl_WhenConformingToProtocol_ThenShowHasAImageStringUrlFormatted() {
+        XCTAssertEqual(incorrectTestShow.imageStringUrlFormatted, DefaultString.stringUrl)
+    }
+
+    func testGivenShowHasNoGenres_WhenConformingToProtocol_ThenShowHasAGenresFormatted() {
+        XCTAssertEqual(incorrectTestShow.genresFormatted, DefaultString.genre)
+    }
+
+    func testGivenShowHasNoEpisodes_WhenConformingToProtocol_ThenItsNumberOfEpisodesAndNumberOfSeasonsAreFormattedAndAreZero() {
+        XCTAssertEqual(incorrectTestShow.numberOfEpisodes, "0")
+        XCTAssertEqual(incorrectTestShow.numberOfSeasons, "0")
+    }
+
 }
+
+

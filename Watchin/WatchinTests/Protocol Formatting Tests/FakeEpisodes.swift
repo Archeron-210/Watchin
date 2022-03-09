@@ -14,7 +14,7 @@ class FakeEpisode {
 
     static func correctEpisode() -> EpisodeFormatted {
 
-       return EpisodeInfo(season: 01, episode: 01, name: "FirstEpisode")
+       return EpisodeInfo(season: 01, episode: 01, name: "First Episode")
     }
 
     static func incorrectEpisode() -> EpisodeFormatted {

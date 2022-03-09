@@ -43,7 +43,7 @@ class FakeShow {
                           name: "",
                           description: "",
                           descriptionSource: "",
-                          startDate: "",
+                          startDate: nil,
                           country: "",
                           status: "",
                           imageStringUrl: "",

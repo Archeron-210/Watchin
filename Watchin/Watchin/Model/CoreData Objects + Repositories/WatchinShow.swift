@@ -19,37 +19,37 @@ extension WatchinShow: ShowDetailFormatted {
         return intId
     }
     var nameFormatted: String {
-        return name ?? "No name"
+        return name ?? DefaultString.name
     }
     var descriptionFormatted: String {
-        return descriptionText ?? "No description"
+        return descriptionText ?? DefaultString.description
     }
     var descriptionSourceFormatted: String {
-        return descriptionSource ?? "No description source"
+        return descriptionSource ?? DefaultString.descriptionSource
     }
     var startDateFormatted: String {
-        return startDate ?? "No start date"
+        return startDate ?? DefaultString.date
     }
     var countryFormatted: String {
-        return country ?? "No country"
+        return country ?? DefaultString.country
     }
     var statusFormatted: String {
-        return status ?? "No status"
+        return status ?? DefaultString.status
     }
     var imageStringUrlFormatted: String {
-        return imageStringUrl ?? "No imageStringUrl"
+        return imageStringUrl ?? DefaultString.stringUrl
     }
     var genresFormatted: String {
-        return genres ?? "No genres"
+        return genres ?? DefaultString.genre
     }
     var numberOfSeasons: String {
-        return totalSeasons ?? "No number of seasons"
+        return totalSeasons ?? DefaultString.numberOfSeasons
     }
     var numberOfEpisodes: String {
-        return totalEpisodes ?? "No number of episodes"
+        return totalEpisodes ?? DefaultString.numberOfEpisodes
     }
     var platformFormatted: String {
-        return platform ?? "No platform"
+        return platform ?? DefaultString.platform
     }
     var trackedFormatted: Bool {
         return tracked
