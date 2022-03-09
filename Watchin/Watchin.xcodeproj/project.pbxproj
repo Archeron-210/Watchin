@@ -42,6 +42,10 @@
 		20E164B927B3C7CF0057E42C /* WatchinShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E164B827B3C7CF0057E42C /* WatchinShowTableViewCell.swift */; };
 		20E164BD27B3CF020057E42C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E164BC27B3CF020057E42C /* EditProfileViewController.swift */; };
 		20E164C927B4111D0057E42C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E164C827B4111D0057E42C /* UITextField+Extension.swift */; };
+		20ED647427D8AE6700FC0A91 /* CoreDataTestStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED647327D8AE6700FC0A91 /* CoreDataTestStack.swift */; };
+		20ED647827D8AF7000FC0A91 /* FakeShows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED647727D8AF7000FC0A91 /* FakeShows.swift */; };
+		20ED647C27D8B91300FC0A91 /* FakeEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED647B27D8B91300FC0A91 /* FakeEpisodes.swift */; };
+		20ED648227D8BE5500FC0A91 /* TvShowInfoFormattedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED648127D8BE5500FC0A91 /* TvShowInfoFormattedTests.swift */; };
 		20F1B2E927C2AC8200AC3874 /* WatchinShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1B2E827C2AC8200AC3874 /* WatchinShow.swift */; };
 		20F1B2F127C39CC300AC3874 /* WatchinShowRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1B2F027C39CC300AC3874 /* WatchinShowRepository.swift */; };
 		20F1B2F927C3E14A00AC3874 /* ShowDetailFormatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1B2F827C3E14A00AC3874 /* ShowDetailFormatted.swift */; };
@@ -106,6 +110,10 @@
 		20E164B827B3C7CF0057E42C /* WatchinShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchinShowTableViewCell.swift; sourceTree = "<group>"; };
 		20E164BC27B3CF020057E42C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		20E164C827B4111D0057E42C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		20ED647327D8AE6700FC0A91 /* CoreDataTestStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestStack.swift; sourceTree = "<group>"; };
+		20ED647727D8AF7000FC0A91 /* FakeShows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeShows.swift; sourceTree = "<group>"; };
+		20ED647B27D8B91300FC0A91 /* FakeEpisodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEpisodes.swift; sourceTree = "<group>"; };
+		20ED648127D8BE5500FC0A91 /* TvShowInfoFormattedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowInfoFormattedTests.swift; sourceTree = "<group>"; };
 		20F1B2E827C2AC8200AC3874 /* WatchinShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchinShow.swift; sourceTree = "<group>"; };
 		20F1B2F027C39CC300AC3874 /* WatchinShowRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchinShowRepository.swift; sourceTree = "<group>"; };
 		20F1B2F827C3E14A00AC3874 /* ShowDetailFormatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailFormatted.swift; sourceTree = "<group>"; };
@@ -194,6 +202,7 @@
 		20C8C76527D79DC900A4D0A4 /* CoreData Tests */ = {
 			isa = PBXGroup;
 			children = (
+				20ED647327D8AE6700FC0A91 /* CoreDataTestStack.swift */,
 			);
 			path = "CoreData Tests";
 			sourceTree = "<group>";
@@ -201,6 +210,9 @@
 		20C8C76627D79DE400A4D0A4 /* Protocol Formatting Tests */ = {
 			isa = PBXGroup;
 			children = (
+				20ED647727D8AF7000FC0A91 /* FakeShows.swift */,
+				20ED648127D8BE5500FC0A91 /* TvShowInfoFormattedTests.swift */,
+				20ED647B27D8B91300FC0A91 /* FakeEpisodes.swift */,
 			);
 			path = "Protocol Formatting Tests";
 			sourceTree = "<group>";
@@ -592,8 +604,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20ED647C27D8B91300FC0A91 /* FakeEpisodes.swift in Sources */,
 				20C8C77027D79E9800A4D0A4 /* ShowServiceTests.swift in Sources */,
+				20ED647827D8AF7000FC0A91 /* FakeShows.swift in Sources */,
+				20ED647427D8AE6700FC0A91 /* CoreDataTestStack.swift in Sources */,
 				20C8C76A27D79E5600A4D0A4 /* FakeNetworkService.swift in Sources */,
+				20ED648227D8BE5500FC0A91 /* TvShowInfoFormattedTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
