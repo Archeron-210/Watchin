@@ -13,17 +13,20 @@ class EpisodeInfoFormattingTests: XCTestCase {
     // MARK: - Properties
 
     var correctTestEpisode: EpisodeFormatted!
+    var incorrectTestEpisode: EpisodeFormatted!
 
     // MARK: - setUp & tearDown
 
     override func setUp() {
         super.setUp()
         correctTestEpisode = FakeEpisode.correctEpisode()
+        incorrectTestEpisode = FakeEpisode.incorrectEpisode()
     }
 
     override func tearDown() {
         super.tearDown()
         correctTestEpisode = nil
+        incorrectTestEpisode = nil
     }
 
     // MARK: - correctEpisode Tests
@@ -47,4 +50,28 @@ class EpisodeInfoFormattingTests: XCTestCase {
     func testGivenEpisodeHasNoHasBeenWatchedProperty_WhenConformingToProtocol_ThenEpisodeHasAHasBeenWatchedFormattedPropertyAndItReturnsFalse() {
         XCTAssertEqual(correctTestEpisode.hasBeenWatchedFormatted, false)
     }
+
+    // MARK: - incorrectEpisode Tests
+
+    func testGivenIncorrectEpisodeHasNoId_WhenConformingToProtocol_ThenIncorrectEpisodeHasAnIdFormatted() {
+        XCTAssertEqual(incorrectTestEpisode.episodeIdFormatted, 0)
+    }
+
+    func testGivenEpisodeHasNoName_WhenConformingToProtocol_ThenEpisodeHasANameFormatted() {
+        XCTAssertEqual(incorrectTestEpisode.episodeNameFormatted, DefaultString.name)
+    }
+
+    func testGivenEpisodeNumberIsZero_WhenConformingToProtocol_ThenEpisodeHasAnEpisodeNumberFormatted() {
+        XCTAssertEqual(incorrectTestEpisode.episodeNumberFormatted, 0)
+    }
+
+    func testGivenEpisodeHasZeroAsSeasonNumber_WhenConformingToProtocol_ThenEpisodeHasASeasonNumberFormatted() {
+        XCTAssertEqual(incorrectTestEpisode.seasonNumberFormatted, 0)
+    }
+
+    func testGivenIncorrectEpisodeHasNoHasBeenWatchedProperty_WhenConformingToProtocol_ThenIncorrectEpisodeHasAHasBeenWatchedFormattedPropertyAndItReturnsFalse() {
+        XCTAssertEqual(incorrectTestEpisode.hasBeenWatchedFormatted, false)
+    }
+
+
 }

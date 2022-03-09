@@ -121,6 +121,9 @@ extension EpisodeInfo: EpisodeFormatted {
     // Formatting properties to conform to EpisodeFormatted:
     
     var episodeNameFormatted: String {
+        guard name != "" else {
+            return DefaultString.name
+        }
         return name
     }
     var episodeNumberFormatted: Int {
