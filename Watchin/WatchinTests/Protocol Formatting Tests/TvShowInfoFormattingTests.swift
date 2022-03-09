@@ -80,7 +80,7 @@ class TvShowInfoFormattingTests: XCTestCase {
     }
 
     func testGivenShowHasNoPlatform_WhenConformingToProtocol_ThenShowHasAPlatformFormatted() {
-        XCTAssertEqual(correctTestShow.platformFormatted, "add platform")
+        XCTAssertEqual(correctTestShow.platformFormatted, DefaultString.platform)
     }
 
     func testGivenShowHasNoTrackedProperty_WhenConformingToProtocol_ThenShowHasATrackedFormattedPropertyAndItReturnsFalse() {
@@ -102,6 +102,10 @@ class TvShowInfoFormattingTests: XCTestCase {
     }
 
     // MARK: - incorrectShow tests
+
+    func testGivenShowHasZeroAsId_WhenConformingToProtocol_ThenShowHasAnIdFormatted() {
+        XCTAssertEqual(incorrectTestShow.idFormatted, 0)
+    }
 
     func testGivenShowHasAnEmptyName_WhenConformingToProtocol_ThenShowHasANameFormatted() {
         XCTAssertEqual(incorrectTestShow.nameFormatted, DefaultString.name)
@@ -139,6 +143,15 @@ class TvShowInfoFormattingTests: XCTestCase {
         XCTAssertEqual(incorrectTestShow.numberOfEpisodes, "0")
         XCTAssertEqual(incorrectTestShow.numberOfSeasons, "0")
     }
+
+    func testGivenIncorrectShowHasNoTrackedProperty_WhenConformingToProtocol_ThenIncorrectShowHasATrackedFormattedPropertyAndItReturnsFalse() {
+        XCTAssertEqual(incorrectTestShow.trackedFormatted, false)
+    }
+
+    func testGivenIncorrectShowHasNoPlatform_WhenConformingToProtocol_ThenIncorrectShowHasAPlatformFormatted() {
+        XCTAssertEqual(incorrectTestShow.platformFormatted, DefaultString.platform)
+    }
+
 
 }
 

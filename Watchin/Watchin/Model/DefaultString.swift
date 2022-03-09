@@ -19,6 +19,6 @@ struct DefaultString {
     static let stringUrl = "No string URL"
     static let numberOfSeasons = "No seasons"
     static let numberOfEpisodes = "No episodes"
-    static let platform = "No platform"
+    static let platform = "add platform"
 
 }

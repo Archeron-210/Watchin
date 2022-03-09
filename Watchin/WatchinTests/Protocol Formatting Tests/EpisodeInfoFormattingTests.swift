@@ -72,6 +72,4 @@ class EpisodeInfoFormattingTests: XCTestCase {
     func testGivenIncorrectEpisodeHasNoHasBeenWatchedProperty_WhenConformingToProtocol_ThenIncorrectEpisodeHasAHasBeenWatchedFormattedPropertyAndItReturnsFalse() {
         XCTAssertEqual(incorrectTestEpisode.hasBeenWatchedFormatted, false)
     }
-
-
 }

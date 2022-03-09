@@ -25,7 +25,7 @@ struct TvShowInfo: Decodable {
     var genres: [String]
     var episodes: [EpisodeInfo]
 
-    // setting coding keys to custom property names :
+    // setting coding keys to customize property names :
     private enum CodingKeys: String, CodingKey {
         case id, name, description, descriptionSource = "description_source", startDate = "start_date", country, status, imageStringUrl = "image_thumbnail_path", genres, episodes
     }
@@ -110,7 +110,7 @@ extension TvShowInfo: ShowDetailFormatted {
         return numberOfEpisodesFormatted
     }
     var platformFormatted: String {
-        return "add platform"
+        return DefaultString.platform
     }
     var trackedFormatted: Bool {
         return false

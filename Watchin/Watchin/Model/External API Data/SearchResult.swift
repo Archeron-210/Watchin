@@ -20,7 +20,7 @@ struct ShowSearchDetail: Decodable {
     var apiFormatedName: String
     var imageStringUrl: String
 
-    // setting coding keys to custom property names :
+    // setting coding keys to customize property names :
     private enum CodingKeys: String, CodingKey {
         case id, name, country, apiFormatedName = "permalink", imageStringUrl = "image_thumbnail_path"
     }

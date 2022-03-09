@@ -13,7 +13,7 @@ class EpisodeDetail: NSManagedObject {}
 extension EpisodeDetail: EpisodeFormatted {
 
     var episodeNameFormatted: String {
-        return name ?? "No name"
+        return name ?? DefaultString.name
     }
     var episodeNumberFormatted: Int {
         let intEpisodeNumber = Int(episodeNumber)
@@ -25,7 +25,6 @@ extension EpisodeDetail: EpisodeFormatted {
     }
     var hasBeenWatchedFormatted: Bool {
         return hasBeenWatched
-
     }
     var episodeIdFormatted: Int {
         let intEpisodeId = Int(episodeId)
