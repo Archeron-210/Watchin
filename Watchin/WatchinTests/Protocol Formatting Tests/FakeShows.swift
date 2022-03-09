@@ -13,10 +13,24 @@ class FakeShow {
 
     static func correctTvShowInfo() -> ShowDetailFormatted {
         return TvShowInfo(id: 27650,
-                          name: "FakeCorrectShow",
+                          name: "Fake Correct Show",
                           description: "A fake correct show for tests",
                           descriptionSource: "https://www.google.com",
                           startDate: "2022-03-09",
+                          country: "FR",
+                          status: "Running",
+                          imageStringUrl: "https://static.episodate.com/images/tv-show/thumbnail/29560.jpg",
+                          genres: ["Action","Science","Drama"],
+                          episodes: [EpisodeInfo(season: 01, episode: 01, name: "Start01"), EpisodeInfo(season: 01, episode: 02, name: "End01"), EpisodeInfo(season: 02, episode: 01, name: "Start02"), EpisodeInfo(season: 02, episode: 02, name: "End02") ])
+    }
+
+    static func specialCorrectTvShowInfo() -> ShowDetailFormatted {
+        // a show with special format in description, startDate and no descriptionSource
+        return TvShowInfo(id: 27651,
+                          name: "Fake Correct Show",
+                          description: "A fake <b>correct</b> show for tests",
+                          descriptionSource: nil,
+                          startDate: "Jan/19/1958",
                           country: "FR",
                           status: "Running",
                           imageStringUrl: "https://static.episodate.com/images/tv-show/thumbnail/29560.jpg",

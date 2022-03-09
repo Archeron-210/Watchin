@@ -85,12 +85,6 @@ extension TvShowInfo: ShowDetailFormatted {
         let numberOfEpisodesFormatted = String(episodes.count)
         return numberOfEpisodesFormatted
     }
-    var watchedSeasonsFormatted: Int {
-        return 0
-    }
-    var watchedEpisodesFormatted: Int {
-        return 0
-    }
     var platformFormatted: String {
         return "add platform"
     }
