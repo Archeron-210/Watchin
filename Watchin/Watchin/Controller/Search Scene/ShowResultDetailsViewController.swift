@@ -55,7 +55,8 @@ class ShowResultDetailsViewController: UIViewController {
     }
 
     @IBAction func addToWatchinLaterButtonTapped(_ sender: UIButton) {
-        watchinLaterPlatformPickerViewAlert()
+        goToPlatformsPicker()
+        saveShowToWatchinLater()
         configureAddToWatchinLaterButton()
     }
 
@@ -138,32 +139,14 @@ class ShowResultDetailsViewController: UIViewController {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
-    private func savePlatform(from pickerView: UIPickerView) {
-        guard let show = show else {
+    private func goToPlatformsPicker() {
+        guard let show = show, let platformPickerViewController = self.storyboard?.instantiateViewController(identifier: "PlatformPickerViewController") as? PlatformPickerViewController else {
             return
         }
-        let platformIndex = pickerView.selectedRow(inComponent: 0)
-        let platform = sortedPlatformNames[platformIndex]
-        watchinShowRepository.updateWatchinShowPlatform(show: show, platform: platform)
+        platformPickerViewController.show = show
+        self.present(platformPickerViewController, animated: true)
     }
 
-    private func createPlatformsPickerView(for alert: UIAlertController) -> UIPickerView {
-        let pickerView = UIPickerView()
-        pickerView.translatesAutoresizingMaskIntoConstraints = false
-        alert.view.addSubview(pickerView)
-
-        NSLayoutConstraint.activate([
-            pickerView.leadingAnchor.constraint(equalTo: alert.view.leadingAnchor),
-            pickerView.trailingAnchor.constraint(equalTo: alert.view.trailingAnchor),
-            pickerView.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 25),
-            pickerView.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -50)
-        ])
-
-        pickerView.dataSource = self
-        pickerView.delegate = self
-
-        return pickerView
-    }
 
     // MARK: - Alerts
 
@@ -182,26 +165,6 @@ class ShowResultDetailsViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 
-    private func watchinLaterPlatformPickerViewAlert() {
-        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
-        alert.isModalInPresentation = true
-        let titleAttributes = [NSAttributedString.Key.font: UIFont(name: "Kohinoor Telugu", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.lightBlue]
-        let titleString = NSAttributedString(string: "Please select a platform :", attributes: titleAttributes)
-        alert.setValue(titleString, forKey: "attributedTitle")
-
-        let pickerView = createPlatformsPickerView(for: alert)
-
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alert.addAction(cancelAction)
-
-        alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { (UIAlertAction) in
-
-            self.saveShowToWatchinLater()
-            self.savePlatform(from: pickerView)
-            self.configureAddToWatchinLaterButton()
-                }))
-                self.present(alert,animated: true, completion: nil )
-    }
 
     // MARK: - UI Aspect
 
@@ -239,28 +202,5 @@ class ShowResultDetailsViewController: UIViewController {
         addToWatchinLaterButton.backgroundColor = backgroundColor
         addToWatchinLaterButton.isEnabled = !isInWatchinLater
         addToYourShowsButton.isEnabled = !isInWatchinLater
-    }
-}
-
-    // MARK: - PickerView Management
-
-extension ShowResultDetailsViewController: UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return sortedPlatformNames.count
-    }
-
-}
-
-extension ShowResultDetailsViewController: UIPickerViewDelegate {
-
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let pickerLabel = UILabel()
-        aspectSetter.setLabelForPicker(for: pickerLabel, with: sortedPlatformNames[row])
-        return pickerLabel
     }
 }
