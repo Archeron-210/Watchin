@@ -76,16 +76,12 @@ class ShowService {
     // MARK: - Private
 
     private func computeSearchParameters(searchParameter: String?) -> [String: Any] {
-        guard let text = searchParameter, let escapedText = escapeWhitespaces(for: text) else {
+        guard let text = searchParameter else {
             return [:]
         }
         let parameters: [String: Any] = [
-            "q": escapedText
+            "q": text
         ]
         return parameters
-    }
-
-    private func escapeWhitespaces(for text: String) -> String? {
-        return text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
     }
 }

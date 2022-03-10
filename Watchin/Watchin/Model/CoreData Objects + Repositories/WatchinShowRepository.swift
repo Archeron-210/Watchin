@@ -70,15 +70,12 @@ class WatchinShowRepository {
     }
 
     func updateWatchinShowPlatform(show: ShowDetailFormatted, platform: String) {
-        let searchedShow = getWatchinShows().first(where: { (watchinShow) -> Bool in
-            return watchinShow.idFormatted == show.idFormatted
-        })
-        guard let foundWatchinShow = searchedShow else {
-            print("WatchinShow not found, unable to save desired changes")
+        let searchedShow = searchCorrespondingShow(for: show)
+        guard let foundShow = searchedShow else {
             return
         }
         do {
-            foundWatchinShow.platform = platform
+            foundShow.platform = platform
             try coreDataStack.viewContext.save()
         } catch {
             print("Unable to save desired changes")
@@ -86,16 +83,12 @@ class WatchinShowRepository {
     }
 
     func updateShowTrackedStatus(show: ShowDetailFormatted) {
-        let searchedShow = getWatchinShows().first(where: { (watchinShow) -> Bool in
-            return watchinShow.idFormatted == show.idFormatted
-        })
-        guard let foundWatchinShow = searchedShow else {
-            print("WatchinShow not found, unable to save desired changes")
+        let searchedShow = searchCorrespondingShow(for: show)
+        guard let foundShow = searchedShow else {
             return
         }
-
         do {
-            foundWatchinShow.tracked = !show.trackedFormatted
+            foundShow.tracked = !show.trackedFormatted
             try coreDataStack.viewContext.save()
         } catch {
             print("Unable to save desired changes")
@@ -104,14 +97,11 @@ class WatchinShowRepository {
     }
 
     func deleteWatchinShow(show: ShowDetailFormatted) {
-        let searchedShow = getWatchinShows().first(where: { (watchinShow) -> Bool in
-            return watchinShow.id == show.idFormatted
-        })
-        guard let foundWatchinShow = searchedShow else {
-            print("WatchinShow not found, unable to save desired changes")
+        let searchedShow = searchCorrespondingShow(for: show)
+        guard let foundShow = searchedShow else {
             return
         }
-        coreDataStack.viewContext.delete(foundWatchinShow)
+        coreDataStack.viewContext.delete(foundShow)
         do {
             try coreDataStack.viewContext.save()
         } catch {
@@ -127,9 +117,7 @@ class WatchinShowRepository {
     }
 
     func isInYourShows(show: ShowDetailFormatted) -> Bool {
-        let searchedShow = getWatchinShows().first { (watchinShow) -> Bool in
-            return watchinShow.idFormatted == show.idFormatted
-        }
+        let searchedShow = searchCorrespondingShow(for: show)
         guard let foundShow = searchedShow else {
             return false
         }
@@ -137,9 +125,7 @@ class WatchinShowRepository {
     }
 
     func isInWatchinLater(show: ShowDetailFormatted) -> Bool {
-        let searchedShow = getWatchinShows().first { (watchinShow) -> Bool in
-            return watchinShow.idFormatted == show.idFormatted
-        }
+        let searchedShow = searchCorrespondingShow(for: show)
         guard let foundShow = searchedShow else {
             return false
         }
@@ -154,8 +140,18 @@ class WatchinShowRepository {
             let watchinShows = try coreDataStack.viewContext.fetch(request)
             return watchinShows
         } catch {
-            print("We were unable to retrieve shows")
+            print("Unable to retrieve shows")
             return []
         }
+    }
+
+    private func searchCorrespondingShow(for show: ShowDetailFormatted) -> WatchinShow? {
+        let searchedShow = getWatchinShows().first { (watchinShow) -> Bool in
+            return watchinShow.idFormatted == show.idFormatted
+        }
+        guard let foundShow = searchedShow else {
+            return nil
+        }
+        return foundShow
     }
 }
