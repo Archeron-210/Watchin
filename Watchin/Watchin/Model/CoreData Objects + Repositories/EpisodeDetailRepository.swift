@@ -56,14 +56,14 @@ class EpisodeDetailRepository {
 
     func getWatchedEpisodes(for show: ShowDetailFormatted) -> [EpisodeFormatted] {
         let episodes = getEpisodeDetails(for: show).map { Episode(episodeFormatted: $0) }
-        let episodeWatched = episodes.filter { $0.hasBeenWatchedFormatted == true }
-        return episodeWatched
+        let watchedEpisodes = episodes.filter { $0.hasBeenWatchedFormatted == true }
+        return watchedEpisodes
     }
 
     func deleteWatchedEpisodes(for show: ShowDetailFormatted) {
         var watchedEpisodes = getWatchedEpisodes(for: show)
         for episode in watchedEpisodes {
-            updateWatchEpisodeStatus(episode: episode, of: show)
+            updateEpisodeWatchedStatus(episode: episode, of: show)
         }
         watchedEpisodes.removeAll()
     }
@@ -84,7 +84,7 @@ class EpisodeDetailRepository {
         }
     }
 
-    func updateWatchEpisodeStatus(episode: EpisodeFormatted, of show: ShowDetailFormatted) {
+    func updateEpisodeWatchedStatus(episode: EpisodeFormatted, of show: ShowDetailFormatted) {
         let searchedEpisode = getEpisodeDetails(for: show).first (where: {  (episodeDetail) -> Bool in
             return episodeDetail.episodeId == episode.episodeIdFormatted
         })

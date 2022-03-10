@@ -13,12 +13,22 @@ import CoreData
 class FakeEpisode {
 
     static func correctEpisode() -> EpisodeFormatted {
-
        return EpisodeInfo(season: 01, episode: 01, name: "First episode")
     }
 
-    static func incorrectEpisode() -> EpisodeFormatted {
+    static func correctEpisode2() -> EpisodeFormatted {
+       return EpisodeInfo(season: 01, episode: 02, name: "Second episode")
+    }
 
+    static func correctEpisode3() -> EpisodeFormatted {
+       return EpisodeInfo(season: 02, episode: 01, name: "Third episode")
+    }
+
+    static func correctEpisode4() -> EpisodeFormatted {
+       return EpisodeInfo(season: 02, episode: 02, name: "Fourth episode")
+    }
+
+    static func incorrectEpisode() -> EpisodeFormatted {
         return EpisodeInfo(season: 0, episode: 0, name: "")
     }
 }

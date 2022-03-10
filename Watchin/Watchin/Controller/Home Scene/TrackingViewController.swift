@@ -169,7 +169,7 @@ extension TrackingViewController: EpisodeTableViewCellActionDelegate {
         }
 
         let episode = episodesBySeason[indexPath.section][indexPath.row]
-        episodeDetailRepository.updateWatchEpisodeStatus(episode: episode, of: show)
+        episodeDetailRepository.updateEpisodeWatchedStatus(episode: episode, of: show)
         // update episode data
         episodesBySeason = episodeDetailRepository.getEpisodes(for: show)
         displayEpisodesAndSeasons()
