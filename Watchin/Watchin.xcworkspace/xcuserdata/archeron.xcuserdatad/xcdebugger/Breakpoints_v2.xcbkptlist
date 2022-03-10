@@ -20,53 +20,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FBB2727F-EA92-4B6A-B774-1F68E7B8C639"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Watchin/Model/Network/ShowService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "getSearchResults(searchText:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FBB2727F-EA92-4B6A-B774-1F68E7B8C639 - d8d96f684dc611b5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Watchin.ShowService.getSearchResults(searchText: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Result&lt;Swift.Array&lt;Watchin.ShowSearchDetail&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Watchin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/archeron/Desktop/Work/Projet%2012/Watchin/Watchin/Watchin/Watchin/Model/Network/ShowService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "185">
-               </Location>
-               <Location
-                  uuid = "FBB2727F-EA92-4B6A-B774-1F68E7B8C639 - 76d88635b4927c53"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Watchin.SearchResult, Swift.Error&gt;) -&gt; () in Watchin.ShowService.getSearchResults(searchText: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Result&lt;Swift.Array&lt;Watchin.ShowSearchDetail&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Watchin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/archeron/Desktop/Work/Projet%2012/Watchin/Watchin/Watchin/Watchin/Model/Network/ShowService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "178">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

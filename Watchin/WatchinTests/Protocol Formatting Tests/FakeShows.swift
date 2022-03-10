@@ -21,7 +21,7 @@ class FakeShow {
                           status: "Running",
                           imageStringUrl: "https://static.episodate.com/images/tv-show/thumbnail/29560.jpg",
                           genres: ["Action","Science","Drama"],
-                          episodes: [EpisodeInfo(season: 01, episode: 01, name: "Start01"), EpisodeInfo(season: 01, episode: 02, name: "End01"), EpisodeInfo(season: 02, episode: 01, name: "Start02"), EpisodeInfo(season: 02, episode: 02, name: "End02") ])
+                          episodes: [EpisodeInfo(season: 01, episode: 01, name: "First episode"), EpisodeInfo(season: 01, episode: 02, name: "Second episode"), EpisodeInfo(season: 02, episode: 01, name: "Third episode"), EpisodeInfo(season: 02, episode: 02, name: "Fourth episode") ])
     }
 
     static func specialCorrectTvShowInfo() -> ShowDetailFormatted {

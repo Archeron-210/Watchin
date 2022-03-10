@@ -39,7 +39,7 @@ class EpisodeDetailFormattingTest: XCTestCase {
     }
 
     func testGivenEpisodeDetailHasAName_WhenConformingToProtocol_ThenEpisodeDetailHasANameFormatted() {
-        XCTAssertEqual(correctTestEpisodeDetail.episodeNameFormatted, "First Episode")
+        XCTAssertEqual(correctTestEpisodeDetail.episodeNameFormatted, "First episode")
     }
 
     func testGivenEpisodeDetailHasAnEpisodeNumber_WhenConformingToProtocol_ThenEpisodeDetailHasAnEpisodeNumberFormatted() {

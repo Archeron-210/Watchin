@@ -36,7 +36,7 @@ class EpisodeInfoFormattingTests: XCTestCase {
     }
 
     func testGivenEpisodeHasAName_WhenConformingToProtocol_ThenEpisodeHasANameFormatted() {
-        XCTAssertEqual(correctTestEpisode.episodeNameFormatted, "First Episode")
+        XCTAssertEqual(correctTestEpisode.episodeNameFormatted, "First episode")
     }
 
     func testGivenEpisodeHasAnEpisodeNumber_WhenConformingToProtocol_ThenEpisodeHasAnEpisodeNumberFormatted() {

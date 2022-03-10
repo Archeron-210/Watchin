@@ -29,6 +29,8 @@ class WatchinShowRepositoryTests: XCTestCase {
         watchinShowRepository = nil
     }
 
+    // MARK: - Tests
+
     func testGivenAShowIsValid_WhenSavingInWatchinShow_ThenShowIsCorrectlySaved() {
 
         let validShow = FakeShow.correctTvShowInfo()
@@ -55,6 +57,7 @@ class WatchinShowRepositoryTests: XCTestCase {
     }
 
     func testGivenAShowIsAlreadySaved_WhenSavingTheShow_ThenTheShowIsNotSavedAgain() {
+        
         let firstShow = FakeShow.correctTvShowInfo()
         let success = watchinShowRepository.saveWatchinShow(show: firstShow)
         XCTAssertTrue(success)
