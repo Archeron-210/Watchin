@@ -101,9 +101,9 @@ class ShowResultDetailsViewController: UIViewController {
         if success {
             saveEpisodes()
             watchinShowRepository.updateShowTrackedStatus(show: show)
-            successAlert(message: "Added to your shows ! 📺")
+            successAlert(message: "\nAdded to your shows !")
         } else {
-            errorAlert(message: "We were unable to add this show to your shows, please check if you did not already save it.")
+            errorAlert(message: "\nWe were unable to add this show to your shows, please check if you did not already save it.")
         }
     }
 
@@ -125,7 +125,7 @@ class ShowResultDetailsViewController: UIViewController {
         if success {
             saveEpisodes()
         } else {
-            errorAlert(message: "We were unable to add this show to Watchin' Later, please check if you did not already save it to your shows in your Home page !")
+            errorAlert(message: "\nWe were unable to add this show to Watchin' Later, please check if you did not already save it to your shows in your Home page !")
         }
     }
 
@@ -151,7 +151,9 @@ class ShowResultDetailsViewController: UIViewController {
     // MARK: - Alerts
 
     private func successAlert(message: String) {
-        let alert = UIAlertController(title: "✅", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Done ✓", message: message, preferredStyle: .alert)
+        alert.setValue(aspectSetter.setAlertTitleAspect(for: alert), forKey: "attributedTitle")
+        alert.setValue(aspectSetter.setAlertMessageAspect(for: alert), forKey: "attributedMessage")
         present(alert, animated: true, completion: nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             self?.dismiss(animated: true)
@@ -159,7 +161,9 @@ class ShowResultDetailsViewController: UIViewController {
     }
 
     private func errorAlert(message: String) {
-        let alert = UIAlertController(title: "❌", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Error ✕", message: message, preferredStyle: .alert)
+        alert.setValue(aspectSetter.setAlertTitleAspect(for: alert), forKey: "attributedTitle")
+        alert.setValue(aspectSetter.setAlertMessageAspect(for: alert), forKey: "attributedMessage")
         let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(actionAlert)
         present(alert, animated: true, completion: nil)

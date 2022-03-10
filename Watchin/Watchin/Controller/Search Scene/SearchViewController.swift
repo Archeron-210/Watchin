@@ -48,7 +48,7 @@ class SearchViewController: UIViewController {
 
     private func searchForResults() {
         guard let text = searchTextField.text, !text.isEmpty else {
-            alert(title: "⚠️", message: "You need to enter a show title first ! 📺")
+            alert(title: "Warning ⚠︎", message: "\nYou need to enter a show title before pressing Search !")
             return
         }
         getSearchResults()
@@ -59,11 +59,15 @@ class SearchViewController: UIViewController {
         showService.getSearchResults(searchText: searchTextField.text) { result in
             self.toggleActivityIndicator(shown: false)
             switch result {
-            case .success(let showsFound) :
+            case .success(let showsFound):
+                guard !showsFound.isEmpty else {
+                    self.alert(title: "No results 📃", message: "\nNo match found for your search, please try checking your spelling or enter another key word !")
+                    return
+                }
                 self.searchResults = showsFound
                 self.tableView.reloadData()
-            case .failure :
-                self.alert(title: "⚠️", message: "It seems like something went wrong with servers 🔌")
+            case .failure:
+                self.alert(title: "Error ✕", message: "\nIt seems like something went wrong with servers, please try again later.")
             }
         }
     }
@@ -77,6 +81,8 @@ class SearchViewController: UIViewController {
 
     private func alert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.setValue(aspectSetter.setAlertTitleAspect(for: alert), forKey: "attributedTitle")
+        alert.setValue(aspectSetter.setAlertMessageAspect(for: alert), forKey: "attributedMessage")
         let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(actionAlert)
         present(alert, animated: true, completion: nil)

@@ -26,7 +26,7 @@ class PlatformPickerViewController: UIViewController {
     var show: ShowDetailFormatted?
     private let aspectSetter = AspectSettings.shared
     private let watchinShowRepository = WatchinShowRepository.shared
-
+    private var platformNamesSorted: [String] = []
 
     // MARK: - Life Cycle
 
@@ -35,6 +35,7 @@ class PlatformPickerViewController: UIViewController {
         aspectSetter.setContainerViewAspect(for: pickerContainerView)
         aspectSetter.setButtonOnWhiteBackgroundAspect(for: doneButton)
         aspectSetter.setButtonOnWhiteBackgroundAspect(for: exitButton)
+        platformNamesSorted = Platform.shared.names.sorted()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,7 +64,7 @@ class PlatformPickerViewController: UIViewController {
             return
         }
         let platformIndex = platformPickerView.selectedRow(inComponent: 0)
-        let platform = sortedPlatformNames[platformIndex]
+        let platform = platformNamesSorted[platformIndex]
         watchinShowRepository.updateWatchinShowPlatform(show: show, platform: platform)
     }
 
@@ -78,7 +79,7 @@ extension PlatformPickerViewController: UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return sortedPlatformNames.count
+        return platformNamesSorted.count
     }
 
 
@@ -88,7 +89,7 @@ extension PlatformPickerViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let pickerLabel = UILabel()
-        aspectSetter.setLabelForPicker(for: pickerLabel, with: sortedPlatformNames[row])
+        aspectSetter.setLabelForPicker(for: pickerLabel, with: platformNamesSorted[row])
         return pickerLabel
     }
 }

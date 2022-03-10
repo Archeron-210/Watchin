@@ -7,27 +7,32 @@
 
 import Foundation
 
-let platformNames = ["Netflix",
-                     "Prime Video",
-                     "Disney +",
-                     "HBO Max",
-                     "Hulu",
-                     "OCS",
-                     "Salto",
-                     "StarzTV",
-                     "AppleTV",
-                     "RakutenTV",
-                     "MyCanal",
-                     "SFR Play",
-                     "Peacock",
-                     "Paramount +",
-                     "ADN",
-                     "Crunchyroll",
-                     "Discovery +",
-                     "Crackle",
-                     "AcornTV",
-                     "PlutoTV",
-                     "Shadowz",
-                     "Funimation"]
- let sortedPlatformNames = platformNames.sorted()
+struct Platform {
+
+    static let shared = Platform()
+    
+    let names = ["Netflix",
+                 "Prime Video",
+                 "Disney +",
+                 "HBO Max",
+                 "Hulu",
+                 "OCS",
+                 "Salto",
+                 "StarzTV",
+                 "AppleTV",
+                 "RakutenTV",
+                 "MyCanal",
+                 "SFR Play",
+                 "Peacock",
+                 "Paramount +",
+                 "ADN",
+                 "Crunchyroll",
+                 "Discovery +",
+                 "Crackle",
+                 "AcornTV",
+                 "PlutoTV",
+                 "Shadowz",
+                 "Funimation"]
+}
+
 

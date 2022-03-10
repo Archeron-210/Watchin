@@ -56,4 +56,18 @@ class AspectSettings {
         label.textColor = UIColor.lightBlue
         label.textAlignment = .center
     }
+
+    func setAlertTitleAspect(for alert: UIAlertController) -> NSAttributedString {
+
+        let attributedString = NSAttributedString(string: alert.title!, attributes: [NSAttributedString.Key.font: UIFont(name: "Kohinoor Telugu Medium", size: 20) ?? UIFont.systemFont(ofSize: 20), NSAttributedString.Key.foregroundColor : UIColor.lightBlue])
+        return attributedString
+    }
+
+    func setAlertMessageAspect(for alert: UIAlertController) -> NSAttributedString {
+
+        let attributedString = NSAttributedString(string: alert.message!, attributes: [NSAttributedString.Key.font: UIFont(name: "Kohinoor Telugu", size: 15) ?? UIFont.systemFont(ofSize: 15), NSAttributedString.Key.foregroundColor : UIColor.lightBlue])
+        return attributedString
+    }
+
+
 }

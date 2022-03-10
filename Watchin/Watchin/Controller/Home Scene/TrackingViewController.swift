@@ -116,7 +116,9 @@ class TrackingViewController: UIViewController {
     // MARK: - Alerts
 
     private func deleteAlert() {
-        let alert = UIAlertController(title: "⚠️", message: "You are about to delete this show from your saved shows : all your episode progression will be lost.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Warning ⚠︎", message: "\nYou are about to delete this show from your saved shows : all your episode progression will be lost.", preferredStyle: .alert)
+        alert.setValue(aspectSetter.setAlertTitleAspect(for: alert), forKey: "attributedTitle")
+        alert.setValue(aspectSetter.setAlertMessageAspect(for: alert), forKey: "attributedMessage")
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
             self.deleteAndGoBackToHome()
         }))
@@ -125,7 +127,9 @@ class TrackingViewController: UIViewController {
     }
 
     private func startAgainAlert() {
-        let alert = UIAlertController(title: "⚠️", message: "You are about to delete all your episode progression: are you sure you want to start this show again ?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Warning ⚠︎", message: "\nYou are about to delete your episode progression: are you sure you want to start this show again ?", preferredStyle: .alert)
+        alert.setValue(aspectSetter.setAlertTitleAspect(for: alert), forKey: "attributedTitle")
+        alert.setValue(aspectSetter.setAlertMessageAspect(for: alert), forKey: "attributedMessage")
         alert.addAction(UIAlertAction(title: "Start again", style: .destructive, handler: { action in
             guard let show = self.show else {
                 return
@@ -222,7 +226,7 @@ extension TrackingViewController: UITableViewDelegate {
 
         let titleLabel = UILabel(frame: CGRect(x: 20, y: 2, width: header.frame.size.width - 5, height: header.frame.size.height - 5))
         titleLabel.text = "◦ Season \(section + 1)"
-        titleLabel.font = UIFont(name: "Kohinoor Telugu", size: 22)
+        titleLabel.font = UIFont(name: "Kohinoor Telugu Medium", size: 22)
         titleLabel.textColor = UIColor.lightBlue
 
         header.addSubview(titleLabel)

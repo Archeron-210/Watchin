@@ -73,16 +73,16 @@ class EditProfileViewController: UIViewController {
 
     private func saveChanges() {
         guard let userName = userNameTextField.text, !userName.isEmpty else {
-            alert(title: "⚠️", message: "Please enter your name before saving !")
+            alert(title: "Warning ⚠︎", message: "\nPlease enter your name before saving !")
             return
         }
         let data = profilePictureImageView.image?.pngData()
         let user = User(name: userName, profilePictureData: data)
         let success = repository.saveUser(user)
         if success {
-            alert(title: "✅", message: "Changes saved successfully !")
+            alert(title: "Done ✓", message: "\nChanges saved successfully !")
         } else {
-            alert(title: "❌", message: "We were unable to save your changes")
+            alert(title: "Error ✕", message: "\nWe were unable to save your changes, please try again later.")
         }
     }
 
@@ -90,6 +90,8 @@ class EditProfileViewController: UIViewController {
 
     private func alert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.setValue(aspectSetter.setAlertTitleAspect(for: alert), forKey: "attributedTitle")
+        alert.setValue(aspectSetter.setAlertMessageAspect(for: alert), forKey: "attributedMessage")
         let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(actionAlert)
         present(alert, animated: true, completion: nil)

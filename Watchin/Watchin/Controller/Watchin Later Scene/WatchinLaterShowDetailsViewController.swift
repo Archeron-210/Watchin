@@ -96,7 +96,9 @@ class WatchinLaterShowDetailsViewController: UIViewController {
     // MARK: - Alerts
 
     private func deleteAlert() {
-        let alert = UIAlertController(title: "⚠️", message: "You are about to delete this show from your Watchin' later list. Are you sure ?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Warning ⚠︎", message: "\nYou are about to delete this show from your Watchin' later list. Are you sure ?", preferredStyle: .alert)
+        alert.setValue(aspectSetter.setAlertTitleAspect(for: alert), forKey: "attributedTitle")
+        alert.setValue(aspectSetter.setAlertMessageAspect(for: alert), forKey: "attributedMessage")
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
             self.deleteAndGoBackToWatchinLater()
         }))
@@ -105,7 +107,9 @@ class WatchinLaterShowDetailsViewController: UIViewController {
     }
 
     private func startWatchinItAlert() {
-        let alert = UIAlertController(title: "⚠️", message: "You are about to move this show from this list to your shows. Are you sure ?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Warning ⚠︎", message: "\nYou are about to move this show from this list to your shows. Are you sure ?", preferredStyle: .alert)
+        alert.setValue(aspectSetter.setAlertTitleAspect(for: alert), forKey: "attributedTitle")
+        alert.setValue(aspectSetter.setAlertMessageAspect(for: alert), forKey: "attributedMessage")
         alert.addAction(UIAlertAction(title: "Move it to my shows !", style: .default, handler: { action in
             self.moveToYourShowsAndGoBack()
         }))
