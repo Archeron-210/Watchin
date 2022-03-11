@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		203076BB27B56ADD00A2AD36 /* Platforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076BA27B56ADD00A2AD36 /* Platforms.swift */; };
+		203076BB27B56ADD00A2AD36 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076BA27B56ADD00A2AD36 /* Platform.swift */; };
 		203076BF27B56DF500A2AD36 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076BE27B56DF500A2AD36 /* SearchResult.swift */; };
 		203076C527B572F500A2AD36 /* ShowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076C427B572F500A2AD36 /* ShowService.swift */; };
 		203076C927B57C0000A2AD36 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203076C827B57C0000A2AD36 /* NetworkService.swift */; };
@@ -77,7 +77,7 @@
 
 /* Begin PBXFileReference section */
 		11A099D167BD5C0DCF5B48F5 /* Pods-Watchin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watchin.debug.xcconfig"; path = "Target Support Files/Pods-Watchin/Pods-Watchin.debug.xcconfig"; sourceTree = "<group>"; };
-		203076BA27B56ADD00A2AD36 /* Platforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platforms.swift; sourceTree = "<group>"; };
+		203076BA27B56ADD00A2AD36 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		203076BE27B56DF500A2AD36 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		203076C427B572F500A2AD36 /* ShowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowService.swift; sourceTree = "<group>"; };
 		203076C827B57C0000A2AD36 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -321,7 +321,7 @@
 				20FA1E4327C9389300DA009E /* User */,
 				2030770927BD361700A2AD36 /* CoreData */,
 				20FA1E4427C938F400DA009E /* CoreData Objects + Repositories */,
-				203076BA27B56ADD00A2AD36 /* Platforms.swift */,
+				203076BA27B56ADD00A2AD36 /* Platform.swift */,
 				205743EA27D8FDE5008364B4 /* DefaultString.swift */,
 				20F1B2FC27C4EF0600AC3874 /* Show.swift */,
 				20C56D7D27CCD71F00927D6F /* Episode.swift */,
@@ -583,7 +583,7 @@
 				20FA1E2527C8E8A000DA009E /* EpisodeTableViewCell.swift in Sources */,
 				2030771027BD369100A2AD36 /* CoreDataStack.swift in Sources */,
 				203076BF27B56DF500A2AD36 /* SearchResult.swift in Sources */,
-				203076BB27B56ADD00A2AD36 /* Platforms.swift in Sources */,
+				203076BB27B56ADD00A2AD36 /* Platform.swift in Sources */,
 				20E164C927B4111D0057E42C /* UITextField+Extension.swift in Sources */,
 				20E164BD27B3CF020057E42C /* EditProfileViewController.swift in Sources */,
 				20C56D8327CE7B3200927D6F /* PlatformPickerViewController.swift in Sources */,

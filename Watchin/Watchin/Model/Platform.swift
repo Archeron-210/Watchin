@@ -1,5 +1,5 @@
 //
-//  Platforms.swift
+//  Platform.swift
 //  Watchin
 //
 //  Created by Archeron on 10/02/2022.

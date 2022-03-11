@@ -39,8 +39,6 @@ class PlatformPickerViewController: UIViewController {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        self.presentingViewController?.viewWillAppear(true)
-
         if isBeingDismissed {
             delegate?.didDismiss()
         }
