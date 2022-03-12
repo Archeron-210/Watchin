@@ -122,9 +122,7 @@ extension HomeViewController: UITableViewDelegate {
         guard let trackingViewController = self.storyboard?.instantiateViewController(identifier: "TrackingViewController") as? TrackingViewController else {
             return
         }
-
         trackingViewController.show = show
-
         self.navigationController?.pushViewController(trackingViewController, animated: true)
     }
 

@@ -12,8 +12,8 @@ class WatchinShowRepositoryTests: XCTestCase {
 
     // MARK: - Properties
 
-    var coreDataStack: CoreDataStackProtocol!
-    var watchinShowRepository: WatchinShowRepository!
+    private var coreDataStack: CoreDataStackProtocol!
+    private var watchinShowRepository: WatchinShowRepository!
 
     //MARK: - setUp & tearDown
 

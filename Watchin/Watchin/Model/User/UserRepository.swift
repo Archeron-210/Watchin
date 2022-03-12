@@ -7,19 +7,7 @@
 
 import Foundation
 
-protocol UserRepositoryProtocol: AnyObject {
-    // Retrieve the user
-    func getUser() -> User
-
-    // Save given user, returns true if success, false if failure
-    func saveUser(_ user: User) -> Bool
-}
-
-class UserRepository: UserRepositoryProtocol {
-
-    // MARK: - Singleton
-
-    static let shared: UserRepositoryProtocol = UserRepository()
+class UserRepository {
 
     // MARK: - Keys
 
@@ -30,6 +18,7 @@ class UserRepository: UserRepositoryProtocol {
 
     // MARK: - Properties
     
+    static let shared = UserRepository()
     private lazy var user: User = {
         let name = self.getName()
         let profilePictureData = self.getProfilePicture()

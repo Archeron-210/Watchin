@@ -20,7 +20,6 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var saveChangesButton: UIButton!
     @IBOutlet weak var exitButton: UIButton!
-
     // MARK: - Properties
 
     weak var delegate: EditProfileViewControllerDismissDelegate?

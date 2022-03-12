@@ -12,8 +12,8 @@ class WatchinShowFormattingTests: XCTestCase {
 
     // MARK: - Properties
 
-    var correctTestWatchinShow: ShowDetailFormatted!
-    var incorrectTestWatchinShow: ShowDetailFormatted!
+    private var correctTestWatchinShow: ShowDetailFormatted!
+    private var incorrectTestWatchinShow: ShowDetailFormatted!
 
     // MARK: - setUp & tearDown
 

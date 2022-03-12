@@ -12,8 +12,8 @@ class EpisodeDetailFormattingTest: XCTestCase {
 
     // MARK: - Properties
 
-    var correctTestEpisodeDetail: EpisodeFormatted!
-    var incorrectTestEpisodeDetail: EpisodeFormatted!
+    private var correctTestEpisodeDetail: EpisodeFormatted!
+    private var incorrectTestEpisodeDetail: EpisodeFormatted!
 
     // MARK: - setUp & tearDown
 

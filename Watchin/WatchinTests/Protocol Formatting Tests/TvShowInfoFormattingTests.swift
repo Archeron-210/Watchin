@@ -12,9 +12,9 @@ class TvShowInfoFormattingTests: XCTestCase {
 
     // MARK: - Properties
 
-    var correctTestShow: ShowDetailFormatted!
-    var specialCorrectTestShow: ShowDetailFormatted!
-    var incorrectTestShow: ShowDetailFormatted!
+    private var correctTestShow: ShowDetailFormatted!
+    private var specialCorrectTestShow: ShowDetailFormatted!
+    private var incorrectTestShow: ShowDetailFormatted!
 
     // MARK: - setUp & tearDown
 

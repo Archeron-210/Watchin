@@ -12,10 +12,10 @@ class EpisodeDetailRepositoryTests: XCTestCase {
 
     // MARK: - Properties
 
-    var coreDataStack: CoreDataStackProtocol!
-    var episodeRepository: EpisodeDetailRepository!
-    var watchinShowRepository: WatchinShowRepository!
-    var validShow: ShowDetailFormatted!
+    private var coreDataStack: CoreDataStackProtocol!
+    private var episodeRepository: EpisodeDetailRepository!
+    private var watchinShowRepository: WatchinShowRepository!
+    private var validShow: ShowDetailFormatted!
 
     // MARK: - setUp & tearDown
 
