@@ -14,22 +14,17 @@ protocol CoreDataStackProtocol {
 
 class CoreDataStack: CoreDataStackProtocol {
 
-    // MARK: - Singleton
+    // MARK: - Properties
 
     static let shared = CoreDataStack()
-
-    // MARK: - Public
-
     var viewContext: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
+    private static let modelName = "Watchin"
 
     // MARK: - Private
 
     private init() {}
-
-    private static let modelName = "Watchin"
-
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: CoreDataStack.modelName)
         container.loadPersistentStores { storeDescription, error in

@@ -38,7 +38,7 @@ struct EpisodeInfo: Decodable {
 }
 
 extension TvShowInfo: ShowDetailFormatted {
-    // Formatting properties to conform to ShowDetailProtocol, and obtain correct forms of it to use in controllers :
+    // Formatting properties to conform to ShowDetailProtocol, and obtain correct forms of it to use in controllers and later in CoreData :
 
     var idFormatted: Int {
         return id

@@ -38,7 +38,7 @@ class UserRepository {
 
     func saveUser(_ user: User) -> Bool {
         // Tries to save the profile picture
-        let didSaveProfilePicture = self.saveProfilePicture(imageData: user.profilePictureData)
+        let didSaveProfilePicture = saveProfilePicture(imageData: user.profilePictureData)
         // If it failed, then saving failed, so returns false
         guard didSaveProfilePicture else {
             return false
@@ -51,7 +51,7 @@ class UserRepository {
         return true
     }
 
-    // MARK: - Private Name Management
+    // MARK: - Name Management
 
     private func saveName(name: String) {
         UserDefaults.standard.set(name, forKey: Keys.name)
@@ -61,7 +61,7 @@ class UserRepository {
         return UserDefaults.standard.string(forKey: Keys.name) ?? "Name"
     }
 
-    // MARK: - Private Profile Picture Management
+    // MARK: - Profile Picture Management
 
     private func saveProfilePicture(imageData: Data?) -> Bool {
         guard let data = imageData else {

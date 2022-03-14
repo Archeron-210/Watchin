@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
 
     var shows: [ShowDetailFormatted] = []
     private var user: User {
-        UserRepository.shared.getUser()
+        return UserRepository.shared.getUser()
     }
     private let aspectSetter = AspectSettings.shared
     private let watchinShowRepository = WatchinShowRepository.shared

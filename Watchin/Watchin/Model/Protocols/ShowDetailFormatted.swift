@@ -8,7 +8,6 @@
 import Foundation
 
 protocol ShowDetailFormatted {
-
     var idFormatted: Int { get }
     var nameFormatted: String { get }
     var descriptionFormatted: String { get }
@@ -22,5 +21,4 @@ protocol ShowDetailFormatted {
     var numberOfEpisodes: String { get }
     var platformFormatted: String { get }
     var trackedFormatted: Bool { get }
-
 }
