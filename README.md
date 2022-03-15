@@ -39,17 +39,17 @@ Pods used in this project are [Alamofire](https://cocoapods.org/pods/alamofire) 
 
 First tab of the app, where you can access the profile editing page, and see all of your currently watched shows.
 
-<img src="Images/Home.jpg" width="30%" height="30%"/> <img src="Images/Editscreen.jpg" width="30%" height="30%"/>
+<img src="Images/Home.png" width="30%" height="30%"/> <img src="Images/Editscreen.png" width="30%" height="30%"/>
 
 By clicking on a show, you can access its tracking screen, and there, mark its episodes as **Seen** by a tap on the "**Saw it !**" button, choose/update your streaming platform by a tap on "**Platforms**", start the show again from the beginning by a tap on "**Start again**" and delete the show from your currently watched shows by a tap on "**Delete**"
 
-<img src="Images/tracking.jpg" width="30%" height="30%"/><img src="Images/platformpicker.jpg" width="30%" height="30%"/>
+<img src="Images/tracking.png" width="30%" height="30%"/><img src="Images/platformpicker.png" width="30%" height="30%"/>
 
 ## Search
 
 Second tab of the app, where you can search a show by its title.
 
-<img src="Images/searchempty.jpg" width="30%" height="30%"/> <img src="Images/search.jpg" width="30%" height="30%"/>
+<img src="Images/searchempty.png" width="30%" height="30%"/> <img src="Images/search.png" width="30%" height="30%"/>
 
 By clicking on a result, you can access the detail page of chooses show, and see all of its infos : number of seasons, status, genres, start date, country, and a description. You can also learn more about it by clicking on "**See more**".
 
@@ -60,10 +60,10 @@ From here, you can either **Add it to your shows** to start tracking it or **Add
 Last but not least, the third tab of the app.
 Here, you can see all your saved for later show, and on which platform to see them.
 
-<img src="Images/watchinlater.jpg" width="30%" height="30%"/>
+<img src="Images/watchinlater.png" width="30%" height="30%"/>
 
 By clicking on a show, you can either modify which platform you wish to watch it on by a tap on "**Change platform**", move it to your list of currently watched shows and start tracking it by a tap on "**Start Watchin' it !**" or simply delete it for your wishlist by a tap on "**Delete**".
 
-<img src="Images/watchinlaterscreen.jpg" width="30%" height="30%"/>
+<img src="Images/watchinlaterscreen.png" width="30%" height="30%"/>
 
 >*Currently in developpment.*
