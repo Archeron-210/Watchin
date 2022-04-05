@@ -5,6 +5,13 @@ You can search for new tv shows to watch, save the shows you are currently watch
 
 <img src="Images/Launchscreen.png" width="50%" height="50%"/> 
 
+## Version
+
+Current version : V1.
+Supports iOS 14+. 
+Available in portrait mode.
+**Unit tests : ✓**
+
 ## API
 
 The **Episodate** Tv Shows API is used in this app to search tv shows and their informations.
