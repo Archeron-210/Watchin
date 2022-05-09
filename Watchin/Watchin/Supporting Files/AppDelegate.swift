@@ -14,23 +14,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         // UINavigationBar appearance
-        UINavigationBar.appearance().tintColor = UIColor.lightBlue
-        if let customFont = UIFont(name: "Kohinoor Telugu", size: 22.0) {
-            UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
-            UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .highlighted)
-        }
-        let navBarImage = UIImage(named: "navBarGradient")
-
-        UINavigationBar.appearance().setBackgroundImage(navBarImage?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch), for: .default)
+        UINavigationBar.appearance().tintColor = UIColor.white
+        setNavigationBarAppearance()
 
         // UITabBar appearance
-        let tabBarImage = UIImage(named: "tabBarGradient")
         UITabBar.appearance().unselectedItemTintColor = .white
-        UITabBar.appearance().backgroundImage = tabBarImage?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch)
 
+        // alerts tint
         UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = UIColor.lightBlue
 
         return true
+    }
+
+    func setNavigationBarAppearance() {
+        let navBarAppearance = UINavigationBar.appearance()
+        let navigationBarAppearance = UINavigationBarAppearance()
+
+        let titleFontAttrs = [ NSAttributedString.Key.font: UIFont(name: "Kohinoor Telugu", size: 22)!, NSAttributedString.Key.foregroundColor: UIColor.white ]
+        let barButtonFontAttrs = [ NSAttributedString.Key.font: UIFont(name: "Kohinoor Telugu", size: 22)! ]
+        navigationBarAppearance.titleTextAttributes = titleFontAttrs
+        navigationBarAppearance.buttonAppearance.normal.titleTextAttributes = barButtonFontAttrs
+        navigationBarAppearance.buttonAppearance.highlighted.titleTextAttributes = barButtonFontAttrs
+
+        navigationBarAppearance.backgroundEffect = .none
+        navigationBarAppearance.backgroundImage = UIImage(named: "tabBarGradient")
+
+        navigationBarAppearance.shadowImage = UIImage()
+        navigationBarAppearance.shadowColor = .clear
+
+        navBarAppearance.standardAppearance = navigationBarAppearance
+        navBarAppearance.scrollEdgeAppearance = navBarAppearance.standardAppearance
     }
 
     // MARK: UISceneSession Lifecycle
